@@ -9,8 +9,8 @@ import { qtyOf } from "@/lib/cart";
 import { useOccasion } from "@/lib/useOccasion";
 
 export default function MomentsPage() {
-  const { demo, data, loading } = useOccasion("complete");
-  const sensed = data && data.occasion_id !== "none";
+  const { demo, data, refining } = useOccasion("complete");
+  const sensed = data.occasion_id !== "none";
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
@@ -19,8 +19,13 @@ export default function MomentsPage() {
           <p className="text-xs font-bold uppercase tracking-wide text-black/50">
             Occasion sensed from your cart
           </p>
-          <h1 className="mt-1 text-xl font-extrabold">
+          <h1 className="mt-1 flex items-center gap-2 text-xl font-extrabold">
             {sensed ? data.occasion_label : "No clear occasion yet"}
+            {refining && (
+              <span className="rounded-full bg-black/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-black/50">
+                refining
+              </span>
+            )}
           </h1>
           <p className="mt-1 text-sm text-black/70">
             {sensed
@@ -36,9 +41,7 @@ export default function MomentsPage() {
           </p>
         )}
 
-        {loading && <p className="mt-6 text-sm text-black/40">Thinking…</p>}
-
-        {!loading && sensed && (
+        {sensed && (
           <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
             {data.suggestions.map((s) => (
               <SuggestionCard
@@ -52,7 +55,7 @@ export default function MomentsPage() {
           </div>
         )}
 
-        {!loading && !sensed && (
+        {!sensed && (
           <p className="mt-5 rounded-xl border border-dashed border-line px-5 py-6 text-sm text-black/45">
             Nothing to complete.{" "}
             <Link href="/" className="text-brand underline underline-offset-2">

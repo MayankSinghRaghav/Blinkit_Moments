@@ -8,8 +8,8 @@ import { qtyOf, setQty } from "@/lib/cart";
 import { useOccasion } from "@/lib/useOccasion";
 
 export default function ShopPage() {
-  const { demo, data, loading } = useOccasion("infer-occasion");
-  const sensed = data && data.occasion_id !== "none";
+  const { demo, data } = useOccasion("infer-occasion");
+  const sensed = data.occasion_id !== "none";
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
@@ -36,7 +36,7 @@ export default function ShopPage() {
           </Link>
         )}
 
-        {!loading && data && !sensed && (
+        {!sensed && (
           <p className="mb-5 rounded-xl border border-dashed border-line px-5 py-4 text-sm text-black/45">
             No clear occasion behind this basket — we&apos;d rather stay quiet than guess.
           </p>
