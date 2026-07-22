@@ -1,0 +1,32 @@
+[
+  {
+    "basket": [
+      { "name": "Beer", "category": "Beverages" },
+      { "name": "Nachos", "category": "Snacks" }
+    ],
+    "context": "Fri 7pm",
+    "expect_occasion": "game_night",
+    "expect_new_categories_any_of": ["Home", "Desserts", "Mixers"]
+  },
+  {
+    "basket": [{ "name": "Dog biscuits", "category": "Pet" }],
+    "context": "first-time buyer",
+    "expect_occasion": "new_pet",
+    "expect_new_categories_any_of": ["Pet", "PersonalCare", "Home"],
+    "must_include_confidence_note": true
+  },
+  {
+    "basket": [
+      { "name": "Instant noodles", "category": "Snacks" },
+      { "name": "Ginger tea", "category": "Beverages" }
+    ],
+    "context": "rainy evening, monsoon",
+    "expect_occasion": "monsoon_evening",
+    "expect_new_categories_any_of": ["Snacks", "Wellness", "Desserts"]
+  },
+  {
+    "basket": [{ "name": "Milk", "category": "Groceries" }],
+    "context": "Tue 9am, no signal",
+    "expect_occasion": "none"
+  }
+]

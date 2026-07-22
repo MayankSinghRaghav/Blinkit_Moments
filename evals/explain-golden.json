@@ -1,0 +1,12 @@
+[
+  {
+    "product_id": "pet_treats",
+    "occasion": "New pet at home",
+    "must_mention_any_of": ["starter", "small", "100g", "₹149", "first"]
+  },
+  {
+    "product_id": "wel_immunity",
+    "occasion": "Monsoon evening in",
+    "must_mention_any_of": ["7", "sachet", "starter", "small", "₹179"]
+  }
+]

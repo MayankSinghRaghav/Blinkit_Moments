@@ -1,0 +1,9 @@
+Given one product and the occasion it was suggested for, explain the pick.
+Ground every claim ONLY in the product and the occasion below — no external facts,
+no invented ratings, no invented ingredients.
+
+Product: {{product}}
+Occasion: {{occasion}}
+
+OUTPUT — strict JSON, no prose:
+{ "why_you_ll_like_it": "...", "why_its_a_stretch": "..." }
