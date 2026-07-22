@@ -18,30 +18,36 @@ export function useOccasion(endpoint: "infer-occasion" | "complete") {
     if (!sessionId) return;
     const ac = new AbortController();
     setLoading(true);
-    fetch(`/api/${endpoint}`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      signal: ac.signal,
-      body: JSON.stringify({
-        session_id: sessionId,
-        basket: cartKey
-          .split(",")
-          .filter(Boolean)
-          .map((id) => byId(id))
-          .filter((p) => p !== undefined)
-          .map((p) => ({ product_id: p.id, name: p.name, category: p.category })),
-        context,
-        comfort,
-      }),
-    })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((r: OccasionState) => {
-        setData(r);
-        if (r) setDemo({ occasionId: r.occasion_id, occasionLabel: r.occasion_label });
+    // the comfort slider fires on every tick — don't spend an LLM call per pixel
+    const t = setTimeout(() => {
+      fetch(`/api/${endpoint}`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        signal: ac.signal,
+        body: JSON.stringify({
+          session_id: sessionId,
+          basket: cartKey
+            .split(",")
+            .filter(Boolean)
+            .map((id) => byId(id))
+            .filter((p) => p !== undefined)
+            .map((p) => ({ product_id: p.id, name: p.name, category: p.category })),
+          context,
+          comfort,
+        }),
       })
-      .catch(() => {})
-      .finally(() => !ac.signal.aborted && setLoading(false));
-    return () => ac.abort();
+        .then((r) => (r.ok ? r.json() : null))
+        .then((r: OccasionState) => {
+          setData(r);
+          if (r) setDemo({ occasionId: r.occasion_id, occasionLabel: r.occasion_label });
+        })
+        .catch(() => {})
+        .finally(() => !ac.signal.aborted && setLoading(false));
+    }, 400);
+    return () => {
+      clearTimeout(t);
+      ac.abort();
+    };
   }, [endpoint, sessionId, cartKey, context, comfort]);
 
   return { demo, data, loading };

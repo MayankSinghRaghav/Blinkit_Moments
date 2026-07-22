@@ -15,8 +15,14 @@ type Case = (typeof golden)[number] & {
   must_include_confidence_note?: boolean;
 };
 
+// Gemini's free tier is ~10 req/min and the app limits 20/min per IP — pace the
+// live run or every case 429s into the fallback and the results mean nothing.
+const PACE_MS = Number(process.env.EVAL_PACE_MS ?? 7000);
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
 async function run(c: Case, comfort: number): Promise<CompleteResult> {
   if (!live) return completeOccasion(c.basket, c.context, comfort);
+  await sleep(PACE_MS);
   const res = await fetch(`${BASE}/api/infer-occasion`, {
     method: "POST",
     headers: { "content-type": "application/json" },
@@ -27,6 +33,7 @@ async function run(c: Case, comfort: number): Promise<CompleteResult> {
       comfort,
     }),
   });
+  if (res.status === 429) throw new Error(`rate limited by ${BASE} — raise EVAL_PACE_MS`);
   if (!res.ok) throw new Error(`${res.status} from ${BASE}`);
   return res.json();
 }
@@ -77,13 +84,17 @@ const COMFORTS = [0, 50, 100];
 
 async function main() {
   let failed = 0;
+  let fellBack = 0;
   console.log(`occasion-golden · ${live ? `live @ ${BASE}` : "offline (deterministic)"}\n`);
 
   for (const c of golden as Case[]) {
     for (const comfort of COMFORTS) {
       const r = await run(c, comfort);
       const fails = check(c, r);
-      const name = `${c.expect_occasion} @comfort=${comfort}`;
+      // a live case that degraded measured the fallback, not the model
+      const viaLlm = !live || !(r as { degraded?: boolean }).degraded;
+      if (!viaLlm) fellBack++;
+      const name = `${c.expect_occasion} @comfort=${comfort}${viaLlm ? "" : " [fellback]"}`;
       if (fails.length) {
         failed++;
         console.log(`  FAIL  ${name}`);
@@ -95,6 +106,11 @@ async function main() {
   }
 
   console.log(failed ? `\n${failed} case(s) failed` : "\nall cases passed");
+  if (fellBack) {
+    console.log(
+      `${fellBack} case(s) never reached the model (quota/timeout) — those measured the fallback.`,
+    );
+  }
   process.exit(failed ? 1 : 0);
 }
 

@@ -8,8 +8,13 @@ INPUT
 - Comfort dial 0-100 (0 = suggest safe adjacent categories only; 100 = suggest bold new categories): {{comfort}}
 - Allowed categories: {{catalog_categories}}
 
+ALLOWED OCCASIONS — occasion_id MUST be one of these ids, or "none":
+{{occasions}}
+
 RULES
-1. Infer ONE occasion. If confidence < 0.4, return occasion_id "none".
+1. Infer ONE occasion. If confidence < 0.4, return occasion_id "none". The
+   occasion must be grounded in the basket itself — context alone (a day, a
+   time) is never enough, and an empty basket is always "none".
 2. Suggest 2-4 items, each from a category NOT present in the basket.
 3. Higher comfort => categories further from the basket's own categories.
 4. Every suggestion needs a one-line "why_now" (ties to the occasion) and, if

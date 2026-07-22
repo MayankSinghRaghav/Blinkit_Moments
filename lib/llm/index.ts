@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
 import { CATEGORIES, PRODUCTS, isHighConsideration } from "@/lib/data/catalog";
+import { OCCASIONS, occasionById } from "@/lib/occasions";
 import { completeOccasion, type BasketItem, type CompleteResult } from "@/lib/scoring";
 
 const MODEL = "gemini-2.5-flash";
@@ -22,9 +23,15 @@ async function generate(text: string): Promise<unknown> {
     headers: { "content-type": "application/json" },
     body: JSON.stringify({
       contents: [{ parts: [{ text }] }],
-      generationConfig: { responseMimeType: "application/json", temperature: 0.4 },
+      generationConfig: {
+        responseMimeType: "application/json",
+        temperature: 0.4,
+        // 2.5-flash burns ~1.5k thinking tokens (~9s) on this prompt by default;
+        // the task is a lookup against a fixed catalog, so skip it.
+        thinkingConfig: { thinkingBudget: 0 },
+      },
     }),
-    signal: AbortSignal.timeout(15_000),
+    signal: AbortSignal.timeout(20_000),
   });
   if (!res.ok) throw new Error(`llm ${res.status}`);
   const json = await res.json();
@@ -42,7 +49,12 @@ const CompleteSchema = z.object({
       product_id: z.string(),
       category: z.string(),
       why_now: z.string().min(1),
-      confidence: z.string().default(""),
+      // model sends null (not undefined) for non-high-consideration items,
+      // which .default() would not catch
+      confidence: z
+        .string()
+        .nullish()
+        .transform((v) => v ?? ""),
     }),
   ),
 });
@@ -52,6 +64,10 @@ function enforceRules(r: CompleteResult, basket: BasketItem[]): CompleteResult {
   if (r.occasion_id === "none" || r.confidence < 0.4) {
     return { ...r, occasion_id: "none", suggestions: [] };
   }
+  // the model likes inventing occasions ("casual_friday_drinks") — only seeded
+  // ids exist downstream (/why links, adoption events, the golden evals)
+  const occasion = occasionById(r.occasion_id);
+  if (!occasion) throw new Error(`llm invented occasion ${r.occasion_id}`);
   const inBasket = new Set(basket.map((i) => i.category));
   const seen = new Set<string>();
   const suggestions = r.suggestions.filter((s) => {
@@ -62,8 +78,8 @@ function enforceRules(r: CompleteResult, basket: BasketItem[]): CompleteResult {
     seen.add(s.category);
     return true;
   });
-  if (suggestions.length < 2) throw new Error("llm violated rules");
-  return { ...r, suggestions: suggestions.slice(0, 4) };
+  if (suggestions.length < 2) throw new Error("llm returned <2 usable suggestions");
+  return { ...r, occasion_label: occasion.label, suggestions: suggestions.slice(0, 4) };
 }
 
 export type InferResult = CompleteResult & { degraded: boolean };
@@ -80,12 +96,17 @@ export async function inferOccasion(
         context,
         comfort: String(comfort),
         catalog_categories: CATEGORIES.join(", "),
+        occasions: OCCASIONS.map((o) => `${o.id} — ${o.label}`).join("\n"),
         catalog: PRODUCTS.map((p) => `${p.id} | ${p.name} | ${p.category} | ₹${p.price_inr}${p.starter ? " | starter" : ""}`).join("\n"),
       }),
     );
     return { ...enforceRules(CompleteSchema.parse(raw), basket), degraded: false };
-  } catch {
-    // no key, quota exhausted, timeout, or a rule violation — deterministic path
+  } catch (e) {
+    // no key, quota exhausted, timeout, or a rule violation — deterministic path.
+    // Logged, not swallowed: a demo that silently degrades looks like it works.
+    if ((e as Error).message !== "no-key") {
+      console.warn("[occasion] LLM fallback:", (e as Error).message);
+    }
     return { ...completeOccasion(basket, context, comfort), degraded: true };
   }
 }

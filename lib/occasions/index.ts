@@ -77,7 +77,9 @@ export function matchOccasion(
   for (const o of OCCASIONS) {
     const catHits = o.signal_categories.filter((c) => cats.has(c)).length;
     const kwHits = o.signal_keywords.filter((k) => ctx.includes(k)).length;
-    if (catHits === 0 && kwHits === 0) continue;
+    // an occasion must be grounded in something actually in the basket —
+    // context alone ("Fri 7pm") would otherwise fire on an empty cart
+    if (catHits === 0) continue;
     const score = 0.25 * catHits + 0.25 * kwHits;
     if (score > bestScore) {
       bestScore = score;
