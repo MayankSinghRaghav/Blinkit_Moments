@@ -43,5 +43,5 @@ async function push(table: string, rows: object[]) {
   console.log(`${table}: ${rows.length} rows`);
 }
 
-await push("products", products);
-await push("occasions", occasions);
+// wrapped, not top-level await — tsx transpiles this file as CJS
+push("products", products).then(() => push("occasions", occasions));
