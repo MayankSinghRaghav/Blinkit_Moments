@@ -1,0 +1,282 @@
+{
+  "bev_beer": {
+    "source": "world.openfoodfacts.org",
+    "product": "1664",
+    "brand": "1664",
+    "code": "3080216052885",
+    "image": "https://images.openfoodfacts.org/images/products/308/021/605/2885/front_en.391.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "bev_ginger_tea": {
+    "source": "world.openfoodfacts.org",
+    "product": "Masala Chai",
+    "brand": "Royal chai",
+    "code": "5060131760025",
+    "image": "https://images.openfoodfacts.org/images/products/506/013/176/0025/front_en.5.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "bev_cold_brew": {
+    "source": "world.openfoodfacts.org",
+    "product": "Cold Brew Coffee",
+    "brand": "yfood",
+    "code": "4260556635491",
+    "image": "https://images.openfoodfacts.org/images/products/426/055/663/5491/front_en.35.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "snk_chips": {
+    "source": "world.openfoodfacts.org",
+    "product": "Lays India's Magic Masala",
+    "brand": "Lay's",
+    "code": "8901491503020",
+    "image": "https://images.openfoodfacts.org/images/products/890/149/150/3020/front_en.35.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "hom_plates": {
+    "source": "world.openproductsfacts.org",
+    "product": "Paper plates",
+    "brand": "Tesco",
+    "code": "5051790722974",
+    "image": "https://images.openproductsfacts.org/images/products/505/179/072/2974/front_en.3.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "hom_napkins": {
+    "source": "world.openproductsfacts.org",
+    "product": "Servilletas Nacional Classic",
+    "brand": "Copelme, Nacional",
+    "code": "7776507001514",
+    "image": "https://images.openproductsfacts.org/images/products/777/650/700/1514/front_es.6.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "hom_trash": {
+    "source": "world.openproductsfacts.org",
+    "product": "Zugband Müllbeutel",
+    "brand": "Edeka, Gut&Günstig",
+    "code": "4311536933837",
+    "image": "https://images.openproductsfacts.org/images/products/431/153/693/3837/front_de.4.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "hom_floor": {
+    "source": "world.openproductsfacts.org",
+    "product": "Godrej Magic Ready to Mix Floor Cleaner",
+    "brand": "Godrej Magic",
+    "code": "8901023029509",
+    "image": "https://images.openproductsfacts.org/images/products/890/102/302/9509/front_en.3.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "pet_treats": {
+    "source": "world.openpetfoodfacts.org",
+    "product": "Training Treats - Chicken & beef",
+    "brand": "Mr goodlad",
+    "code": "8717249776390",
+    "image": "https://images.openpetfoodfacts.org/images/products/871/724/977/6390/front_en.27.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "pet_litter": {
+    "source": "world.openpetfoodfacts.org",
+    "product": "Cat litter",
+    "brand": "Agriselect",
+    "code": "8718836051005",
+    "image": "https://images.openpetfoodfacts.org/images/products/871/883/605/1005/front_en.3.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "bab_wipes": {
+    "source": "world.openproductsfacts.org",
+    "product": "Baby Wipes",
+    "brand": "Pampers, Pampers Sensitive",
+    "code": "8001841062303",
+    "image": "https://images.openproductsfacts.org/images/products/800/184/106/2303/front_en.3.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "bab_diapers": {
+    "source": "world.openproductsfacts.org",
+    "product": "Baby Love XG",
+    "brand": "Baby Love",
+    "code": "6921603224249",
+    "image": "https://images.openproductsfacts.org/images/products/692/160/322/4249/front_es.10.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "bab_lotion": {
+    "source": "world.openbeautyfacts.org",
+    "product": "Johnsons baby lotion",
+    "brand": null,
+    "code": "3574669908108",
+    "image": "https://images.openbeautyfacts.org/images/products/357/466/990/8108/front_en.6.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "pc_facewash": {
+    "source": "world.openbeautyfacts.org",
+    "product": "Himalaya",
+    "brand": "Himalaya",
+    "code": "8901138511784",
+    "image": "https://images.openbeautyfacts.org/images/products/890/113/851/1784/front_en.24.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "pc_handwash": {
+    "source": "world.openbeautyfacts.org",
+    "product": "Gentle Hand Wash Antibacterial",
+    "brand": "Cien",
+    "code": "4056489345343",
+    "image": "https://images.openbeautyfacts.org/images/products/405/648/934/5343/front_fr.12.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "pc_sanitizer": {
+    "source": "world.openbeautyfacts.org",
+    "product": "Liquid Hand Soap Pump, Aquarium Series",
+    "brand": "Softsoap",
+    "code": "0074182268008",
+    "image": "https://images.openbeautyfacts.org/images/products/007/418/226/8008/front_en.9.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "wel_immunity": {
+    "source": "world.openfoodfacts.org",
+    "product": "Hydration Plus Immunity Drink Mix",
+    "brand": "Salud",
+    "code": "0850033318388",
+    "image": "https://images.openfoodfacts.org/images/products/085/003/331/8388/front_en.3.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "gro_milk": {
+    "source": "world.openfoodfacts.org",
+    "product": "Amul Masti Spiced Buttermilk 200ml",
+    "brand": "Amul",
+    "code": "8901262200196",
+    "image": "https://images.openfoodfacts.org/images/products/890/126/220/0196/front_en.54.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "bev_juice": {
+    "source": "world.openfoodfacts.org",
+    "product": "Cocktail de fruits au jus de raisin",
+    "brand": "Del Monte",
+    "code": "0024000124023",
+    "image": "https://images.openfoodfacts.org/images/products/002/400/012/4023/front_en.55.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "snk_nachos": {
+    "source": "world.openfoodfacts.org",
+    "product": "Tortillas chips Nacho cheese",
+    "brand": "Doritos",
+    "code": "3168930174219",
+    "image": "https://images.openfoodfacts.org/images/products/316/893/017/4219/front_fr.3.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "snk_dip": {
+    "source": "world.openfoodfacts.org",
+    "product": "Salsa dip",
+    "brand": "Old El Paso",
+    "code": "8410076350213",
+    "image": "https://images.openfoodfacts.org/images/products/841/007/635/0213/front_en.56.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "des_choco_tub": {
+    "source": "world.openfoodfacts.org",
+    "product": "Ben & Jerry's Glace en Pot Vegan Chocolate Fudge Brownie 465ml",
+    "brand": "Ben & Jerry's",
+    "code": "8711327627086",
+    "image": "https://images.openfoodfacts.org/images/products/871/132/762/7086/front_fr.4.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "des_icecream": {
+    "source": "world.openfoodfacts.org",
+    "product": "Cookie Dough Vanilla Ice Cream with Chunks of Chocolate Chip Cookie Dough",
+    "brand": "Ben & Jerry's",
+    "code": "8711327373105",
+    "image": "https://images.openfoodfacts.org/images/products/871/132/737/3105/front_en.236.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "des_gulab": {
+    "source": "world.openfoodfacts.org",
+    "product": "Gulab Jamun",
+    "brand": "Gits",
+    "code": "8901155101210",
+    "image": "https://images.openfoodfacts.org/images/products/890/115/510/1210/front_en.7.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "des_brownie": {
+    "source": "world.openfoodfacts.org",
+    "product": "Browny",
+    "brand": "Be",
+    "code": "6111259346239",
+    "image": "https://images.openfoodfacts.org/images/products/611/125/934/6239/front_fr.15.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "mix_lime": {
+    "source": "world.openfoodfacts.org",
+    "product": "Jus de citron vert",
+    "brand": "Solevita, Lidl",
+    "code": "4056489009412",
+    "image": "https://images.openfoodfacts.org/images/products/405/648/900/9412/front_en.62.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "wel_vitc": {
+    "source": "world.openfoodfacts.org",
+    "product": "Effervescent Vitamin C + Zinc (orange Flavour)",
+    "brand": "MinaVita",
+    "code": "4056489495147",
+    "image": "https://images.openfoodfacts.org/images/products/405/648/949/5147/front_en.23.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "gro_bread": {
+    "source": "world.openfoodfacts.org",
+    "product": "Original Seeded Batch",
+    "brand": "Warburtons",
+    "code": "5010044002552",
+    "image": "https://images.openfoodfacts.org/images/products/501/004/400/2552/front_en.67.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "gro_eggs": {
+    "source": "world.openfoodfacts.org",
+    "product": "Stéphanie eleveur",
+    "brand": "Oeufs de  france",
+    "code": "20057251",
+    "image": "https://images.openfoodfacts.org/images/products/000/002/005/7251/front_fr.60.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "bev_cola": {
+    "source": "world.openfoodfacts.org",
+    "product": "Coca-Cola Original Taste",
+    "brand": "Coca Cola Life, Coca-Cola",
+    "code": "5449000054227",
+    "image": "https://images.openfoodfacts.org/images/products/544/900/005/4227/front_en.543.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "snk_noodles": {
+    "source": "world.openfoodfacts.org",
+    "product": "maggi",
+    "brand": "Maggi",
+    "code": "8901058017687",
+    "image": "https://images.openfoodfacts.org/images/products/890/105/801/7687/front_en.13.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "snk_pakora": {
+    "source": "world.openfoodfacts.org",
+    "product": "Pakora mix",
+    "brand": "Laziza",
+    "code": "5028217000984",
+    "image": "https://images.openfoodfacts.org/images/products/502/821/700/0984/front_en.6.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "mix_tonic": {
+    "source": "world.openfoodfacts.org",
+    "product": "INDIAN TONIC",
+    "brand": "Schweppes",
+    "code": "3124480186850",
+    "image": "https://images.openfoodfacts.org/images/products/312/448/018/6850/front_en.166.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "mix_soda": {
+    "source": "world.openfoodfacts.org",
+    "product": "tuborg club soda 330",
+    "brand": null,
+    "code": "5201309703141",
+    "image": "https://images.openfoodfacts.org/images/products/520/130/970/3141/front_en.12.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "wel_protein": {
+    "source": "world.openfoodfacts.org",
+    "product": "Whey Protein",
+    "brand": "XXL Nutrition",
+    "code": "8719881036429",
+    "image": "https://images.openfoodfacts.org/images/products/871/988/103/6429/front_en.10.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  }
+}

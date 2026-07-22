@@ -1,99 +1,68 @@
 "use client";
 import Link from "next/link";
-import { CartRow } from "@/components/CartRow";
-import { PRODUCTS, byId } from "@/lib/data/catalog";
+import { CartPanel } from "@/components/CartPanel";
+import { ProductCard } from "@/components/ProductCard";
+import { CATEGORIES, PRODUCTS } from "@/lib/data/catalog";
 import { setDemo } from "@/lib/session";
 import { useOccasion } from "@/lib/useOccasion";
 
-const CONTEXTS = ["Fri 7pm", "rainy evening, monsoon", "first-time buyer", "Tue 9am, no signal"];
-
-export default function CartPage() {
+export default function ShopPage() {
   const { demo, data, loading } = useOccasion("infer-occasion");
-  const items = demo.cart.map(byId).filter((p) => p !== undefined);
-  const total = items.reduce((s, p) => s + p.price_inr, 0);
   const sensed = data && data.occasion_id !== "none";
 
   return (
-    <div className="space-y-5">
-      <div>
-        <h1 className="text-lg font-semibold">Your cart</h1>
-        <p className="text-sm text-black/50">
-          {items.length} item{items.length === 1 ? "" : "s"} · ₹{total}
-        </p>
-      </div>
-
-      <div className="rounded-xl border border-black/10 bg-white px-4">
-        {items.length ? (
-          <ul>
-            {items.map((p) => (
-              <CartRow
-                key={p.id}
-                product={p}
-                onRemove={() => setDemo({ cart: demo.cart.filter((id) => id !== p.id) })}
-              />
-            ))}
-          </ul>
-        ) : (
-          <p className="py-6 text-sm text-black/40">Empty. Add something below.</p>
-        )}
-      </div>
-
-      <div className="flex flex-wrap items-center gap-2">
-        <label htmlFor="add" className="text-sm text-black/60">
-          Add item
-        </label>
-        <select
-          id="add"
-          value=""
-          onChange={(e) => e.target.value && setDemo({ cart: [...demo.cart, e.target.value] })}
-          className="rounded-lg border border-black/15 bg-white px-2 py-1.5 text-sm"
-        >
-          <option value="">Choose…</option>
-          {PRODUCTS.filter((p) => !demo.cart.includes(p.id)).map((p) => (
-            <option key={p.id} value={p.id}>
-              {p.category} — {p.name}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="text-sm text-black/60">Context</span>
-        {CONTEXTS.map((c) => (
-          <button
-            key={c}
-            onClick={() => setDemo({ context: c })}
-            className={`rounded-full border px-3 py-1 text-xs ${
-              demo.context === c ? "border-brand bg-brand text-white" : "border-black/15 bg-white"
-            }`}
+    <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
+      <div className="min-w-0">
+        {sensed && (
+          <Link
+            href="/moments"
+            className="mb-5 flex items-center gap-4 rounded-xl bg-accent px-5 py-4 transition hover:brightness-[1.03]"
           >
-            {c}
-          </button>
-        ))}
+            <span className="text-2xl" aria-hidden>
+              ✨
+            </span>
+            <span className="min-w-0">
+              <span className="block text-sm font-bold">
+                Looks like {data.occasion_label} · {Math.round(data.confidence * 100)}% sure
+              </span>
+              <span className="block text-sm text-black/70">
+                {data.suggestions.length} things you&apos;ve never ordered would finish it off
+              </span>
+            </span>
+            <span className="ml-auto shrink-0 rounded-lg bg-black/85 px-3 py-2 text-xs font-bold text-white">
+              Complete it →
+            </span>
+          </Link>
+        )}
+
+        {!loading && data && !sensed && (
+          <p className="mb-5 rounded-xl border border-dashed border-line px-5 py-4 text-sm text-black/45">
+            No clear occasion behind this basket — we&apos;d rather stay quiet than guess.
+          </p>
+        )}
+
+        {CATEGORIES.map((category) => {
+          const items = PRODUCTS.filter((p) => p.category === category);
+          if (!items.length) return null;
+          return (
+            <section key={category} className="mb-7">
+              <h2 className="mb-3 text-base font-bold">{category}</h2>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5">
+                {items.map((p) => (
+                  <ProductCard
+                    key={p.id}
+                    product={p}
+                    added={demo.cart.includes(p.id)}
+                    onAdd={() => setDemo({ cart: [...demo.cart, p.id] })}
+                  />
+                ))}
+              </div>
+            </section>
+          );
+        })}
       </div>
 
-      {loading && <p className="text-sm text-black/40">Reading the basket…</p>}
-
-      {!loading && sensed && (
-        <Link
-          href="/moments"
-          className="block rounded-xl border border-black/10 bg-accent p-4 transition hover:brightness-105"
-        >
-          <p className="text-sm font-semibold">
-            Looks like <span className="underline decoration-2">{data.occasion_label}</span>
-          </p>
-          <p className="mt-1 text-sm text-black/70">
-            {Math.round(data.confidence * 100)}% sure. We found {data.suggestions.length} things
-            you&apos;ve never ordered that would finish it off →
-          </p>
-        </Link>
-      )}
-
-      {!loading && data && !sensed && (
-        <p className="rounded-xl border border-dashed border-black/15 p-4 text-sm text-black/45">
-          No clear occasion behind this basket yet — we&apos;d rather stay quiet than guess.
-        </p>
-      )}
+      <CartPanel />
     </div>
   );
 }

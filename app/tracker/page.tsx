@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import { AdoptionRing } from "@/components/AdoptionRing";
+import { ProductImage } from "@/components/ProductImage";
 import { byId } from "@/lib/data/catalog";
 import { useDemo } from "@/lib/session";
 import type { AdoptionEvent } from "@/lib/scoring";
@@ -39,38 +40,57 @@ export default function TrackerPage() {
   );
 
   return (
-    <div className="space-y-5">
-      <div>
-        <h1 className="text-lg font-semibold">Adoption tracker</h1>
-        <p className="text-sm text-black/50">
-          A category counts once it&apos;s been tried twice — and you didn&apos;t already shop it.
-        </p>
-      </div>
+    <div className="mx-auto max-w-3xl">
+      <h1 className="text-xl font-extrabold">Adoption tracker</h1>
+      <p className="mt-1 text-sm text-muted">
+        A category counts as adopted once it&apos;s been tried twice — and you didn&apos;t already
+        shop it.
+      </p>
 
-      <div className="flex items-center gap-6 rounded-xl border border-black/10 bg-white p-5">
+      <div className="mt-5 flex flex-col items-center gap-6 rounded-xl border border-line p-6 sm:flex-row sm:items-center">
         <AdoptionRing adopted={state?.adopted.length ?? 0} goal={state?.goal ?? 3} />
-        <div className="text-sm">
-          <p className="font-medium">New categories adopted</p>
-          <p className="mt-1 text-black/55">
+        <div className="min-w-0 text-sm">
+          <p className="font-bold">New categories adopted</p>
+          <p className="mt-1 text-muted">
             {state?.adopted.length ? state.adopted.join(", ") : "None yet"}
           </p>
           <p className="mt-3 text-xs text-black/40">
-            Started with: {state?.baseline.join(", ") || "—"}
+            Session started with: {state?.baseline.join(", ") || "—"}
           </p>
+          <button
+            onClick={simulate}
+            disabled={busy || !demo.sessionId}
+            className="mt-4 rounded-lg bg-brand px-4 py-2.5 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-dark disabled:bg-black/15"
+          >
+            {busy ? "Simulating…" : "Simulate a month"}
+          </button>
         </div>
       </div>
 
-      <div className="rounded-xl border border-black/10 bg-white p-4">
-        <h2 className="text-sm font-medium">Trial → repeat</h2>
+      <div className="mt-4 rounded-xl border border-line p-5">
+        <h2 className="text-sm font-bold">Trial → repeat</h2>
         {newCats.length ? (
-          <ul className="mt-2 space-y-1 text-sm">
+          <ul className="mt-3 space-y-3">
             {newCats.map((c) => {
               const n = trials.filter((e) => e.category === c).length;
+              const p = byId(trials.find((e) => e.category === c)!.product_id);
               return (
-                <li key={c} className="flex items-center gap-2">
-                  <span className="w-32 shrink-0">{c}</span>
-                  <span className="text-black/40">{"●".repeat(Math.min(n, 5))}</span>
-                  <span className="ml-auto text-xs text-black/45">
+                <li key={c} className="flex items-center gap-3">
+                  {p && (
+                    <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-md border border-line">
+                      <ProductImage product={p} sizes="40px" />
+                    </div>
+                  )}
+                  <span className="w-28 shrink-0 text-sm font-medium">{c}</span>
+                  <span className="flex gap-1" aria-hidden>
+                    {Array.from({ length: Math.max(n, 2) }, (_, i) => (
+                      <span
+                        key={i}
+                        className={`h-2.5 w-2.5 rounded-full ${i < n ? "bg-brand" : "bg-line"}`}
+                      />
+                    ))}
+                  </span>
+                  <span className="ml-auto text-xs font-medium text-muted">
                     {n >= 2 ? "adopted" : `${n}/2`}
                   </span>
                 </li>
@@ -79,24 +99,10 @@ export default function TrackerPage() {
           </ul>
         ) : (
           <p className="mt-2 text-sm text-black/40">
-            Nothing tried yet. Add a suggestion on the Moments screen, or fast-forward below.
+            Nothing tried yet. Add a suggestion on the Moments screen, or fast-forward above.
           </p>
         )}
       </div>
-
-      <button
-        onClick={simulate}
-        disabled={busy || !demo.sessionId}
-        className="rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white disabled:bg-black/20"
-      >
-        {busy ? "Simulating…" : "Simulate a month"}
-      </button>
-
-      {trials.length > 0 && (
-        <p className="text-xs text-black/40">
-          Last tried: {byId(trials[trials.length - 1].product_id)?.name}
-        </p>
-      )}
     </div>
   );
 }

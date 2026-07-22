@@ -9,7 +9,9 @@ export function AddButton({ productId }: { productId: string }) {
     <button
       onClick={() => tryItem(demo, productId)}
       disabled={added}
-      className="rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white disabled:bg-black/20"
+      className={`w-full rounded-lg px-4 py-3 text-sm font-bold uppercase tracking-wide ${
+        added ? "bg-tile text-black/35" : "bg-brand text-white hover:bg-brand-dark"
+      }`}
     >
       {added ? "In your basket" : "Add to basket"}
     </button>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { AppHeader } from "@/components/AppHeader";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -8,31 +8,17 @@ export const metadata: Metadata = {
     "Demo: an agent infers the occasion behind your cart and completes it across categories you've never bought.",
 };
 
-const NAV = [
-  ["/", "Cart"],
-  ["/moments", "Moments"],
-  ["/tracker", "Tracker"],
-];
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="antialiased">
-        <header className="border-b border-black/10 bg-accent">
-          <div className="mx-auto flex max-w-2xl items-center gap-4 px-4 py-3">
-            <span className="font-bold tracking-tight">Blinkit <span className="text-brand">Moments</span></span>
-            <nav className="ml-auto flex gap-4 text-sm">
-              {NAV.map(([href, label]) => (
-                <Link key={href} href={href} className="hover:underline">
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </header>
-        <main className="mx-auto max-w-2xl px-4 py-6">{children}</main>
-        <footer className="mx-auto max-w-2xl px-4 pb-10 text-xs text-black/40">
-          Prototype. Seeded catalog, no real Blinkit data, no payments.
+        <AppHeader />
+        <main className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6">{children}</main>
+        <footer className="mx-auto max-w-[1280px] px-4 pb-12 pt-6 text-xs leading-relaxed text-black/35 sm:px-6">
+          Prototype — not affiliated with Blinkit. Seeded catalog, no payments, no accounts.
+          <br />
+          Product photography from Open Food Facts, Open Beauty Facts, Open Pet Food Facts and Open
+          Products Facts contributors (images CC-BY-SA, data ODbL).
         </footer>
       </body>
     </html>

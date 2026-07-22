@@ -1,6 +1,15 @@
 import type { Product } from "@/lib/data/catalog";
 import { isHighConsideration } from "@/lib/data/catalog";
 
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section className="rounded-xl border border-line p-4">
+      <h2 className="text-xs font-bold uppercase tracking-wide text-muted">{title}</h2>
+      <div className="mt-1.5 text-sm leading-relaxed">{children}</div>
+    </section>
+  );
+}
+
 export function WhyPanel({
   product,
   occasionLabel,
@@ -13,22 +22,23 @@ export function WhyPanel({
   stretch: string;
 }) {
   return (
-    <div className="space-y-4">
-      <section className="rounded-xl border border-black/10 bg-white p-4">
-        <h2 className="text-xs font-semibold uppercase tracking-wide text-black/40">Why now</h2>
-        <p className="mt-1 text-sm">{like}</p>
-      </section>
+    <div className="space-y-3">
+      <Section title="Why now">{like}</Section>
 
       {isHighConsideration(product.category) && (
-        <section className="rounded-xl border border-black/10 bg-white p-4">
-          <h2 className="text-xs font-semibold uppercase tracking-wide text-black/40">Why trust it</h2>
-          <ul className="mt-1 space-y-1 text-sm">
+        <Section title="Why trust it">
+          <ul className="space-y-1.5">
             {product.rating && (
-              <li>
-                ★ {product.rating} from {product.reviews?.toLocaleString("en-IN")} buyers
+              <li className="flex items-center gap-2">
+                <span className="rounded bg-brand px-1.5 py-0.5 text-[11px] font-bold text-white">
+                  ★ {product.rating}
+                </span>
+                <span className="text-black/60">
+                  from {product.reviews?.toLocaleString("en-IN")} buyers
+                </span>
               </li>
             )}
-            {product.proof && <li>{product.proof}</li>}
+            {product.proof && <li className="text-black/60">{product.proof}</li>}
             {product.starter && (
               <li className="text-brand">
                 Starter pack — ₹{product.price_inr}, the smallest size we sell. Try it once for{" "}
@@ -36,15 +46,12 @@ export function WhyPanel({
               </li>
             )}
           </ul>
-        </section>
+        </Section>
       )}
 
-      <section className="rounded-xl border border-black/10 bg-white p-4">
-        <h2 className="text-xs font-semibold uppercase tracking-wide text-black/40">
-          Why it&apos;s a stretch
-        </h2>
-        <p className="mt-1 text-sm text-black/60">{stretch}</p>
-      </section>
+      <Section title="Why it's a stretch">
+        <span className="text-black/60">{stretch}</span>
+      </Section>
     </div>
   );
 }
