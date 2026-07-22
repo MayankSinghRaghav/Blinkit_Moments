@@ -9,6 +9,10 @@
  *  - every theme carries a confidence and links to verbatim source quotes
  */
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
+// The app's own seeded occasion catalog. Imported rather than retyped so the
+// "occasion signal" definition below cannot drift from the occasions the MVP
+// actually infers. (Run under tsx — see npm run discovery:analyze.)
+import { OCCASIONS } from "@/lib/occasions";
 
 const arg = (name, fallback) => {
   const i = process.argv.indexOf(name);
@@ -184,6 +188,87 @@ themes.sort((a, b) => b.opportunity - a.opportunity);
  * context-theme half is the interesting number — those are users filed under
  * "pricing" who are actually describing the cost of a first try.
  */
+/* ---------- "Occasion Spikers" behavioural cross-cut ----------
+ * The five segments above are personas the coder assigns per document. This is
+ * a different kind of cut: a behaviour that can appear inside any of them, so
+ * it is reported ALONGSIDE the five rather than replacing one.
+ *
+ * A document is an occasion spike if EITHER:
+ *   (a) the coder assigned segment "new_life_stage" — an explicit life-stage
+ *       change (new pet, new baby, moving) is an occasion by definition, and is
+ *       the strongest direct evidence for the thesis; or
+ *   (b) its source text contains a signal keyword from the seeded occasion
+ *       catalog in lib/occasions — festival, monsoon, party, gym, and so on.
+ *
+ * Both criteria and their overlap are reported, so the size can be checked
+ * against either half rather than taken on trust.
+ */
+/*
+ * The catalog's keywords were authored to match the app's short `context`
+ * string ("Fri 7pm"), not free-form review prose. Four of them are unusable
+ * here and are excluded rather than left to inflate the count:
+ *   fri, sat   day abbreviations that prefix-match "friend" and "satisfied"
+ *   match      cricket match, but also "matched"/"matches" the verb
+ *   cold       weather, but also cold drinks and being ill
+ *   resolution New Year's, but in app reviews it overwhelmingly means
+ *              complaint resolution
+ * The exclusions are reported in the output so the adjustment is visible.
+ * Everything else matches on whole words, both edges.
+ */
+const AMBIGUOUS_IN_PROSE = ["fri", "sat", "match", "cold", "resolution"];
+const ALL_KEYWORDS = [...new Set(OCCASIONS.flatMap((o) => o.signal_keywords))];
+const OCCASION_KEYWORDS = ALL_KEYWORDS.filter((k) => !AMBIGUOUS_IN_PROSE.includes(k));
+const esc = (k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const KEYWORD_RES = OCCASION_KEYWORDS.map((k) => [k, new RegExp(`\\b${esc(k)}\\b`, "i")]);
+
+const keywordHits = {};
+let lifeStageOnly = 0;
+let keywordOnly = 0;
+let both = 0;
+const spikers = [];
+
+for (const c of coded) {
+  const text = byId.get(c.id)?.text ?? "";
+  const isLifeStage = c.segment === "new_life_stage";
+  const matched = KEYWORD_RES.filter(([, re]) => re.test(text)).map(([k]) => k);
+  const hasKeyword = matched.length > 0;
+  if (!isLifeStage && !hasKeyword) continue;
+
+  if (isLifeStage && hasKeyword) both++;
+  else if (isLifeStage) lifeStageOnly++;
+  else keywordOnly++;
+
+  for (const k of matched) keywordHits[k] = (keywordHits[k] || 0) + 1;
+  spikers.push(c);
+}
+
+const spikerThemes = {};
+for (const c of spikers) spikerThemes[c.theme] = (spikerThemes[c.theme] || 0) + 1;
+const labelOf = new Map(themes.map((t) => [t.id, t.label]));
+
+const occasionSpikers = {
+  label: "Occasion Spikers",
+  definition:
+    "Coded documents showing an episodic occasion spike: the coder assigned the new_life_stage segment (new pet, new baby, moving), or the source text carries a signal keyword from the seeded occasion catalog in lib/occasions.",
+  derivation: "new_life_stage segment OR occasion signal keyword in the source text",
+  size: spikers.length,
+  share_of_coded: Number(share(spikers.length, coded.length).toFixed(3)),
+  criteria: {
+    life_stage_only: lifeStageOnly,
+    occasion_keyword_only: keywordOnly,
+    both: both,
+  },
+  keyword_source: "lib/occasions signal_keywords (whole-word match on the source text)",
+  keywords_used: OCCASION_KEYWORDS.length,
+  keywords_excluded: AMBIGUOUS_IN_PROSE,
+  top_keywords: Object.entries(keywordHits).sort((a, b) => b[1] - a[1]).slice(0, 8),
+  by_source: spikers.reduce((a, c) => ({ ...a, [c.source]: (a[c.source] || 0) + 1 }), {}),
+  top_themes: Object.entries(spikerThemes)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 4)
+    .map(([id, n]) => ({ id, label: labelOf.get(id) ?? id, n })),
+};
+
 const relevanceOf = new Map(themes.map((t) => [t.id, t.relevance]));
 const trialNeedDocs = coded.filter((c) => c.unmet_need && EXPLORATION_NEED.test(c.unmet_need));
 const sharedNeeds = {};
@@ -240,6 +325,7 @@ const insights = {
     rejected_themes: rejected.map((t) => ({ id: t.id, label: t.label, sources: t.sources, count: t.count })),
   },
   themes: valid,
+  occasion_spikers: occasionSpikers,
   segments: SEGMENTS.map((s) => ({
     id: s,
     count: coded.filter((c) => c.segment === s).length,

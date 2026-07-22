@@ -1697,6 +1697,88 @@
    "strategic_priority": 31.4
   }
  ],
+ "occasion_spikers": {
+  "label": "Occasion Spikers",
+  "definition": "Coded documents showing an episodic occasion spike: the coder assigned the new_life_stage segment (new pet, new baby, moving), or the source text carries a signal keyword from the seeded occasion catalog in lib/occasions.",
+  "derivation": "new_life_stage segment OR occasion signal keyword in the source text",
+  "size": 230,
+  "share_of_coded": 0.179,
+  "criteria": {
+   "life_stage_only": 204,
+   "occasion_keyword_only": 21,
+   "both": 5
+  },
+  "keyword_source": "lib/occasions signal_keywords (whole-word match on the source text)",
+  "keywords_used": 21,
+  "keywords_excluded": [
+   "fri",
+   "sat",
+   "match",
+   "cold",
+   "resolution"
+  ],
+  "top_keywords": [
+   [
+    "game",
+    9
+   ],
+   [
+    "rain",
+    5
+   ],
+   [
+    "friends",
+    5
+   ],
+   [
+    "diwali",
+    2
+   ],
+   [
+    "gym",
+    2
+   ],
+   [
+    "adopted",
+    1
+   ],
+   [
+    "workout",
+    1
+   ],
+   [
+    "storm",
+    1
+   ]
+  ],
+  "by_source": {
+   "play_store": 103,
+   "app_store": 48,
+   "reddit": 79
+  },
+  "top_themes": [
+   {
+    "id": "delivery_reliability",
+    "label": "Delivery and order accuracy",
+    "n": 56
+   },
+   {
+    "id": "pricing_and_charges",
+    "label": "Pricing, surge and handling fees",
+    "n": 55
+   },
+   {
+    "id": "support_quality",
+    "label": "Customer support quality",
+    "n": 51
+   },
+   {
+    "id": "trust_gap_new_category",
+    "label": "Won't risk an unfamiliar category",
+    "n": 16
+   }
+  ]
+ },
  "segments": [
   {
    "id": "deal_seeker",

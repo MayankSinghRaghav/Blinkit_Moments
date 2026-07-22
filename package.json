@@ -13,7 +13,7 @@
     "db:seed": "tsx --env-file-if-exists=.env.local scripts/seed.ts",
     "verify:store": "tsx --conditions=react-server --env-file-if-exists=.env.local scripts/verify-store.ts",
     "discovery:tag": "node --env-file-if-exists=.env.local scripts/discovery/2-tag.mjs",
-    "discovery:analyze": "node scripts/discovery/3-analyze.mjs",
+    "discovery:analyze": "tsx scripts/discovery/3-analyze.mjs",
     "discovery:holdout": "node scripts/discovery/4-holdout.mjs",
     "discovery:fetch": "node scripts/discovery/0-fetch-appstore.mjs && node scripts/discovery/1-normalize.mjs",
     "verify:cart": "tsx scripts/verify-cart.ts",

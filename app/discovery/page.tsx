@@ -1,4 +1,10 @@
-import { loadInsights, loadHoldout, type Bridge, type Theme } from "@/lib/discovery";
+import {
+  loadInsights,
+  loadHoldout,
+  type Bridge,
+  type OccasionSpikers,
+  type Theme,
+} from "@/lib/discovery";
 import { MIN_CONFIDENCE, pickQuotes } from "@/lib/quotes";
 
 export const dynamic = "force-dynamic";
@@ -265,6 +271,84 @@ function FramingBlock({ bridge }: { bridge: Bridge }) {
   );
 }
 
+function SpikerCard({ spikers, coded }: { spikers: OccasionSpikers; coded: number }) {
+  const { criteria } = spikers;
+  return (
+    <div className="rounded-xl border-l-4 border-brand bg-brand/5 p-5">
+      <div className="flex items-baseline gap-2">
+        <h2 className="text-sm font-bold">{spikers.label}</h2>
+        <span className="rounded-full bg-brand px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+          cross-cut
+        </span>
+        <span className="ml-auto text-sm font-extrabold tabular-nums">
+          {spikers.size}
+          <span className="ml-1 text-xs font-medium text-black/45">
+            of {coded} ({pct(spikers.share_of_coded)})
+          </span>
+        </span>
+      </div>
+
+      <p className="mt-2 text-[13px] leading-relaxed text-black/70">{spikers.definition}</p>
+
+      <p className="mt-2 text-[11px] font-bold uppercase tracking-wide text-muted">
+        How it&apos;s derived
+      </p>
+      <p className="text-[12px] text-black/60">
+        {spikers.derivation}. This is a behaviour, not a persona — it cuts across the five
+        segments below rather than replacing one of them, so a document can be both a deal
+        seeker and an occasion spike.
+      </p>
+
+      <dl className="mt-3 grid grid-cols-3 gap-2 text-[12px]">
+        <div className="rounded-lg bg-white p-2">
+          <dt className="text-black/45">Life-stage only</dt>
+          <dd className="font-bold tabular-nums">{criteria.life_stage_only}</dd>
+        </div>
+        <div className="rounded-lg bg-white p-2">
+          <dt className="text-black/45">Occasion keyword only</dt>
+          <dd className="font-bold tabular-nums">{criteria.occasion_keyword_only}</dd>
+        </div>
+        <div className="rounded-lg bg-white p-2">
+          <dt className="text-black/45">Both</dt>
+          <dd className="font-bold tabular-nums">{criteria.both}</dd>
+        </div>
+      </dl>
+
+      {spikers.top_keywords.length > 0 && (
+        <div className="mt-3">
+          <p className="text-[11px] font-bold uppercase tracking-wide text-muted">
+            Occasion signals matched
+          </p>
+          <ul className="mt-1 flex flex-wrap gap-1.5">
+            {spikers.top_keywords.map(([kw, n]) => (
+              <li
+                key={kw}
+                className="rounded-full border border-brand/30 bg-white px-2 py-0.5 text-[11px]"
+              >
+                {kw} <span className="text-black/40">×{n}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {spikers.top_themes.length > 0 && (
+        <p className="mt-3 text-[12px] text-black/60">
+          <span className="font-bold text-ink">Concentrates in:</span>{" "}
+          {spikers.top_themes.map((t) => `${t.label} (${t.n})`).join(" · ")}
+        </p>
+      )}
+
+      <p className="mt-3 text-[11px] leading-snug text-black/40">
+        Keywords come from {spikers.keyword_source} — {spikers.keywords_used} used, matched on
+        whole words. Excluded as ambiguous in prose: {spikers.keywords_excluded.join(", ")} (day
+        abbreviations prefix-match &ldquo;friend&rdquo; and &ldquo;satisfied&rdquo;; in app reviews
+        &ldquo;resolution&rdquo; means complaint resolution).
+      </p>
+    </div>
+  );
+}
+
 export default function DiscoveryPage() {
   const { data, fixture } = loadInsights();
   const holdout = loadHoldout();
@@ -377,21 +461,35 @@ export default function DiscoveryPage() {
       </section>
 
       <section className="grid gap-4 lg:grid-cols-2">
-        <div className="rounded-xl border border-line p-5">
-          <h2 className="text-sm font-bold">Segments</h2>
-          <ul className="mt-3 space-y-2.5">
-            {data.segments.map((s) => (
-              <li key={s.id}>
-                <div className="flex items-baseline justify-between">
-                  <span className="text-sm font-medium">{s.id.replace(/_/g, " ")}</span>
-                  <span className="text-xs tabular-nums text-muted">{s.count}</span>
-                </div>
-                <p className="text-xs text-black/45">
-                  {s.top_themes.map((t) => t.label).join(" · ") || "—"}
-                </p>
-              </li>
-            ))}
-          </ul>
+        <div className="space-y-4">
+          <SpikerCard spikers={data.occasion_spikers} coded={data.corpus.with_theme} />
+
+          <div className="rounded-xl border border-line p-5">
+            <h2 className="text-sm font-bold">Coder-assigned segments</h2>
+            <p className="text-[11px] text-muted">
+              The five personas the coder chooses between, unchanged.
+            </p>
+            <ul className="mt-3 space-y-2.5">
+              {data.segments.map((s) => (
+                <li key={s.id}>
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-sm font-medium">
+                      {s.id.replace(/_/g, " ")}
+                      {s.id === "new_life_stage" && (
+                        <span className="ml-1.5 rounded bg-brand/15 px-1.5 py-0.5 text-[10px] font-bold uppercase text-brand">
+                          feeds spikers
+                        </span>
+                      )}
+                    </span>
+                    <span className="text-xs tabular-nums text-muted">{s.count}</span>
+                  </div>
+                  <p className="text-xs text-black/45">
+                    {s.top_themes.map((t) => t.label).join(" · ") || "—"}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="rounded-xl border border-line p-5">

@@ -52,6 +52,21 @@ export type Bridge = {
   quotes: Quote[];
 };
 
+export type OccasionSpikers = {
+  label: string;
+  definition: string;
+  derivation: string;
+  size: number;
+  share_of_coded: number;
+  criteria: { life_stage_only: number; occasion_keyword_only: number; both: number };
+  keyword_source: string;
+  keywords_used: number;
+  keywords_excluded: string[];
+  top_keywords: [string, number][];
+  by_source: Record<string, number>;
+  top_themes: { id: string; label: string; n: number }[];
+};
+
 export type Scoring = {
   opportunity: string;
   strategic_fit: string;
@@ -78,6 +93,7 @@ export type Insights = {
   scoring: Scoring;
   bridge: Bridge;
   themes: Theme[];
+  occasion_spikers: OccasionSpikers;
   segments: { id: string; count: number; top_themes: { id: string; label: string; n: number }[] }[];
 };
 
