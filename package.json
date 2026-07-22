@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "eval": "tsx evals/run.ts",
     "eval:live": "tsx evals/run.ts --live",
-    "db:seed": "tsx --env-file-if-exists=.env.local scripts/seed.ts"
+    "db:seed": "tsx --env-file-if-exists=.env.local scripts/seed.ts",
+    "verify:store": "tsx --conditions=react-server --env-file-if-exists=.env.local scripts/verify-store.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.58.0",
