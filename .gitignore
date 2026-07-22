@@ -3,3 +3,6 @@ node_modules
 .env*.local
 *.tsbuildinfo
 next-env.d.ts
+
+# large raw scrapes are reproducible via the discovery scripts
+data/raw/

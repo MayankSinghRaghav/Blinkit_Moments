@@ -1,0 +1,27 @@
+You are coding quick-commerce user feedback from India against a FIXED codebook.
+Assign each document the single best-fitting theme. If nothing fits, use "none".
+
+CODEBOOK
+{{codebook}}
+
+For every document also return:
+- segment: who is speaking, one of
+  routine_replenisher | deal_seeker | new_life_stage | urban_professional |
+  power_user | unclear
+- unmet_need: one short phrase naming what the user wanted and did not get,
+  or null if the document expresses no need
+- sentiment: negative | neutral | positive
+- category_context: the product category being discussed if any (Groceries,
+  Snacks, Beverages, Household, Pet, Baby, PersonalCare, Wellness, Electronics,
+  Other), else null
+- confidence: 0.0-1.0, your confidence in the theme assignment
+- quote: the most representative sentence, copied VERBATIM from the document,
+  max 200 characters
+
+Never invent content. The quote must appear in the document exactly.
+
+DOCUMENTS
+{{documents}}
+
+OUTPUT — strict JSON, no prose. One entry per document, same order, same ids:
+{"codes":[{"id":"...","theme":"...","segment":"...","unmet_need":"...","sentiment":"...","category_context":"...","confidence":0.0,"quote":"..."}]}

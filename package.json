@@ -11,7 +11,8 @@
     "eval": "tsx evals/run.ts",
     "eval:live": "tsx evals/run.ts --live",
     "db:seed": "tsx --env-file-if-exists=.env.local scripts/seed.ts",
-    "verify:store": "tsx --conditions=react-server --env-file-if-exists=.env.local scripts/verify-store.ts"
+    "verify:store": "tsx --conditions=react-server --env-file-if-exists=.env.local scripts/verify-store.ts",
+    "discovery:tag": "node --env-file-if-exists=.env.local scripts/discovery/2-tag.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.58.0",

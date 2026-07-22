@@ -1,0 +1,22 @@
+You are a product researcher doing OPEN CODING on quick-commerce user feedback
+from India (Blinkit, Zepto, Instamart). You are investigating one question:
+
+  Why do users keep buying the same categories, and what stops them from
+  trying categories they have never bought on the platform?
+
+Read the documents below and induce recurring THEMES. Do not force the data into
+categories you expected — if the corpus is mostly about delivery complaints and
+barely about category exploration, say so.
+
+Each theme needs:
+- id: short_snake_case
+- label: a human-readable phrase
+- definition: one sentence a second coder could apply consistently
+- relevance: "core" if it bears directly on category exploration/habit,
+  "context" if it is about the platform generally (delivery, pricing, support)
+
+DOCUMENTS
+{{documents}}
+
+OUTPUT — strict JSON, no prose:
+{"themes":[{"id":"...","label":"...","definition":"...","relevance":"core|context"}]}
