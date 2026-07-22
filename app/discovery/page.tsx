@@ -1,10 +1,11 @@
-import { loadInsights, loadHoldout, type Theme } from "@/lib/discovery";
+import { loadInsights, loadHoldout, type Bridge, type Theme } from "@/lib/discovery";
 
 export const dynamic = "force-dynamic";
 
 const pct = (n: number) => `${Math.round(n * 100)}%`;
 const SOURCE_LABEL: Record<string, string> = {
   play_store: "Google Play",
+  app_store: "App Store",
   reddit: "Reddit",
 };
 
@@ -48,15 +49,28 @@ function ThemeRow({ theme, rank }: { theme: Theme; rank: number }) {
               .join(" · ")}
           </span>
         </span>
-        <span className="w-28 shrink-0">
-          <span className="block h-2 overflow-hidden rounded-full bg-line">
-            <span
-              className="block h-full rounded-full bg-brand"
-              style={{ width: `${theme.opportunity}%` }}
-            />
+        <span className="flex w-40 shrink-0 gap-3">
+          <span className="flex-1">
+            <span className="block h-2 overflow-hidden rounded-full bg-line">
+              <span
+                className="block h-full rounded-full bg-black/25"
+                style={{ width: `${theme.opportunity}%` }}
+              />
+            </span>
+            <span className="mt-0.5 block text-right text-[11px] tabular-nums text-black/45">
+              {theme.opportunity}
+            </span>
           </span>
-          <span className="mt-0.5 block text-right text-[11px] font-bold tabular-nums">
-            {theme.opportunity}
+          <span className="flex-1">
+            <span className="block h-2 overflow-hidden rounded-full bg-line">
+              <span
+                className="block h-full rounded-full bg-brand"
+                style={{ width: `${Math.round(theme.strategic_fit * 100)}%` }}
+              />
+            </span>
+            <span className="mt-0.5 block text-right text-[11px] font-bold tabular-nums text-brand">
+              {theme.strategic_fit.toFixed(2)}
+            </span>
           </span>
         </span>
       </summary>
@@ -115,6 +129,34 @@ function ThemeRow({ theme, rank }: { theme: Theme; rank: number }) {
               </div>
             </dl>
           </div>
+
+          <div>
+            <p className="font-bold uppercase tracking-wide text-muted">Strategic fit</p>
+            <dl className="mt-1 space-y-1">
+              <div className="flex justify-between">
+                <dt className="text-black/50">Open-coded as core (×0.5)</dt>
+                <dd className="tabular-nums">{theme.strategic_components.core_relevance}</dd>
+              </div>
+              <div className="flex justify-between">
+                <dt className="text-black/50">Trial/risk unmet need (×0.3)</dt>
+                <dd className="tabular-nums">{pct(theme.strategic_components.trial_need)}</dd>
+              </div>
+              <div className="flex justify-between">
+                <dt className="text-black/50">New-to-user category (×0.2)</dt>
+                <dd className="tabular-nums">{pct(theme.strategic_components.new_category)}</dd>
+              </div>
+              <div className="flex justify-between border-t border-line pt-1">
+                <dt className="text-black/50">Fit (weighted sum)</dt>
+                <dd className="tabular-nums">{theme.strategic_fit}</dd>
+              </div>
+              <div className="flex justify-between font-bold">
+                <dt>
+                  {theme.opportunity} × {theme.strategic_fit} =
+                </dt>
+                <dd className="tabular-nums">{theme.strategic_priority}</dd>
+              </div>
+            </dl>
+          </div>
           {theme.top_needs.length > 0 && (
             <div>
               <p className="font-bold uppercase tracking-wide text-muted">Unmet needs</p>
@@ -130,6 +172,81 @@ function ThemeRow({ theme, rank }: { theme: Theme; rank: number }) {
         </div>
       </div>
     </details>
+  );
+}
+
+function FramingBlock({ bridge }: { bridge: Bridge }) {
+  return (
+    <div className="rounded-xl border-l-4 border-brand bg-brand/5 p-5">
+      <h3 className="text-sm font-bold">
+        Why the loudest complaint and our thesis are the same problem
+      </h3>
+      <div className="mt-2 space-y-2 text-[13px] leading-relaxed text-black/70">
+        <p>
+          Pricing, delivery and support outrank every exploration theme on raw share of voice, and
+          that ranking is left exactly as the data produced it. But share of voice answers
+          &ldquo;what do people complain about most&rdquo; — not the goal we were set, which is how
+          many customers buy from a <em>new</em> category each month.
+        </p>
+        <p>
+          Reading the unmet needs rather than the theme labels, the two converge.{" "}
+          <strong className="text-ink">{bridge.trial_need_docs} documents</strong> (
+          {pct(bridge.share_of_coded)} of the coded corpus) name a need about trying something
+          unfamiliar — a smaller pack, a way to tell if the quality is good, something not worth the
+          risk. Of those,{" "}
+          <strong className="text-ink">{bridge.in_context_themes} sit inside the context themes</strong>{" "}
+          and only {bridge.in_core_themes} inside the exploration themes.
+        </p>
+        <p>
+          So most of this need is filed under &ldquo;pricing&rdquo; — users describing the cost of a
+          <em> first try</em>, not the cost of their weekly basket. Price-risk and the exploration
+          barrier meet at one sentence: <strong className="text-ink">fear of wasting money on
+          something unknown</strong>. That is precisely what a starter pack, a rating and a
+          why-now line de-risk, which is what the MVP builds.
+        </p>
+      </div>
+
+      {bridge.top_shared_needs.length > 0 && (
+        <div className="mt-3">
+          <p className="text-[11px] font-bold uppercase tracking-wide text-muted">
+            Needs spanning both groups
+          </p>
+          <ul className="mt-1 flex flex-wrap gap-1.5">
+            {bridge.top_shared_needs.map(([need, n]) => (
+              <li
+                key={need}
+                className="rounded-full border border-brand/30 bg-white px-2.5 py-1 text-[11px]"
+              >
+                {need} <span className="text-black/40">×{n}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {bridge.quotes.length > 0 && (
+        <div className="mt-3">
+          <p className="text-[11px] font-bold uppercase tracking-wide text-muted">
+            Filed as a context theme, describing trial risk
+          </p>
+          <ul className="mt-1 space-y-1.5">
+            {bridge.quotes.map((q, i) => (
+              <li key={i} className="text-[12px] leading-snug text-black/65">
+                “{q.quote}”{" "}
+                <span className="text-black/40">
+                  — {SOURCE_LABEL[q.source] ?? q.source}, coded {q.theme.replace(/_/g, " ")}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <p className="mt-3 text-[11px] text-black/40">
+        Counted from the coding, not asserted: any document whose unmet need matches{" "}
+        <code className="rounded bg-white px-1">{bridge.lexicon.slice(0, 60)}…</code>
+      </p>
+    </div>
   );
 }
 
@@ -194,15 +311,28 @@ export default function DiscoveryPage() {
         />
       </div>
 
+      <FramingBlock bridge={data.bridge} />
+
+      <div className="flex items-center justify-end gap-3 text-[11px] text-muted">
+        <span className="flex items-center gap-1.5">
+          <span className="h-2 w-6 rounded-full bg-black/25" /> raw opportunity (share of voice)
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="h-2 w-6 rounded-full bg-brand" /> strategic fit (goal alignment)
+        </span>
+      </div>
+
       <section>
         <h2 className="text-base font-bold">Core themes — category exploration</h2>
         <p className="text-xs text-muted">
-          Themes bearing directly on why users don&apos;t try new categories. Ranked by opportunity
-          score.
+          Themes bearing directly on why users don&apos;t try new categories. Ranked by strategic
+          priority (raw × fit); the raw score stays visible on every row.
         </p>
         <div className="mt-2 rounded-xl border border-line px-3">
           {core.length ? (
-            core.map((t, i) => <ThemeRow key={t.id} theme={t} rank={i + 1} />)
+            [...core]
+              .sort((a, b) => b.strategic_priority - a.strategic_priority)
+              .map((t, i) => <ThemeRow key={t.id} theme={t} rank={i + 1} />)
           ) : (
             <p className="py-4 text-sm text-black/40">No core themes surfaced.</p>
           )}
@@ -271,6 +401,11 @@ export default function DiscoveryPage() {
                   <code>node scripts/discovery/4-holdout.mjs</code>.
                 </>
               )}
+            </li>
+            <li>
+              <strong className="text-ink">Two axes, neither adjusted.</strong> Opportunity ={" "}
+              {data.scoring.opportunity} Strategic fit = {data.scoring.strategic_fit}{" "}
+              {data.scoring.note}
             </li>
             <li>
               <strong className="text-ink">Open before closed.</strong> The codebook is induced from

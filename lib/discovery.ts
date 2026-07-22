@@ -25,7 +25,35 @@ export type Theme = {
   top_needs: [string, number][];
   categories: [string, number][];
   quotes: Quote[];
+  /** share of voice: frequency + severity + segment spread */
   opportunity: number;
+  /** fit with the new-category-adoption goal, 0-1, computed in 3-analyze.mjs */
+  strategic_fit: number;
+  /** opportunity x strategic_fit */
+  strategic_priority: number;
+  strategic_components: {
+    core_relevance: number;
+    trial_need: number;
+    new_category: number;
+  };
+};
+
+export type Bridge = {
+  lexicon: string;
+  trial_need_docs: number;
+  share_of_coded: number;
+  in_core_themes: number;
+  in_context_themes: number;
+  top_shared_needs: [string, number][];
+  quotes: { quote: string; source: string; theme: string; url: string | null }[];
+};
+
+export type Scoring = {
+  opportunity: string;
+  strategic_fit: string;
+  strategic_priority: string;
+  weights: Record<string, number>;
+  note: string;
 };
 
 export type Insights = {
@@ -43,6 +71,8 @@ export type Insights = {
     valid_themes: number;
     rejected_themes: { id: string; label: string; sources: string[]; count: number }[];
   };
+  scoring: Scoring;
+  bridge: Bridge;
   themes: Theme[];
   segments: { id: string; count: number; top_themes: { id: string; label: string; n: number }[] }[];
 };

@@ -16,6 +16,54 @@
    "reddit"
   ]
  },
+ "scoring": {
+  "opportunity": "0.5 x frequency (normalised to the largest theme) + 0.3 x negative sentiment + 0.2 x segment spread. Measures share of voice.",
+  "strategic_fit": "0.5 x open-coded 'core' relevance + 0.3 x share of documents whose unmet need is about trialling something unfamiliar + 0.2 x share whose category context is one the user would be new to. Measures fit with the goal of new-category adoption.",
+  "strategic_priority": "opportunity x strategic_fit",
+  "weights": {
+   "core_relevance": 0.5,
+   "trial_need": 0.3,
+   "new_category": 0.2
+  },
+  "note": "Raw opportunity is never adjusted. The two axes are reported side by side because the loudest theme and the most strategically relevant theme are not the same theme, and hiding that would be dishonest."
+ },
+ "bridge": {
+  "lexicon": "\\b(trial|try|trying|sample|small(er)?|starter|pack size|risk|unsure|unfamiliar|quality|know if|first[- ]time|worth it)\\b",
+  "trial_need_docs": 303,
+  "share_of_coded": 0.236,
+  "in_core_themes": 81,
+  "in_context_themes": 222,
+  "top_shared_needs": [
+   [
+    "smaller trial pack",
+    155
+   ],
+   [
+    "know if quality is good",
+    148
+   ]
+  ],
+  "quotes": [
+   {
+    "quote": "I ordered a face wash from this app, but it was expired when I received it.",
+    "source": "play_store",
+    "theme": "delivery_reliability",
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+   },
+   {
+    "quote": "They just keep going Down with service; it's never Available.",
+    "source": "play_store",
+    "theme": "support_quality",
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+   },
+   {
+    "quote": "A very good alternative when you are unable to reach local marketplace or you have to purchase something urgently and you have less time.",
+    "source": "play_store",
+    "theme": "support_quality",
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+   }
+  ]
+ },
  "validity": {
   "rule": "A theme is reported only if it appears in at least 2 independent sources.",
   "valid_themes": 8,
@@ -139,7 +187,14 @@
      "segment": "unclear"
     }
    ],
-   "opportunity": 89.8
+   "opportunity": 89.8,
+   "strategic_components": {
+    "core_relevance": 0,
+    "trial_need": 0.251,
+    "new_category": 0.444
+   },
+   "strategic_fit": 0.164,
+   "strategic_priority": 14.7
   },
   {
    "id": "delivery_reliability",
@@ -258,7 +313,14 @@
      "segment": "deal_seeker"
     }
    ],
-   "opportunity": 89.5
+   "opportunity": 89.5,
+   "strategic_components": {
+    "core_relevance": 0,
+    "trial_need": 0.246,
+    "new_category": 0.508
+   },
+   "strategic_fit": 0.175,
+   "strategic_priority": 15.7
   },
   {
    "id": "support_quality",
@@ -377,7 +439,14 @@
      "segment": "routine_replenisher"
     }
    ],
-   "opportunity": 87.9
+   "opportunity": 87.9,
+   "strategic_components": {
+    "core_relevance": 0,
+    "trial_need": 0.215,
+    "new_category": 0.428
+   },
+   "strategic_fit": 0.15,
+   "strategic_priority": 13.2
   },
   {
    "id": "trust_gap_new_category",
@@ -496,7 +565,14 @@
      "segment": "unclear"
     }
    ],
-   "opportunity": 51.7
+   "opportunity": 51.7,
+   "strategic_components": {
+    "core_relevance": 1,
+    "trial_need": 0.149,
+    "new_category": 0.463
+   },
+   "strategic_fit": 0.637,
+   "strategic_priority": 32.9
   },
   {
    "id": "habit_autopilot",
@@ -615,7 +691,14 @@
      "segment": "new_life_stage"
     }
    ],
-   "opportunity": 48.6
+   "opportunity": 48.6,
+   "strategic_components": {
+    "core_relevance": 1,
+    "trial_need": 0.25,
+    "new_category": 0.447
+   },
+   "strategic_fit": 0.664,
+   "strategic_priority": 32.3
   },
   {
    "id": "pack_size_too_big",
@@ -734,7 +817,14 @@
      "segment": "deal_seeker"
     }
    ],
-   "opportunity": 48.4
+   "opportunity": 48.4,
+   "strategic_components": {
+    "core_relevance": 1,
+    "trial_need": 0.281,
+    "new_category": 0.5
+   },
+   "strategic_fit": 0.684,
+   "strategic_priority": 33.1
   },
   {
    "id": "didnt_know_stocked",
@@ -853,7 +943,14 @@
      "segment": "deal_seeker"
     }
    ],
-   "opportunity": 48.2
+   "opportunity": 48.2,
+   "strategic_components": {
+    "core_relevance": 1,
+    "trial_need": 0.263,
+    "new_category": 0.513
+   },
+   "strategic_fit": 0.682,
+   "strategic_priority": 32.9
   },
   {
    "id": "discovery_is_search_only",
@@ -972,7 +1069,14 @@
      "segment": "power_user"
     }
    ],
-   "opportunity": 48.2
+   "opportunity": 48.2,
+   "strategic_components": {
+    "core_relevance": 1,
+    "trial_need": 0.212,
+    "new_category": 0.439
+   },
+   "strategic_fit": 0.652,
+   "strategic_priority": 31.4
   }
  ],
  "segments": [
