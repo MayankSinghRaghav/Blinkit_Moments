@@ -1,4 +1,5 @@
 import { loadInsights, loadHoldout, type Bridge, type Theme } from "@/lib/discovery";
+import { MIN_CONFIDENCE, pickQuotes } from "@/lib/quotes";
 
 export const dynamic = "force-dynamic";
 
@@ -20,6 +21,7 @@ function Stat({ label, value, sub }: { label: string; value: string; sub?: strin
 }
 
 function ThemeRow({ theme, rank }: { theme: Theme; rank: number }) {
+  const { shown, withheld } = pickQuotes(theme.quotes, theme.id);
   return (
     <details className="group border-b border-line last:border-0">
       <summary className="flex cursor-pointer items-center gap-3 py-3 hover:bg-tile">
@@ -81,12 +83,13 @@ function ThemeRow({ theme, rank }: { theme: Theme; rank: number }) {
             Verbatim evidence
           </p>
           <ul className="mt-2 space-y-2">
-            {theme.quotes.map((q, i) => (
+            {shown.map((q, i) => (
               <li key={i} className="rounded-lg bg-tile p-3 text-[13px] leading-snug">
                 <span className="text-black/75">“{q.quote}”</span>
                 <span className="mt-1 block text-[11px] text-black/45">
                   {SOURCE_LABEL[q.source] ?? q.source}
-                  {q.rating ? ` · ${q.rating}★` : ""} · {q.segment}
+                  {q.rating ? ` · ${q.rating}★` : ""} · {q.segment} · conf{" "}
+                  {q.confidence.toFixed(2)}
                   {q.url && (
                     <>
                       {" · "}
@@ -103,12 +106,19 @@ function ThemeRow({ theme, rank }: { theme: Theme; rank: number }) {
                 </span>
               </li>
             ))}
-            {!theme.quotes.length && (
+            {!shown.length && (
               <li className="text-xs text-black/40">
-                No quote passed the verbatim check for this theme.
+                No quote for this theme met the display bar — nothing was clean enough to show.
               </li>
             )}
           </ul>
+          {withheld > 0 && (
+            <p className="mt-2 text-[11px] text-black/35">
+              {withheld} further quote{withheld === 1 ? "" : "s"} held back: below{" "}
+              {MIN_CONFIDENCE} coding confidence, truncated, off-theme, or containing links or
+              forum markup. All of them remain in the stored data.
+            </p>
+          )}
         </div>
 
         <div className="space-y-3 text-xs">
@@ -176,6 +186,11 @@ function ThemeRow({ theme, rank }: { theme: Theme; rank: number }) {
 }
 
 function FramingBlock({ bridge }: { bridge: Bridge }) {
+  // same display bar as the theme rows; these quotes carry the argument, so a
+  // truncated or off-theme one here does the most damage
+  const bridgeQuotes = bridge.quotes
+    .flatMap((q) => pickQuotes([q], q.theme, 1).shown)
+    .slice(0, 3);
   return (
     <div className="rounded-xl border-l-4 border-brand bg-brand/5 p-5">
       <h3 className="text-sm font-bold">
@@ -224,13 +239,13 @@ function FramingBlock({ bridge }: { bridge: Bridge }) {
         </div>
       )}
 
-      {bridge.quotes.length > 0 && (
+      {bridgeQuotes.length > 0 && (
         <div className="mt-3">
           <p className="text-[11px] font-bold uppercase tracking-wide text-muted">
             Filed as a context theme, describing trial risk
           </p>
           <ul className="mt-1 space-y-1.5">
-            {bridge.quotes.map((q, i) => (
+            {bridgeQuotes.map((q, i) => (
               <li key={i} className="text-[12px] leading-snug text-black/65">
                 “{q.quote}”{" "}
                 <span className="text-black/40">

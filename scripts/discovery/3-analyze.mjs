@@ -68,16 +68,22 @@ const themes = [...clusters.entries()].map(([id, items]) => {
     items.length,
   );
 
+  // Store a generous pool of candidates with the fields the display filter
+  // needs (confidence, owning theme). The UI shows at most 3 after filtering;
+  // keeping 12 here means a theme whose best quotes are junk still has clean
+  // ones to fall back on. Nothing is discarded from data/tagged.json.
   const quotes = items
     .filter((i) => i.quote)
     .sort((a, b) => (Number(b.confidence) || 0) - (Number(a.confidence) || 0))
-    .slice(0, 6)
+    .slice(0, 12)
     .map((i) => ({
       quote: i.quote,
       source: i.source,
       url: i.url ?? byId.get(i.id)?.url ?? null,
       rating: i.rating ?? null,
       segment: i.segment,
+      confidence: Number(i.confidence) || 0,
+      theme: i.theme,
     }));
 
   const t = meta.get(id);
@@ -192,8 +198,17 @@ const bridge = {
   top_shared_needs: Object.entries(sharedNeeds).sort((a, b) => b[1] - a[1]).slice(0, 5),
   quotes: trialNeedDocs
     .filter((c) => c.quote && relevanceOf.get(c.theme) !== "core")
-    .slice(0, 3)
-    .map((c) => ({ quote: c.quote, source: c.source, theme: c.theme, url: c.url ?? null })),
+    .sort((a, b) => (Number(b.confidence) || 0) - (Number(a.confidence) || 0))
+    .slice(0, 12)
+    .map((c) => ({
+      quote: c.quote,
+      source: c.source,
+      theme: c.theme,
+      url: c.url ?? null,
+      rating: c.rating ?? null,
+      segment: c.segment,
+      confidence: Number(c.confidence) || 0,
+    })),
 };
 
 const valid = themes.filter((t) => t.cross_source_valid);

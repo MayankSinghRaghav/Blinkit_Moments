@@ -45,22 +45,112 @@
   ],
   "quotes": [
    {
-    "quote": "I ordered a face wash from this app, but it was expired when I received it.",
+    "quote": "Blinkit is a very convenient app for quick grocery and daily essentials delivery.",
+    "source": "play_store",
+    "theme": "pricing_and_charges",
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+    "rating": 5,
+    "segment": "deal_seeker",
+    "confidence": 0.95
+   },
+   {
+    "quote": "Interesting concept, though the UI/UX could be refined further",
+    "source": "reddit",
+    "theme": "delivery_reliability",
+    "url": "https://www.reddit.com/r/dealsforindia/comments/1nd3p4r/built_a_free_app_to_compare_realtime_cab_fares/ne5qxt8/",
+    "rating": null,
+    "segment": "power_user",
+    "confidence": 0.95
+   },
+   {
+    "quote": "Person delivering was soo sweet!",
+    "source": "app_store",
+    "theme": "delivery_reliability",
+    "url": "https://apps.apple.com/in/app/id960335206",
+    "rating": 5,
+    "segment": "routine_replenisher",
+    "confidence": 0.94
+   },
+   {
+    "quote": "Built an app to compare 7 quick commerce stores + cab fares (Uber, Ola, Rapido) in one place.",
+    "source": "reddit",
+    "theme": "pricing_and_charges",
+    "url": "https://www.reddit.com/r/gurgaon/comments/1onabrh/built_an_app_to_compare_7_quick_commerce_stores/",
+    "rating": null,
+    "segment": "new_life_stage",
+    "confidence": 0.94
+   },
+   {
+    "quote": "Dear Blinkit Team, I would like to request that the previous simple picking system be brought back.",
     "source": "play_store",
     "theme": "delivery_reliability",
-    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+    "rating": 4,
+    "segment": "power_user",
+    "confidence": 0.93
    },
    {
-    "quote": "They just keep going Down with service; it's never Available.",
+    "quote": "Not good, it very bad app you paid for product and they don't have return or refund policy even the product is damaged or in good condition.",
     "source": "play_store",
-    "theme": "support_quality",
-    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+    "theme": "pricing_and_charges",
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+    "rating": 1,
+    "segment": "deal_seeker",
+    "confidence": 0.93
    },
    {
-    "quote": "A very good alternative when you are unable to reach local marketplace or you have to purchase something urgently and you have less time.",
+    "quote": "I placed an order on Blinkit and completed the payment based on the delivery time shown before checkout.",
     "source": "play_store",
     "theme": "support_quality",
-    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+    "rating": 1,
+    "segment": "deal_seeker",
+    "confidence": 0.93
+   },
+   {
+    "quote": "You delivered rotten sweet potatoes.",
+    "source": "play_store",
+    "theme": "pricing_and_charges",
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+    "rating": 1,
+    "segment": "power_user",
+    "confidence": 0.93
+   },
+   {
+    "quote": "Price issue. Almost time I’ve ordered same item but facing price issue",
+    "source": "app_store",
+    "theme": "support_quality",
+    "url": "https://apps.apple.com/in/app/id960335206",
+    "rating": 1,
+    "segment": "unclear",
+    "confidence": 0.93
+   },
+   {
+    "quote": "This is for people who enjoy thick shakes or the occasional sweet drink",
+    "source": "reddit",
+    "theme": "delivery_reliability",
+    "url": "https://www.reddit.com/r/Fitness_India/comments/1p3it1m/blinkit_got_the_stock_other_protein_brands_are/nq50hn3/",
+    "rating": null,
+    "segment": "deal_seeker",
+    "confidence": 0.93
+   },
+   {
+    "quote": "Zepto fails to maintain basic quality, why would people trust for premium groceries?",
+    "source": "reddit",
+    "theme": "support_quality",
+    "url": "https://www.reddit.com/r/FuckZepto/comments/1uw7k50/zepto_fails_to_maintain_basic_quality_why_would/",
+    "rating": null,
+    "segment": "routine_replenisher",
+    "confidence": 0.93
+   },
+   {
+    "quote": "Amul tender coconut is actually a Blunder coconut.",
+    "source": "reddit",
+    "theme": "pricing_and_charges",
+    "url": "https://www.reddit.com/r/AmulPagalHoChukaHai/comments/1u4fnvs/amul_k_sath_amazon_quick_commerce_pagal_ho_chuka/ordfx8d/",
+    "rating": null,
+    "segment": "new_life_stage",
+    "confidence": 0.93
    }
   ]
  },
@@ -149,42 +239,108 @@
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 5,
-     "segment": "deal_seeker"
+     "segment": "deal_seeker",
+     "confidence": 0.95,
+     "theme": "pricing_and_charges"
     },
     {
      "quote": "Absolutely horrible experience.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "routine_replenisher"
+     "segment": "routine_replenisher",
+     "confidence": 0.95,
+     "theme": "pricing_and_charges"
     },
     {
      "quote": "Worst company. I purchased a boat 108 stone it was damaged and they are not refunding the speaker they are saying to go",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 1,
-     "segment": "power_user"
+     "segment": "power_user",
+     "confidence": 0.95,
+     "theme": "pricing_and_charges"
     },
     {
      "quote": "Zepto & Blinkit Deals Now Available on DealMilGai ⚡.",
      "source": "reddit",
      "url": "https://www.reddit.com/r/dealmilgai/comments/1r60z3d/zepto_blinkit_deals_now_available_on_dealmilgai/",
      "rating": null,
-     "segment": "power_user"
+     "segment": "power_user",
+     "confidence": 0.95,
+     "theme": "pricing_and_charges"
     },
     {
      "quote": "wont hsbc be a problem to get if my home and office address are in different cities and i am staying in the city of my office address?",
      "source": "reddit",
      "url": "https://www.reddit.com/r/CreditCardsIndia/comments/1rvbu6t/hsbc_live_vs_sbi_cashback_vs_axis_cashback_which/oargeq1/",
      "rating": null,
-     "segment": "routine_replenisher"
+     "segment": "routine_replenisher",
+     "confidence": 0.95,
+     "theme": "pricing_and_charges"
     },
     {
      "quote": "Replicating a delivery network for kirana local stores picking up a charger from an electronics shop, balm from a pharmacy, and eggs from a grocery store is a logistical nightmare.",
      "source": "reddit",
      "url": "https://www.reddit.com/r/indianstartups/comments/1t2ipuu/introducing_zoro_a_new_quick_commerce_app_for/ojpyxi1/",
      "rating": null,
-     "segment": "unclear"
+     "segment": "unclear",
+     "confidence": 0.95,
+     "theme": "pricing_and_charges"
+    },
+    {
+     "quote": "Hello Blinkit Team, I really enjoy shopping on Blinkit because the delivery is fast and the product quality is good.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 5,
+     "segment": "deal_seeker",
+     "confidence": 0.94,
+     "theme": "pricing_and_charges"
+    },
+    {
+     "quote": "Sometimes your delivery partners take their time and even seem to do their personal work while delivering orders.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.94,
+     "theme": "pricing_and_charges"
+    },
+    {
+     "quote": "One of the worst customer experience, I ever had.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "urban_professional",
+     "confidence": 0.94,
+     "theme": "pricing_and_charges"
+    },
+    {
+     "quote": "It’s great platform am bcoz of fast delivery, genuien items nd more things.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
+     "segment": "routine_replenisher",
+     "confidence": 0.94,
+     "theme": "pricing_and_charges"
+    },
+    {
+     "quote": "My app crossed 100K downloads!",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/PataHaiAajKyaHua/comments/1qg99fw/my_app_crossed_100k_downloads/",
+     "rating": null,
+     "segment": "routine_replenisher",
+     "confidence": 0.94,
+     "theme": "pricing_and_charges"
+    },
+    {
+     "quote": "Built an app to compare 7 quick commerce stores + cab fares (Uber, Ola, Rapido) in one place.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/gurgaon/comments/1onabrh/built_an_app_to_compare_7_quick_commerce_stores/",
+     "rating": null,
+     "segment": "new_life_stage",
+     "confidence": 0.94,
+     "theme": "pricing_and_charges"
     }
    ],
    "opportunity": 89.8,
@@ -275,42 +431,108 @@
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "unclear"
+     "segment": "unclear",
+     "confidence": 0.95,
+     "theme": "delivery_reliability"
     },
     {
      "quote": "It was good when I started using the app but now it's kind of like scamming people.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "deal_seeker"
+     "segment": "deal_seeker",
+     "confidence": 0.95,
+     "theme": "delivery_reliability"
     },
     {
      "quote": "automatically adds stuff on that platform A lite version which just shows price of a product given a city/location, and availability of that product on other platforms will be good.",
      "source": "reddit",
      "url": "https://www.reddit.com/r/GadgetsIndia/comments/1m6l4cl/i_got_sick_of_flipping_between_blinkit_instamart/n5sq5ek/",
      "rating": null,
-     "segment": "deal_seeker"
+     "segment": "deal_seeker",
+     "confidence": 0.95,
+     "theme": "delivery_reliability"
     },
     {
      "quote": "Interesting concept, though the UI/UX could be refined further",
      "source": "reddit",
      "url": "https://www.reddit.com/r/dealsforindia/comments/1nd3p4r/built_a_free_app_to_compare_realtime_cab_fares/ne5qxt8/",
      "rating": null,
-     "segment": "power_user"
+     "segment": "power_user",
+     "confidence": 0.95,
+     "theme": "delivery_reliability"
     },
     {
      "quote": "It charges high price for vegetables and fruits as compared to the market.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 2,
-     "segment": "deal_seeker"
+     "segment": "deal_seeker",
+     "confidence": 0.94,
+     "theme": "delivery_reliability"
     },
     {
      "quote": "Blinkit's return and refund policy is pathetic.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "deal_seeker"
+     "segment": "deal_seeker",
+     "confidence": 0.94,
+     "theme": "delivery_reliability"
+    },
+    {
+     "quote": "Person delivering was soo sweet!",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
+     "segment": "routine_replenisher",
+     "confidence": 0.94,
+     "theme": "delivery_reliability"
+    },
+    {
+     "quote": "Caping of billing. Very bad strategy of Blinkit to push shopper to reach 200 for free delivery , shame on you guys",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.94,
+     "theme": "delivery_reliability"
+    },
+    {
+     "quote": "quick commerce at its best.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
+     "segment": "unclear",
+     "confidence": 0.94,
+     "theme": "delivery_reliability"
+    },
+    {
+     "quote": "[H] Zepto, Blinkit ,Instamart Grocery Orders [W] 90%upi.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/IndiaDealsExchange/comments/1tqpy1g/h_zepto_blinkit_instamart_grocery_orders_w_90upi/",
+     "rating": null,
+     "segment": "new_life_stage",
+     "confidence": 0.94,
+     "theme": "delivery_reliability"
+    },
+    {
+     "quote": "Very disappointing experience.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "urban_professional",
+     "confidence": 0.93,
+     "theme": "delivery_reliability"
+    },
+    {
+     "quote": "Dear Blinkit Team, I would like to request that the previous simple picking system be brought back.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 4,
+     "segment": "power_user",
+     "confidence": 0.93,
+     "theme": "delivery_reliability"
     }
    ],
    "opportunity": 89.5,
@@ -401,42 +623,108 @@
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "power_user"
+     "segment": "power_user",
+     "confidence": 0.94,
+     "theme": "support_quality"
     },
     {
      "quote": "The worst customer service you can receive was provided by Blinkit.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "power_user"
+     "segment": "power_user",
+     "confidence": 0.94,
+     "theme": "support_quality"
     },
     {
      "quote": "Update. Pls kuch blinkit aap mai kuch aisa upgrade kar ki non veg option ko band kiya ja sake veg walo ko dikkat hoti h",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 5,
-     "segment": "unclear"
+     "segment": "unclear",
+     "confidence": 0.94,
+     "theme": "support_quality"
     },
     {
      "quote": "You guys are doing the Best with the ambulance work.",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 5,
-     "segment": "unclear"
+     "segment": "unclear",
+     "confidence": 0.94,
+     "theme": "support_quality"
     },
     {
      "quote": "I placed an order on Blinkit and completed the payment based on the delivery time shown before checkout.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "deal_seeker"
+     "segment": "deal_seeker",
+     "confidence": 0.93,
+     "theme": "support_quality"
     },
     {
      "quote": "Decent platform, however return process has to be smooth if any item is near expiry or you don't like the quality because most of the items are food items.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 4,
-     "segment": "routine_replenisher"
+     "segment": "routine_replenisher",
+     "confidence": 0.93,
+     "theme": "support_quality"
+    },
+    {
+     "quote": "Disappointing experience with wallet balance and customer support Please be cautious when adding money to the Blinkit wallet.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.93,
+     "theme": "support_quality"
+    },
+    {
+     "quote": "Price issue. Almost time I’ve ordered same item but facing price issue",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.93,
+     "theme": "support_quality"
+    },
+    {
+     "quote": "Excellent Service & Fast Delivery” ⭐⭐⭐⭐⭐.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
+     "segment": "deal_seeker",
+     "confidence": 0.93,
+     "theme": "support_quality"
+    },
+    {
+     "quote": "Order picked but not delivered.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 1,
+     "segment": "power_user",
+     "confidence": 0.93,
+     "theme": "support_quality"
+    },
+    {
+     "quote": "I ordered a day earbuds and the earbuds were unvailable but i showed 899 rupees.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 3,
+     "segment": "urban_professional",
+     "confidence": 0.93,
+     "theme": "support_quality"
+    },
+    {
+     "quote": "Zepto fails to maintain basic quality, why would people trust for premium groceries?",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/FuckZepto/comments/1uw7k50/zepto_fails_to_maintain_basic_quality_why_would/",
+     "rating": null,
+     "segment": "routine_replenisher",
+     "confidence": 0.93,
+     "theme": "support_quality"
     }
    ],
    "opportunity": 87.9,
@@ -527,42 +815,108 @@
      "source": "reddit",
      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1r3zqn1/do_you_compare_grocery_prices_across/",
      "rating": null,
-     "segment": "urban_professional"
+     "segment": "urban_professional",
+     "confidence": 0.95,
+     "theme": "trust_gap_new_category"
     },
     {
      "quote": "⭐⭐⭐⭐⭐ Excellent quality blanket!",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 5,
-     "segment": "power_user"
+     "segment": "power_user",
+     "confidence": 0.92,
+     "theme": "trust_gap_new_category"
     },
     {
      "quote": "Price. Some prices are higher than market for example Blinkit Verka Dahi is 35 though in market it’s Rs 30/ my question",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 1,
-     "segment": "deal_seeker"
+     "segment": "deal_seeker",
+     "confidence": 0.92,
+     "theme": "trust_gap_new_category"
     },
     {
      "quote": "This app is good, but very expensive.",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 5,
-     "segment": "urban_professional"
+     "segment": "urban_professional",
+     "confidence": 0.92,
+     "theme": "trust_gap_new_category"
     },
     {
      "quote": "me: /u/Tricky_Investment793 * Account Age: 5 months * Link karma: 3 * Comment karma: 25 * Confirmed trades: 6 ^^This ^^information ^^does ^^not ^^guarantee ^^a ^^successful ^^trade.",
      "source": "reddit",
      "url": "https://www.reddit.com/r/IndiaDealsExchange/comments/1rkdhl0/h_150_discount_on_zomato_swiggy_blinkit_zepto_w/o8jru8m/",
      "rating": null,
-     "segment": "urban_professional"
+     "segment": "urban_professional",
+     "confidence": 0.92,
+     "theme": "trust_gap_new_category"
     },
     {
      "quote": "very happy with blinkit service.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 5,
-     "segment": "unclear"
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "trust_gap_new_category"
+    },
+    {
+     "quote": "Ur English seems pretty fluent and highly educated , why did u even take up such a job?",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/StartUpIndia/comments/1qo6h8e/first_month_of_blinkit_picker_packer_job_salary/o1zbu2v/",
+     "rating": null,
+     "segment": "urban_professional",
+     "confidence": 0.9,
+     "theme": "trust_gap_new_category"
+    },
+    {
+     "quote": "Anyone using it should not order food items, particularly that need refrigeration.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "power_user",
+     "confidence": 0.89,
+     "theme": "trust_gap_new_category"
+    },
+    {
+     "quote": "Blink it is losing its efficiency with product management.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "urban_professional",
+     "confidence": 0.88,
+     "theme": "trust_gap_new_category"
+    },
+    {
+     "quote": "I am a Blinkit customer and had ordered a product (Ant Esports GM40 RGB Optical Wired Gaming Mouse) from the platform.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 2,
+     "segment": "unclear",
+     "confidence": 0.87,
+     "theme": "trust_gap_new_category"
+    },
+    {
+     "quote": "customer service assistance is very very poor and irresponsible.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.87,
+     "theme": "trust_gap_new_category"
+    },
+    {
+     "quote": "Prompt service and almost everything is available.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
+     "segment": "power_user",
+     "confidence": 0.87,
+     "theme": "trust_gap_new_category"
     }
    ],
    "opportunity": 51.7,
@@ -653,42 +1007,108 @@
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 5,
-     "segment": "unclear"
+     "segment": "unclear",
+     "confidence": 0.94,
+     "theme": "habit_autopilot"
     },
     {
      "quote": "'t find location usually that's too common when we have given full location then also , but the aap is so awesome i appreciate it continue and make delivery more nice with packing .",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 5,
-     "segment": "new_life_stage"
+     "segment": "new_life_stage",
+     "confidence": 0.92,
+     "theme": "habit_autopilot"
     },
     {
      "quote": "Very convenient in hot summer weather to have it at ur doorstep in just blinking of ur eyes.",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 5,
-     "segment": "deal_seeker"
+     "segment": "deal_seeker",
+     "confidence": 0.92,
+     "theme": "habit_autopilot"
     },
     {
      "quote": "Very bad service. Not helpful my son ordered it by mistake I said them to cancel order in 10 the said me your order is p",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 1,
-     "segment": "unclear"
+     "segment": "unclear",
+     "confidence": 0.92,
+     "theme": "habit_autopilot"
     },
     {
      "quote": "I am extremely disappointed with Blinkit's customer support.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 2,
-     "segment": "new_life_stage"
+     "segment": "new_life_stage",
+     "confidence": 0.9,
+     "theme": "habit_autopilot"
     },
     {
      "quote": "It seems like a push sales which might not last long though if customers found a better option.",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 3,
-     "segment": "new_life_stage"
+     "segment": "new_life_stage",
+     "confidence": 0.9,
+     "theme": "habit_autopilot"
+    },
+    {
+     "quote": "Worst customer support experience!",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 1,
+     "segment": "power_user",
+     "confidence": 0.9,
+     "theme": "habit_autopilot"
+    },
+    {
+     "quote": "Delivery time not met many times.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 2,
+     "segment": "deal_seeker",
+     "confidence": 0.89,
+     "theme": "habit_autopilot"
+    },
+    {
+     "quote": "Service in need. Beautiful and hospitable service making lives comfortable",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
+     "segment": "routine_replenisher",
+     "confidence": 0.89,
+     "theme": "habit_autopilot"
+    },
+    {
+     "quote": "High packaging charges. Worst experience with their customer service and @Blinkit Team if you guys want your sales to in",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 1,
+     "segment": "deal_seeker",
+     "confidence": 0.88,
+     "theme": "habit_autopilot"
+    },
+    {
+     "quote": "but it has to include exotic veggies or fruits.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/indianstartups/comments/1sbyr90/ready_to_eat_salads_in_retail_channels_like/oe762js/",
+     "rating": null,
+     "segment": "new_life_stage",
+     "confidence": 0.88,
+     "theme": "habit_autopilot"
+    },
+    {
+     "quote": "I ordered pack of 3 chips , delivered quantity was only 2.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 4,
+     "segment": "new_life_stage",
+     "confidence": 0.87,
+     "theme": "habit_autopilot"
     }
    ],
    "opportunity": 48.6,
@@ -779,42 +1199,108 @@
      "source": "reddit",
      "url": "https://www.reddit.com/r/CreditCardsIndia/comments/1rdms6v/help_me_to_organise/o7687r7/",
      "rating": null,
-     "segment": "routine_replenisher"
+     "segment": "routine_replenisher",
+     "confidence": 0.95,
+     "theme": "pack_size_too_big"
     },
     {
      "quote": "Cheated by sending expired product.",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 1,
-     "segment": "routine_replenisher"
+     "segment": "routine_replenisher",
+     "confidence": 0.94,
+     "theme": "pack_size_too_big"
     },
     {
      "quote": "A reliable vendor for everything last minute .",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 5,
-     "segment": "urban_professional"
+     "segment": "urban_professional",
+     "confidence": 0.94,
+     "theme": "pack_size_too_big"
     },
     {
      "quote": "prices same product ki compare nhi kiya tha.",
      "source": "reddit",
      "url": "https://www.reddit.com/r/jaipur/comments/1m6f59q/i_got_sick_of_flipping_between_blinkit_instamart/n4j39wd/",
      "rating": null,
-     "segment": "power_user"
+     "segment": "power_user",
+     "confidence": 0.94,
+     "theme": "pack_size_too_big"
     },
     {
      "quote": "Dark stores, warehouses, data centers, and commercial rentals.",
      "source": "reddit",
      "url": "https://www.reddit.com/r/StartupFuture/comments/1tihboj/quick_commerce_is_changing_india_fast_but_heres/on1p7te/",
      "rating": null,
-     "segment": "new_life_stage"
+     "segment": "new_life_stage",
+     "confidence": 0.93,
+     "theme": "pack_size_too_big"
     },
     {
      "quote": "You think the guy in a $4,000 suit is going to set foot in a supermarket?",
      "source": "reddit",
      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1r3zqn1/do_you_compare_grocery_prices_across/o5aipd0/",
      "rating": null,
-     "segment": "deal_seeker"
+     "segment": "deal_seeker",
+     "confidence": 0.92,
+     "theme": "pack_size_too_big"
+    },
+    {
+     "quote": "Built a free app to compare real-time cab fares (Uber, Ola, Rapido, Namma Yatri) and groceries (Blinkit, Zepto, Instamart) - all in one place.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/indianstartups/comments/1miuttw/built_a_free_app_to_compare_realtime_cab_fares/",
+     "rating": null,
+     "segment": "power_user",
+     "confidence": 0.92,
+     "theme": "pack_size_too_big"
+    },
+    {
+     "quote": "As we go on adding items, the limit of free delivery goes on increasing.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 2,
+     "segment": "deal_seeker",
+     "confidence": 0.91,
+     "theme": "pack_size_too_big"
+    },
+    {
+     "quote": "She cannot travel for long hours in train.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/InsideIndianMarriage/comments/1uxsa8z/how_do_i_understand_pov_of_my_wife_32m_mentally/oxu3djq/",
+     "rating": null,
+     "segment": "new_life_stage",
+     "confidence": 0.91,
+     "theme": "pack_size_too_big"
+    },
+    {
+     "quote": "You do understand the order can only be marked ‘delivered’ when it’s actually near the receiver location, right?",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/IndiaTodayLIVE/comments/1oce2tj/a_hyderabad_man_is_winning_hearts_this_diwali/nkn6sya/",
+     "rating": null,
+     "segment": "power_user",
+     "confidence": 0.9,
+     "theme": "pack_size_too_big"
+    },
+    {
+     "quote": "Blinkit has officially become my 'I forgot' button.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 5,
+     "segment": "routine_replenisher",
+     "confidence": 0.89,
+     "theme": "pack_size_too_big"
+    },
+    {
+     "quote": "The delivery was super fast, the products were fresh, and everything arrived in perfect condition.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 5,
+     "segment": "power_user",
+     "confidence": 0.89,
+     "theme": "pack_size_too_big"
     }
    ],
    "opportunity": 48.4,
@@ -905,42 +1391,108 @@
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "routine_replenisher"
+     "segment": "routine_replenisher",
+     "confidence": 0.95,
+     "theme": "didnt_know_stocked"
     },
     {
      "quote": "Complete mis-organised company and staff.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "urban_professional"
+     "segment": "urban_professional",
+     "confidence": 0.94,
+     "theme": "didnt_know_stocked"
     },
     {
      "quote": "First of all, I would like to point out that many products available on your app are significantly overpriced.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 5,
-     "segment": "power_user"
+     "segment": "power_user",
+     "confidence": 0.94,
+     "theme": "didnt_know_stocked"
     },
     {
      "quote": "They deliver tempered electronic product and then refuse toe listen customer complaints.",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 1,
-     "segment": "new_life_stage"
+     "segment": "new_life_stage",
+     "confidence": 0.94,
+     "theme": "didnt_know_stocked"
     },
     {
      "quote": "Life savers. Jab b ap kahi jao or kuch bhul jao To market open nhi milega ya phir market me jo apko cahiye vo nhi hoga L",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 5,
-     "segment": "deal_seeker"
+     "segment": "deal_seeker",
+     "confidence": 0.94,
+     "theme": "didnt_know_stocked"
     },
     {
      "quote": "This is my least favorite app to use.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "deal_seeker"
+     "segment": "deal_seeker",
+     "confidence": 0.93,
+     "theme": "didnt_know_stocked"
+    },
+    {
+     "quote": "I am extremely disappointed with the blinkit customer service.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "power_user",
+     "confidence": 0.93,
+     "theme": "didnt_know_stocked"
+    },
+    {
+     "quote": "⚠️ **CRITICAL SAFETY GUIDELINES** * **Demand a Comment First:** Ignore DMs from users who haven't commented on your post (banned users cannot comment).",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/IndiaDealsExchange/comments/1tqpy1g/h_zepto_blinkit_instamart_grocery_orders_w_90upi/ooi5llm/",
+     "rating": null,
+     "segment": "routine_replenisher",
+     "confidence": 0.93,
+     "theme": "didnt_know_stocked"
+    },
+    {
+     "quote": "Great initiative 🥳 But they not only play on MRPs taxes, handling, gsts etc are biggest factors too 👍",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/unitedstatesofindia/comments/1m7u32t/i_got_sick_of_flipping_between_blinkit_instamart/n4uawx9/",
+     "rating": null,
+     "segment": "deal_seeker",
+     "confidence": 0.92,
+     "theme": "didnt_know_stocked"
+    },
+    {
+     "quote": "Worst chatbot suport. With the addition Of ur worst chatbot for customer support which is not able to understand even a",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.91,
+     "theme": "didnt_know_stocked"
+    },
+    {
+     "quote": "I have ordered on 18 May it was cancelled three times and my amount is still not refunded.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/us/app/id960335206",
+     "rating": 1,
+     "segment": "deal_seeker",
+     "confidence": 0.91,
+     "theme": "didnt_know_stocked"
+    },
+    {
+     "quote": "So my girlfriend came to our flat and I thought I will get chicken biryani prepared by my cook aunty.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/hyderabad/comments/1tl4z0e/wtf_blinkit/",
+     "rating": null,
+     "segment": "deal_seeker",
+     "confidence": 0.91,
+     "theme": "didnt_know_stocked"
     }
    ],
    "opportunity": 48.2,
@@ -1031,42 +1583,108 @@
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 5,
-     "segment": "power_user"
+     "segment": "power_user",
+     "confidence": 0.95,
+     "theme": "discovery_is_search_only"
     },
     {
      "quote": "I'm very disappointed with my experience using Blinkit.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "power_user"
+     "segment": "power_user",
+     "confidence": 0.93,
+     "theme": "discovery_is_search_only"
     },
     {
      "quote": "Dear Blinkit Team, I am extremely disappointed with my recent order experience.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "deal_seeker"
+     "segment": "deal_seeker",
+     "confidence": 0.93,
+     "theme": "discovery_is_search_only"
     },
     {
      "quote": "Very poor experience that I got today.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "new_life_stage"
+     "segment": "new_life_stage",
+     "confidence": 0.93,
+     "theme": "discovery_is_search_only"
     },
     {
      "quote": "⚠️ Warning: Avoid buying electronic products from Blinkit.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
-     "segment": "unclear"
+     "segment": "unclear",
+     "confidence": 0.93,
+     "theme": "discovery_is_search_only"
     },
     {
      "quote": "Continuously stale vegetables.",
      "source": "app_store",
      "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 1,
-     "segment": "power_user"
+     "segment": "power_user",
+     "confidence": 0.93,
+     "theme": "discovery_is_search_only"
+    },
+    {
+     "quote": "urnout this early, channel your thoughts and see what is best for you in the long run, focus the most there, and then what is important for your current situation, not vice a versa.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/blinkit/comments/1usorw9/1st_day_in_blinkit/owpwcx8/",
+     "rating": null,
+     "segment": "new_life_stage",
+     "confidence": 0.93,
+     "theme": "discovery_is_search_only"
+    },
+    {
+     "quote": "⚠️ **PSA FOR ALL USERS** - **Do Not Reply to DMs** from users who cannot successfully comment first on your post.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/IndiaDealsExchange/comments/1rkdhl0/h_150_discount_on_zomato_swiggy_blinkit_zepto_w/o8jrtai/",
+     "rating": null,
+     "segment": "power_user",
+     "confidence": 0.93,
+     "theme": "discovery_is_search_only"
+    },
+    {
+     "quote": "the recent experience, I had ordered 3 french fries from Blinkit, it was delivered on time but this time all the frozen items were rotten and the expiry dates had been wiped clean.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.92,
+     "theme": "discovery_is_search_only"
+    },
+    {
+     "quote": "There are problems with quality and quality check before delivering it to customers.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 2,
+     "segment": "new_life_stage",
+     "confidence": 0.91,
+     "theme": "discovery_is_search_only"
+    },
+    {
+     "quote": "Add more squishy. Amazing , but I wish u would have some squishys",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 4,
+     "segment": "routine_replenisher",
+     "confidence": 0.91,
+     "theme": "discovery_is_search_only"
+    },
+    {
+     "quote": "Using my frnd documents there is no one for checking this even manger take my phone for error and they said nothing",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/blinkit/comments/1usorw9/1st_day_in_blinkit/owq0eql/",
+     "rating": null,
+     "segment": "deal_seeker",
+     "confidence": 0.91,
+     "theme": "discovery_is_search_only"
     }
    ],
    "opportunity": 48.2,

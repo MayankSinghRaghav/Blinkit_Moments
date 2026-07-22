@@ -8,6 +8,10 @@ export type Quote = {
   url: string | null;
   rating: number | null;
   segment: string;
+  /** carried so the display filter can drop low-confidence evidence */
+  confidence: number;
+  /** carried so the display filter can prove a quote belongs to its theme */
+  theme: string;
 };
 
 export type Theme = {
@@ -45,7 +49,7 @@ export type Bridge = {
   in_core_themes: number;
   in_context_themes: number;
   top_shared_needs: [string, number][];
-  quotes: { quote: string; source: string; theme: string; url: string | null }[];
+  quotes: Quote[];
 };
 
 export type Scoring = {

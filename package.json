@@ -16,7 +16,8 @@
     "discovery:analyze": "node scripts/discovery/3-analyze.mjs",
     "discovery:holdout": "node scripts/discovery/4-holdout.mjs",
     "discovery:fetch": "node scripts/discovery/0-fetch-appstore.mjs && node scripts/discovery/1-normalize.mjs",
-    "verify:cart": "tsx scripts/verify-cart.ts"
+    "verify:cart": "tsx scripts/verify-cart.ts",
+    "verify:quotes": "tsx scripts/verify-quotes.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.58.0",
