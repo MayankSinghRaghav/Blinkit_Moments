@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CATEGORIES } from "@/lib/data/catalog";
 import { useDemo } from "@/lib/session";
+import { countItems } from "@/lib/cart";
 
 const NAV = [
   ["/", "Shop"],
@@ -36,7 +37,7 @@ export function AppHeader() {
           </div>
 
           <span className="ml-auto shrink-0 rounded-lg bg-brand px-3 py-2 text-sm font-semibold text-white sm:ml-0">
-            🛒 {demo.cart.length}
+            🛒 {countItems(demo.cart)}
           </span>
         </div>
       </div>

@@ -7,21 +7,21 @@ import type { Suggestion } from "@/lib/scoring";
 export function SuggestionCard({
   suggestion,
   occasionId,
-  added,
-  onAdd,
+  qty,
+  onQtyChange,
 }: {
   suggestion: Suggestion;
   occasionId: string;
-  added: boolean;
-  onAdd: () => void;
+  qty: number;
+  onQtyChange: (qty: number) => void;
 }) {
   const p = byId(suggestion.product_id);
   if (!p) return null;
   return (
     <ProductCard
       product={p}
-      added={added}
-      onAdd={onAdd}
+      qty={qty}
+      onQtyChange={onQtyChange}
       badge={
         <span className="absolute left-1.5 top-1.5 rounded-md bg-brand px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
           New · {p.category}

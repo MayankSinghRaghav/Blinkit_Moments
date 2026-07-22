@@ -4,6 +4,7 @@ import { CartPanel } from "@/components/CartPanel";
 import { ProductCard } from "@/components/ProductCard";
 import { CATEGORIES, PRODUCTS } from "@/lib/data/catalog";
 import { setDemo } from "@/lib/session";
+import { qtyOf, setQty } from "@/lib/cart";
 import { useOccasion } from "@/lib/useOccasion";
 
 export default function ShopPage() {
@@ -52,8 +53,8 @@ export default function ShopPage() {
                   <ProductCard
                     key={p.id}
                     product={p}
-                    added={demo.cart.includes(p.id)}
-                    onAdd={() => setDemo({ cart: [...demo.cart, p.id] })}
+                    qty={qtyOf(demo.cart, p.id)}
+                    onQtyChange={(q) => setDemo({ cart: setQty(demo.cart, p.id, q) })}
                   />
                 ))}
               </div>

@@ -4,7 +4,8 @@ import { CartPanel } from "@/components/CartPanel";
 import { ComfortDial } from "@/components/ComfortDial";
 import { SuggestionCard } from "@/components/SuggestionCard";
 import { setDemo } from "@/lib/session";
-import { tryItem } from "@/lib/actions";
+import { setSuggestionQty } from "@/lib/actions";
+import { qtyOf } from "@/lib/cart";
 import { useOccasion } from "@/lib/useOccasion";
 
 export default function MomentsPage() {
@@ -44,8 +45,8 @@ export default function MomentsPage() {
                 key={s.product_id}
                 suggestion={s}
                 occasionId={data.occasion_id}
-                added={demo.cart.includes(s.product_id)}
-                onAdd={() => tryItem(demo, s.product_id)}
+                qty={qtyOf(demo.cart, s.product_id)}
+                onQtyChange={(q) => setSuggestionQty(demo, s.product_id, q)}
               />
             ))}
           </div>

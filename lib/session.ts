@@ -1,10 +1,11 @@
 "use client";
 import { useSyncExternalStore } from "react";
+import { toLines, type CartLine } from "@/lib/cart";
 
 export type Demo = {
   sessionId: string;
-  /** product ids currently in the cart */
-  cart: string[];
+  /** the single source of truth for the cart — id + quantity */
+  cart: CartLine[];
   comfort: number;
   context: string;
   occasionId: string;
@@ -14,7 +15,10 @@ export type Demo = {
 const KEY = "blinkit-moments";
 const START: Demo = {
   sessionId: "",
-  cart: ["bev_beer", "snk_nachos"],
+  cart: [
+    { id: "bev_beer", qty: 1 },
+    { id: "snk_nachos", qty: 2 },
+  ],
   comfort: 50,
   context: "Fri 7pm",
   occasionId: "",
@@ -29,7 +33,9 @@ function hydrate() {
   if (hydrated || typeof window === "undefined") return;
   hydrated = true;
   const saved = localStorage.getItem(KEY);
+  // toLines migrates carts saved as string[] by earlier versions
   state = saved ? { ...START, ...JSON.parse(saved) } : START;
+  state = { ...state, cart: toLines(state.cart) };
   if (!state.sessionId) state = { ...state, sessionId: crypto.randomUUID() };
   localStorage.setItem(KEY, JSON.stringify(state));
 }

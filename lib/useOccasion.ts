@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { byId } from "@/lib/data/catalog";
+import { resolve } from "@/lib/cart";
 import type { CompleteResult } from "@/lib/scoring";
 import { setDemo, useDemo } from "@/lib/session";
 
@@ -12,7 +12,8 @@ export function useOccasion(endpoint: "infer-occasion" | "complete") {
   const [data, setData] = useState<OccasionState>(null);
   const [loading, setLoading] = useState(true);
   const { sessionId, cart, comfort, context } = demo;
-  const cartKey = cart.join(",");
+  // ids only: changing a quantity must not spend an LLM call
+  const cartKey = cart.map((l) => l.id).join(",");
 
   useEffect(() => {
     if (!sessionId) return;
@@ -26,12 +27,15 @@ export function useOccasion(endpoint: "infer-occasion" | "complete") {
         signal: ac.signal,
         body: JSON.stringify({
           session_id: sessionId,
-          basket: cartKey
-            .split(",")
-            .filter(Boolean)
-            .map((id) => byId(id))
-            .filter((p) => p !== undefined)
-            .map((p) => ({ product_id: p.id, name: p.name, category: p.category })),
+          // built from cartKey, not cart, so the effect has no stale-closure
+          // dependency on the array identity
+          basket: resolve(cartKey.split(",").filter(Boolean).map((id) => ({ id, qty: 1 }))).map(
+            ({ product }) => ({
+              product_id: product.id,
+              name: product.name,
+              category: product.category,
+            }),
+          ),
           context,
           comfort,
         }),

@@ -22,3 +22,24 @@ body {
 .no-bar::-webkit-scrollbar {
   display: none;
 }
+
+/* Quantity digit slide. Purely decorative: the digit's resting state is fully
+   visible, so if the animation never runs the number is still readable. */
+@keyframes qty-in {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.qty-in {
+  animation: qty-in 0.16s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .qty-in {
+    animation: none;
+  }
+}

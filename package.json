@@ -15,10 +15,12 @@
     "discovery:tag": "node --env-file-if-exists=.env.local scripts/discovery/2-tag.mjs",
     "discovery:analyze": "node scripts/discovery/3-analyze.mjs",
     "discovery:holdout": "node scripts/discovery/4-holdout.mjs",
-    "discovery:fetch": "node scripts/discovery/0-fetch-appstore.mjs && node scripts/discovery/1-normalize.mjs"
+    "discovery:fetch": "node scripts/discovery/0-fetch-appstore.mjs && node scripts/discovery/1-normalize.mjs",
+    "verify:cart": "tsx scripts/verify-cart.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.58.0",
+    "framer-motion": "^12.42.2",
     "next": "15.5.20",
     "react": "19.1.0",
     "react-dom": "19.1.0",

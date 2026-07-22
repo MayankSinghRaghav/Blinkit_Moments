@@ -42,7 +42,7 @@ export default async function WhyPage({
             </span>
           </div>
           <div className="mt-4 hidden lg:block">
-            <AddButton productId={product.id} />
+            <AddButton productId={product.id} label={product.name} />
           </div>
         </div>
 
@@ -62,7 +62,7 @@ export default async function WhyPage({
           </div>
 
           <div className="mt-6 lg:hidden">
-            <AddButton productId={product.id} />
+            <AddButton productId={product.id} label={product.name} />
           </div>
 
           {degraded && (
