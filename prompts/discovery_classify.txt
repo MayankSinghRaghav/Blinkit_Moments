@@ -1,6 +1,16 @@
 You are coding quick-commerce user feedback from India against a FIXED codebook.
 Assign each document the single best-fitting theme. If nothing fits, use "none".
 
+Real corpora always contain documents that fit no theme: one-word ratings, spam,
+off-topic chatter, complaints about something outside the codebook. Returning
+"none" for those is correct and expected — do not stretch a theme to cover a
+document it does not describe. A codebook that appears to fit every document is
+evidence the coding was too generous, not that the codebook was good.
+
+Report confidence honestly. Use a value below 0.5 when you are guessing; those
+codes are discarded rather than counted, so a low score costs nothing and a
+falsely high one corrupts the analysis.
+
 CODEBOOK
 {{codebook}}
 

@@ -399,14 +399,14 @@ export default function DiscoveryPage() {
             .join(" · ")}
         />
         <Stat
-          label="Coded"
+          label="Accepted"
           value={String(data.corpus.with_theme)}
-          sub={`${data.corpus.unclassified} fit no theme`}
+          sub={`${data.corpus.no_theme + data.corpus.low_confidence} rejected`}
         />
         <Stat
-          label="Valid themes"
-          value={String(data.validity.valid_themes)}
-          sub={`${data.validity.rejected_themes.length} rejected`}
+          label="Rejected"
+          value={String(data.corpus.no_theme + data.corpus.low_confidence)}
+          sub={`${data.corpus.no_theme} fit no theme · ${data.corpus.low_confidence} below ${data.corpus.min_code_confidence} confidence`}
         />
         <Stat
           label="Agreement (κ)"
@@ -496,7 +496,17 @@ export default function DiscoveryPage() {
           <h2 className="text-sm font-bold">How this was validated</h2>
           <ul className="mt-3 space-y-2 text-xs leading-relaxed text-black/60">
             <li>
+              <strong className="text-ink">Confidence floor.</strong> {data.validity.code_rule}{" "}
+              {data.corpus.no_theme} document{data.corpus.no_theme === 1 ? "" : "s"} fit no theme
+              and {data.corpus.low_confidence} were coded below the floor; all{" "}
+              {data.corpus.no_theme + data.corpus.low_confidence} are excluded from every figure
+              on this page and remain in the stored data.
+            </li>
+            <li>
               <strong className="text-ink">Cross-source rule.</strong> {data.validity.rule}{" "}
+              {data.validity.valid_themes} theme
+              {data.validity.valid_themes === 1 ? "" : "s"} passed,{" "}
+              {data.validity.rejected_themes.length} rejected.{" "}
               {data.validity.rejected_themes.length > 0 && (
                 <>
                   Rejected:{" "}

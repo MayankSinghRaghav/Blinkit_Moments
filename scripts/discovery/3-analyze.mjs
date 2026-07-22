@@ -35,7 +35,20 @@ const taxonomy = existsSync(TAXONOMY) ? JSON.parse(readFileSync(TAXONOMY, "utf8"
 const byId = new Map(corpus.map((d) => [d.id, d]));
 const meta = new Map(taxonomy.map((t) => [t.id, t]));
 const codes = Object.entries(tagged).map(([id, c]) => ({ ...c, id }));
-const coded = codes.filter((c) => c.theme && c.theme !== "none");
+
+/* ---------- accept / reject each code ----------
+ * A code is only evidence if the coder committed to it. Below the threshold the
+ * model was hedging, and letting a 0.3 sit in a theme's frequency next to a 0.95
+ * inflates every downstream number. Rejected codes are excluded from the
+ * analysis but counted and reported — a pipeline that never rejects anything is
+ * not being honest about its inputs.
+ */
+const MIN_CODE_CONFIDENCE = Number(arg("--min-confidence", 0.5));
+
+const noTheme = codes.filter((c) => !c.theme || c.theme === "none");
+const withTheme = codes.filter((c) => c.theme && c.theme !== "none");
+const lowConfidence = withTheme.filter((c) => (Number(c.confidence) || 0) < MIN_CODE_CONFIDENCE);
+const coded = withTheme.filter((c) => (Number(c.confidence) || 0) >= MIN_CODE_CONFIDENCE);
 
 /* ---------- cluster by theme ---------- */
 const clusters = new Map();
@@ -303,9 +316,15 @@ const insights = {
   generated_from: INPUT,
   corpus: {
     documents: corpus.length,
-    coded: codes.length,
+    returned_by_coder: codes.length,
+    // documents accepted into the analysis
     with_theme: coded.length,
-    unclassified: codes.length - coded.length,
+    // documents the coder could not place in the codebook
+    no_theme: noTheme.length,
+    // placed, but below the confidence floor — excluded from every theme stat
+    low_confidence: lowConfidence.length,
+    min_code_confidence: MIN_CODE_CONFIDENCE,
+    uncoded: corpus.length - codes.length,
     by_source: corpus.reduce((a, d) => ({ ...a, [d.source]: (a[d.source] || 0) + 1 }), {}),
     sources: [...new Set(corpus.map((d) => d.source))],
   },
@@ -321,6 +340,7 @@ const insights = {
   bridge,
   validity: {
     rule: "A theme is reported only if it appears in at least 2 independent sources.",
+    code_rule: `A code is accepted only if the coder's confidence is at least ${MIN_CODE_CONFIDENCE}; below that it is counted as rejected and excluded from every theme statistic.`,
     valid_themes: valid.length,
     rejected_themes: rejected.map((t) => ({ id: t.id, label: t.label, sources: t.sources, count: t.count })),
   },
@@ -340,7 +360,12 @@ const insights = {
 
 writeFileSync(OUT, JSON.stringify(insights, null, 1));
 
-console.log(`corpus      ${insights.corpus.documents} docs, ${insights.corpus.with_theme} themed`);
+console.log(`corpus      ${insights.corpus.documents} docs`);
+console.log(
+  `accepted    ${coded.length}  ` +
+    `(rejected: ${noTheme.length} fit no theme, ${lowConfidence.length} below ${MIN_CODE_CONFIDENCE} confidence` +
+    `${insights.corpus.uncoded ? `, ${insights.corpus.uncoded} not yet coded` : ""})`,
+);
 console.log(`themes      ${themes.length} induced, ${valid.length} pass the cross-source rule`);
 if (rejected.length) console.log(`rejected    ${rejected.map((t) => t.id).join(", ")}`);
 const row = (t) =>

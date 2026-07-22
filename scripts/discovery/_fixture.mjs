@@ -32,6 +32,24 @@ const pick = (arr) => arr[Math.floor(rand() * arr.length)];
 
 const tagged = {};
 for (const d of corpus) {
+  // Model the shape of a real coding run, not a perfect one: some documents fit
+  // nothing in the codebook, and some codes are guesses. Without these the
+  // rejection counters read 0 and the pipeline looks implausibly clean.
+  if (rand() < 0.08) {
+    tagged[d.id] = {
+      theme: "none",
+      segment: "unclear",
+      unmet_need: null,
+      sentiment: "neutral",
+      category_context: null,
+      confidence: Number((0.2 + rand() * 0.3).toFixed(2)),
+      quote: null,
+      source: d.source,
+      url: d.url,
+      rating: d.rating,
+    };
+    continue;
+  }
   // real reviews skew to complaints; bias the fixture the same way so the
   // scoring stage gets a realistic distribution rather than a uniform one
   const theme = rand() < 0.55 ? pick(THEMES.slice(5)) : pick(THEMES);
@@ -42,7 +60,8 @@ for (const d of corpus) {
     unmet_need: rand() < 0.6 ? pick(["smaller trial pack", "know if quality is good", "see what else is stocked", "reliable delivery", "fair pricing"]) : null,
     sentiment: rand() < 0.62 ? "negative" : rand() < 0.7 ? "neutral" : "positive",
     category_context: pick(CATS),
-    confidence: Number((0.55 + rand() * 0.4).toFixed(2)),
+    // a tail below the 0.5 accept floor, so low-confidence rejects are visible
+    confidence: Number((rand() < 0.1 ? 0.25 + rand() * 0.25 : 0.55 + rand() * 0.4).toFixed(2)),
     quote: sentence,
     source: d.source,
     url: d.url,

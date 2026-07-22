@@ -79,14 +79,18 @@ export type Insights = {
   generated_from: string;
   corpus: {
     documents: number;
-    coded: number;
+    returned_by_coder: number;
     with_theme: number;
-    unclassified: number;
+    no_theme: number;
+    low_confidence: number;
+    min_code_confidence: number;
+    uncoded: number;
     by_source: Record<string, number>;
     sources: string[];
   };
   validity: {
     rule: string;
+    code_rule: string;
     valid_themes: number;
     rejected_themes: { id: string; label: string; sources: string[]; count: number }[];
   };
