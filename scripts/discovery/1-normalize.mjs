@@ -48,6 +48,27 @@ for (const r of read("data/raw/play-reviews.json")) {
   });
 }
 
+// Apple serves ~2.2k reviews but the other two sources sit near 500 each.
+// Left uncapped, App Store complaints would dominate every frequency figure,
+// so take the India storefront first and cap the total.
+const APPSTORE_CAP = 600;
+const appstore = read("data/raw/appstore-reviews.json")
+  .sort((a, b) => (a.store === "in" ? -1 : 0) - (b.store === "in" ? -1 : 0))
+  .slice(0, APPSTORE_CAP);
+
+for (const r of appstore) {
+  push({
+    id: `appstore_${key(r.reviewId)}`,
+    source: "app_store",
+    text: `${norm(r.title)}. ${norm(r.body)}`,
+    rating: r.rating ?? null,
+    date: r.date ?? null,
+    helpful: 0,
+    storefront: r.store,
+    url: `https://apps.apple.com/${r.store}/app/id960335206`,
+  });
+}
+
 for (const r of read("data/raw/reddit.json")) {
   const sub = r.communityName || r.subredditName || r.parsedCommunityName || null;
   push({

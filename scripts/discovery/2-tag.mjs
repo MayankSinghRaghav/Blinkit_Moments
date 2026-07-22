@@ -23,9 +23,9 @@ if (!KEY) {
 
 // The Gemini free tier allows 20 generateContent calls PER DAY, so the batch
 // size is set by that budget, not by what the model finds comfortable:
-// 2 open-coding calls + ceil(984/100) classification calls = 12 calls total.
+// 2 open-coding calls + ceil(1284/120) classification calls = 13 calls total.
 // Flash has a 1M context; 100 docs/call is nowhere near the ceiling.
-const BATCH = 100;
+const BATCH = 120;
 const OPEN_BATCH = 60;
 const SAMPLE = 120; // documents used for open coding
 const PACE_MS = 4500;
@@ -75,14 +75,23 @@ async function buildTaxonomy() {
   if (existsSync("data/taxonomy.json")) {
     return JSON.parse(readFileSync("data/taxonomy.json", "utf8"));
   }
-  // stratified: alternate sources so neither dominates the induced taxonomy
-  const play = corpus.filter((d) => d.source === "play_store");
-  const reddit = corpus.filter((d) => d.source === "reddit");
-  const sample = [];
-  for (let i = 0; sample.length < SAMPLE && (play[i] || reddit[i]); i++) {
-    if (play[i]) sample.push(play[i]);
-    if (reddit[i]) sample.push(reddit[i]);
+  // stratified round-robin across every source, so no single one dominates the
+  // induced taxonomy — App Store was silently excluded when this was hardcoded
+  const bySource = new Map();
+  for (const d of corpus) {
+    if (!bySource.has(d.source)) bySource.set(d.source, []);
+    bySource.get(d.source).push(d);
   }
+  const lists = [...bySource.values()];
+  const sample = [];
+  for (let i = 0; sample.length < SAMPLE && lists.some((l) => l[i]); i++) {
+    for (const l of lists) if (l[i] && sample.length < SAMPLE) sample.push(l[i]);
+  }
+  console.log(
+    `  sample sources: ${[...bySource.keys()]
+      .map((s) => `${s} ${sample.filter((d) => d.source === s).length}`)
+      .join(", ")}`,
+  );
 
   console.log(`Pass A — open coding ${sample.length} docs`);
   // resume from a partial codebook if a previous run ran out of quota mid-pass

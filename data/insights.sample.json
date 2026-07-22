@@ -1,16 +1,18 @@
 {
  "generated_from": "data/tagged.sample.json",
  "corpus": {
-  "documents": 984,
-  "coded": 984,
-  "with_theme": 984,
+  "documents": 1284,
+  "coded": 1284,
+  "with_theme": 1284,
   "unclassified": 0,
   "by_source": {
    "play_store": 498,
+   "app_store": 300,
    "reddit": 486
   },
   "sources": [
    "play_store",
+   "app_store",
    "reddit"
   ]
  },
@@ -21,308 +23,76 @@
  },
  "themes": [
   {
-   "id": "delivery_reliability",
-   "label": "Delivery and order accuracy",
-   "definition": "Missing items, wrong items, late delivery.",
-   "relevance": "context",
-   "count": 247,
-   "frequency": 0.25101626016260165,
-   "severity": 0.6761133603238867,
-   "confidence": 0.746194331983806,
-   "sources": [
-    "play_store",
-    "reddit"
-   ],
-   "cross_source_valid": true,
-   "per_source": {
-    "play_store": 122,
-    "reddit": 125
-   },
-   "segments": {
-    "deal_seeker": 56,
-    "urban_professional": 33,
-    "unclear": 44,
-    "power_user": 27,
-    "new_life_stage": 42,
-    "routine_replenisher": 45
-   },
-   "segment_spread": 1,
-   "top_needs": [
-    [
-     "reliable delivery",
-     36
-    ],
-    [
-     "smaller trial pack",
-     35
-    ],
-    [
-     "know if quality is good",
-     31
-    ],
-    [
-     "fair pricing",
-     29
-    ],
-    [
-     "see what else is stocked",
-     27
-    ]
-   ],
-   "categories": [
-    [
-     "Groceries",
-     35
-    ],
-    [
-     "Baby",
-     33
-    ],
-    [
-     "Pet",
-     33
-    ],
-    [
-     "Household",
-     31
-    ],
-    [
-     "PersonalCare",
-     29
-    ]
-   ],
-   "quotes": [
-    {
-     "quote": "Very disappointing experience.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear"
-    },
-    {
-     "quote": "It was good when I started using the app but now it's kind of like scamming people.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "deal_seeker"
-    },
-    {
-     "quote": "It charges high price for vegetables and fruits as compared to the market.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 2,
-     "segment": "deal_seeker"
-    },
-    {
-     "quote": "Blinkit's return and refund policy is pathetic.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "deal_seeker"
-    },
-    {
-     "quote": "300 is always better than nothing remember, slowly slowly ho jayega, bas remember to sace and work on your skills in the meanwhile for better pay.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/blinkit/comments/1usorw9/1st_day_in_blinkit/owpfjcf/",
-     "rating": null,
-     "segment": "routine_replenisher"
-    },
-    {
-     "quote": "People can instead purchase the same product, touch it, feel it, see it from their own eyes and \"opt\" to return it if they don't like it.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/StartUpIndia/comments/1q4rekd/everyone_is_fighting_a_bloodbath_over_10minute/nxulenr/",
-     "rating": null,
-     "segment": "unclear"
-    }
-   ],
-   "opportunity": 89.9
-  },
-  {
-   "id": "support_quality",
-   "label": "Customer support quality",
-   "definition": "Unresolved complaints, scripted replies, refunds.",
-   "relevance": "context",
-   "count": 249,
-   "frequency": 0.2530487804878049,
-   "severity": 0.6024096385542169,
-   "confidence": 0.7535742971887555,
-   "sources": [
-    "play_store",
-    "reddit"
-   ],
-   "cross_source_valid": true,
-   "per_source": {
-    "play_store": 123,
-    "reddit": 126
-   },
-   "segments": {
-    "unclear": 55,
-    "routine_replenisher": 35,
-    "deal_seeker": 48,
-    "new_life_stage": 36,
-    "power_user": 38,
-    "urban_professional": 37
-   },
-   "segment_spread": 1,
-   "top_needs": [
-    [
-     "fair pricing",
-     39
-    ],
-    [
-     "reliable delivery",
-     37
-    ],
-    [
-     "know if quality is good",
-     27
-    ],
-    [
-     "see what else is stocked",
-     24
-    ],
-    [
-     "smaller trial pack",
-     23
-    ]
-   ],
-   "categories": [
-    [
-     "Groceries",
-     45
-    ],
-    [
-     "Household",
-     35
-    ],
-    [
-     "Snacks",
-     33
-    ],
-    [
-     "Wellness",
-     31
-    ],
-    [
-     "Baby",
-     25
-    ]
-   ],
-   "quotes": [
-    {
-     "quote": "Pathetic service from @letsblinkit!",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "power_user"
-    },
-    {
-     "quote": "The worst customer service you can receive was provided by Blinkit.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "power_user"
-    },
-    {
-     "quote": "Then then ask loudly enough for the neighbours to hear: “Kis naam se order hai?",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/delhi/comments/1skcz85/blinkit_zepto_are_selling_vibrators_for_women_in/og3teuw/",
-     "rating": null,
-     "segment": "unclear"
-    },
-    {
-     "quote": "I got sick of flipping between Blinkit, Instamart, and Zepto to save a few rupees, so I built an app that compares them for you.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/bakchodi/comments/1m7ujrz/i_got_sick_of_flipping_between_blinkit_instamart/",
-     "rating": null,
-     "segment": "unclear"
-    },
-    {
-     "quote": "I placed an order on Blinkit and completed the payment based on the delivery time shown before checkout.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "deal_seeker"
-    },
-    {
-     "quote": "Decent platform, however return process has to be smooth if any item is near expiry or you don't like the quality because most of the items are food items.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 4,
-     "segment": "routine_replenisher"
-    }
-   ],
-   "opportunity": 88.1
-  },
-  {
    "id": "pricing_and_charges",
    "label": "Pricing, surge and handling fees",
    "definition": "Complaints about fees, surge pricing, or value.",
    "relevance": "context",
-   "count": 235,
-   "frequency": 0.23882113821138212,
-   "severity": 0.6680851063829787,
-   "confidence": 0.7517021276595749,
+   "count": 315,
+   "frequency": 0.24532710280373832,
+   "severity": 0.6603174603174603,
+   "confidence": 0.7529841269841271,
    "sources": [
     "play_store",
+    "app_store",
     "reddit"
    ],
    "cross_source_valid": true,
    "per_source": {
     "play_store": 127,
-    "reddit": 108
+    "app_store": 63,
+    "reddit": 125
    },
    "segments": {
-    "deal_seeker": 39,
-    "unclear": 39,
-    "power_user": 38,
-    "routine_replenisher": 41,
-    "new_life_stage": 37,
-    "urban_professional": 41
+    "deal_seeker": 55,
+    "unclear": 52,
+    "power_user": 48,
+    "routine_replenisher": 55,
+    "new_life_stage": 51,
+    "urban_professional": 54
    },
    "segment_spread": 1,
    "top_needs": [
     [
      "see what else is stocked",
-     45
-    ],
-    [
-     "reliable delivery",
-     30
-    ],
-    [
-     "smaller trial pack",
-     29
+     53
     ],
     [
      "know if quality is good",
-     26
+     41
+    ],
+    [
+     "smaller trial pack",
+     38
+    ],
+    [
+     "reliable delivery",
+     38
     ],
     [
      "fair pricing",
-     24
+     34
     ]
    ],
    "categories": [
     [
      "Snacks",
-     35
+     46
     ],
     [
      "Household",
-     34
+     44
     ],
     [
      "Baby",
-     31
-    ],
-    [
-     "Pet",
-     26
+     38
     ],
     [
      "Groceries",
-     25
+     36
+    ],
+    [
+     "Wellness",
+     36
     ]
    ],
    "quotes": [
@@ -341,79 +111,319 @@
      "segment": "routine_replenisher"
     },
     {
-     "quote": "I Went To Shopping Today And I Compared Prices Between Mall, Online Stores and Local Shops.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/Frugal_Ind/comments/1rtrcyb/i_went_to_shopping_today_and_i_compared_prices/",
-     "rating": null,
-     "segment": "power_user"
-    },
-    {
-     "quote": "I mostly use Flipkart minutes because of the membership and the coins I’ve earned from it so far.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/chennaicity/comments/1tvggbg/which_quickcommerce_app_does_chennai_use_the_most/opi6juc/",
-     "rating": null,
-     "segment": "power_user"
-    },
-    {
-     "quote": "Hello Blinkit Team, I really enjoy shopping on Blinkit because the delivery is fast and the product quality is good.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 5,
-     "segment": "deal_seeker"
-    },
-    {
-     "quote": "Sometimes your delivery partners take their time and even seem to do their personal work while delivering orders.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "quote": "Worst company. I purchased a boat 108 stone it was damaged and they are not refunding the speaker they are saying to go",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
      "rating": 1,
+     "segment": "power_user"
+    },
+    {
+     "quote": "Zepto & Blinkit Deals Now Available on DealMilGai ⚡.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/dealmilgai/comments/1r60z3d/zepto_blinkit_deals_now_available_on_dealmilgai/",
+     "rating": null,
+     "segment": "power_user"
+    },
+    {
+     "quote": "wont hsbc be a problem to get if my home and office address are in different cities and i am staying in the city of my office address?",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/CreditCardsIndia/comments/1rvbu6t/hsbc_live_vs_sbi_cashback_vs_axis_cashback_which/oargeq1/",
+     "rating": null,
+     "segment": "routine_replenisher"
+    },
+    {
+     "quote": "Replicating a delivery network for kirana local stores picking up a charger from an electronics shop, balm from a pharmacy, and eggs from a grocery store is a logistical nightmare.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/indianstartups/comments/1t2ipuu/introducing_zoro_a_new_quick_commerce_app_for/ojpyxi1/",
+     "rating": null,
      "segment": "unclear"
     }
    ],
-   "opportunity": 87.2
+   "opportunity": 89.8
   },
   {
-   "id": "habit_autopilot",
-   "label": "Ordering the same basket on autopilot",
-   "definition": "User describes reordering the same items without browsing.",
-   "relevance": "core",
-   "count": 65,
-   "frequency": 0.06605691056910569,
-   "severity": 0.5692307692307692,
-   "confidence": 0.7476923076923079,
+   "id": "delivery_reliability",
+   "label": "Delivery and order accuracy",
+   "definition": "Missing items, wrong items, late delivery.",
+   "relevance": "context",
+   "count": 309,
+   "frequency": 0.24065420560747663,
+   "severity": 0.6828478964401294,
+   "confidence": 0.7456310679611654,
    "sources": [
     "play_store",
+    "app_store",
     "reddit"
    ],
    "cross_source_valid": true,
    "per_source": {
-    "play_store": 30,
-    "reddit": 35
+    "play_store": 122,
+    "app_store": 80,
+    "reddit": 107
    },
    "segments": {
-    "power_user": 12,
-    "urban_professional": 5,
-    "new_life_stage": 12,
-    "routine_replenisher": 11,
-    "unclear": 8,
-    "deal_seeker": 17
+    "deal_seeker": 69,
+    "urban_professional": 40,
+    "unclear": 59,
+    "power_user": 34,
+    "new_life_stage": 50,
+    "routine_replenisher": 57
    },
    "segment_spread": 1,
    "top_needs": [
     [
-     "smaller trial pack",
-     10
+     "reliable delivery",
+     43
     ],
     [
-     "reliable delivery",
-     8
+     "smaller trial pack",
+     40
     ],
     [
      "fair pricing",
-     7
+     39
+    ],
+    [
+     "see what else is stocked",
+     39
+    ],
+    [
+     "know if quality is good",
+     36
+    ]
+   ],
+   "categories": [
+    [
+     "Household",
+     43
+    ],
+    [
+     "Pet",
+     43
+    ],
+    [
+     "Baby",
+     41
+    ],
+    [
+     "PersonalCare",
+     38
+    ],
+    [
+     "Groceries",
+     38
+    ]
+   ],
+   "quotes": [
+    {
+     "quote": "Very disappointing experience.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear"
+    },
+    {
+     "quote": "It was good when I started using the app but now it's kind of like scamming people.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "deal_seeker"
+    },
+    {
+     "quote": "automatically adds stuff on that platform A lite version which just shows price of a product given a city/location, and availability of that product on other platforms will be good.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/GadgetsIndia/comments/1m6l4cl/i_got_sick_of_flipping_between_blinkit_instamart/n5sq5ek/",
+     "rating": null,
+     "segment": "deal_seeker"
+    },
+    {
+     "quote": "Interesting concept, though the UI/UX could be refined further",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/dealsforindia/comments/1nd3p4r/built_a_free_app_to_compare_realtime_cab_fares/ne5qxt8/",
+     "rating": null,
+     "segment": "power_user"
+    },
+    {
+     "quote": "It charges high price for vegetables and fruits as compared to the market.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 2,
+     "segment": "deal_seeker"
+    },
+    {
+     "quote": "Blinkit's return and refund policy is pathetic.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "deal_seeker"
+    }
+   ],
+   "opportunity": 89.5
+  },
+  {
+   "id": "support_quality",
+   "label": "Customer support quality",
+   "definition": "Unresolved complaints, scripted replies, refunds.",
+   "relevance": "context",
+   "count": 311,
+   "frequency": 0.24221183800623053,
+   "severity": 0.617363344051447,
+   "confidence": 0.7496141479099679,
+   "sources": [
+    "play_store",
+    "app_store",
+    "reddit"
+   ],
+   "cross_source_valid": true,
+   "per_source": {
+    "play_store": 123,
+    "app_store": 78,
+    "reddit": 110
+   },
+   "segments": {
+    "unclear": 65,
+    "routine_replenisher": 46,
+    "deal_seeker": 54,
+    "new_life_stage": 47,
+    "power_user": 53,
+    "urban_professional": 46
+   },
+   "segment_spread": 1,
+   "top_needs": [
+    [
+     "reliable delivery",
+     46
+    ],
+    [
+     "fair pricing",
+     43
+    ],
+    [
+     "know if quality is good",
+     34
+    ],
+    [
+     "smaller trial pack",
+     33
+    ],
+    [
+     "see what else is stocked",
+     30
+    ]
+   ],
+   "categories": [
+    [
+     "Groceries",
+     56
+    ],
+    [
+     "Snacks",
+     43
+    ],
+    [
+     "Household",
+     41
+    ],
+    [
+     "Wellness",
+     36
+    ],
+    [
+     "PersonalCare",
+     34
+    ]
+   ],
+   "quotes": [
+    {
+     "quote": "Pathetic service from @letsblinkit!",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "power_user"
+    },
+    {
+     "quote": "The worst customer service you can receive was provided by Blinkit.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "power_user"
+    },
+    {
+     "quote": "Update. Pls kuch blinkit aap mai kuch aisa upgrade kar ki non veg option ko band kiya ja sake veg walo ko dikkat hoti h",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
+     "segment": "unclear"
+    },
+    {
+     "quote": "You guys are doing the Best with the ambulance work.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
+     "segment": "unclear"
+    },
+    {
+     "quote": "I placed an order on Blinkit and completed the payment based on the delivery time shown before checkout.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "deal_seeker"
+    },
+    {
+     "quote": "Decent platform, however return process has to be smooth if any item is near expiry or you don't like the quality because most of the items are food items.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 4,
+     "segment": "routine_replenisher"
+    }
+   ],
+   "opportunity": 87.9
+  },
+  {
+   "id": "trust_gap_new_category",
+   "label": "Won't risk an unfamiliar category",
+   "definition": "User hesitates to buy an unfamiliar category without knowing quality.",
+   "relevance": "core",
+   "count": 67,
+   "frequency": 0.05218068535825545,
+   "severity": 0.7014925373134329,
+   "confidence": 0.7347761194029855,
+   "sources": [
+    "play_store",
+    "app_store",
+    "reddit"
+   ],
+   "cross_source_valid": true,
+   "per_source": {
+    "play_store": 21,
+    "app_store": 12,
+    "reddit": 34
+   },
+   "segments": {
+    "new_life_stage": 14,
+    "unclear": 13,
+    "power_user": 11,
+    "urban_professional": 11,
+    "deal_seeker": 13,
+    "routine_replenisher": 5
+   },
+   "segment_spread": 1,
+   "top_needs": [
+    [
+     "reliable delivery",
+     9
     ],
     [
      "see what else is stocked",
      7
+    ],
+    [
+     "fair pricing",
+     6
+    ],
+    [
+     "smaller trial pack",
+     5
     ],
     [
      "know if quality is good",
@@ -422,24 +432,143 @@
    ],
    "categories": [
     [
-     "Snacks",
-     11
-    ],
-    [
-     "Wellness",
-     10
+     "Pet",
+     14
     ],
     [
      "Groceries",
+     12
+    ],
+    [
+     "PersonalCare",
+     8
+    ],
+    [
+     "Snacks",
+     7
+    ],
+    [
+     "Household",
+     6
+    ]
+   ],
+   "quotes": [
+    {
+     "quote": "Do you compare grocery prices across Blinkit/Zepto/BigBasket or just stick to one app?",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/personalfinanceindia/comments/1r3zqn1/do_you_compare_grocery_prices_across/",
+     "rating": null,
+     "segment": "urban_professional"
+    },
+    {
+     "quote": "⭐⭐⭐⭐⭐ Excellent quality blanket!",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 5,
+     "segment": "power_user"
+    },
+    {
+     "quote": "Price. Some prices are higher than market for example Blinkit Verka Dahi is 35 though in market it’s Rs 30/ my question",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 1,
+     "segment": "deal_seeker"
+    },
+    {
+     "quote": "This app is good, but very expensive.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
+     "segment": "urban_professional"
+    },
+    {
+     "quote": "me: /u/Tricky_Investment793 * Account Age: 5 months * Link karma: 3 * Comment karma: 25 * Confirmed trades: 6 ^^This ^^information ^^does ^^not ^^guarantee ^^a ^^successful ^^trade.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/IndiaDealsExchange/comments/1rkdhl0/h_150_discount_on_zomato_swiggy_blinkit_zepto_w/o8jru8m/",
+     "rating": null,
+     "segment": "urban_professional"
+    },
+    {
+     "quote": "very happy with blinkit service.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 5,
+     "segment": "unclear"
+    }
+   ],
+   "opportunity": 51.7
+  },
+  {
+   "id": "habit_autopilot",
+   "label": "Ordering the same basket on autopilot",
+   "definition": "User describes reordering the same items without browsing.",
+   "relevance": "core",
+   "count": 76,
+   "frequency": 0.059190031152647975,
+   "severity": 0.5526315789473685,
+   "confidence": 0.740526315789474,
+   "sources": [
+    "play_store",
+    "app_store",
+    "reddit"
+   ],
+   "cross_source_valid": true,
+   "per_source": {
+    "play_store": 30,
+    "app_store": 25,
+    "reddit": 21
+   },
+   "segments": {
+    "power_user": 14,
+    "urban_professional": 9,
+    "new_life_stage": 13,
+    "routine_replenisher": 11,
+    "unclear": 11,
+    "deal_seeker": 18
+   },
+   "segment_spread": 1,
+   "top_needs": [
+    [
+     "smaller trial pack",
+     13
+    ],
+    [
+     "reliable delivery",
+     11
+    ],
+    [
+     "see what else is stocked",
      9
     ],
     [
-     "Baby",
+     "fair pricing",
      7
     ],
     [
-     "Pet",
-     7
+     "know if quality is good",
+     6
+    ]
+   ],
+   "categories": [
+    [
+     "Snacks",
+     14
+    ],
+    [
+     "Wellness",
+     11
+    ],
+    [
+     "Groceries",
+     10
+    ],
+    [
+     "Baby",
+     9
+    ],
+    [
+     "Household",
+     9
     ]
    ],
    "quotes": [
@@ -458,17 +587,17 @@
      "segment": "new_life_stage"
     },
     {
-     "quote": "Tried to set location by allowing access but its setting wrong location in browser.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/pune/comments/1oo5dh5/built_an_app_to_compare_7_quick_commerce_stores/nn1quvu/",
-     "rating": null,
+     "quote": "Very convenient in hot summer weather to have it at ur doorstep in just blinking of ur eyes.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
      "segment": "deal_seeker"
     },
     {
-     "quote": "What do you guys actually use instant marts (Blinkit, Zepto, Swiggy Instamart, BigBasket Now etc.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/hyderabad/comments/1rqo2yx/what_do_you_guys_actually_use_instant_marts/",
-     "rating": null,
+     "quote": "Very bad service. Not helpful my son ordered it by mistake I said them to cancel order in 10 the said me your order is p",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 1,
      "segment": "unclear"
     },
     {
@@ -479,318 +608,205 @@
      "segment": "new_life_stage"
     },
     {
-     "quote": "felling short & want something nice to drink ( much like Diet Coke funda ) Whey you use to add to the list of protein sources you intake along with eggs, chicken, paneer, milk etc.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/Fitness_India/comments/1p3it1m/blinkit_got_the_stock_other_protein_brands_are/nq50s00/",
-     "rating": null,
+     "quote": "It seems like a push sales which might not last long though if customers found a better option.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 3,
      "segment": "new_life_stage"
     }
    ],
-   "opportunity": 50.1
-  },
-  {
-   "id": "trust_gap_new_category",
-   "label": "Won't risk an unfamiliar category",
-   "definition": "User hesitates to buy an unfamiliar category without knowing quality.",
-   "relevance": "core",
-   "count": 47,
-   "frequency": 0.047764227642276426,
-   "severity": 0.6595744680851063,
-   "confidence": 0.74,
-   "sources": [
-    "play_store",
-    "reddit"
-   ],
-   "cross_source_valid": true,
-   "per_source": {
-    "play_store": 21,
-    "reddit": 26
-   },
-   "segments": {
-    "new_life_stage": 9,
-    "unclear": 9,
-    "power_user": 7,
-    "urban_professional": 9,
-    "deal_seeker": 9,
-    "routine_replenisher": 4
-   },
-   "segment_spread": 1,
-   "top_needs": [
-    [
-     "reliable delivery",
-     7
-    ],
-    [
-     "fair pricing",
-     6
-    ],
-    [
-     "see what else is stocked",
-     5
-    ],
-    [
-     "smaller trial pack",
-     3
-    ],
-    [
-     "know if quality is good",
-     3
-    ]
-   ],
-   "categories": [
-    [
-     "Groceries",
-     9
-    ],
-    [
-     "Pet",
-     8
-    ],
-    [
-     "PersonalCare",
-     6
-    ],
-    [
-     "Snacks",
-     6
-    ],
-    [
-     "Baby",
-     4
-    ]
-   ],
-   "quotes": [
-    {
-     "quote": "⭐⭐⭐⭐⭐ Excellent quality blanket!",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 5,
-     "segment": "power_user"
-    },
-    {
-     "quote": "Other protein brands are done for.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/Fitness_India/comments/1p3it1m/blinkit_got_the_stock_other_protein_brands_are/",
-     "rating": null,
-     "segment": "deal_seeker"
-    },
-    {
-     "quote": "Holy shit you have 30 available stock.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/Fitness_India/comments/1p3it1m/blinkit_got_the_stock_other_protein_brands_are/nq528dn/",
-     "rating": null,
-     "segment": "urban_professional"
-    },
-    {
-     "quote": "very happy with blinkit service.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 5,
-     "segment": "unclear"
-    },
-    {
-     "quote": "ed The Social Society, a social media management agency focused on helping Indian startups and small businesses build a stronger online presence without spending agency-level lakhs.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/indianstartups/comments/1t2ipuu/introducing_zoro_a_new_quick_commerce_app_for/okermf2/",
-     "rating": null,
-     "segment": "urban_professional"
-    },
-    {
-     "quote": "Anyone using it should not order food items, particularly that need refrigeration.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "power_user"
-    }
-   ],
-   "opportunity": 49.2
+   "opportunity": 48.6
   },
   {
    "id": "pack_size_too_big",
    "label": "First purchase feels too expensive to risk",
    "definition": "User wants a smaller/cheaper way to try something new.",
    "relevance": "core",
-   "count": 43,
-   "frequency": 0.04369918699186992,
-   "severity": 0.6046511627906976,
-   "confidence": 0.7537209302325583,
+   "count": 64,
+   "frequency": 0.04984423676012461,
+   "severity": 0.609375,
+   "confidence": 0.7623437499999999,
    "sources": [
     "play_store",
+    "app_store",
     "reddit"
    ],
    "cross_source_valid": true,
    "per_source": {
     "play_store": 22,
-    "reddit": 21
+    "app_store": 10,
+    "reddit": 32
    },
    "segments": {
-    "routine_replenisher": 9,
-    "urban_professional": 7,
-    "deal_seeker": 9,
-    "power_user": 7,
+    "routine_replenisher": 11,
+    "urban_professional": 8,
+    "deal_seeker": 16,
+    "power_user": 14,
     "unclear": 4,
-    "new_life_stage": 7
+    "new_life_stage": 11
    },
    "segment_spread": 1,
    "top_needs": [
     [
      "smaller trial pack",
-     9
+     11
     ],
     [
      "see what else is stocked",
-     8
+     10
     ],
     [
      "fair pricing",
-     6
-    ],
-    [
-     "reliable delivery",
-     5
+     8
     ],
     [
      "know if quality is good",
-     5
+     7
+    ],
+    [
+     "reliable delivery",
+     6
     ]
    ],
    "categories": [
     [
      "Wellness",
-     9
+     14
     ],
     [
      "Household",
+     14
+    ],
+    [
+     "Snacks",
      9
     ],
     [
      "Pet",
-     7
-    ],
-    [
-     "Snacks",
-     6
+     8
     ],
     [
      "Baby",
-     3
+     5
     ]
    ],
    "quotes": [
     {
-     "quote": "This is classic cost push inflation getting priced into end users.",
+     "quote": "https://preview.redd.it/ffkd7ac5bhlg1.jpeg?width=1024&format=pjpg&auto=webp&s=3177dc5aa1c20e9fb510fe68636c12fe6056eed4 L",
      "source": "reddit",
-     "url": "https://www.reddit.com/r/IndianStreetBets/comments/1tnv3vk/swiggy_eternal_meesho_nykaa_in_focus_amid_rising/onwu6bk/",
+     "url": "https://www.reddit.com/r/CreditCardsIndia/comments/1rdms6v/help_me_to_organise/o7687r7/",
      "rating": null,
      "segment": "routine_replenisher"
     },
     {
-     "quote": "Blinkit Guy earning vs Labour Earning in India.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/IndianWorkplace/comments/1pnxb2c/blinkit_guy_earning_vs_labour_earning_in_india/",
-     "rating": null,
+     "quote": "Cheated by sending expired product.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 1,
      "segment": "routine_replenisher"
     },
     {
-     "quote": "Built an app to compare 7 quick commerce stores + cab fares (Uber, Ola, Rapido) in one place.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/gurgaon/comments/1onabrh/built_an_app_to_compare_7_quick_commerce_stores/",
-     "rating": null,
+     "quote": "A reliable vendor for everything last minute .",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
      "segment": "urban_professional"
     },
     {
-     "quote": "But don’t you think that your app will be removed/banned as it violates the company’s terms and conditions?",
+     "quote": "prices same product ki compare nhi kiya tha.",
      "source": "reddit",
-     "url": "https://www.reddit.com/r/indianstartups/comments/1miuttw/built_a_free_app_to_compare_realtime_cab_fares/n77echz/",
+     "url": "https://www.reddit.com/r/jaipur/comments/1m6f59q/i_got_sick_of_flipping_between_blinkit_instamart/n4j39wd/",
+     "rating": null,
+     "segment": "power_user"
+    },
+    {
+     "quote": "Dark stores, warehouses, data centers, and commercial rentals.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/StartupFuture/comments/1tihboj/quick_commerce_is_changing_india_fast_but_heres/on1p7te/",
      "rating": null,
      "segment": "new_life_stage"
     },
     {
-     "quote": "As we go on adding items, the limit of free delivery goes on increasing.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 2,
-     "segment": "deal_seeker"
-    },
-    {
-     "quote": "[H] 150 Discount on Zomato Swiggy blinkit zepto [W] UPI PF/Admin split.",
+     "quote": "You think the guy in a $4,000 suit is going to set foot in a supermarket?",
      "source": "reddit",
-     "url": "https://www.reddit.com/r/IndiaDealsExchange/comments/1rkdhl0/h_150_discount_on_zomato_swiggy_blinkit_zepto_w/",
+     "url": "https://www.reddit.com/r/personalfinanceindia/comments/1r3zqn1/do_you_compare_grocery_prices_across/o5aipd0/",
      "rating": null,
-     "segment": "power_user"
+     "segment": "deal_seeker"
     }
    ],
-   "opportunity": 46.8
+   "opportunity": 48.4
   },
   {
    "id": "didnt_know_stocked",
    "label": "Unaware the category exists on the app",
    "definition": "User did not know the platform sold that category.",
    "relevance": "core",
-   "count": 51,
-   "frequency": 0.051829268292682924,
-   "severity": 0.5490196078431373,
-   "confidence": 0.7535294117647058,
+   "count": 76,
+   "frequency": 0.059190031152647975,
+   "severity": 0.5394736842105263,
+   "confidence": 0.7530263157894735,
    "sources": [
     "play_store",
+    "app_store",
     "reddit"
    ],
    "cross_source_valid": true,
    "per_source": {
     "play_store": 25,
-    "reddit": 26
+    "app_store": 22,
+    "reddit": 29
    },
    "segments": {
-    "unclear": 7,
-    "urban_professional": 7,
-    "routine_replenisher": 8,
-    "power_user": 12,
-    "new_life_stage": 8,
-    "deal_seeker": 9
+    "unclear": 12,
+    "urban_professional": 11,
+    "routine_replenisher": 12,
+    "power_user": 14,
+    "new_life_stage": 12,
+    "deal_seeker": 15
    },
    "segment_spread": 1,
    "top_needs": [
     [
      "know if quality is good",
-     10
+     12
     ],
     [
      "fair pricing",
-     7
+     9
     ],
     [
      "reliable delivery",
-     5
+     8
     ],
     [
      "smaller trial pack",
-     5
+     8
     ],
     [
      "see what else is stocked",
-     3
+     7
     ]
    ],
    "categories": [
     [
      "Snacks",
-     11
-    ],
-    [
-     "Wellness",
-     9
-    ],
-    [
-     "Household",
-     6
+     15
     ],
     [
      "PersonalCare",
-     6
+     13
     ],
     [
-     "Baby",
-     5
+     "Wellness",
+     12
+    ],
+    [
+     "Household",
+     10
+    ],
+    [
+     "Groceries",
+     8
     ]
    ],
    "quotes": [
@@ -816,17 +832,17 @@
      "segment": "power_user"
     },
     {
-     "quote": "https://preview.redd.it/ffkd7ac5bhlg1.jpeg?width=1024&format=pjpg&auto=webp&s=3177dc5aa1c20e9fb510fe68636c12fe6056eed4 L",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/CreditCardsIndia/comments/1rdms6v/help_me_to_organise/o7687r7/",
-     "rating": null,
+     "quote": "They deliver tempered electronic product and then refuse toe listen customer complaints.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 1,
      "segment": "new_life_stage"
     },
     {
-     "quote": "Need recommendations for a good cashback card for grocery shopping (blinkit, zepto) and online shopping (mostly amazon).",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/CreditCardsIndia/comments/1mxfljn/need_recommendations_for_a_good_cashback_card_for/",
-     "rating": null,
+     "quote": "Life savers. Jab b ap kahi jao or kuch bhul jao To market open nhi milega ya phir market me jo apko cahiye vo nhi hoga L",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
      "segment": "deal_seeker"
     },
     {
@@ -837,85 +853,87 @@
      "segment": "deal_seeker"
     }
    ],
-   "opportunity": 46.7
+   "opportunity": 48.2
   },
   {
    "id": "discovery_is_search_only",
    "label": "Discovery happens only through search",
    "definition": "User finds products by typing a known name, not by browsing.",
    "relevance": "core",
-   "count": 47,
-   "frequency": 0.047764227642276426,
-   "severity": 0.574468085106383,
-   "confidence": 0.76531914893617,
+   "count": 66,
+   "frequency": 0.0514018691588785,
+   "severity": 0.5909090909090909,
+   "confidence": 0.7587878787878787,
    "sources": [
     "play_store",
+    "app_store",
     "reddit"
    ],
    "cross_source_valid": true,
    "per_source": {
     "play_store": 28,
-    "reddit": 19
+    "app_store": 10,
+    "reddit": 28
    },
    "segments": {
-    "new_life_stage": 10,
-    "urban_professional": 8,
-    "routine_replenisher": 7,
-    "power_user": 9,
-    "deal_seeker": 6,
-    "unclear": 7
+    "new_life_stage": 11,
+    "urban_professional": 10,
+    "routine_replenisher": 10,
+    "power_user": 13,
+    "deal_seeker": 12,
+    "unclear": 10
    },
    "segment_spread": 1,
    "top_needs": [
     [
-     "reliable delivery",
-     6
-    ],
-    [
      "fair pricing",
-     6
+     9
     ],
     [
-     "see what else is stocked",
-     6
+     "reliable delivery",
+     8
     ],
     [
      "smaller trial pack",
-     5
+     7
     ],
     [
      "know if quality is good",
-     2
+     7
+    ],
+    [
+     "see what else is stocked",
+     7
     ]
    ],
    "categories": [
     [
-     "Wellness",
-     8
+     "Snacks",
+     11
     ],
     [
-     "Snacks",
-     8
+     "Wellness",
+     10
     ],
     [
      "Household",
-     7
+     10
+    ],
+    [
+     "PersonalCare",
+     8
     ],
     [
      "Baby",
-     6
-    ],
-    [
-     "Groceries",
-     4
+     7
     ]
    ],
    "quotes": [
     {
-     "quote": "Hi, i recently got live plus.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/CreditCardsIndia/comments/1rvbu6t/hsbc_live_vs_sbi_cashback_vs_axis_cashback_which/oarvqjb/",
-     "rating": null,
+     "quote": "Have to increase delivery time for delivery boys and girls for life safety.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 5,
      "segment": "power_user"
     },
     {
@@ -947,119 +965,119 @@
      "segment": "unclear"
     },
     {
-     "quote": "My Short Credit Card Journey (From 0 Cards to Full Setup in 2 Years).",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/CreditCardsIndia/comments/1pe367u/my_short_credit_card_journey_from_0_cards_to_full/",
-     "rating": null,
+     "quote": "Continuously stale vegetables.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 1,
      "segment": "power_user"
     }
    ],
-   "opportunity": 46.7
+   "opportunity": 48.2
   }
  ],
  "segments": [
   {
    "id": "deal_seeker",
-   "count": 193,
+   "count": 252,
    "top_themes": [
     {
      "id": "delivery_reliability",
      "label": "Delivery and order accuracy",
-     "n": 56
-    },
-    {
-     "id": "support_quality",
-     "label": "Customer support quality",
-     "n": 48
+     "n": 69
     },
     {
      "id": "pricing_and_charges",
      "label": "Pricing, surge and handling fees",
-     "n": 39
+     "n": 55
+    },
+    {
+     "id": "support_quality",
+     "label": "Customer support quality",
+     "n": 54
     }
    ]
   },
   {
    "id": "new_life_stage",
-   "count": 161,
+   "count": 209,
    "top_themes": [
-    {
-     "id": "delivery_reliability",
-     "label": "Delivery and order accuracy",
-     "n": 42
-    },
     {
      "id": "pricing_and_charges",
      "label": "Pricing, surge and handling fees",
-     "n": 37
+     "n": 51
+    },
+    {
+     "id": "delivery_reliability",
+     "label": "Delivery and order accuracy",
+     "n": 50
     },
     {
      "id": "support_quality",
      "label": "Customer support quality",
-     "n": 36
+     "n": 47
     }
    ]
   },
   {
    "id": "routine_replenisher",
-   "count": 160,
+   "count": 207,
    "top_themes": [
     {
      "id": "delivery_reliability",
      "label": "Delivery and order accuracy",
-     "n": 45
+     "n": 57
     },
     {
      "id": "pricing_and_charges",
      "label": "Pricing, surge and handling fees",
-     "n": 41
+     "n": 55
     },
     {
      "id": "support_quality",
      "label": "Customer support quality",
-     "n": 35
+     "n": 46
     }
    ]
   },
   {
    "id": "power_user",
-   "count": 150,
+   "count": 201,
    "top_themes": [
     {
      "id": "support_quality",
      "label": "Customer support quality",
-     "n": 38
+     "n": 53
     },
     {
      "id": "pricing_and_charges",
      "label": "Pricing, surge and handling fees",
-     "n": 38
+     "n": 48
     },
     {
      "id": "delivery_reliability",
      "label": "Delivery and order accuracy",
-     "n": 27
+     "n": 34
     }
    ]
   },
   {
    "id": "urban_professional",
-   "count": 147,
+   "count": 189,
    "top_themes": [
     {
      "id": "pricing_and_charges",
      "label": "Pricing, surge and handling fees",
-     "n": 41
+     "n": 54
     },
     {
      "id": "support_quality",
      "label": "Customer support quality",
-     "n": 37
+     "n": 46
     },
     {
      "id": "delivery_reliability",
      "label": "Delivery and order accuracy",
-     "n": 33
+     "n": 40
     }
    ]
   }
