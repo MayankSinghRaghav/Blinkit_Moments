@@ -8,6 +8,7 @@ const NAV = [
   ["/", "Shop"],
   ["/moments", "Moments"],
   ["/tracker", "Tracker"],
+  ["/discovery", "Discovery"],
 ];
 
 export function AppHeader() {

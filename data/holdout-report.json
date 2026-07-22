@@ -1,0 +1,41 @@
+{
+  "coded_pairs": 60,
+  "raw_agreement": 0.7,
+  "expected_by_chance": 0.171,
+  "cohens_kappa": 0.638,
+  "interpretation": "substantial",
+  "top_confusions": [
+    [
+      "delivery_reliability → pricing_and_charges",
+      2
+    ],
+    [
+      "delivery_reliability → support_quality",
+      2
+    ],
+    [
+      "didnt_know_stocked → pricing_and_charges",
+      1
+    ],
+    [
+      "pricing_and_charges → support_quality",
+      1
+    ],
+    [
+      "discovery_is_search_only → pricing_and_charges",
+      1
+    ],
+    [
+      "habit_autopilot → pricing_and_charges",
+      1
+    ],
+    [
+      "habit_autopilot → pack_size_too_big",
+      1
+    ],
+    [
+      "habit_autopilot → discovery_is_search_only",
+      1
+    ]
+  ]
+}

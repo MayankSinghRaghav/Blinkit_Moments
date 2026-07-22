@@ -6,3 +6,4 @@ next-env.d.ts
 
 # large raw scrapes are reproducible via the discovery scripts
 data/raw/
+data/holdout-coded.csv

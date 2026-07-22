@@ -1,0 +1,50 @@
+[
+  {
+    "id": "habit_autopilot",
+    "label": "Ordering the same basket on autopilot",
+    "definition": "User describes reordering the same items without browsing.",
+    "relevance": "core"
+  },
+  {
+    "id": "discovery_is_search_only",
+    "label": "Discovery happens only through search",
+    "definition": "User finds products by typing a known name, not by browsing.",
+    "relevance": "core"
+  },
+  {
+    "id": "trust_gap_new_category",
+    "label": "Won't risk an unfamiliar category",
+    "definition": "User hesitates to buy an unfamiliar category without knowing quality.",
+    "relevance": "core"
+  },
+  {
+    "id": "pack_size_too_big",
+    "label": "First purchase feels too expensive to risk",
+    "definition": "User wants a smaller/cheaper way to try something new.",
+    "relevance": "core"
+  },
+  {
+    "id": "didnt_know_stocked",
+    "label": "Unaware the category exists on the app",
+    "definition": "User did not know the platform sold that category.",
+    "relevance": "core"
+  },
+  {
+    "id": "delivery_reliability",
+    "label": "Delivery and order accuracy",
+    "definition": "Missing items, wrong items, late delivery.",
+    "relevance": "context"
+  },
+  {
+    "id": "pricing_and_charges",
+    "label": "Pricing, surge and handling fees",
+    "definition": "Complaints about fees, surge pricing, or value.",
+    "relevance": "context"
+  },
+  {
+    "id": "support_quality",
+    "label": "Customer support quality",
+    "definition": "Unresolved complaints, scripted replies, refunds.",
+    "relevance": "context"
+  }
+]
