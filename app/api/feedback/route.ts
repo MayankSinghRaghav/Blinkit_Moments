@@ -2,7 +2,7 @@ import { z } from "zod";
 import { byId } from "@/lib/data/catalog";
 import { rateLimit, clientKey, tooMany } from "@/lib/rate-limit";
 import { addEvents, getSession } from "@/lib/store";
-import { ADOPTION_GOAL, adoptedCategories } from "@/lib/scoring";
+import { ADOPTION_DEPTH, ADOPTION_GOAL, adoptedCategories } from "@/lib/scoring";
 
 export const runtime = "nodejs";
 
@@ -23,6 +23,7 @@ export async function GET(req: Request) {
   return Response.json({
     adopted: adoptedCategories(baseline, events),
     goal: ADOPTION_GOAL,
+    depth: ADOPTION_DEPTH,
     baseline,
     events,
   });
@@ -48,5 +49,5 @@ export async function POST(req: Request) {
 
   const { baseline, events } = await getSession(parsed.data.session_id);
   const adopted = adoptedCategories(baseline, events);
-  return Response.json({ adopted, goal: ADOPTION_GOAL });
+  return Response.json({ adopted, goal: ADOPTION_GOAL, depth: ADOPTION_DEPTH });
 }

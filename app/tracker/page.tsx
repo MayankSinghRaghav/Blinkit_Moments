@@ -6,7 +6,13 @@ import { byId } from "@/lib/data/catalog";
 import { useDemo } from "@/lib/session";
 import type { AdoptionEvent } from "@/lib/scoring";
 
-type State = { adopted: string[]; goal: number; baseline: string[]; events: AdoptionEvent[] };
+type State = {
+  adopted: string[];
+  goal: number;
+  depth: number;
+  baseline: string[];
+  events: AdoptionEvent[];
+};
 
 export default function TrackerPage() {
   const demo = useDemo();
@@ -38,6 +44,7 @@ export default function TrackerPage() {
   const newCats = [...new Set(trials.map((e) => e.category))].filter(
     (c) => !state?.baseline.includes(c),
   );
+  const met = (state?.adopted.length ?? 0) >= (state?.goal ?? 1);
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -47,12 +54,36 @@ export default function TrackerPage() {
         shop it.
       </p>
 
-      <div className="mt-5 flex flex-col items-center gap-6 rounded-xl border border-line p-6 sm:flex-row sm:items-center">
-        <AdoptionRing adopted={state?.adopted.length ?? 0} goal={state?.goal ?? 3} />
+      <div
+        className={`mt-5 flex items-center gap-3 rounded-xl px-5 py-4 ${
+          met ? "bg-brand text-white" : "bg-tile text-black/55"
+        }`}
+      >
+        <span className="text-xl" aria-hidden>
+          {met ? "✓" : "○"}
+        </span>
+        <div>
+          <p className="text-sm font-bold">
+            {met
+              ? "Counts toward the North Star this month"
+              : "Not yet counting toward the North Star"}
+          </p>
+          <p className={`text-xs ${met ? "text-white/80" : "text-black/45"}`}>
+            Goal: bought from at least {state?.goal ?? 1} new category this month
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-4 flex flex-col items-center gap-6 rounded-xl border border-line p-6 sm:flex-row sm:items-center">
+        <AdoptionRing adopted={state?.adopted.length ?? 0} goal={state?.depth ?? 3} />
         <div className="min-w-0 text-sm">
-          <p className="font-bold">New categories adopted</p>
+          <p className="font-bold">Breadth of adoption</p>
           <p className="mt-1 text-muted">
             {state?.adopted.length ? state.adopted.join(", ") : "None yet"}
+          </p>
+          <p className="mt-2 text-xs text-black/45">
+            The metric only needs one. Breadth is the leading indicator that a trial became a habit
+            rather than a one-off.
           </p>
           <p className="mt-3 text-xs text-black/40">
             Session started with: {state?.baseline.join(", ") || "—"}

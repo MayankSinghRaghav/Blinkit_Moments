@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { rateLimit, clientKey, tooMany } from "@/lib/rate-limit";
 import { addEvents, getSession } from "@/lib/store";
-import { ADOPTION_GOAL, adoptedCategories, type AdoptionEvent } from "@/lib/scoring";
+import { ADOPTION_DEPTH, ADOPTION_GOAL, adoptedCategories, type AdoptionEvent } from "@/lib/scoring";
 
 export const runtime = "nodejs";
 
@@ -30,7 +30,7 @@ export async function POST(req: Request) {
   }
 
   const fresh: AdoptionEvent[] = [];
-  for (const [category, { product_id, occasion_id }] of [...seen].slice(0, ADOPTION_GOAL)) {
+  for (const [category, { product_id, occasion_id }] of [...seen].slice(0, ADOPTION_DEPTH)) {
     const have = counts.get(category) ?? 0;
     for (let i = have; i < 2; i++) {
       fresh.push({ product_id, category, event: i === 0 ? "tried" : "repeat", occasion_id });
@@ -43,5 +43,6 @@ export async function POST(req: Request) {
     inserted: fresh.length,
     adopted: adoptedCategories(after.baseline, after.events),
     goal: ADOPTION_GOAL,
+    depth: ADOPTION_DEPTH,
   });
 }

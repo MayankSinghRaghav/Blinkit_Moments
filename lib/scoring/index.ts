@@ -144,7 +144,14 @@ export type AdoptionEvent = {
   occasion_id?: string | null;
 };
 
-export const ADOPTION_GOAL = 3;
+/**
+ * The company goal is "purchased from AT LEAST ONE new category this month",
+ * so the metric is binary per customer. GOAL is what a session must cross to
+ * count; DEPTH is the stretch we show alongside it, since breadth of adoption
+ * is what turns a one-off trial into a habit.
+ */
+export const ADOPTION_GOAL = 1;
+export const ADOPTION_DEPTH = 3;
 
 /**
  * North Star: a category counts as adopted when it collects >= 2 tried/repeat
