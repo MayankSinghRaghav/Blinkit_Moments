@@ -82,6 +82,9 @@ export type Insights = {
 };
 
 export type Holdout = {
+  model_codes?: string;
+  human_codes?: string;
+  fixture_derived?: boolean;
   coded_pairs: number;
   raw_agreement: number;
   expected_by_chance: number;

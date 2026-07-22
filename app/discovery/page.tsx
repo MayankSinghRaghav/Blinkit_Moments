@@ -268,6 +268,11 @@ function FramingBlock({ bridge }: { bridge: Bridge }) {
 export default function DiscoveryPage() {
   const { data, fixture } = loadInsights();
   const holdout = loadHoldout();
+  // An agreement score is only meaningful next to real coding. Withhold it if
+  // the report itself was scored against fixture codes, or if the page is still
+  // falling back to fixture insights — a real kappa beside placeholder themes
+  // would imply the themes had been validated too.
+  const realHoldout = holdout && !holdout.fixture_derived && !fixture ? holdout : null;
 
   if (!data) {
     return (
@@ -321,8 +326,12 @@ export default function DiscoveryPage() {
         />
         <Stat
           label="Agreement (κ)"
-          value={holdout ? holdout.cohens_kappa.toFixed(2) : "—"}
-          sub={holdout ? `${holdout.interpretation}, n=${holdout.coded_pairs}` : "hold-out not coded yet"}
+          value={realHoldout ? realHoldout.cohens_kappa.toFixed(2) : "—"}
+          sub={
+            realHoldout
+              ? `${realHoldout.interpretation}, n=${realHoldout.coded_pairs}`
+              : "hold-out not coded yet"
+          }
         />
       </div>
 
@@ -404,11 +413,13 @@ export default function DiscoveryPage() {
             </li>
             <li>
               <strong className="text-ink">Blind hold-out coding.</strong>{" "}
-              {holdout ? (
+              {realHoldout ? (
                 <>
-                  {holdout.coded_pairs} documents coded by hand without seeing the model&apos;s
-                  label: {pct(holdout.raw_agreement)} raw agreement, {pct(holdout.expected_by_chance)}{" "}
-                  expected by chance, κ = {holdout.cohens_kappa} ({holdout.interpretation}).
+                  {realHoldout.coded_pairs} documents coded by hand without seeing the model&apos;s
+                  label: {pct(realHoldout.raw_agreement)} raw agreement,{" "}
+                  {pct(realHoldout.expected_by_chance)} expected by chance, κ ={" "}
+                  {realHoldout.cohens_kappa} ({realHoldout.interpretation}). Computed from the two
+                  label sets, not asserted.
                 </>
               ) : (
                 <>

@@ -34,7 +34,38 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const prompt = (n) => readFileSync(`prompts/${n}.txt`, "utf8");
 const fill = (t, v) => Object.entries(v).reduce((s, [k, x]) => s.replaceAll(`{{${k}}}`, x), t);
 
+/* ---------- daily call budget ----------
+ * The free tier allows 20 generateContent calls per project per day, and the
+ * quota resets at midnight Pacific. Tracking spend locally means a re-run knows
+ * what is left instead of discovering it by getting 429s, and stops cleanly
+ * with work saved rather than burning the remainder on retries.
+ */
+const DAILY_BUDGET = Number(process.env.GEMINI_DAILY_CALLS ?? 20);
+const PROGRESS = "data/tag-progress.json";
+/** Pacific day, because that is when Google resets the quota. */
+const quotaDay = () =>
+  new Date().toLocaleDateString("en-CA", { timeZone: "America/Los_Angeles" });
+
+function loadProgress() {
+  const all = existsSync(PROGRESS) ? JSON.parse(readFileSync(PROGRESS, "utf8")) : {};
+  return { all, used: all[quotaDay()] ?? 0 };
+}
+function recordCall(n = 1) {
+  const { all, used } = loadProgress();
+  all[quotaDay()] = used + n;
+  writeFileSync(PROGRESS, JSON.stringify(all, null, 1));
+}
+const remainingCalls = () => Math.max(0, DAILY_BUDGET - loadProgress().used);
+
+class BudgetExhausted extends Error {
+  constructor() {
+    super("daily LLM call budget exhausted");
+  }
+}
+
 async function generate(text, attempt = 0) {
+  if (remainingCalls() <= 0) throw new BudgetExhausted();
+  recordCall(); // count before sending: a call that errors still left the machine
   const res = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${KEY}`,
     {
@@ -52,7 +83,13 @@ async function generate(text, attempt = 0) {
     },
   );
   if (res.status === 429) {
-    if (attempt >= 3) throw new Error("quota exhausted");
+    // The daily cap is the usual cause. Two short retries cover a transient
+    // per-minute limit; beyond that, treat the day as spent and stop rather
+    // than spending the rest of the budget discovering the same thing.
+    if (attempt >= 2) {
+      recordCall(DAILY_BUDGET); // park the budget so a re-run today exits at once
+      throw new BudgetExhausted();
+    }
     const wait = 20_000 * (attempt + 1);
     console.log(`    429 — waiting ${wait / 1000}s`);
     await sleep(wait);
@@ -108,7 +145,9 @@ async function buildTaxonomy() {
     } catch (e) {
       // never lose induced themes to a quota error
       writeFileSync("data/taxonomy.partial.json", JSON.stringify([...themes.values()], null, 2));
-      console.error(`  stopped: ${e.message} — ${themes.size} themes saved, re-run to continue`);
+      console.error(`  stopped: ${e.message}`);
+      console.error(`  ${themes.size} themes saved to data/taxonomy.partial.json`);
+      console.error(`  re-run tomorrow to finish open coding — nothing is lost`);
       process.exit(1);
     }
     console.log(`  batch ${i / OPEN_BATCH + 1}: ${themes.size} distinct themes so far`);
@@ -127,7 +166,19 @@ async function classify(taxonomy) {
     ? JSON.parse(readFileSync("data/tagged.json", "utf8"))
     : {};
   const todo = corpus.filter((d) => !tagged[d.id]);
-  console.log(`Pass B — ${todo.length} of ${corpus.length} still to code`);
+  const done = () => Object.keys(tagged).length;
+  console.log(
+    `Pass B — coded ${done()} / remaining ${todo.length}  (corpus ${corpus.length})`,
+  );
+  if (!todo.length) {
+    console.log("  nothing to do — every document is already coded");
+    return tagged;
+  }
+  const batches = Math.ceil(todo.length / BATCH);
+  console.log(
+    `  ${batches} batch${batches === 1 ? "" : "es"} of ${BATCH} needed · ` +
+      `${remainingCalls()} of ${DAILY_BUDGET} calls left today`,
+  );
 
   const codebook = taxonomy
     .map((t) => `${t.id} | ${t.label} | ${t.definition} | ${t.relevance}`)
@@ -151,10 +202,22 @@ async function classify(taxonomy) {
         tagged[doc.id] = { ...c, quote, source: doc.source, url: doc.url, rating: doc.rating };
       }
       writeFileSync("data/tagged.json", JSON.stringify(tagged, null, 1));
-      console.log(`  ${Object.keys(tagged).length}/${corpus.length} coded`);
+      console.log(
+        `  coded ${done()} / remaining ${corpus.length - done()}  ` +
+          `· ${remainingCalls()} calls left today`,
+      );
     } catch (e) {
+      // every completed batch is already on disk; this only reports where we got to
       writeFileSync("data/tagged.json", JSON.stringify(tagged, null, 1));
-      console.error(`  stopped: ${e.message} — progress saved, re-run to continue`);
+      const budget = e instanceof BudgetExhausted;
+      console.error(`
+  stopped: ${e.message}`);
+      console.error(`  coded ${done()} / remaining ${corpus.length - done()} — progress saved`);
+      console.error(
+        budget
+          ? `  the free tier resets at midnight Pacific; re-run then and it picks up here`
+          : `  re-run to continue from this point`,
+      );
       return tagged;
     }
     await sleep(PACE_MS);
@@ -164,4 +227,13 @@ async function classify(taxonomy) {
 
 const taxonomy = await buildTaxonomy();
 const tagged = await classify(taxonomy);
-console.log(`\ndone: ${Object.keys(tagged).length}/${corpus.length} documents coded`);
+
+const codedCount = Object.keys(tagged).length;
+const remainingCount = corpus.length - codedCount;
+console.log(`\ncoded ${codedCount} / remaining ${remainingCount}  (${corpus.length} total)`);
+console.log(`calls used today: ${loadProgress().used} of ${DAILY_BUDGET}`);
+console.log(
+  remainingCount > 0
+    ? "re-run `npm run discovery:tag` to continue — coded documents are skipped"
+    : "next: npm run discovery:analyze",
+);

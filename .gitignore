@@ -6,7 +6,11 @@ next-env.d.ts
 
 # large raw scrapes are reproducible via the discovery scripts
 data/raw/
-data/holdout-coded.csv
-# generated per-run; the synthetic version must never ship as a real result
+
+# The blank coding sheet is regenerated per run. The human-coded sheet and the
+# resulting kappa are NOT ignored: they are the evidence behind the reported
+# agreement score, and /discovery reads the report at build time.
 data/holdout.csv
-data/holdout-report.json
+
+# local quota bookkeeping, specific to one machine and one day
+data/tag-progress.json

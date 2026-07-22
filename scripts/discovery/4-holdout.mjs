@@ -95,6 +95,11 @@ if (process.argv.includes("--score")) {
   for (const [h, l] of disagreements) confusion[`${h} → ${l}`] = (confusion[`${h} → ${l}`] || 0) + 1;
 
   const report = {
+    // provenance, so a report generated from fixture data can never be mistaken
+    // for a measured one on the page
+    model_codes: INPUT,
+    human_codes: CODED,
+    fixture_derived: INPUT.includes(".sample."),
     coded_pairs: pairs.length,
     raw_agreement: Number(po.toFixed(3)),
     expected_by_chance: Number(pe.toFixed(3)),
@@ -108,6 +113,10 @@ if (process.argv.includes("--score")) {
   console.log(`raw agreement       ${(po * 100).toFixed(1)}%`);
   console.log(`expected by chance  ${(pe * 100).toFixed(1)}%`);
   console.log(`Cohen's kappa       ${report.cohens_kappa} (${strength})`);
+  if (report.fixture_derived) {
+    console.log(`
+!! scored against ${INPUT} — this is fixture data, not a real agreement score`);
+  }
   if (report.top_confusions.length) {
     console.log(`\nmost common disagreements (human → model)`);
     for (const [k, n] of report.top_confusions) console.log(`  ${n}x  ${k}`);
