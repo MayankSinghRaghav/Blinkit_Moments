@@ -49,6 +49,10 @@ reviews record failed transactions, not absent ones.
 | 3 Problem definition | ✅ `data/problem-definition.md` — figures provisional at 65% corpus |
 | 4 MVP | ✅ Deployed, 4 screens + `/discovery` |
 
+Also written: `data/business-case.md` (sizing, guardrails, kill criteria),
+`data/experiment-design.md` (A/B + the 3-arm test that isolates the occasion
+framing). Sample sizes from `scripts/experiment-power.mjs`.
+
 ## Immediate next actions, in order
 
 1. **Finish coding** (quota resets midnight Pacific):
@@ -57,12 +61,10 @@ reviews record failed transactions, not absent ones.
 2. **Hold-out κ**: `npm run discovery:holdout` → hand-code 60 rows into
    `data/holdout-coded.csv` → `node scripts/discovery/4-holdout.mjs --score`.
    Must be human-coded. `/discovery` shows "—" until it exists.
-3. **Business case + experiment design** — the next Phase 2 items; nothing
-   exists yet. Baseline (~50%) and guardrails are named in problem-definition.md
-   section 5 but not modelled.
+3. **Deck** — the largest remaining gap. Nothing exists.
 4. **Supabase env vars in Vercel** — production is `"store":"in-memory"`,
    so the tracker reads empty across lambdas. USER ACTION, 5 min.
-5. **Deck** — none exists. Likely the primary evaluation artifact.
+4. **Deck** — none exists. Likely the primary evaluation artifact.
 
 ## Product decisions already made from research — don't undo
 
@@ -88,7 +90,6 @@ reviews record failed transactions, not absent ones.
   `WhyPanel` unlabelled as illustrative.
 - "Clustering" is a group-by on an LLM label (`3-analyze.mjs`) — no embeddings.
 - 3 of 7 required sources (no forums, no social media — X is paywalled on Apify).
-- No business case, no experiment design.
 - MVP was committed before the discovery engine — provable from git. Own it in
   the writeup rather than implying otherwise.
 - LLM degrades to the deterministic matcher after ~2 production calls (20/day
