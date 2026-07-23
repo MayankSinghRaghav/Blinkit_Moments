@@ -43,7 +43,7 @@ reviews record failed transactions, not absent ones.
 
 | Part | State |
 |---|---|
-| 1 Discovery engine | 🟡 **830/1284 coded** (quota cut in). 18-theme codebook induced from real data. `/discovery` serves real insights. **454 documents remain** |
+| 1 Discovery engine | 🟡 **830/1284 coded** (quota cut in). 18-theme codebook induced from real data. `/discovery` serves real insights. **454 documents remain**; codebook has near-duplicate themes to merge before the hold-out |
 | 2 Interviews | ✅ 6 committed in `data/interviews/` with leading-question flags + limitations |
 | 2 Survey | ✅ n=26 committed, analysed, `data/survey.json` generated reproducibly |
 | 3 Problem definition | ✅ `data/problem-definition.md` — figures provisional at 65% corpus |
@@ -61,16 +61,28 @@ framing). Sample sizes from `scripts/experiment-power.mjs`.
 2. **Hold-out κ**: `npm run discovery:holdout` → hand-code 60 rows into
    `data/holdout-coded.csv` → `node scripts/discovery/4-holdout.mjs --score`.
    Must be human-coded. `/discovery` shows "—" until it exists.
-3. **Deck** — the largest remaining gap. Nothing exists.
-4. **Supabase env vars in Vercel** — production is `"store":"in-memory"`,
-   so the tracker reads empty across lambdas. USER ACTION, 5 min.
-4. **Deck** — none exists. Likely the primary evaluation artifact.
+3. **Merge near-duplicate themes** before the hold-out is coded. Open coding
+   produced `customer_support_failure` + `poor_customer_support`,
+   `delivery_issues` + `delivery_inconsistencies` + `delivery_time_expectations`,
+   `pricing_discrepancies` + `pricing_and_fees`. A human coder will coin-flip
+   between them and kappa will come out low for a codebook flaw, not a coding
+   one. Deterministic, no quota.
+4. **Regenerate the deck** after the corpus and kappa land:
+   `node scripts/build-deck.mjs` — every figure is read from the data files.
+5. **Vercel still reports `"store":"in-memory"`** despite the env vars being
+   added. Check they are on the Production environment, names exact, and that a
+   deployment has run since. USER ACTION.
 
 ## Product decisions already made from research — don't undo
 
-- **Suggestions capped at 3** (`lib/scoring/index.ts`). Nikhil: "one or two
-  useful suggestions, not ten". Comfort dial now changes *which* categories, not
-  how many.
+- **Suggestions capped at 3** — `MAX_SUGGESTIONS` in `lib/scoring/index.ts`.
+  Nikhil: "one or two useful suggestions, not ten".
+- **Comfort dial deleted entirely** — UI, session, store, API, prompt, evals.
+  No participant asked for it; two asked for less friction.
+- **Dismiss path exists** — `dismissed` event, per-card control, session
+  suppression, `dismiss_rate` on the feedback GET. Needed migration 0002.
+- **Store writes throw on failure.** They used to swallow the Supabase error and
+  return 200, silently losing adoption events. Do not revert that.
 - **Occasion catalog realigned** (`lib/occasions/index.ts`), each with an
   `evidence` field: removed `fitness_kickoff` and `baby_arrival` (zero mentions
   across 6 interviews + 26 responses); added `hosting_guests` and `movie_night`
@@ -82,18 +94,18 @@ framing). Sample sizes from `scripts/experiment-power.mjs`.
 
 ## Known open criticisms (from an independent review)
 
-- Comfort dial has zero research support — **recommended for removal**, not yet
-  done.
-- No dismiss/negative-feedback path; `feedback` event enum is `tried|repeat`
-  only, so rejection is unrepresentable.
-- Fabricated social proof (`lib/data/catalog.ts` `proof:` fields) renders in
-  `WhyPanel` unlabelled as illustrative.
+Closed since: comfort dial removed, dismiss path added, seeded proof labelled,
+business case and experiment design written, Part 3 written, deck built.
+
+Still open:
 - "Clustering" is a group-by on an LLM label (`3-analyze.mjs`) — no embeddings.
 - 3 of 7 required sources (no forums, no social media — X is paywalled on Apify).
 - MVP was committed before the discovery engine — provable from git. Own it in
   the writeup rather than implying otherwise.
 - LLM degrades to the deterministic matcher after ~2 production calls (20/day
-  free tier). Rules pass 12/12 evals; the LLM has never beaten them.
+  free tier). Rules pass the golden set; the LLM has never beaten them.
+- No inter-coder agreement yet — kappa tile shows "—" until the hold-out is
+  hand-coded.
 
 ## Commands
 
@@ -102,7 +114,8 @@ npm run discovery:tag        # resumable LLM coding, respects 20/day budget
 npm run discovery:analyze    # deterministic, no quota, re-run freely
 npm run discovery:holdout    # blind coding sheet → --score for kappa
 node scripts/discovery/5-survey.mjs   # regenerate data/survey.json from CSV
-npm run eval                 # 12 golden occasion cases, offline
+npm run eval                 # golden occasion cases, offline
+node scripts/build-deck.mjs  # regenerate the deck from the data files
 npm run verify:cart          # 14 assertions   npm run verify:quotes  # 32
 npm run build && npm run lint
 ```
