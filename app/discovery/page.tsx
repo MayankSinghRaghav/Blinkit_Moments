@@ -2,6 +2,7 @@ import {
   loadInsights,
   loadHoldout,
   loadSurvey,
+  loadSensitivity,
   type Survey,
   type Bridge,
   type OccasionSpikers,
@@ -415,6 +416,7 @@ export default function DiscoveryPage() {
   const { data, fixture } = loadInsights();
   const holdout = loadHoldout();
   const survey = loadSurvey();
+  const sens = loadSensitivity();
   // An agreement score is only meaningful next to real coding. Withhold it if
   // the report itself was scored against fixture codes, or if the page is still
   // falling back to fixture insights — a real kappa beside placeholder themes
@@ -604,6 +606,25 @@ export default function DiscoveryPage() {
               {data.scoring.opportunity} Strategic fit = {data.scoring.strategic_fit}{" "}
               {data.scoring.note}
             </li>
+            {sens && (
+              <li>
+                <strong className="text-ink">Weight sensitivity, reported against us.</strong>{" "}
+                Re-scored across {sens.opportunity.weightings_tested} weightings. The{" "}
+                <em>strategic fit</em> ranking is robust (Spearman{" "}
+                {sens.strategic_fit.mean_spearman}, top theme unchanged{" "}
+                {pct(sens.strategic_fit.top1_stable)}), and a core theme tops strategic priority in{" "}
+                <strong className="text-ink">
+                  {pct(sens.conclusions.core_theme_leads_strategic_priority)}
+                </strong>{" "}
+                of them — that conclusion does not depend on our weights. The{" "}
+                <em>raw opportunity</em> ranking is not robust: the top theme changes in{" "}
+                {pct(1 - sens.opportunity.top1_stable)} of weightings and the worst-case rank
+                correlation is {sens.opportunity.min_spearman}. Read the opportunity order as a
+                magnitude band, not an ordering. The confidence floor rejects{" "}
+                {sens.confidence_floor_sweep.find((f) => f.floor === 0.5)?.rejected_low_confidence ?? 0}{" "}
+                codes at 0.5, so it is currently doing no work.
+              </li>
+            )}
             <li>
               <strong className="text-ink">Open before closed.</strong> The codebook is induced from
               a stratified sample first, so the taxonomy comes from the data rather than from the

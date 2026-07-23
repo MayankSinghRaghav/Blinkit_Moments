@@ -1,0 +1,179 @@
+{
+ "note": "Weights were chosen, not derived. This tests whether the conclusions depend on them. Grid holds each weight at >= 0.10 and sums to 1.",
+ "opportunity": {
+  "label": "opportunity",
+  "base_weights": [
+   0.5,
+   0.3,
+   0.2
+  ],
+  "weightings_tested": 120,
+  "baseline_top": [
+   "product_quality_concerns",
+   "pricing_and_fees",
+   "customer_support_failure"
+  ],
+  "top1_stable": 0.292,
+  "topN_set_stable": 0.592,
+  "mean_spearman": 0.825,
+  "min_spearman": 0.338,
+  "most_volatile": [
+   {
+    "id": "convenience_and_speed_value",
+    "label": "Value of Convenience and Speed",
+    "best": 1,
+    "worst": 15,
+    "swing": 14
+   },
+   {
+    "id": "convenience_as_primary_driver",
+    "label": "Convenience as Primary Driver",
+    "best": 2,
+    "worst": 16,
+    "swing": 14
+   },
+   {
+    "id": "pricing_discrepancies",
+    "label": "Higher Pricing and Hidden Fees",
+    "best": 3,
+    "worst": 16,
+    "swing": 13
+   }
+  ],
+  "most_stable": [
+   {
+    "id": "customer_support_failure",
+    "label": "Ineffective Customer Support",
+    "best": 1,
+    "worst": 4,
+    "swing": 3
+   },
+   {
+    "id": "pricing_and_fees",
+    "label": "Pricing and Fees",
+    "best": 2,
+    "worst": 5,
+    "swing": 3
+   },
+   {
+    "id": "product_quality_concerns",
+    "label": "Product Quality Concerns",
+    "best": 1,
+    "worst": 5,
+    "swing": 4
+   }
+  ]
+ },
+ "strategic_fit": {
+  "label": "strategic_fit",
+  "base_weights": [
+   0.5,
+   0.3,
+   0.2
+  ],
+  "weightings_tested": 120,
+  "baseline_top": [
+   "habitual_purchases_value_for_money",
+   "product_quality_concerns",
+   "privacy_and_discretion_breaches"
+  ],
+  "top1_stable": 0.825,
+  "topN_set_stable": 0.95,
+  "mean_spearman": 0.97,
+  "min_spearman": 0.907,
+  "most_volatile": [
+   {
+    "id": "order_accuracy_issues",
+    "label": "Order Accuracy Issues",
+    "best": 6,
+    "worst": 12,
+    "swing": 6
+   },
+   {
+    "id": "order_cancellation_and_refunds",
+    "label": "Order Cancellation and Refund Problems",
+    "best": 8,
+    "worst": 13,
+    "swing": 5
+   },
+   {
+    "id": "pricing_and_fees",
+    "label": "Pricing and Fees",
+    "best": 10,
+    "worst": 14,
+    "swing": 4
+   }
+  ],
+  "most_stable": [
+   {
+    "id": "pricing_discrepancies",
+    "label": "Higher Pricing and Hidden Fees",
+    "best": 17,
+    "worst": 17,
+    "swing": 0
+   },
+   {
+    "id": "delivery_issues",
+    "label": "Delivery Problems",
+    "best": 16,
+    "worst": 16,
+    "swing": 0
+   },
+   {
+    "id": "app_technical_issues",
+    "label": "App Technical Issues",
+    "best": 15,
+    "worst": 15,
+    "swing": 0
+   }
+  ]
+ },
+ "conclusions": {
+  "core_theme_leads_strategic_priority": 1,
+  "context_theme_leads_raw_opportunity": 0.417
+ },
+ "confidence_floor_sweep": [
+  {
+   "floor": 0.3,
+   "accepted": 799,
+   "rejected_low_confidence": 0,
+   "themes_surviving_cross_source": 17,
+   "largest_theme": "convenience_and_speed_value"
+  },
+  {
+   "floor": 0.4,
+   "accepted": 799,
+   "rejected_low_confidence": 0,
+   "themes_surviving_cross_source": 17,
+   "largest_theme": "convenience_and_speed_value"
+  },
+  {
+   "floor": 0.5,
+   "accepted": 799,
+   "rejected_low_confidence": 0,
+   "themes_surviving_cross_source": 17,
+   "largest_theme": "convenience_and_speed_value"
+  },
+  {
+   "floor": 0.6,
+   "accepted": 799,
+   "rejected_low_confidence": 0,
+   "themes_surviving_cross_source": 17,
+   "largest_theme": "convenience_and_speed_value"
+  },
+  {
+   "floor": 0.7,
+   "accepted": 793,
+   "rejected_low_confidence": 6,
+   "themes_surviving_cross_source": 17,
+   "largest_theme": "convenience_and_speed_value"
+  },
+  {
+   "floor": 0.8,
+   "accepted": 720,
+   "rejected_low_confidence": 79,
+   "themes_surviving_cross_source": 17,
+   "largest_theme": "convenience_and_speed_value"
+  }
+ ]
+}

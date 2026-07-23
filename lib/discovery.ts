@@ -112,6 +112,31 @@ export type Survey = {
   stated_preference: Record<string, { n: number; mean: number; top2_box: number; neutral: number }>;
 };
 
+export type Sensitivity = {
+  opportunity: {
+    weightings_tested: number;
+    top1_stable: number;
+    topN_set_stable: number;
+    mean_spearman: number;
+    min_spearman: number;
+    most_volatile: { id: string; label: string; best: number; worst: number; swing: number }[];
+  };
+  strategic_fit: {
+    top1_stable: number;
+    mean_spearman: number;
+    min_spearman: number;
+  };
+  conclusions: {
+    core_theme_leads_strategic_priority: number;
+    context_theme_leads_raw_opportunity: number;
+  };
+  confidence_floor_sweep: {
+    floor: number;
+    accepted: number;
+    rejected_low_confidence: number;
+  }[];
+};
+
 export type Holdout = {
   model_codes?: string;
   human_codes?: string;
@@ -141,3 +166,4 @@ export function loadInsights(): { data: Insights | null; fixture: boolean } {
 
 export const loadHoldout = () => read<Holdout>("holdout-report.json");
 export const loadSurvey = () => read<Survey>("survey.json");
+export const loadSensitivity = () => read<Sensitivity>("sensitivity.json");

@@ -98,6 +98,16 @@ Closed since: comfort dial removed, dismiss path added, seeded proof labelled,
 business case and experiment design written, Part 3 written, deck built.
 
 Still open:
+- **The opportunity ranking is not robust** — sensitivity analysis shows the top
+  theme changes under 71% of weightings (worst Spearman 0.338). Present it as a
+  magnitude band, not an ordering. Strategic fit IS robust (0.97) and "a core
+  theme leads strategic priority" holds at 100% of weightings.
+- **The confidence floor rejects 0 codes at 0.5** — self-reported LLM confidence
+  clusters high and is doing no filtering work. Only the hold-out kappa can say
+  whether it is calibrated. Do not raise the floor before then; that is theatre.
+- **"Value of Convenience and Speed" (n=123, the largest theme) is flagged
+  `core`** but is about the platform value prop, not category exploration. It
+  breaks the "context outranks core on raw" claim. Fix in the codebook merge.
 - "Clustering" is a group-by on an LLM label (`3-analyze.mjs`) — no embeddings.
 - 3 of 7 required sources (no forums, no social media — X is paywalled on Apify).
 - MVP was committed before the discovery engine — provable from git. Own it in
