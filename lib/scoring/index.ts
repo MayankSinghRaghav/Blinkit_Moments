@@ -16,6 +16,12 @@ export type Suggestion = {
   confidence: string;
 };
 
+/**
+ * Research-set ceiling, not a tuning knob. Nikhil (interview 6) named the
+ * failure mode directly; nobody asked for more.
+ */
+export const MAX_SUGGESTIONS = 3;
+
 export type CompleteResult = {
   occasion_id: string;
   occasion_label: string;
@@ -78,7 +84,11 @@ function confidenceNote(p: Product): string {
   return bits.length ? bits.join(" · ") : "New category — free returns on the first order";
 }
 
-/** How far a category sits from the everyday basket. Drives the comfort dial. */
+/**
+ * How far a category sits from the everyday basket. Used to order suggestions
+ * so the familiar ones come first — high-consideration categories are a bigger
+ * ask and go last.
+ */
 const boldness = (c: string) => (HIGH_CONSIDERATION.includes(c as Category) ? 2 : 1);
 
 function pickProduct(category: string): Product | undefined {
@@ -91,35 +101,24 @@ function pickProduct(category: string): Product | undefined {
  * from categories the basket does NOT contain. Shared by /api/infer-occasion,
  * /api/complete, and the eval harness.
  */
-export function completeOccasion(
-  basket: BasketItem[],
-  context: string,
-  comfort: number,
-): CompleteResult {
+export function completeOccasion(basket: BasketItem[], context: string): CompleteResult {
   const { occasion, confidence } = matchOccasion(basket, context);
   if (!occasion) {
     return { occasion_id: "none", occasion_label: "No clear occasion", confidence, suggestions: [] };
   }
 
   const inBasket = new Set(basket.map((i) => i.category));
-  const targets = occasion.target_categories
+  // Familiar categories first: a suggestion the user can evaluate at a glance
+  // earns the right to the ones they cannot.
+  const cats = occasion.target_categories
     .filter((c) => !inBasket.has(c))
-    .sort((a, b) => (comfort >= 50 ? boldness(b) - boldness(a) : boldness(a) - boldness(b)));
-
-  // high comfort => reach past the occasion's own targets, but only after them
-  const stretch =
-    comfort > 70
-      ? HIGH_CONSIDERATION.filter((c) => !inBasket.has(c) && !targets.includes(c))
-      : [];
-  const cats: string[] = [...targets, ...stretch];
+    .sort((a, b) => boldness(a) - boldness(b));
 
   // Capped at 3 on research, not taste. Nikhil, unprompted: "One or two useful
   // suggestions. Not ten" — and "if they're obviously trying to sell me more"
-  // names exactly the failure mode the old maximum of 4 produced. The comfort
-  // dial now changes which categories are reached for, not how many.
-  const count = comfort < 25 ? 2 : 3;
+  // names exactly the failure mode a longer list produced.
   const suggestions = cats
-    .slice(0, count)
+    .slice(0, MAX_SUGGESTIONS)
     .map((c): Suggestion | null => {
       const p = pickProduct(c);
       if (!p) return null;
@@ -147,7 +146,12 @@ export function completeOccasion(
 export type AdoptionEvent = {
   product_id: string;
   category: string;
-  event: "suggested" | "tried" | "repeat";
+  /**
+   * `dismissed` exists because the experiment design sets a dismiss-rate
+   * guardrail, and a guardrail you cannot measure is decoration. It never
+   * counts toward adoption — only toward whether the surface is annoying.
+   */
+  event: "suggested" | "tried" | "repeat" | "dismissed";
   occasion_id?: string | null;
 };
 
@@ -168,7 +172,8 @@ export function adoptedCategories(baseline: string[], events: AdoptionEvent[]): 
   const base = new Set(baseline);
   const counts = new Map<string, number>();
   for (const e of events) {
-    if (e.event === "suggested" || base.has(e.category)) continue;
+    if (e.event === "suggested" || e.event === "dismissed") continue;
+    if (base.has(e.category)) continue;
     counts.set(e.category, (counts.get(e.category) ?? 0) + 1);
   }
   return [...counts.entries()].filter(([, n]) => n >= 2).map(([c]) => c);

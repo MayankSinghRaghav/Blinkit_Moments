@@ -27,7 +27,7 @@ create table if not exists adoption_events (
   session_id uuid references sessions(id) on delete cascade,
   product_id text references products(id),
   category text not null,
-  event text not null check (event in ('suggested','tried','repeat')),
+  event text not null check (event in ('suggested','tried','repeat','dismissed')),
   occasion_id text,
   created_at timestamptz default now()
 );

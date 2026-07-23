@@ -1,8 +1,9 @@
 "use client";
 import { addOne, setQty, type CartLine } from "@/lib/cart";
+import { byId } from "@/lib/data/catalog";
 import { setDemo } from "@/lib/session";
 
-type Ctx = { sessionId: string; cart: CartLine[]; occasionId: string };
+type Ctx = { sessionId: string; cart: CartLine[]; occasionId: string; dismissed: string[] };
 
 /** Log a trial of a suggested item — this is what drives the adoption tracker. */
 async function logTrial(ctx: Ctx, productId: string) {
@@ -22,6 +23,23 @@ async function logTrial(ctx: Ctx, productId: string) {
 export async function tryItem(ctx: Ctx, productId: string) {
   setDemo({ cart: addOne(ctx.cart, productId) });
   await logTrial(ctx, productId);
+}
+
+/** Record that a suggestion was rejected, and stop showing it this session. */
+export async function dismissItem(ctx: Ctx, productId: string) {
+  const product = byId(productId);
+  setDemo({ dismissed: [...new Set([...ctx.dismissed, productId])] });
+  await fetch("/api/feedback", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      session_id: ctx.sessionId,
+      product_id: productId,
+      event: "dismissed",
+      occasion_id: ctx.occasionId || undefined,
+    }),
+  }).catch(() => {});
+  return product;
 }
 
 /**

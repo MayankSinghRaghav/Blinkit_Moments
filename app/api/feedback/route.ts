@@ -9,7 +9,7 @@ export const runtime = "nodejs";
 const Body = z.object({
   session_id: z.uuid(),
   product_id: z.string(),
-  event: z.enum(["tried", "repeat"]),
+  event: z.enum(["tried", "repeat", "dismissed"]),
   occasion_id: z.string().optional(),
 });
 
@@ -20,10 +20,16 @@ export async function GET(req: Request) {
     return Response.json({ error: "bad request" }, { status: 400 });
   }
   const { baseline, events } = await getSession(id);
+  const suggested = events.filter((e) => e.event === "suggested").length;
+  const dismissed = events.filter((e) => e.event === "dismissed").length;
   return Response.json({
     adopted: adoptedCategories(baseline, events),
     goal: ADOPTION_GOAL,
     depth: ADOPTION_DEPTH,
+    // the experiment's annoyance guardrail, measurable from the same event log
+    dismiss_rate: suggested ? Number((dismissed / suggested).toFixed(3)) : null,
+    dismissed,
+    suggested,
     baseline,
     events,
   });
@@ -38,14 +44,20 @@ export async function POST(req: Request) {
   const product = byId(parsed.data.product_id);
   if (!product) return Response.json({ error: "unknown product" }, { status: 400 });
 
-  await addEvents(parsed.data.session_id, [
-    {
-      product_id: product.id,
-      category: product.category,
-      event: parsed.data.event,
-      occasion_id: parsed.data.occasion_id ?? null,
-    },
-  ]);
+  try {
+    await addEvents(parsed.data.session_id, [
+      {
+        product_id: product.id,
+        category: product.category,
+        event: parsed.data.event,
+        occasion_id: parsed.data.occasion_id ?? null,
+      },
+    ]);
+  } catch (e) {
+    // recording IS the request — reporting success here would lose the event
+    console.error("[feedback] write failed:", (e as Error).message);
+    return Response.json({ error: "could not record event" }, { status: 500 });
+  }
 
   const { baseline, events } = await getSession(parsed.data.session_id);
   const adopted = adoptedCategories(baseline, events);

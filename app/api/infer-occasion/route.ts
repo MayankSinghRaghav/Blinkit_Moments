@@ -11,7 +11,6 @@ const Body = z.object({
     .array(z.object({ product_id: z.string().optional(), name: z.string(), category: z.string() }))
     .max(50),
   context: z.string().max(200).default(""),
-  comfort: z.number().int().min(0).max(100).default(50),
 });
 
 export async function POST(req: Request) {
@@ -19,25 +18,34 @@ export async function POST(req: Request) {
 
   const parsed = Body.safeParse(await req.json().catch(() => null));
   if (!parsed.success) return Response.json({ error: "bad request" }, { status: 400 });
-  const { session_id, basket, context, comfort } = parsed.data;
+  const { session_id, basket, context } = parsed.data;
 
-  const result = await inferOccasion(basket, context, comfort);
+  const result = await inferOccasion(basket, context);
 
-  // first call fixes the baseline: categories the session already shops
-  const { baseline } = await getSession(session_id);
-  await upsertSession(session_id, {
-    baseline: baseline.length ? baseline : [...new Set(basket.map((i) => i.category))],
-    comfort,
-  });
-  await addEvents(
-    session_id,
-    result.suggestions.map((s) => ({
-      product_id: s.product_id,
-      category: s.category,
-      event: "suggested" as const,
-      occasion_id: result.occasion_id,
-    })),
-  );
+  // Persistence is secondary here: the suggestions are what the caller needs, so
+  // a store failure is logged and surfaced as a flag rather than losing the
+  // response. The feedback route takes the opposite view, because recording is
+  // the entire point of that call.
+  let persisted = true;
+  try {
+    // first call fixes the baseline: categories the session already shops
+    const { baseline } = await getSession(session_id);
+    await upsertSession(session_id, {
+      baseline: baseline.length ? baseline : [...new Set(basket.map((i) => i.category))],
+    });
+    await addEvents(
+      session_id,
+      result.suggestions.map((s) => ({
+        product_id: s.product_id,
+        category: s.category,
+        event: "suggested" as const,
+        occasion_id: result.occasion_id,
+      })),
+    );
+  } catch (e) {
+    persisted = false;
+    console.error("[infer-occasion] store write failed:", (e as Error).message);
+  }
 
-  return Response.json(result);
+  return Response.json({ ...result, persisted });
 }

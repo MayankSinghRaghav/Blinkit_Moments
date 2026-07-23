@@ -49,6 +49,13 @@ export function WhyPanel({
         </Section>
       )}
 
+      {isHighConsideration(product.category) && (
+        <p className="px-1 text-[11px] leading-snug text-black/40">
+          Ratings and reorder statistics above are illustrative seed data for this prototype, not
+          real Blinkit figures.
+        </p>
+      )}
+
       <Section title="Why it's a stretch">
         <span className="text-black/60">{stretch}</span>
       </Section>

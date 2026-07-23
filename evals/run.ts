@@ -20,8 +20,8 @@ type Case = (typeof golden)[number] & {
 const PACE_MS = Number(process.env.EVAL_PACE_MS ?? 7000);
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-async function run(c: Case, comfort: number): Promise<CompleteResult> {
-  if (!live) return completeOccasion(c.basket, c.context, comfort);
+async function run(c: Case): Promise<CompleteResult> {
+  if (!live) return completeOccasion(c.basket, c.context);
   await sleep(PACE_MS);
   const res = await fetch(`${BASE}/api/infer-occasion`, {
     method: "POST",
@@ -30,7 +30,6 @@ async function run(c: Case, comfort: number): Promise<CompleteResult> {
       session_id: crypto.randomUUID(),
       basket: c.basket,
       context: c.context,
-      comfort,
     }),
   });
   if (res.status === 429) throw new Error(`rate limited by ${BASE} — raise EVAL_PACE_MS`);
@@ -53,8 +52,8 @@ function check(c: Case, r: CompleteResult): string[] {
     return fails;
   }
 
-  if (r.suggestions.length < 2 || r.suggestions.length > 4) {
-    fails.push(`expected 2-4 suggestions, got ${r.suggestions.length}`);
+  if (r.suggestions.length < 2 || r.suggestions.length > 3) {
+    fails.push(`expected 2-3 suggestions, got ${r.suggestions.length}`);
   }
 
   // 2 — never a category already in the basket
@@ -80,21 +79,19 @@ function check(c: Case, r: CompleteResult): string[] {
   return fails;
 }
 
-const COMFORTS = [0, 50, 100];
-
 async function main() {
   let failed = 0;
   let fellBack = 0;
   console.log(`occasion-golden · ${live ? `live @ ${BASE}` : "offline (deterministic)"}\n`);
 
   for (const c of golden as Case[]) {
-    for (const comfort of COMFORTS) {
-      const r = await run(c, comfort);
+    {
+      const r = await run(c);
       const fails = check(c, r);
       // a live case that degraded measured the fallback, not the model
       const viaLlm = !live || !(r as { degraded?: boolean }).degraded;
       if (!viaLlm) fellBack++;
-      const name = `${c.expect_occasion} @comfort=${comfort}${viaLlm ? "" : " [fellback]"}`;
+      const name = `${c.expect_occasion}${viaLlm ? "" : " [fellback]"}`;
       if (fails.length) {
         failed++;
         console.log(`  FAIL  ${name}`);

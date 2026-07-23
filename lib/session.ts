@@ -6,8 +6,9 @@ export type Demo = {
   sessionId: string;
   /** the single source of truth for the cart — id + quantity */
   cart: CartLine[];
-  comfort: number;
   context: string;
+  /** product ids the user rejected — never suggested again this session */
+  dismissed: string[];
   occasionId: string;
   occasionLabel: string;
 };
@@ -19,8 +20,8 @@ const START: Demo = {
     { id: "bev_beer", qty: 1 },
     { id: "snk_nachos", qty: 2 },
   ],
-  comfort: 50,
   context: "Fri 7pm",
+  dismissed: [],
   occasionId: "",
   occasionLabel: "",
 };

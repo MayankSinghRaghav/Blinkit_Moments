@@ -13,7 +13,7 @@ const id = crypto.randomUUID();
 async function main() {
   console.log("store:", supabaseConfigured() ? "supabase" : "in-memory");
 
-  await upsertSession(id, { baseline: ["Beverages", "Snacks"], comfort: 50 });
+  await upsertSession(id, { baseline: ["Beverages", "Snacks"] });
   await addEvents(id, [
     { product_id: "hom_napkins", category: "Home", event: "suggested", occasion_id: "game_night" },
     { product_id: "hom_napkins", category: "Home", event: "tried", occasion_id: "game_night" },

@@ -9,11 +9,13 @@ export function SuggestionCard({
   occasionId,
   qty,
   onQtyChange,
+  onDismiss,
 }: {
   suggestion: Suggestion;
   occasionId: string;
   qty: number;
   onQtyChange: (qty: number) => void;
+  onDismiss: () => void;
 }) {
   const p = byId(suggestion.product_id);
   if (!p) return null;
@@ -23,9 +25,22 @@ export function SuggestionCard({
       qty={qty}
       onQtyChange={onQtyChange}
       badge={
-        <span className="absolute left-1.5 top-1.5 rounded-md bg-brand px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
-          New · {p.category}
-        </span>
+        <>
+          <span className="absolute left-1.5 top-1.5 rounded-md bg-brand px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+            New · {p.category}
+          </span>
+          {/* Rejecting a suggestion has to be as easy as accepting it, or the
+              dismiss rate measures friction rather than opinion. */}
+          <button
+            type="button"
+            onClick={onDismiss}
+            aria-label={`Not interested in ${p.name}`}
+            title="Not interested"
+            className="absolute right-1 top-1 rounded-md px-1.5 py-0.5 text-xs text-black/35 transition hover:bg-black/5 hover:text-black"
+          >
+            ✕
+          </button>
+        </>
       }
     >
       <p className="mt-1.5 text-[12px] leading-snug text-black/60">{suggestion.why_now}</p>

@@ -1,16 +1,17 @@
 "use client";
 import Link from "next/link";
 import { CartPanel } from "@/components/CartPanel";
-import { ComfortDial } from "@/components/ComfortDial";
 import { SuggestionCard } from "@/components/SuggestionCard";
-import { setDemo } from "@/lib/session";
-import { setSuggestionQty } from "@/lib/actions";
+import { dismissItem, setSuggestionQty } from "@/lib/actions";
 import { qtyOf } from "@/lib/cart";
 import { useOccasion } from "@/lib/useOccasion";
 
 export default function MomentsPage() {
   const { demo, data, refining } = useOccasion("complete");
-  const sensed = data.occasion_id !== "none";
+  // a dismissed suggestion never comes back this session — showing it again is
+  // exactly the behaviour Nikhil described as "obviously trying to sell me more"
+  const visible = data.suggestions.filter((s) => !demo.dismissed.includes(s.product_id));
+  const sensed = data.occasion_id !== "none" && visible.length > 0;
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
@@ -29,7 +30,7 @@ export default function MomentsPage() {
           </h1>
           <p className="mt-1 text-sm text-black/70">
             {sensed
-              ? `${Math.round(data.confidence * 100)}% confidence · completing across ${data.suggestions.length} categories you've never ordered`
+              ? `${Math.round(data.confidence * 100)}% confidence · completing across ${visible.length} ${visible.length === 1 ? "category" : "categories"} you've never ordered`
               : "Add a couple of items and the agent will read the basket."}
           </p>
         </div>
@@ -43,13 +44,14 @@ export default function MomentsPage() {
 
         {sensed && (
           <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
-            {data.suggestions.map((s) => (
+            {visible.map((s) => (
               <SuggestionCard
                 key={s.product_id}
                 suggestion={s}
                 occasionId={data.occasion_id}
                 qty={qtyOf(demo.cart, s.product_id)}
                 onQtyChange={(q) => setSuggestionQty(demo, s.product_id, q)}
+                onDismiss={() => dismissItem(demo, s.product_id)}
               />
             ))}
           </div>
@@ -72,11 +74,7 @@ export default function MomentsPage() {
         </Link>
       </div>
 
-      <CartPanel>
-        <div className="mt-4">
-          <ComfortDial value={demo.comfort} onChange={(comfort) => setDemo({ comfort })} />
-        </div>
-      </CartPanel>
+      <CartPanel />
     </div>
   );
 }

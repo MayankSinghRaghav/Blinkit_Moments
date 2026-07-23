@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { z } from "zod";
 import { CATEGORIES, PRODUCTS, isHighConsideration } from "@/lib/data/catalog";
 import { OCCASIONS, occasionById } from "@/lib/occasions";
-import { completeOccasion, type BasketItem, type CompleteResult } from "@/lib/scoring";
+import { completeOccasion, MAX_SUGGESTIONS, type BasketItem, type CompleteResult } from "@/lib/scoring";
 
 const MODEL = "gemini-2.5-flash";
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
@@ -79,22 +79,19 @@ function enforceRules(r: CompleteResult, basket: BasketItem[]): CompleteResult {
     return true;
   });
   if (suggestions.length < 2) throw new Error("llm returned <2 usable suggestions");
-  return { ...r, occasion_label: occasion.label, suggestions: suggestions.slice(0, 4) };
+  // same ceiling the deterministic path uses — the model does not get to
+  // exceed a limit set by research
+  return { ...r, occasion_label: occasion.label, suggestions: suggestions.slice(0, MAX_SUGGESTIONS) };
 }
 
 export type InferResult = CompleteResult & { degraded: boolean };
 
-export async function inferOccasion(
-  basket: BasketItem[],
-  context: string,
-  comfort: number,
-): Promise<InferResult> {
+export async function inferOccasion(basket: BasketItem[], context: string): Promise<InferResult> {
   try {
     const raw = await generate(
       fill(prompt("occasion_inference"), {
         basket: JSON.stringify(basket),
         context,
-        comfort: String(comfort),
         catalog_categories: CATEGORIES.join(", "),
         occasions: OCCASIONS.map((o) => `${o.id} — ${o.label}`).join("\n"),
         catalog: PRODUCTS.map((p) => `${p.id} | ${p.name} | ${p.category} | ₹${p.price_inr}${p.starter ? " | starter" : ""}`).join("\n"),
@@ -107,7 +104,7 @@ export async function inferOccasion(
     if ((e as Error).message !== "no-key") {
       console.warn("[occasion] LLM fallback:", (e as Error).message);
     }
-    return { ...completeOccasion(basket, context, comfort), degraded: true };
+    return { ...completeOccasion(basket, context), degraded: true };
   }
 }
 

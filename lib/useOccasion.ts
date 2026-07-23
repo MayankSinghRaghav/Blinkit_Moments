@@ -19,7 +19,7 @@ const basketFromKey = (key: string) =>
   }));
 
 /**
- * Runs the occasion engine whenever the cart, context, or comfort dial changes.
+ * Runs the occasion engine whenever the cart or context changes.
  *
  * The deterministic matcher runs synchronously first and its result is shown
  * immediately; the server response replaces it when it lands. Two reasons:
@@ -32,13 +32,13 @@ export function useOccasion(endpoint: "infer-occasion" | "complete") {
   const demo = useDemo();
   const [server, setServer] = useState<OccasionResult | null>(null);
   const [loading, setLoading] = useState(true);
-  const { sessionId, cart, comfort, context } = demo;
+  const { sessionId, cart, context } = demo;
   // ids only: changing a quantity must not re-run inference
   const cartKey = cart.map((l) => l.id).join(",");
 
   const local = useMemo<OccasionResult>(
-    () => ({ ...completeOccasion(basketFromKey(cartKey), context, comfort), degraded: true }),
-    [cartKey, context, comfort],
+    () => ({ ...completeOccasion(basketFromKey(cartKey), context), degraded: true }),
+    [cartKey, context],
   );
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export function useOccasion(endpoint: "infer-occasion" | "complete") {
     // instantly rather than the stale occasion for the old one
     setServer(null);
     setLoading(true);
-    // the comfort slider fires on every tick — don't spend an LLM call per pixel
+    // debounce so a fast basket edit does not spend an LLM call per keystroke
     const t = setTimeout(() => {
       fetch(`/api/${endpoint}`, {
         method: "POST",
@@ -58,7 +58,6 @@ export function useOccasion(endpoint: "infer-occasion" | "complete") {
           session_id: sessionId,
           basket: basketFromKey(cartKey),
           context,
-          comfort,
         }),
       })
         .then((r) => (r.ok ? r.json() : null))
@@ -74,7 +73,7 @@ export function useOccasion(endpoint: "infer-occasion" | "complete") {
       clearTimeout(t);
       ac.abort();
     };
-  }, [endpoint, sessionId, cartKey, context, comfort]);
+  }, [endpoint, sessionId, cartKey, context]);
 
   const data = server ?? local;
 

@@ -5,7 +5,6 @@ propose items from categories the user has NOT bought, to complete that occasion
 INPUT
 - Basket (items with category): {{basket}}
 - Context (time, day, weather, season/festival if any): {{context}}
-- Comfort dial 0-100 (0 = suggest safe adjacent categories only; 100 = suggest bold new categories): {{comfort}}
 - Allowed categories: {{catalog_categories}}
 
 ALLOWED OCCASIONS — occasion_id MUST be one of these ids, or "none":
@@ -15,8 +14,9 @@ RULES
 1. Infer ONE occasion. If confidence < 0.4, return occasion_id "none". The
    occasion must be grounded in the basket itself — context alone (a day, a
    time) is never enough, and an empty basket is always "none".
-2. Suggest 2-4 items, each from a category NOT present in the basket.
-3. Higher comfort => categories further from the basket's own categories.
+2. Suggest 2-3 items, each from a category NOT present in the basket. Never more
+   than 3 — users read a longer list as upselling.
+3. Order suggestions so familiar categories come before unfamiliar ones.
 4. Every suggestion needs a one-line "why_now" (ties to the occasion) and, if
    category is high-consideration (Pet, Baby, PersonalCare, Wellness), a
    "confidence" note that reduces trial risk (small pack / rating / social proof).
