@@ -191,46 +191,78 @@ function ThemeRow({ theme, rank }: { theme: Theme; rank: number }) {
   );
 }
 
-function FramingBlock({ bridge }: { bridge: Bridge }) {
+function FramingBlock({ bridge, themes }: { bridge: Bridge; themes: Theme[] }) {
   // same display bar as the theme rows; these quotes carry the argument, so a
   // truncated or off-theme one here does the most damage
   const bridgeQuotes = bridge.quotes
     .flatMap((q) => pickQuotes([q], q.theme, 1).shown)
     .slice(0, 3);
+
+  // Derived, not asserted: whichever core theme actually ranks highest on
+  // strategic priority is the one this block argues from. If a future run
+  // reorders the themes, the prose follows the data instead of contradicting it.
+  const topCore = [...themes]
+    .filter((t) => t.relevance === "core")
+    .sort((a, b) => b.strategic_priority - a.strategic_priority)[0];
+  const exploration = themes.find((t) => /habitual|explor/i.test(t.id));
+  const majorityInCore = bridge.in_core_themes >= bridge.in_context_themes;
+
   return (
-    <div className="rounded-xl border-l-4 border-brand bg-brand/5 p-5">
+    <div className="rounded-xl border-l-4 border-amber-500 bg-amber-50/60 p-5">
       <h3 className="text-sm font-bold">
-        Why the loudest complaint and our thesis are the same problem
+        What the corpus says about our hypothesis — and where it says we were wrong
       </h3>
       <div className="mt-2 space-y-2 text-[13px] leading-relaxed text-black/70">
         <p>
-          Pricing, delivery and support outrank every exploration theme on raw share of voice, and
-          that ranking is left exactly as the data produced it. But share of voice answers
-          &ldquo;what do people complain about most&rdquo; — not the goal we were set, which is how
-          many customers buy from a <em>new</em> category each month.
+          <strong className="text-ink">The hypothesis is not visible in this corpus.</strong> We
+          expected public feedback to show users held back from unfamiliar categories. It does not.
+          {exploration && (
+            <>
+              {" "}
+              The one theme about habitual buying is{" "}
+              <strong className="text-ink">n={exploration.count}</strong>, and a theme named for
+              category-exploration deterrents appeared once, in a single source, and was rejected by
+              our own cross-source rule — a rule written before we knew what it would reject.
+            </>
+          )}{" "}
+          Only <strong className="text-ink">{bridge.trial_need_docs} documents</strong> (
+          {pct(bridge.share_of_coded)}) name a trial or risk need at all.
         </p>
         <p>
-          Reading the unmet needs rather than the theme labels, the two converge.{" "}
-          <strong className="text-ink">{bridge.trial_need_docs} documents</strong> (
-          {pct(bridge.share_of_coded)} of the coded corpus) name a need about trying something
-          unfamiliar — a smaller pack, a way to tell if the quality is good, something not worth the
-          risk. Of those,{" "}
-          <strong className="text-ink">{bridge.in_context_themes} sit inside the context themes</strong>{" "}
-          and only {bridge.in_core_themes} inside the exploration themes.
+          We also predicted that need would sit mostly inside pricing complaints — users describing
+          the cost of a first try. It does not:{" "}
+          <strong className="text-ink">{bridge.in_core_themes} of those documents sit in core themes
+          and {bridge.in_context_themes} in context themes</strong>
+          {majorityInCore ? ", the opposite of what we assumed" : ""}. The price-risk bridge we
+          expected is not in the data, and we have left that stated rather than reweighted.
         </p>
         <p>
-          So most of this need is filed under &ldquo;pricing&rdquo; — users describing the cost of a
-          <em> first try</em>, not the cost of their weekly basket. Price-risk and the exploration
-          barrier meet at one sentence: <strong className="text-ink">fear of wasting money on
-          something unknown</strong>. That is precisely what a starter pack, a rating and a
-          why-now line de-risk, which is what the MVP builds.
+          <strong className="text-ink">What the corpus does support is a different barrier.</strong>{" "}
+          {topCore && (
+            <>
+              The largest core theme is <strong className="text-ink">{topCore.label}</strong> (n=
+              {topCore.count}, strategic priority {topCore.strategic_priority}) —{" "}
+            </>
+          )}
+          uncertainty about whether an unfamiliar product will be any good. That matches what
+          interviews said independently: <em>&ldquo;I wasn&rsquo;t sure which brand to choose&rdquo;</em>{" "}
+          (Meghna, new pet owner) and <em>&ldquo;I don&rsquo;t want to waste money on something
+          nobody likes&rdquo;</em> (Aditya). Two sources, different methods, same barrier — and it is
+          quality uncertainty, not price.
+        </p>
+        <p className="rounded-lg bg-white/70 p-3">
+          <strong className="text-ink">What we changed because of this.</strong> Occasion inference
+          is demoted from the headline to the delivery mechanism: occasion signals are{" "}
+          {pct(bridge.share_of_coded)} of this corpus and cannot carry the argument. The trust
+          cues — starter pack sizing, ratings, and the why-this explanation — move to the centre,
+          because they address the barrier the evidence actually supports.
         </p>
       </div>
 
       {bridge.top_shared_needs.length > 0 && (
         <div className="mt-3">
           <p className="text-[11px] font-bold uppercase tracking-wide text-muted">
-            Needs spanning both groups
+            Trial/risk needs found
           </p>
           <ul className="mt-1 flex flex-wrap gap-1.5">
             {bridge.top_shared_needs.map(([need, n]) => (
@@ -248,7 +280,7 @@ function FramingBlock({ bridge }: { bridge: Bridge }) {
       {bridgeQuotes.length > 0 && (
         <div className="mt-3">
           <p className="text-[11px] font-bold uppercase tracking-wide text-muted">
-            Filed as a context theme, describing trial risk
+            Trial-risk language found in context themes
           </p>
           <ul className="mt-1 space-y-1.5">
             {bridgeQuotes.map((q, i) => (
@@ -419,7 +451,7 @@ export default function DiscoveryPage() {
         />
       </div>
 
-      <FramingBlock bridge={data.bridge} />
+      <FramingBlock bridge={data.bridge} themes={data.themes} />
 
       <div className="flex items-center justify-end gap-3 text-[11px] text-muted">
         <span className="flex items-center gap-1.5">
