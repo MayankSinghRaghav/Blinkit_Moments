@@ -609,14 +609,17 @@ export default function DiscoveryPage() {
             {sens && (
               <li>
                 <strong className="text-ink">Weight sensitivity, reported against us.</strong>{" "}
-                Re-scored across {sens.opportunity.weightings_tested} weightings. The{" "}
-                <em>strategic fit</em> ranking is robust (Spearman{" "}
-                {sens.strategic_fit.mean_spearman}, top theme unchanged{" "}
-                {pct(sens.strategic_fit.top1_stable)}), and a core theme tops strategic priority in{" "}
+                Re-scored across {sens.opportunity.weightings_tested} weightings. A{" "}
+                <em>context</em> theme tops raw opportunity in{" "}
                 <strong className="text-ink">
-                  {pct(sens.conclusions.core_theme_leads_strategic_priority)}
+                  {pct(sens.conclusions.context_theme_leads_raw_opportunity)}
                 </strong>{" "}
-                of them — that conclusion does not depend on our weights. The{" "}
+                of them, so &ldquo;the loudest themes are operational&rdquo; does not depend on our
+                weights. A core theme tops strategic <em>priority</em> in only{" "}
+                {pct(sens.conclusions.core_theme_leads_strategic_priority)}, so we do not claim
+                that ranking is robust — what is robust is the separation: core themes score
+                0.52-0.65 on fit and no context theme exceeds 0.09. The{" "}
+                of them. The{" "}
                 <em>raw opportunity</em> ranking is not robust: the top theme changes in{" "}
                 {pct(1 - sens.opportunity.top1_stable)} of weightings and the worst-case rank
                 correlation is {sens.opportunity.min_spearman}. Read the opportunity order as a

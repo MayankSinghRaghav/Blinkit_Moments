@@ -7,18 +7,23 @@ The opportunity and strategic-fit weights are round numbers we picked. This
 tests whether the conclusions depend on them, across **120 weightings** where
 each weight is held at ≥0.10 and the three sum to 1.
 
+All figures below are **post codebook-merge** (13 themes). Section 3 records
+what the merge changed, including a claim it broke.
+
 ---
 
 ## 1. The opportunity score is fragile. This is a real weakness.
 
 | Measure | Result |
 |---|---|
-| Top theme unchanged across weightings | **29%** |
-| Top-3 set unchanged | 59% |
-| Spearman vs baseline | mean 0.825, **worst 0.338** |
+| Top theme unchanged across weightings | 70% |
+| Top-3 set unchanged | **62%** |
+| Spearman vs baseline | mean 0.902, **worst 0.399** |
 
-"Value of Convenience and Speed" ranks anywhere from **1st to 15th** depending
-on the weights. "Convenience as Primary Driver" swings 2nd to 16th.
+"Value of Convenience and Speed" ranks anywhere from **1st to 10th** depending
+on the weights; "Payment, Cancellation and Refunds" swings 5th to 11th. The
+merge improved this (the worst case was 0.338 across 18 themes) but did not fix
+it.
 
 **What this means:** any statement of the form *"theme X is the top opportunity"*
 is not safe. The ordering is an artefact of weights we chose without
@@ -30,38 +35,56 @@ as a result.
 
 | Measure | Result |
 |---|---|
-| Top theme unchanged | **83%** |
-| Top-3 set unchanged | **95%** |
-| Spearman vs baseline | mean **0.97**, worst 0.907 |
+| Top theme unchanged | **99%** |
+| Spearman vs baseline | mean **0.979**, worst 0.909 |
+| Top-3 set unchanged | 55% |
 
-Strategic fit survives re-weighting because one component (the open-coded `core`
-flag) is binary and dominates. That is also its limitation: it inherits whatever
-the open coder decided, and the coder's `core`/`context` split was made in a
-single pass without review.
+The top of the ranking is near-immovable; the 2nd and 3rd places shuffle among
+context themes whose fit scores are all within 0.09 of each other, which is why
+the top-3 figure is lower than the correlation suggests. Ties near zero are not
+a meaningful ordering.
 
-## 3. The load-bearing conclusion holds at every weighting
+Strategic fit survives re-weighting because one component (the `core` flag) is
+binary and dominates. That is also its limitation: it inherits the core/context
+judgement. That judgement is now made by a stated rule applied uniformly
+(`scripts/discovery/7-merge-codebook.mjs`) rather than case by case, which is
+checkable — but it is still a judgement.
 
-> **A `core` theme tops strategic priority in 100% of the 120 weightings tested.**
+## 3. What survived the codebook merge, and what did not
 
-This is the one that matters. The project's claim is not "theme X is biggest" —
-it is that ranking by share of voice and ranking by fit with the goal produce
-*different* orderings, and that the second is the one aligned to the brief. That
-conclusion does not depend on the weights at all.
+Re-run after merging near-duplicate themes (18 → 13) and re-applying the
+core/context rule uniformly. **Two conclusions moved in opposite directions, and
+both are reported.**
 
-## 4. A claim we have been making is NOT robust — correcting it
+| Conclusion | Before merge | After merge |
+|---|---|---|
+| A `context` theme tops raw opportunity | 42% | **100%** |
+| A `core` theme tops strategic priority | 100% | **54%** |
 
-We have said that pricing, delivery and support **outrank every exploration
-theme on raw share of voice**. Across the weight grid, a `context` theme tops
-raw opportunity only **42%** of the time.
+**The claim that got stronger.** "The loudest themes are operational" now holds
+under *every* weighting. Before the merge it held only 42% of the time, because
+*Value of Convenience and Speed* (n=123) had been open-coded `core` despite
+being about the platform's value proposition. Correcting that flag fixed it.
 
-The reason is a labelling problem, not a scoring one: the largest theme in the
-corpus, *Value of Convenience and Speed* (n=123), was open-coded as **`core`**.
-It is about the platform's value proposition, not about category exploration.
-With it flagged core, "context always wins on raw" is simply false.
+**The claim that got weaker, and we are withdrawing it.** "A core theme leads on
+strategic priority" is now a coin flip. The cause is the same correction:
+*Product Quality Concerns* (n=105) moved core → context, and its residual fit
+(0.09) multiplied by its large raw score competes with a small core theme's high
+fit. **We no longer claim the priority ranking is robust.**
 
-**Action:** this belongs in the codebook merge (see `HANDOFF.md`). Until it is
-resolved, the "context outranks core" phrasing should be softened to *"the
-loudest themes are operational"* — which is true regardless of the flag.
+## 4. The claim that replaces it — and it is stronger
+
+Strategic fit **separates core from context completely**, with no overlap:
+
+| | Fit scores |
+|---|---|
+| Core themes | 0.65, 0.52 |
+| Context themes | 0.09, 0.06, 0.03, 0.02, 0.01, 0.01, 0.01, 0.00, 0.00, 0.00 |
+
+**Gap between the lowest core and the highest context theme: 0.43.** The axis
+does what it was built to do — it tells exploration-relevant themes apart from
+operational ones — even though the *ordering* it produces after multiplying by
+raw score is not stable. Report the separation, not the ranking.
 
 ## 5. The confidence floor is currently doing nothing
 
@@ -91,8 +114,12 @@ the confidence figures on `/discovery` should not be read as a quality signal.
 ## What we would change
 
 1. Stop presenting the opportunity ranking as an ordering; present it as a
-   magnitude band.
-2. Merge the near-duplicate themes and re-review the `core`/`context` flags —
-   particularly *Value of Convenience and Speed*.
+   magnitude band. Still true after the merge.
+2. ~~Merge the near-duplicate themes and re-review the core/context flags~~ —
+   **done**, 18 → 13 themes, flags reassigned by a stated rule. This section is
+   kept rather than deleted so the sequence is visible: the merge was decided
+   before the kappa was scored, not after.
 3. Raise the confidence floor only if the hold-out shows the model's confidence
    correlates with agreement. Raising it now would be theatre.
+4. Report the core/context **separation** (0.43 gap, no overlap) rather than the
+   strategic-priority ranking, which the merge showed is not stable.

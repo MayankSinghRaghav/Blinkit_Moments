@@ -1,110 +1,114 @@
 [
   {
-    "id": "delivery_issues",
-    "label": "Delivery Problems",
-    "definition": "Users frequently report issues with incomplete, incorrect, or missing deliveries, as well as problems with delivery personnel.",
-    "relevance": "context"
+    "id": "customer_support",
+    "label": "Ineffective Customer Support",
+    "definition": "Users report unhelpful, unresponsive or inaccessible customer service: unresolved complaints, refusal to take responsibility, and unfulfilled refund promises.",
+    "relevance": "context",
+    "merged_from": [
+      "customer_support_failure",
+      "poor_customer_support"
+    ],
+    "merge_reason": "Definitions are near-identical — both describe unhelpful, unaccountable support. No coder could split them reliably.",
+    "relevance_reason": "Service recovery failure."
   },
   {
-    "id": "customer_support_failure",
-    "label": "Ineffective Customer Support",
-    "definition": "Users express frustration with customer service, citing unhelpful responses, refusal to resolve issues, and lack of accountability for problems.",
-    "relevance": "context"
+    "id": "order_and_delivery_failures",
+    "label": "Order and Delivery Failures",
+    "definition": "The order did not arrive as promised: items incorrect, missing, damaged or short in quantity, wrong location, or poor handling by delivery personnel.",
+    "relevance": "context",
+    "merged_from": [
+      "delivery_issues",
+      "delivery_inconsistencies",
+      "order_accuracy_issues"
+    ],
+    "merge_reason": "All three span 'what arrived was wrong' and 'how it arrived was wrong'. delivery_issues explicitly covers both, so the boundary between the three is not codeable.",
+    "relevance_reason": "Fulfilment failure."
+  },
+  {
+    "id": "pricing_and_fees",
+    "label": "Pricing and Fees",
+    "definition": "Prices higher than market or other platforms, plus delivery charges, handling fees, surge pricing and minimum cart limits.",
+    "relevance": "context",
+    "merged_from": [
+      "pricing_and_fees",
+      "pricing_discrepancies"
+    ],
+    "merge_reason": "Both cover above-market prices AND added fees; the labels differ but the definitions overlap almost entirely.",
+    "relevance_reason": "Cost of the basket, not the cost of a first try."
+  },
+  {
+    "id": "payment_and_refunds",
+    "label": "Payment, Cancellation and Refunds",
+    "definition": "Payment failures, duplicate orders, platform-side cancellations, cancellation fees, and refunds that are delayed or never arrive.",
+    "relevance": "context",
+    "merged_from": [
+      "payment_and_refund_problems",
+      "order_cancellation_and_refunds"
+    ],
+    "merge_reason": "Both centre on money not moving correctly — cancellations and refunds appear in each definition.",
+    "relevance_reason": "Transaction failure."
   },
   {
     "id": "product_quality_concerns",
     "label": "Product Quality Concerns",
     "definition": "Users express dissatisfaction with the quality of perishable items (e.g., curdled milk), lack of visible expiry dates, or receiving items that do not match product descriptions (e.g., warm drinks, wrong umbrella).",
-    "relevance": "core"
-  },
-  {
-    "id": "pricing_discrepancies",
-    "label": "Higher Pricing and Hidden Fees",
-    "definition": "Users complain about products being more expensive than market prices and the presence of additional surcharges or handling fees.",
-    "relevance": "context"
+    "relevance": "context",
+    "relevance_reason": "Definition is about perishables arriving spoiled and items not matching description — an operational failure, not hesitancy about an unfamiliar category. Previously flagged core; this is the correction."
   },
   {
     "id": "stock_availability_issues",
     "label": "Frequent Out-of-Stock Items",
     "definition": "Essential items are often unavailable or marked 'out of stock,' defeating the purpose of a quick delivery service.",
-    "relevance": "core"
+    "relevance": "context",
+    "relevance_reason": "Concerns essentials being out of stock, not the discoverability of new categories. Previously core."
   },
   {
     "id": "convenience_and_speed_value",
     "label": "Value of Convenience and Speed",
     "definition": "Users appreciate the quick delivery and convenience of ordering essentials from home, saving time and effort.",
-    "relevance": "core"
+    "relevance": "context",
+    "relevance_reason": "Appreciation of speed. Satisfaction with the service, with no exploration mechanism in the definition. NOT merged with convenience_as_primary_driver for exactly this reason."
   },
   {
     "id": "privacy_and_discretion_breaches",
     "label": "Breaches of Privacy and Discretion",
     "definition": "Users report concerns about delivery personnel knowing their order contents, leading to uncomfortable or inappropriate interactions, especially with sensitive items.",
-    "relevance": "core"
-  },
-  {
-    "id": "order_cancellation_and_refunds",
-    "label": "Order Cancellation and Refund Problems",
-    "definition": "Users experience issues with orders being cancelled by the platform, technical glitches leading to multiple orders, and difficulties in obtaining timely refunds.",
-    "relevance": "context"
+    "relevance": "context",
+    "relevance_reason": "Delivery-personnel discretion. No connection to category exploration. Previously core."
   },
   {
     "id": "delivery_time_expectations",
     "label": "Delivery Time Expectations",
     "definition": "Discussions around the 10-minute delivery promise, its impact on workers, and actual delivery times.",
-    "relevance": "context"
-  },
-  {
-    "id": "poor_customer_support",
-    "label": "Poor Customer Support",
-    "definition": "Users frequently report issues with unhelpful, unresponsive, or inaccessible customer service, leading to unresolved complaints, unfulfilled refunds, and general frustration.",
-    "relevance": "context"
-  },
-  {
-    "id": "order_accuracy_issues",
-    "label": "Order Accuracy Issues",
-    "definition": "Users experience problems with incorrect, missing, or defective items, as well as discrepancies in quantity or quality of products received.",
-    "relevance": "context"
-  },
-  {
-    "id": "delivery_inconsistencies",
-    "label": "Delivery Inconsistencies",
-    "definition": "Users report issues with delivery speed, incorrect delivery locations, or poor handling by delivery personnel, despite the platforms' promise of quick delivery.",
-    "relevance": "context"
-  },
-  {
-    "id": "pricing_and_fees",
-    "label": "Pricing and Fees",
-    "definition": "Users complain about high delivery charges, hidden fees, minimum cart limits, and prices being higher compared to other platforms or traditional stores.",
-    "relevance": "context"
-  },
-  {
-    "id": "payment_and_refund_problems",
-    "label": "Payment and Refund Problems",
-    "definition": "Users face issues with payment failures, duplicate orders, unexpected cancellation fees, and delayed or unreceived refunds.",
-    "relevance": "context"
+    "relevance": "context",
+    "relevance_reason": "Debate about the 10-minute promise and its effect on workers."
   },
   {
     "id": "app_technical_issues",
     "label": "App Technical Issues",
     "definition": "Users encounter glitches with the app, such as location unavailability, shopping cart emptying, or misleading UX regarding offers and charges.",
-    "relevance": "context"
+    "relevance": "context",
+    "relevance_reason": "Client bugs and misleading UX."
   },
   {
     "id": "habitual_purchases_value_for_money",
     "label": "Habitual Purchases: Value for Money",
     "definition": "Users stick to certain products or categories (e.g., protein shakes) based on cost-effectiveness and perceived value, often comparing prices across brands or platforms.",
-    "relevance": "core"
+    "relevance": "core",
+    "relevance_reason": "Explicitly about sticking to known products and categories."
   },
   {
     "id": "lack_of_category_exploration_deterrents",
     "label": "Lack of Category Exploration Deterrents",
     "definition": "Users are discouraged from trying new categories due to negative experiences with product quality, misleading listings, or the hassle of returns for unfamiliar items.",
-    "relevance": "core"
+    "relevance": "core",
+    "relevance_reason": "Directly about being discouraged from trying new categories."
   },
   {
     "id": "convenience_as_primary_driver",
     "label": "Convenience as Primary Driver",
     "definition": "Users primarily use quick-commerce for speed and convenience, especially for daily essentials or sudden requirements, which reinforces buying familiar items rather than exploring new ones.",
-    "relevance": "core"
+    "relevance": "core",
+    "relevance_reason": "Definition states convenience 'reinforces buying familiar items rather than exploring new ones' — a named mechanism for not exploring."
   }
 ]

@@ -9,58 +9,58 @@
   ],
   "weightings_tested": 120,
   "baseline_top": [
-   "product_quality_concerns",
-   "pricing_and_fees",
-   "customer_support_failure"
+   "customer_support",
+   "order_and_delivery_failures",
+   "pricing_and_fees"
   ],
-  "top1_stable": 0.292,
-  "topN_set_stable": 0.592,
-  "mean_spearman": 0.825,
-  "min_spearman": 0.338,
+  "top1_stable": 0.7,
+  "topN_set_stable": 0.617,
+  "mean_spearman": 0.902,
+  "min_spearman": 0.399,
   "most_volatile": [
    {
     "id": "convenience_and_speed_value",
     "label": "Value of Convenience and Speed",
     "best": 1,
-    "worst": 15,
-    "swing": 14
+    "worst": 10,
+    "swing": 9
    },
    {
     "id": "convenience_as_primary_driver",
     "label": "Convenience as Primary Driver",
-    "best": 2,
-    "worst": 16,
-    "swing": 14
+    "best": 3,
+    "worst": 11,
+    "swing": 8
    },
    {
-    "id": "pricing_discrepancies",
-    "label": "Higher Pricing and Hidden Fees",
-    "best": 3,
-    "worst": 16,
-    "swing": 13
+    "id": "payment_and_refunds",
+    "label": "Payment, Cancellation and Refunds",
+    "best": 5,
+    "worst": 11,
+    "swing": 6
    }
   ],
   "most_stable": [
    {
-    "id": "customer_support_failure",
-    "label": "Ineffective Customer Support",
-    "best": 1,
-    "worst": 4,
-    "swing": 3
+    "id": "stock_availability_issues",
+    "label": "Frequent Out-of-Stock Items",
+    "best": 9,
+    "worst": 11,
+    "swing": 2
    },
    {
     "id": "pricing_and_fees",
     "label": "Pricing and Fees",
     "best": 2,
-    "worst": 5,
-    "swing": 3
+    "worst": 4,
+    "swing": 2
    },
    {
-    "id": "product_quality_concerns",
-    "label": "Product Quality Concerns",
+    "id": "customer_support",
+    "label": "Ineffective Customer Support",
     "best": 1,
-    "worst": 5,
-    "swing": 4
+    "worst": 3,
+    "swing": 2
    }
   ]
  },
@@ -74,105 +74,105 @@
   "weightings_tested": 120,
   "baseline_top": [
    "habitual_purchases_value_for_money",
-   "product_quality_concerns",
-   "privacy_and_discretion_breaches"
+   "convenience_as_primary_driver",
+   "product_quality_concerns"
   ],
-  "top1_stable": 0.825,
-  "topN_set_stable": 0.95,
-  "mean_spearman": 0.97,
-  "min_spearman": 0.907,
+  "top1_stable": 0.992,
+  "topN_set_stable": 0.55,
+  "mean_spearman": 0.979,
+  "min_spearman": 0.909,
   "most_volatile": [
-   {
-    "id": "order_accuracy_issues",
-    "label": "Order Accuracy Issues",
-    "best": 6,
-    "worst": 12,
-    "swing": 6
-   },
-   {
-    "id": "order_cancellation_and_refunds",
-    "label": "Order Cancellation and Refund Problems",
-    "best": 8,
-    "worst": 13,
-    "swing": 5
-   },
    {
     "id": "pricing_and_fees",
     "label": "Pricing and Fees",
-    "best": 10,
-    "worst": 14,
-    "swing": 4
+    "best": 5,
+    "worst": 10,
+    "swing": 5
+   },
+   {
+    "id": "privacy_and_discretion_breaches",
+    "label": "Breaches of Privacy and Discretion",
+    "best": 2,
+    "worst": 7,
+    "swing": 5
+   },
+   {
+    "id": "order_and_delivery_failures",
+    "label": "Order and Delivery Failures",
+    "best": 5,
+    "worst": 8,
+    "swing": 3
    }
   ],
   "most_stable": [
    {
-    "id": "pricing_discrepancies",
-    "label": "Higher Pricing and Hidden Fees",
-    "best": 17,
-    "worst": 17,
-    "swing": 0
-   },
-   {
-    "id": "delivery_issues",
-    "label": "Delivery Problems",
-    "best": 16,
-    "worst": 16,
+    "id": "stock_availability_issues",
+    "label": "Frequent Out-of-Stock Items",
+    "best": 12,
+    "worst": 12,
     "swing": 0
    },
    {
     "id": "app_technical_issues",
     "label": "App Technical Issues",
-    "best": 15,
-    "worst": 15,
+    "best": 11,
+    "worst": 11,
     "swing": 0
+   },
+   {
+    "id": "habitual_purchases_value_for_money",
+    "label": "Habitual Purchases: Value for Money",
+    "best": 1,
+    "worst": 2,
+    "swing": 1
    }
   ]
  },
  "conclusions": {
-  "core_theme_leads_strategic_priority": 1,
-  "context_theme_leads_raw_opportunity": 0.417
+  "core_theme_leads_strategic_priority": 0.542,
+  "context_theme_leads_raw_opportunity": 1
  },
  "confidence_floor_sweep": [
   {
    "floor": 0.3,
    "accepted": 799,
    "rejected_low_confidence": 0,
-   "themes_surviving_cross_source": 17,
+   "themes_surviving_cross_source": 12,
    "largest_theme": "convenience_and_speed_value"
   },
   {
    "floor": 0.4,
    "accepted": 799,
    "rejected_low_confidence": 0,
-   "themes_surviving_cross_source": 17,
+   "themes_surviving_cross_source": 12,
    "largest_theme": "convenience_and_speed_value"
   },
   {
    "floor": 0.5,
    "accepted": 799,
    "rejected_low_confidence": 0,
-   "themes_surviving_cross_source": 17,
+   "themes_surviving_cross_source": 12,
    "largest_theme": "convenience_and_speed_value"
   },
   {
    "floor": 0.6,
    "accepted": 799,
    "rejected_low_confidence": 0,
-   "themes_surviving_cross_source": 17,
+   "themes_surviving_cross_source": 12,
    "largest_theme": "convenience_and_speed_value"
   },
   {
    "floor": 0.7,
    "accepted": 793,
    "rejected_low_confidence": 6,
-   "themes_surviving_cross_source": 17,
+   "themes_surviving_cross_source": 12,
    "largest_theme": "convenience_and_speed_value"
   },
   {
    "floor": 0.8,
    "accepted": 720,
    "rejected_low_confidence": 79,
-   "themes_surviving_cross_source": 17,
+   "themes_surviving_cross_source": 12,
    "largest_theme": "convenience_and_speed_value"
   }
  ]

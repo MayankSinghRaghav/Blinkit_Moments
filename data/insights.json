@@ -34,8 +34,8 @@
   "lexicon": "\\b(trial|try|trying|sample|small(er)?|starter|pack size|risk|unsure|unfamiliar|quality|know if|first[- ]time|worth it)\\b",
   "trial_need_docs": 40,
   "share_of_coded": 0.05,
-  "in_core_themes": 27,
-  "in_context_themes": 13,
+  "in_core_themes": 1,
+  "in_context_themes": 39,
   "top_shared_needs": [
    [
     "fresh, good quality products",
@@ -59,6 +59,51 @@
    ]
   ],
   "quotes": [
+   {
+    "quote": "The bread was of poor quality and unusually small in size, and the butter delivered was expired. This is completely unacceptable.",
+    "source": "play_store",
+    "theme": "product_quality_concerns",
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+    "rating": 1,
+    "segment": "unclear",
+    "confidence": 0.9
+   },
+   {
+    "quote": "I had ordered 3 french fries from Blinkit, it was delivered on time but this time all the frozen items were rotten and the expiry dates had been wiped clean.",
+    "source": "play_store",
+    "theme": "product_quality_concerns",
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+    "rating": 1,
+    "segment": "unclear",
+    "confidence": 0.9
+   },
+   {
+    "quote": "I ordered a phone charging cable expecting to receive the product as advertised on your platform. However, the item delivered to me is clearly a low-quality local product that does not match the description or quality promised at the time of purchase.",
+    "source": "play_store",
+    "theme": "product_quality_concerns",
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+    "rating": 1,
+    "segment": "unclear",
+    "confidence": 0.9
+   },
+   {
+    "quote": "I received expired rice from Blinkit, and it was completely rotten and full of insects. When I filed a complaint, they refused to give me a refund.",
+    "source": "play_store",
+    "theme": "product_quality_concerns",
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+    "rating": 1,
+    "segment": "unclear",
+    "confidence": 0.9
+   },
+   {
+    "quote": "The milk products and curd I ordered were not of good quality, and this has happened repeatedly. It is better to buy these items from a nearby local shop.",
+    "source": "play_store",
+    "theme": "product_quality_concerns",
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+    "rating": 1,
+    "segment": "unclear",
+    "confidence": 0.9
+   },
    {
     "quote": "The store is only around 1 km away from my location, yet I was charged ₹30 delivery fees along with handling charges and small cart fees.",
     "source": "play_store",
@@ -87,92 +132,47 @@
     "confidence": 0.9
    },
    {
-    "quote": "Even the Blinkit customer care did not resolve my problem, nor did they process the return. I never expected such poor service from Blinkit, but now I will delete this app even from my family members' phones and will never use it again.",
+    "quote": "Perishable goods like fruits and vegetables are not upto mark and are defective. blinkit stores should check the quality of goods they supply.",
     "source": "play_store",
-    "theme": "customer_support_failure",
+    "theme": "product_quality_concerns",
     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
     "rating": 1,
     "segment": "unclear",
     "confidence": 0.9
    },
    {
-    "quote": "Completely degraded quality of delivery and service",
-    "source": "app_store",
-    "theme": "delivery_inconsistencies",
-    "url": "https://apps.apple.com/us/app/id960335206",
-    "rating": 1,
-    "segment": "unclear",
-    "confidence": 0.9
-   },
-   {
-    "quote": "I ordered a lighter from the app and they sent me a cheap quality one. when I contacted the delivery partner he said that he can't help me with it. I tried the customer support and it gave very mechanical and unhelpful answers.",
+    "quote": "I frequently noticed that the weight of vegetables and fruits are not correct, they are almost missed by 30~40 percent of weight, and many times the quality is also not good.",
     "source": "play_store",
-    "theme": "poor_customer_support",
+    "theme": "product_quality_concerns",
     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-    "rating": 1,
-    "segment": "unclear",
-    "confidence": 0.8
-   },
-   {
-    "quote": "It is a terrible experience they always scam regarding the time and product and brag when they deliver on time. blinkit is better if you can wait but don't trust the product to be delivered on time and check the quality after delivery, I used to like it so much in beginning that I used it to even order what I can get easily whithin 5-10 minutes but now I'm just getting fed-up.",
-    "source": "play_store",
-    "theme": "delivery_time_expectations",
-    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-    "rating": 1,
-    "segment": "unclear",
-    "confidence": 0.8
-   },
-   {
-    "quote": "The product which was delivered was not up to the mark and when I raised the complaint to the customer support, they refused to replace it with another size and revised price.",
-    "source": "play_store",
-    "theme": "poor_customer_support",
-    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-    "rating": 1,
-    "segment": "unclear",
-    "confidence": 0.8
-   },
-   {
-    "quote": "They replied to me that they will provide a coupon which I can use next time while placing my order to compensate for the bad quality potatoes, so I said ok. But neither the coupon was received and in fact the chats in which they said they will provide coupon was deleted from their side later on.",
-    "source": "play_store",
-    "theme": "customer_support_failure",
-    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-    "rating": 1,
-    "segment": "unclear",
-    "confidence": 0.8
-   },
-   {
-    "quote": "Only problem is the high cost of ordering a small item. like if I order 20 rs item then the additional amount would add upto 50-60 in the final amount.",
-    "source": "play_store",
-    "theme": "pricing_and_fees",
-    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-    "rating": 4,
-    "segment": "unclear",
-    "confidence": 0.8
-   },
-   {
-    "quote": "Not consistent with quality delivery. Delivery training of new employees is poor and thus many issues",
-    "source": "app_store",
-    "theme": "delivery_inconsistencies",
-    "url": "https://apps.apple.com/us/app/id960335206",
     "rating": 2,
     "segment": "unclear",
-    "confidence": 0.8
+    "confidence": 0.9
    },
    {
-    "quote": "but1problem is there are handling charge and also below 200 it's get ₹30charge its very cool app btw all order are on time and good quality of eating product bcz I am only used for eating item I can say about that her electronics and beauty products.",
+    "quote": "Even the Blinkit customer care did not resolve my problem, nor did they process the return. I never expected such poor service from Blinkit, but now I will delete this app even from my family members' phones and will never use it again.",
     "source": "play_store",
-    "theme": "pricing_and_fees",
+    "theme": "customer_support",
     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-    "rating": 4,
+    "rating": 1,
     "segment": "unclear",
-    "confidence": 0.7
+    "confidence": 0.9
+   },
+   {
+    "quote": "No quality control check before the product leaves from outlet as the milk packets were torn and spilled all over and took the photos at the time of delivery Which was cleaned.",
+    "source": "play_store",
+    "theme": "product_quality_concerns",
+    "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+    "rating": 1,
+    "segment": "unclear",
+    "confidence": 0.9
    }
   ]
  },
  "validity": {
   "rule": "A theme is reported only if it appears in at least 2 independent sources.",
   "code_rule": "A code is accepted only if the coder's confidence is at least 0.5; below that it is counted as rejected and excluded from every theme statistic.",
-  "valid_themes": 17,
+  "valid_themes": 12,
   "rejected_themes": [
    {
     "id": "lack_of_category_exploration_deterrents",
@@ -186,10 +186,570 @@
  },
  "themes": [
   {
+   "id": "customer_support",
+   "label": "Ineffective Customer Support",
+   "definition": "Users report unhelpful, unresponsive or inaccessible customer service: unresolved complaints, refusal to take responsibility, and unfulfilled refund promises.",
+   "relevance": "context",
+   "count": 107,
+   "frequency": 0.13391739674593242,
+   "severity": 0.9719626168224299,
+   "confidence": 0.854205607476636,
+   "sources": [
+    "play_store",
+    "app_store"
+   ],
+   "cross_source_valid": true,
+   "per_source": {
+    "play_store": 82,
+    "app_store": 25
+   },
+   "segments": {
+    "unclear": 105,
+    "new_life_stage": 1,
+    "routine_replenisher": 1
+   },
+   "segment_spread": 0.4,
+   "top_needs": [
+    [
+     "resolution for missing item",
+     2
+    ],
+    [
+     "return/replacement for defective product",
+     2
+    ],
+    [
+     "responsive and helpful customer support",
+     2
+    ],
+    [
+     "effective customer support for order issues",
+     2
+    ],
+    [
+     "solution for defective product",
+     2
+    ]
+   ],
+   "categories": [
+    [
+     "Electronics",
+     20
+    ],
+    [
+     "PersonalCare",
+     3
+    ],
+    [
+     "Groceries",
+     2
+    ],
+    [
+     "Other",
+     2
+    ],
+    [
+     "Snacks",
+     2
+    ]
+   ],
+   "quotes": [
+    {
+     "quote": "The customer PAYS for an item -> Receives an EMPTY box -> The support team says; \"I understand your point of view. If I were in your position, I would feel the same, but trust me, it is not possible from our end to cater to this request, as we have confirmed from the delivery team that all items have been delivered to you.\"",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "customer_support"
+    },
+    {
+     "quote": "I placed multiple orders, but only two of them were delivered while the remaining items were not. The store manager couldn't even provide clear information about whether I would receive a refund for the undelivered products.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "customer_support"
+    },
+    {
+     "quote": "I ordered one product through the app, but when the package was delivered, I received only an empty box. The biggest concern is not just the missing item but the complete lack of accountability.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "customer_support"
+    },
+    {
+     "quote": "Incorrect product received. No resolution offered but empty platitude. Informed Return or replacement is not available at the moment though at the very same time i could see in the app it's showing otherwise.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "customer_support"
+    },
+    {
+     "quote": "I ordered 4 items, but only 3 were delivered. When I contacted customer support to report the missing item, they simply claimed that all 4 items had been delivered and did not take any action to investigate or resolve the issue.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "customer_support"
+    },
+    {
+     "quote": "Blinkit delivers items quickly, but their customer service is very poor. Even after sending photos as proof, they still claim that everything is fine with the order.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "customer_support"
+    },
+    {
+     "quote": "When the order arrived, some products were missing. I reported the issue immediately. First, your customer support assured me that the missing products would be sent. Later, I was told I would receive a refund. In the end, neither the missing products nor the promised refu",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "new_life_stage",
+     "confidence": 0.9,
+     "theme": "customer_support"
+    },
+    {
+     "quote": "Very poor customer support. There is no chat or customer care number to contact. I received a defective product, and the only option was email.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "customer_support"
+    },
+    {
+     "quote": "The product page clearly mentioned \"7 Days Easy Return – Hassle free return or exchange for size issues.\" However, when I requested an exchange due to a size issue, it was denied by citing conditions that were never disclosed at the time of purchase.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "customer_support"
+    },
+    {
+     "quote": "I received a faulty product that turns ON and OFF automatically right out of the box. Instead of replacing the defective product, Blinkit kept asking me to contact the brand, even though I purchased it from Blinkit.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "customer_support"
+    },
+    {
+     "quote": "I ordered a set of sketch colors which were completely dry even without using them. So the app said that the products could only be replaced not returned. Therefore we replaced those dried sketches and received a new one . Now that too are not working and neither we're able to replace nor return the item.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "customer_support"
+    },
+    {
+     "quote": "The only problem is the lack of cancellation or return option. Why isn't there a clear return or cancellation button but instead an ai assistant that makes 0 sense and doesn't work properly.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 5,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "customer_support"
+    }
+   ],
+   "opportunity": 80.7,
+   "strategic_components": {
+    "core_relevance": 0,
+    "trial_need": 0.037,
+    "new_category": 0.028
+   },
+   "strategic_fit": 0.017,
+   "strategic_priority": 1.4
+  },
+  {
+   "id": "order_and_delivery_failures",
+   "label": "Order and Delivery Failures",
+   "definition": "The order did not arrive as promised: items incorrect, missing, damaged or short in quantity, wrong location, or poor handling by delivery personnel.",
+   "relevance": "context",
+   "count": 119,
+   "frequency": 0.14893617021276595,
+   "severity": 0.9243697478991597,
+   "confidence": 0.810084033613445,
+   "sources": [
+    "play_store",
+    "app_store",
+    "reddit"
+   ],
+   "cross_source_valid": true,
+   "per_source": {
+    "play_store": 79,
+    "app_store": 33,
+    "reddit": 7
+   },
+   "segments": {
+    "unclear": 118,
+    "routine_replenisher": 1
+   },
+   "segment_spread": 0.2,
+   "top_needs": [
+    [
+     "correct freebie",
+     4
+    ],
+    [
+     "delivered items",
+     2
+    ],
+    [
+     "delivered order",
+     2
+    ],
+    [
+     "safe interaction with delivery agents",
+     2
+    ],
+    [
+     "delivery to correct address",
+     1
+    ]
+   ],
+   "categories": [
+    [
+     "Groceries",
+     16
+    ],
+    [
+     "Snacks",
+     4
+    ],
+    [
+     "PersonalCare",
+     4
+    ],
+    [
+     "Other",
+     3
+    ],
+    [
+     "Household",
+     3
+    ]
+   ],
+   "quotes": [
+    {
+     "quote": "The order was not delivered and it showed in aap delivered. I paid extra as a rain surcharge as well. Post raising complaint they said checked with delivery partner it was delivered.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "order_and_delivery_failures"
+    },
+    {
+     "quote": "The delivery partners assigned are very rude and irresponsible. I had to cancel my order ( ice cream )just for him,as he asked me to collect order from some other place very rudely.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "order_and_delivery_failures"
+    },
+    {
+     "quote": "The delivery guy asked to cancel and didnt picked the call further. After that it is showing the order is delivered. I approached to the support in blinkit app. There also no help come.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "order_and_delivery_failures"
+    },
+    {
+     "quote": "My order was marked delivered, but the package contained absolutely nothing. Not one item.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "order_and_delivery_failures"
+    },
+    {
+     "quote": "I ordered an item, but it was never delivered even though the app marked it as delivered.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "order_and_delivery_failures"
+    },
+    {
+     "quote": "I had ordered a raincoat set, but upon receiving the delivery, I found that only the rain pant was included in the package. The raincoat jacket, which is an essential part of the product, was completely missing from the order.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "order_and_delivery_failures"
+    },
+    {
+     "quote": "I placed a prepaid order on Blinkit, but it was never delivered. The app incorrectly marked it as \"Delivered.\"",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "order_and_delivery_failures"
+    },
+    {
+     "quote": "My order arrived with missing items, and the customer support chat was not helpful at all. They neither arranged delivery of the missing items nor provided a refund.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "order_and_delivery_failures"
+    },
+    {
+     "quote": "And the service was absolutely fantastic, but now, as I am saying it's through my own from 2 months or 3 months, maybe more, the service is not that much good as it was previous, they are removing the people and giving multiple orders for the one person delivery and there is no perfect timing for the delivery.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "order_and_delivery_failures"
+    },
+    {
+     "quote": "I've ordered the cam Pure original car refresher. I want the exact same thinh that's shown in the app. they sent something else and when I raised a request, the chat says it's the same and closed the issue.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "order_and_delivery_failures"
+    },
+    {
+     "quote": "Sometimes they intentionally deliver the wrong product and sometimes they send delivered massages without sending any single product.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "order_and_delivery_failures"
+    },
+    {
+     "quote": "Most of the time, they deliver wrong or rotten items, and on several occasions, they have completely forgotten to send ordered items.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "order_and_delivery_failures"
+    }
+   ],
+   "opportunity": 80.1,
+   "strategic_components": {
+    "core_relevance": 0,
+    "trial_need": 0.017,
+    "new_category": 0.05
+   },
+   "strategic_fit": 0.015,
+   "strategic_priority": 1.2
+  },
+  {
+   "id": "pricing_and_fees",
+   "label": "Pricing and Fees",
+   "definition": "Prices higher than market or other platforms, plus delivery charges, handling fees, surge pricing and minimum cart limits.",
+   "relevance": "context",
+   "count": 104,
+   "frequency": 0.13016270337922403,
+   "severity": 0.8942307692307693,
+   "confidence": 0.8403846153846154,
+   "sources": [
+    "play_store",
+    "app_store",
+    "reddit"
+   ],
+   "cross_source_valid": true,
+   "per_source": {
+    "play_store": 48,
+    "app_store": 53,
+    "reddit": 3
+   },
+   "segments": {
+    "unclear": 98,
+    "deal_seeker": 3,
+    "routine_replenisher": 3
+   },
+   "segment_spread": 0.4,
+   "top_needs": [
+    [
+     "competitive pricing",
+     6
+    ],
+    [
+     "fair pricing",
+     5
+    ],
+    [
+     "lower delivery charges",
+     3
+    ],
+    [
+     "lower minimum order for free delivery",
+     2
+    ],
+    [
+     "fair pricing and stock availability",
+     1
+    ]
+   ],
+   "categories": [
+    [
+     "Groceries",
+     6
+    ],
+    [
+     "Snacks",
+     4
+    ],
+    [
+     "Other",
+     1
+    ],
+    [
+     "Electronics",
+     1
+    ]
+   ],
+   "quotes": [
+    {
+     "quote": "Blinkit is overpriced. It charges high price for vegetables and fruits as compared to the market. It also charges Rs 5 as handling fee which other online shopping apps doesn't ask for.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 2,
+     "segment": "deal_seeker",
+     "confidence": 0.9,
+     "theme": "pricing_and_fees"
+    },
+    {
+     "quote": "I ordered one product but received a completely different item. When I complained, they refunded only the discounted amount and did not return the full amount I paid after applying the offer.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "pricing_and_fees"
+    },
+    {
+     "quote": "already charges are high, no clear cut policies regarding refund, payment. whenever they feel like so. I read almost all reviews, most of the time 1 star, horrible experiences.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "pricing_and_fees"
+    },
+    {
+     "quote": "At the time of placing the order, I was shown a total amount of ₹61, but ₹161 was deducted from my bank account. No clear information about any additional charges, handling fees, or extra deductions was displayed before the payment was completed.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "pricing_and_fees"
+    },
+    {
+     "quote": "they over charge you when you go to final order price where 50 rs product becomes 150 rs product with hidden charges and stupid pointless costs like handling cost and small cart charge, why are they taking small cart charge when they launched this app to deliver small items on last minutes, absolute rubbish app ever",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "pricing_and_fees"
+    },
+    {
+     "quote": "As we go on adding items, the limit of free delivery goes on increasing.. when it's shows add items of particular amount to get free delivery.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 2,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "pricing_and_fees"
+    },
+    {
+     "quote": "We are very happy with it but one thing is that the prices are triple of the actual item please make the price relevant as it is very high to purchase , for example : a 10 rupees chips packet is 39 rupees please change it and your app will improve a lot .",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 4,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "pricing_and_fees"
+    },
+    {
+     "quote": "App is ok occasional issue while applying voucher codes, but the problem is I always see surge price of 30rs after 5pm evening. although they say delivery is free they collect it through surge fee most of the time.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 2,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "pricing_and_fees"
+    },
+    {
+     "quote": "Very poor unmeasured app, price more than market price, no coupons, discounts ,payment providers offer higher order price, if you guys continue like this the app will not workout long timebecause of no attraction on app just i checked and left out because of nothing special on this app.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "pricing_and_fees"
+    },
+    {
+     "quote": "But the “free delivery” claim feels misleading because they almost always add a ₹30 surge fee at checkout. Extra charges should be shown clearly from the start.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 3,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "pricing_and_fees"
+    },
+    {
+     "quote": "The store is only around 1 km away from my location, yet I was charged ₹30 delivery fees along with handling charges and small cart fees.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "pricing_and_fees"
+    },
+    {
+     "quote": "it's charging unnecessary amount of money, 5rs on handling fee then again 30rs of delivery charge if ordered products less than 150rs. first of all we are not supposed to order more than 150 rupees everytime.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "pricing_and_fees"
+    }
+   ],
+   "opportunity": 77.1,
+   "strategic_components": {
+    "core_relevance": 0,
+    "trial_need": 0.048,
+    "new_category": 0
+   },
+   "strategic_fit": 0.014,
+   "strategic_priority": 1.1
+  },
+  {
    "id": "product_quality_concerns",
    "label": "Product Quality Concerns",
    "definition": "Users express dissatisfaction with the quality of perishable items (e.g., curdled milk), lack of visible expiry dates, or receiving items that do not match product descriptions (e.g., warm drinks, wrong umbrella).",
-   "relevance": "core",
+   "relevance": "context",
    "count": 105,
    "frequency": 0.13141426783479349,
    "severity": 0.9333333333333333,
@@ -366,244 +926,65 @@
    ],
    "opportunity": 74.7,
    "strategic_components": {
-    "core_relevance": 1,
+    "core_relevance": 0,
     "trial_need": 0.248,
     "new_category": 0.057
    },
-   "strategic_fit": 0.586,
-   "strategic_priority": 43.8
+   "strategic_fit": 0.086,
+   "strategic_priority": 6.4
   },
   {
-   "id": "pricing_and_fees",
-   "label": "Pricing and Fees",
-   "definition": "Users complain about high delivery charges, hidden fees, minimum cart limits, and prices being higher compared to other platforms or traditional stores.",
+   "id": "payment_and_refunds",
+   "label": "Payment, Cancellation and Refunds",
+   "definition": "Payment failures, duplicate orders, platform-side cancellations, cancellation fees, and refunds that are delayed or never arrive.",
    "relevance": "context",
-   "count": 86,
-   "frequency": 0.10763454317897372,
-   "severity": 0.872093023255814,
-   "confidence": 0.8383720930232551,
-   "sources": [
-    "play_store",
-    "app_store",
-    "reddit"
-   ],
-   "cross_source_valid": true,
-   "per_source": {
-    "play_store": 39,
-    "app_store": 44,
-    "reddit": 3
-   },
-   "segments": {
-    "unclear": 80,
-    "deal_seeker": 3,
-    "routine_replenisher": 3
-   },
-   "segment_spread": 0.4,
-   "top_needs": [
-    [
-     "lower delivery charges",
-     3
-    ],
-    [
-     "competitive pricing",
-     3
-    ],
-    [
-     "fair pricing",
-     2
-    ],
-    [
-     "lower minimum order for free delivery",
-     2
-    ],
-    [
-     "fair pricing and stock availability",
-     1
-    ]
-   ],
-   "categories": [
-    [
-     "Groceries",
-     5
-    ],
-    [
-     "Snacks",
-     4
-    ],
-    [
-     "Electronics",
-     1
-    ]
-   ],
-   "quotes": [
-    {
-     "quote": "Blinkit is overpriced. It charges high price for vegetables and fruits as compared to the market. It also charges Rs 5 as handling fee which other online shopping apps doesn't ask for.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 2,
-     "segment": "deal_seeker",
-     "confidence": 0.9,
-     "theme": "pricing_and_fees"
-    },
-    {
-     "quote": "already charges are high, no clear cut policies regarding refund, payment. whenever they feel like so. I read almost all reviews, most of the time 1 star, horrible experiences.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_and_fees"
-    },
-    {
-     "quote": "they over charge you when you go to final order price where 50 rs product becomes 150 rs product with hidden charges and stupid pointless costs like handling cost and small cart charge, why are they taking small cart charge when they launched this app to deliver small items on last minutes, absolute rubbish app ever",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_and_fees"
-    },
-    {
-     "quote": "As we go on adding items, the limit of free delivery goes on increasing.. when it's shows add items of particular amount to get free delivery.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 2,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_and_fees"
-    },
-    {
-     "quote": "We are very happy with it but one thing is that the prices are triple of the actual item please make the price relevant as it is very high to purchase , for example : a 10 rupees chips packet is 39 rupees please change it and your app will improve a lot .",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 4,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_and_fees"
-    },
-    {
-     "quote": "App is ok occasional issue while applying voucher codes, but the problem is I always see surge price of 30rs after 5pm evening. although they say delivery is free they collect it through surge fee most of the time.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 2,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_and_fees"
-    },
-    {
-     "quote": "Very poor unmeasured app, price more than market price, no coupons, discounts ,payment providers offer higher order price, if you guys continue like this the app will not workout long timebecause of no attraction on app just i checked and left out because of nothing special on this app.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_and_fees"
-    },
-    {
-     "quote": "But the “free delivery” claim feels misleading because they almost always add a ₹30 surge fee at checkout. Extra charges should be shown clearly from the start.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 3,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_and_fees"
-    },
-    {
-     "quote": "The store is only around 1 km away from my location, yet I was charged ₹30 delivery fees along with handling charges and small cart fees.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_and_fees"
-    },
-    {
-     "quote": "it's charging unnecessary amount of money, 5rs on handling fee then again 30rs of delivery charge if ordered products less than 150rs. first of all we are not supposed to order more than 150 rupees everytime.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_and_fees"
-    },
-    {
-     "quote": "During day time why would you charge a high surcharge and do i really have to order above 499 to get rid of it. I'll better walk to the nearby stores.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 2,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_and_fees"
-    },
-    {
-     "quote": "very high delivery charges, very High prices of all products. i can't suggest this app to anyone. i hve ordered some items, they show that payment will be deducted from my Amazon pay balance, when i click on proceed, payment was immediately deducted, no sms, no confirmation,. And when i cancel my order within 1-2 minute, they have deducted 20 rupees as cancellation charges.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_and_fees"
-    }
-   ],
-   "opportunity": 69.1,
-   "strategic_components": {
-    "core_relevance": 0,
-    "trial_need": 0.058,
-    "new_category": 0
-   },
-   "strategic_fit": 0.017,
-   "strategic_priority": 1.2
-  },
-  {
-   "id": "customer_support_failure",
-   "label": "Ineffective Customer Support",
-   "definition": "Users express frustration with customer service, citing unhelpful responses, refusal to resolve issues, and lack of accountability for problems.",
-   "relevance": "context",
-   "count": 78,
-   "frequency": 0.09762202753441802,
-   "severity": 0.9743589743589743,
-   "confidence": 0.8499999999999994,
+   "count": 102,
+   "frequency": 0.1276595744680851,
+   "severity": 0.9411764705882353,
+   "confidence": 0.8539215686274506,
    "sources": [
     "play_store",
     "app_store"
    ],
    "cross_source_valid": true,
    "per_source": {
-    "play_store": 66,
-    "app_store": 12
+    "play_store": 69,
+    "app_store": 33
    },
    "segments": {
-    "unclear": 76,
-    "new_life_stage": 1,
-    "routine_replenisher": 1
+    "unclear": 102
    },
-   "segment_spread": 0.4,
+   "segment_spread": 0,
    "top_needs": [
     [
-     "resolution for missing item",
+     "cash on delivery option",
+     4
+    ],
+    [
+     "timely refund and proper customer support",
      2
     ],
     [
-     "return/replacement for defective product",
+     "refund to original payment method",
      2
     ],
     [
-     "responsive and helpful customer support",
+     "timely refund for cancelled orders",
      2
     ],
     [
-     "solution for defective product",
+     "refund for cancelled orders",
      2
-    ],
-    [
-     "refund for undelivered items",
-     1
     ]
    ],
    "categories": [
     [
      "Electronics",
-     19
+     7
+    ],
+    [
+     "Other",
+     5
     ],
     [
      "PersonalCare",
@@ -614,138 +995,134 @@
      2
     ],
     [
-     "Other",
-     2
-    ],
-    [
-     "Snacks",
-     2
+     "Household",
+     1
     ]
    ],
    "quotes": [
     {
-     "quote": "The customer PAYS for an item -> Receives an EMPTY box -> The support team says; \"I understand your point of view. If I were in your position, I would feel the same, but trust me, it is not possible from our end to cater to this request, as we have confirmed from the delivery team that all items have been delivered to you.\"",
+     "quote": "I placed the order only once, but it failed three times due to a technical issue on your end. Suddenly, all three orders became active, which is completely unacceptable.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
      "segment": "unclear",
      "confidence": 0.9,
-     "theme": "customer_support_failure"
+     "theme": "payment_and_refunds"
     },
     {
-     "quote": "I placed multiple orders, but only two of them were delivered while the remaining items were not. The store manager couldn't even provide clear information about whether I would receive a refund for the undelivered products.",
+     "quote": "The app showed a \"Retry Payment\" option, which resulted in a duplicate order. I accepted one order and cancelled the duplicate, but Blinkit still charged a ₹20 cancellation fee for an issue caused by its own payment flow.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
      "segment": "unclear",
      "confidence": 0.9,
-     "theme": "customer_support_failure"
+     "theme": "payment_and_refunds"
     },
     {
-     "quote": "I ordered one product through the app, but when the package was delivered, I received only an empty box. The biggest concern is not just the missing item but the complete lack of accountability.",
+     "quote": "I ordered a product from blinkit, the amount was deducted from my account and they mentioned it as failed delivery and mentioned my money would be refunded in 5days !!",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
      "segment": "unclear",
      "confidence": 0.9,
-     "theme": "customer_support_failure"
+     "theme": "payment_and_refunds"
     },
     {
-     "quote": "Incorrect product received. No resolution offered but empty platitude. Informed Return or replacement is not available at the moment though at the very same time i could see in the app it's showing otherwise.",
+     "quote": "refunds are not processed sooner.. for that matter they are not processed at all. my money is not being refund since the last two weeks.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
      "segment": "unclear",
      "confidence": 0.9,
-     "theme": "customer_support_failure"
+     "theme": "payment_and_refunds"
     },
     {
-     "quote": "I ordered 4 items, but only 3 were delivered. When I contacted customer support to report the missing item, they simply claimed that all 4 items had been delivered and did not take any action to investigate or resolve the issue.",
+     "quote": "After waiting for 45 minutes, Blinkit cancelled my order from their side without any explanation. I was then told that my refund would be processed by 24th July, even though refunds are usually completed within 24–48 hours.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
      "segment": "unclear",
      "confidence": 0.9,
-     "theme": "customer_support_failure"
+     "theme": "payment_and_refunds"
     },
     {
-     "quote": "Blinkit delivers items quickly, but their customer service is very poor. Even after sending photos as proof, they still claim that everything is fine with the order.",
+     "quote": "I accidentally ordered the wrong product today, but Blinkit's customer service was outstanding. I requested a return through the chat box right after delivery. They collected the item and processed my refund immediately.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 5,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "payment_and_refunds"
+    },
+    {
+     "quote": "Great experience with the customer support team! I had to return an unstable laptop table, and the executive was very helpful in resolving the issue quickly, arranging a pickup, and processing a full refund back to my original payment source without any hassle.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 5,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "payment_and_refunds"
+    },
+    {
+     "quote": "I accidentally made a payment on the Blinkit app about 6 weeks ago without placing an order. I received a message saying that the amount would be refunded within 7 working days, but I still haven't received my money.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
      "segment": "unclear",
      "confidence": 0.9,
-     "theme": "customer_support_failure"
+     "theme": "payment_and_refunds"
     },
     {
-     "quote": "When the order arrived, some products were missing. I reported the issue immediately. First, your customer support assured me that the missing products would be sent. Later, I was told I would receive a refund. In the end, neither the missing products nor the promised refu",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "new_life_stage",
-     "confidence": 0.9,
-     "theme": "customer_support_failure"
-    },
-    {
-     "quote": "The product page clearly mentioned \"7 Days Easy Return – Hassle free return or exchange for size issues.\" However, when I requested an exchange due to a size issue, it was denied by citing conditions that were never disclosed at the time of purchase.",
+     "quote": "The app does not clearly show the refund status, making it confusing for customers to know whether their refund has been initiated or when they can expect to receive it.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
      "segment": "unclear",
      "confidence": 0.9,
-     "theme": "customer_support_failure"
+     "theme": "payment_and_refunds"
     },
     {
-     "quote": "I received a faulty product that turns ON and OFF automatically right out of the box. Instead of replacing the defective product, Blinkit kept asking me to contact the brand, even though I purchased it from Blinkit.",
+     "quote": "Due to a technical issue on your end, my online transaction got stuck in the processing stage, and I was given a date of July 14, 2026. Today is July 14, yet I have not received the refund, and the order history is no longer visible on the Blinkit platform.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 2,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "payment_and_refunds"
+    },
+    {
+     "quote": "I accidentally placed an order by mistake. It happened suddenly, and I didn’t get the chance to review it properly. Unfortunately, I’m unable to cancel it.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
      "segment": "unclear",
      "confidence": 0.9,
-     "theme": "customer_support_failure"
+     "theme": "payment_and_refunds"
     },
     {
-     "quote": "I ordered a set of sketch colors which were completely dry even without using them. So the app said that the products could only be replaced not returned. Therefore we replaced those dried sketches and received a new one . Now that too are not working and neither we're able to replace nor return the item.",
+     "quote": "Firstly product received without essential items. Refund was said to be issued to the original source. they refunded back as a promo code instead.",
      "source": "play_store",
      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
      "rating": 1,
      "segment": "unclear",
      "confidence": 0.9,
-     "theme": "customer_support_failure"
-    },
-    {
-     "quote": "I purchased the Fiama Shower Gel and Renee Lip Gloss under a Buy 1 Get 1 offer, but I received only one item. When I contacted customer support, the first representative assured me that I would receive a refund.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "customer_support_failure"
-    },
-    {
-     "quote": "I have recieved a bad quality damaged product from them. when I approach to the customer support they told me they can not do anything regarding this matter.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "customer_support_failure"
+     "theme": "payment_and_refunds"
     }
    ],
-   "opportunity": 68.9,
+   "opportunity": 69.7,
    "strategic_components": {
     "core_relevance": 0,
-    "trial_need": 0.026,
-    "new_category": 0.038
+    "trial_need": 0,
+    "new_category": 0.029
    },
-   "strategic_fit": 0.015,
-   "strategic_priority": 1
+   "strategic_fit": 0.006,
+   "strategic_priority": 0.4
   },
   {
    "id": "convenience_and_speed_value",
    "label": "Value of Convenience and Speed",
    "definition": "Users appreciate the quick delivery and convenience of ordering essentials from home, saving time and effort.",
-   "relevance": "core",
+   "relevance": "context",
    "count": 123,
    "frequency": 0.1539424280350438,
    "severity": 0,
@@ -922,376 +1299,12 @@
    ],
    "opportunity": 62,
    "strategic_components": {
-    "core_relevance": 1,
+    "core_relevance": 0,
     "trial_need": 0,
     "new_category": 0.008
    },
-   "strategic_fit": 0.502,
-   "strategic_priority": 31.1
-  },
-  {
-   "id": "payment_and_refund_problems",
-   "label": "Payment and Refund Problems",
-   "definition": "Users face issues with payment failures, duplicate orders, unexpected cancellation fees, and delayed or unreceived refunds.",
-   "relevance": "context",
-   "count": 68,
-   "frequency": 0.0851063829787234,
-   "severity": 0.9411764705882353,
-   "confidence": 0.8588235294117638,
-   "sources": [
-    "play_store",
-    "app_store"
-   ],
-   "cross_source_valid": true,
-   "per_source": {
-    "play_store": 39,
-    "app_store": 29
-   },
-   "segments": {
-    "unclear": 68
-   },
-   "segment_spread": 0,
-   "top_needs": [
-    [
-     "cash on delivery option",
-     4
-    ],
-    [
-     "timely refund and proper customer support",
-     2
-    ],
-    [
-     "timely refund for cancelled orders",
-     2
-    ],
-    [
-     "refund for cancelled orders",
-     2
-    ],
-    [
-     "reliable payment processing",
-     2
-    ]
-   ],
-   "categories": [
-    [
-     "Electronics",
-     5
-    ],
-    [
-     "Other",
-     1
-    ],
-    [
-     "PersonalCare",
-     1
-    ]
-   ],
-   "quotes": [
-    {
-     "quote": "I placed the order only once, but it failed three times due to a technical issue on your end. Suddenly, all three orders became active, which is completely unacceptable.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "payment_and_refund_problems"
-    },
-    {
-     "quote": "The app showed a \"Retry Payment\" option, which resulted in a duplicate order. I accepted one order and cancelled the duplicate, but Blinkit still charged a ₹20 cancellation fee for an issue caused by its own payment flow.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "payment_and_refund_problems"
-    },
-    {
-     "quote": "I ordered a product from blinkit, the amount was deducted from my account and they mentioned it as failed delivery and mentioned my money would be refunded in 5days !!",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "payment_and_refund_problems"
-    },
-    {
-     "quote": "refunds are not processed sooner.. for that matter they are not processed at all. my money is not being refund since the last two weeks.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "payment_and_refund_problems"
-    },
-    {
-     "quote": "I accidentally made a payment on the Blinkit app about 6 weeks ago without placing an order. I received a message saying that the amount would be refunded within 7 working days, but I still haven't received my money.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "payment_and_refund_problems"
-    },
-    {
-     "quote": "The app does not clearly show the refund status, making it confusing for customers to know whether their refund has been initiated or when they can expect to receive it.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "payment_and_refund_problems"
-    },
-    {
-     "quote": "Due to a technical issue on your end, my online transaction got stuck in the processing stage, and I was given a date of July 14, 2026. Today is July 14, yet I have not received the refund, and the order history is no longer visible on the Blinkit platform.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 2,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "payment_and_refund_problems"
-    },
-    {
-     "quote": "Firstly product received without essential items. Refund was said to be issued to the original source. they refunded back as a promo code instead.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "payment_and_refund_problems"
-    },
-    {
-     "quote": "I returned my COD order and was promised a refund of ₹1011 by 13 July 2026, but today is 15 July and I still haven't received it.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 2,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "payment_and_refund_problems"
-    },
-    {
-     "quote": "amount deducted but it's showing still Awaiting Payment Status how much time it will take to confirm. If i need something right now what will I do later if I get it.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "payment_and_refund_problems"
-    },
-    {
-     "quote": "My first payment was deducted, but the app showed it as failed. Because of that, I had to pay the delivery partner again to receive my order. I ended up paying twice for the same order.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "payment_and_refund_problems"
-    },
-    {
-     "quote": "around 8-10 mins later they shows that 1 item is unavailable and for that inconvenience we will refund you the money ( it was 275 rupees ) in 3-5 days and I have being checking from the last 2-3 days that if they did the refund or not today on 12th July I checked on the app its showing that they have returned the money but I have received none & not allowing me to complain",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "payment_and_refund_problems"
-    }
-   ],
-   "opportunity": 55.9,
-   "strategic_components": {
-    "core_relevance": 0,
-    "trial_need": 0,
-    "new_category": 0.015
-   },
-   "strategic_fit": 0.003,
-   "strategic_priority": 0.2
-  },
-  {
-   "id": "order_accuracy_issues",
-   "label": "Order Accuracy Issues",
-   "definition": "Users experience problems with incorrect, missing, or defective items, as well as discrepancies in quantity or quality of products received.",
-   "relevance": "context",
-   "count": 48,
-   "frequency": 0.060075093867334166,
-   "severity": 0.9583333333333334,
-   "confidence": 0.8166666666666663,
-   "sources": [
-    "play_store",
-    "app_store",
-    "reddit"
-   ],
-   "cross_source_valid": true,
-   "per_source": {
-    "play_store": 35,
-    "app_store": 9,
-    "reddit": 4
-   },
-   "segments": {
-    "unclear": 48
-   },
-   "segment_spread": 0,
-   "top_needs": [
-    [
-     "correct freebie",
-     4
-    ],
-    [
-     "correct quantity of product",
-     1
-    ],
-    [
-     "accurate billing and refund for missing item",
-     1
-    ],
-    [
-     "refund for missing items",
-     1
-    ],
-    [
-     "correct item delivery and helpful customer support",
-     1
-    ]
-   ],
-   "categories": [
-    [
-     "Groceries",
-     10
-    ],
-    [
-     "PersonalCare",
-     4
-    ],
-    [
-     "Snacks",
-     3
-    ],
-    [
-     "Household",
-     2
-    ],
-    [
-     "Pet",
-     1
-    ]
-   ],
-   "quotes": [
-    {
-     "quote": "My order was marked delivered, but the package contained absolutely nothing. Not one item.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_accuracy_issues"
-    },
-    {
-     "quote": "I had ordered a raincoat set, but upon receiving the delivery, I found that only the rain pant was included in the package. The raincoat jacket, which is an essential part of the product, was completely missing from the order.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_accuracy_issues"
-    },
-    {
-     "quote": "My order arrived with missing items, and the customer support chat was not helpful at all. They neither arranged delivery of the missing items nor provided a refund.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_accuracy_issues"
-    },
-    {
-     "quote": "I've ordered the cam Pure original car refresher. I want the exact same thinh that's shown in the app. they sent something else and when I raised a request, the chat says it's the same and closed the issue.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_accuracy_issues"
-    },
-    {
-     "quote": "Sometimes they intentionally deliver the wrong product and sometimes they send delivered massages without sending any single product.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_accuracy_issues"
-    },
-    {
-     "quote": "Most of the time, they deliver wrong or rotten items, and on several occasions, they have completely forgotten to send ordered items.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_accuracy_issues"
-    },
-    {
-     "quote": "I ordered Happilo premium seedless green raisins packs of 250gm each but they send packs of 200gm each. Now, they are not resolving my problem",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_accuracy_issues"
-    },
-    {
-     "quote": "Ordered BTS oreos Received normal oreos. Asked support for help and was replied with “packaging changed but you received the correct product”.",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_accuracy_issues"
-    },
-    {
-     "quote": "I have purchase a order yesterday in thi order 1 product is missing",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_accuracy_issues"
-    },
-    {
-     "quote": "I ordered cherries, but the quantity I received was significantly less than what I paid for. When I contacted customer support, they repeatedly asked for photos as proof.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "order_accuracy_issues"
-    },
-    {
-     "quote": "i have order some items but one item is missing but it is showing in bill so I contact customer care that item is out of stock at Dark store. If item is out of stock it should not be in my bill.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "order_accuracy_issues"
-    },
-    {
-     "quote": "Missing items in an order is a common issue with most online delivery portals, most of them acknowledge and issue a refund automatically.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "order_accuracy_issues"
-    }
-   ],
-   "opportunity": 48.3,
-   "strategic_components": {
-    "core_relevance": 0,
-    "trial_need": 0,
-    "new_category": 0.125
-   },
-   "strategic_fit": 0.025,
-   "strategic_priority": 1.2
+   "strategic_fit": 0.002,
+   "strategic_priority": 0.1
   },
   {
    "id": "app_technical_issues",
@@ -1459,898 +1472,6 @@
     }
    ],
    "opportunity": 47.6,
-   "strategic_components": {
-    "core_relevance": 0,
-    "trial_need": 0,
-    "new_category": 0
-   },
-   "strategic_fit": 0,
-   "strategic_priority": 0
-  },
-  {
-   "id": "delivery_issues",
-   "label": "Delivery Problems",
-   "definition": "Users frequently report issues with incomplete, incorrect, or missing deliveries, as well as problems with delivery personnel.",
-   "relevance": "context",
-   "count": 45,
-   "frequency": 0.056320400500625784,
-   "severity": 0.9111111111111111,
-   "confidence": 0.8133333333333329,
-   "sources": [
-    "play_store",
-    "app_store",
-    "reddit"
-   ],
-   "cross_source_valid": true,
-   "per_source": {
-    "play_store": 26,
-    "app_store": 16,
-    "reddit": 3
-   },
-   "segments": {
-    "unclear": 45
-   },
-   "segment_spread": 0,
-   "top_needs": [
-    [
-     "delivered items",
-     2
-    ],
-    [
-     "delivered order",
-     2
-    ],
-    [
-     "safe interaction with delivery agents",
-     2
-    ],
-    [
-     "complete and timely delivery",
-     1
-    ],
-    [
-     "complete delivery with notification",
-     1
-    ]
-   ],
-   "categories": [
-    [
-     "Groceries",
-     5
-    ],
-    [
-     "Electronics",
-     2
-    ],
-    [
-     "Snacks",
-     1
-    ],
-    [
-     "Other",
-     1
-    ],
-    [
-     "Household",
-     1
-    ]
-   ],
-   "quotes": [
-    {
-     "quote": "The order was not delivered and it showed in aap delivered. I paid extra as a rain surcharge as well. Post raising complaint they said checked with delivery partner it was delivered.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_issues"
-    },
-    {
-     "quote": "The delivery partners assigned are very rude and irresponsible. I had to cancel my order ( ice cream )just for him,as he asked me to collect order from some other place very rudely.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_issues"
-    },
-    {
-     "quote": "The delivery guy asked to cancel and didnt picked the call further. After that it is showing the order is delivered. I approached to the support in blinkit app. There also no help come.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_issues"
-    },
-    {
-     "quote": "I ordered an item, but it was never delivered even though the app marked it as delivered.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_issues"
-    },
-    {
-     "quote": "I placed a prepaid order on Blinkit, but it was never delivered. The app incorrectly marked it as \"Delivered.\"",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_issues"
-    },
-    {
-     "quote": "One item was completely fine & delivered in proper condition but the second item arrived with a broken seal and visible teeth marks on the cover/cap.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_issues"
-    },
-    {
-     "quote": "I purchase something, in the morning it came to me, in a broken condition. it was too broken that I wonder why the delivery guy even picked it up from the store in the first place.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_issues"
-    },
-    {
-     "quote": "The delivery was severely delayed, wasting my valuable time. To top it off, the delivery rider cancelled the order from their end without delivering.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_issues"
-    },
-    {
-     "quote": "Your people wrote delivered but it was never delivered!!! Cheats .",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_issues"
-    },
-    {
-     "quote": "I ordered a buds but did not founds buds in the box and delivery partner said that she has talked to store and they will assign a new delivery partner and deliver the item but there is no response from blinkit",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_issues"
-    },
-    {
-     "quote": "Rider did not come to deliver order and given excuses and he ask me to cancel the order.Also customer service not help me in this situation.",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_issues"
-    },
-    {
-     "quote": "They took my money, but never deliver the item",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_issues"
-    }
-   ],
-   "opportunity": 45.6,
-   "strategic_components": {
-    "core_relevance": 0,
-    "trial_need": 0,
-    "new_category": 0
-   },
-   "strategic_fit": 0,
-   "strategic_priority": 0
-  },
-  {
-   "id": "order_cancellation_and_refunds",
-   "label": "Order Cancellation and Refund Problems",
-   "definition": "Users experience issues with orders being cancelled by the platform, technical glitches leading to multiple orders, and difficulties in obtaining timely refunds.",
-   "relevance": "context",
-   "count": 34,
-   "frequency": 0.0425531914893617,
-   "severity": 0.9411764705882353,
-   "confidence": 0.8441176470588236,
-   "sources": [
-    "play_store",
-    "app_store"
-   ],
-   "cross_source_valid": true,
-   "per_source": {
-    "play_store": 30,
-    "app_store": 4
-   },
-   "segments": {
-    "unclear": 34
-   },
-   "segment_spread": 0,
-   "top_needs": [
-    [
-     "option to edit or cancel order",
-     1
-    ],
-    [
-     "delivery of order or proper solution",
-     1
-    ],
-    [
-     "explanation for cancellation and timely refund",
-     1
-    ],
-    [
-     "option to cancel accidental order",
-     1
-    ],
-    [
-     "fair COD policy",
-     1
-    ]
-   ],
-   "categories": [
-    [
-     "Other",
-     4
-    ],
-    [
-     "PersonalCare",
-     2
-    ],
-    [
-     "Groceries",
-     2
-    ],
-    [
-     "Electronics",
-     2
-    ],
-    [
-     "Household",
-     1
-    ]
-   ],
-   "quotes": [
-    {
-     "quote": "After waiting for 45 minutes, Blinkit cancelled my order from their side without any explanation. I was then told that my refund would be processed by 24th July, even though refunds are usually completed within 24–48 hours.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_cancellation_and_refunds"
-    },
-    {
-     "quote": "I accidentally ordered the wrong product today, but Blinkit's customer service was outstanding. I requested a return through the chat box right after delivery. They collected the item and processed my refund immediately.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 5,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_cancellation_and_refunds"
-    },
-    {
-     "quote": "Great experience with the customer support team! I had to return an unstable laptop table, and the executive was very helpful in resolving the issue quickly, arranging a pickup, and processing a full refund back to my original payment source without any hassle.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 5,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_cancellation_and_refunds"
-    },
-    {
-     "quote": "I accidentally placed an order by mistake. It happened suddenly, and I didn’t get the chance to review it properly. Unfortunately, I’m unable to cancel it.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_cancellation_and_refunds"
-    },
-    {
-     "quote": "and now they're not sending my money, stating it might take 4 to 7 days to return my money, Worst service",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_cancellation_and_refunds"
-    },
-    {
-     "quote": "My order was cancelled without any valid reason, and I have still not received a refund for it. What's worse is that there is absolutely no proper customer support to resolve the issue-no response, no accountability.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_cancellation_and_refunds"
-    },
-    {
-     "quote": "They instantly accepted my order and charged my credit card, but later cancelled it saying the item was out of stock.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_cancellation_and_refunds"
-    },
-    {
-     "quote": "I ordered a polyester luggage bag organiser from Blinkit, but they delivered the wrong product. I returned it multiple times (2–3 times), yet each replacement was incorrect.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_cancellation_and_refunds"
-    },
-    {
-     "quote": "I had cancelled my order and my money deducted were given me as coupon instead of refunding to original payment method and moreover I had received a text message stating that coupon will expire in a month if nothing ordered.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_cancellation_and_refunds"
-    },
-    {
-     "quote": "I cancelled an order worth approximately ₹266, but the refund was not credited back to my original payment method. Instead, Blinkit issued the amount as a coupon without providing any option to choose between a refund to the source account and store credit.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_cancellation_and_refunds"
-    },
-    {
-     "quote": "However, the redelivery was later cancelled from your end,and I never received the replacement items. When I followed up regarding the refund, I was told there was no pending refund because the issue had been marked as a redelivery order.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_cancellation_and_refunds"
-    },
-    {
-     "quote": "However, after waiting for an hour, the delivery did not arrive. Ultimately, the service was declared unavailable, and a refund was initiated. The refund was supposed to be completed by May 3rd, but I have not received it.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 4,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "order_cancellation_and_refunds"
-    }
-   ],
-   "opportunity": 42.1,
-   "strategic_components": {
-    "core_relevance": 0,
-    "trial_need": 0,
-    "new_category": 0.059
-   },
-   "strategic_fit": 0.012,
-   "strategic_priority": 0.5
-  },
-  {
-   "id": "delivery_inconsistencies",
-   "label": "Delivery Inconsistencies",
-   "definition": "Users report issues with delivery speed, incorrect delivery locations, or poor handling by delivery personnel, despite the platforms' promise of quick delivery.",
-   "relevance": "context",
-   "count": 26,
-   "frequency": 0.03254067584480601,
-   "severity": 0.8846153846153846,
-   "confidence": 0.7923076923076923,
-   "sources": [
-    "play_store",
-    "app_store"
-   ],
-   "cross_source_valid": true,
-   "per_source": {
-    "play_store": 18,
-    "app_store": 8
-   },
-   "segments": {
-    "unclear": 25,
-    "routine_replenisher": 1
-   },
-   "segment_spread": 0.2,
-   "top_needs": [
-    [
-     "delivery to correct address",
-     1
-    ],
-    [
-     "accurate delivery to location",
-     1
-    ],
-    [
-     "delivery to current location",
-     1
-    ],
-    [
-     "reliable communication with delivery partner",
-     1
-    ],
-    [
-     "timely delivery and proper handling of frozen items",
-     1
-    ]
-   ],
-   "categories": [
-    [
-     "Groceries",
-     1
-    ],
-    [
-     "Beverages",
-     1
-    ],
-    [
-     "Other",
-     1
-    ]
-   ],
-   "quotes": [
-    {
-     "quote": "And the service was absolutely fantastic, but now, as I am saying it's through my own from 2 months or 3 months, maybe more, the service is not that much good as it was previous, they are removing the people and giving multiple orders for the one person delivery and there is no perfect timing for the delivery.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_inconsistencies"
-    },
-    {
-     "quote": "I have been waiting for my order for more than 20 minutes now, but no rider has been assigned yet. The order status is still showing as not picked up.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_inconsistencies"
-    },
-    {
-     "quote": "Delivery is always late, delivers wrong product often without intimation, not expected from such a reputable app",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_inconsistencies"
-    },
-    {
-     "quote": "Completely degraded quality of delivery and service",
-     "source": "app_store",
-     "url": "https://apps.apple.com/us/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "delivery_inconsistencies"
-    },
-    {
-     "quote": "I had placed two orders from the blinkit app and the address is in the saved list. while I placed the order with my location live. Says 1.8km away so not sure where they have a store near my house but my saved address is very correct and when the delivery agent calls shows a different location in his map.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "delivery_inconsistencies"
-    },
-    {
-     "quote": "The delivery agent's call audio was barely audible, he reached the wrong location despite the correct address, and I had to walk outside my street to collect the order.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "delivery_inconsistencies"
-    },
-    {
-     "quote": "Before a few days they were delivering at my location and i ordered some products but now they suddenly stopped delivering when I tried readjusting my pin I found out they delivered just half a kilometre ahead from my location and not delivering at my location which is just half a kilometre ahead.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "delivery_inconsistencies"
-    },
-    {
-     "quote": "My delivery was 26 minutes late, and all my frozen items arrived completely melted.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "delivery_inconsistencies"
-    },
-    {
-     "quote": "The app showed 24 minutes, but it was delayed by over 30 minutes. Customer support told me the delivery couldn't be completed, so I cancelled the order.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "delivery_inconsistencies"
-    },
-    {
-     "quote": "almost every delivery partner calls multiple times asking where my location is, even though it's correctly pinned in the app. Some even ask me to come downstairs to collect my order.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "routine_replenisher",
-     "confidence": 0.8,
-     "theme": "delivery_inconsistencies"
-    },
-    {
-     "quote": "When I try to pin my exact home address, it automatically pins to a completely different, wrong location. Because of this poor map accuracy, delivery partners are always confused, and deliveries are getting delayed.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "delivery_inconsistencies"
-    },
-    {
-     "quote": "First my items got delivered at the wrong address. Then after calling the delivery partner, who was rude and not agreeing that he delivered it at the wrong location, and did not even recheck the address in his app, finally agreed after I sent him a screenshot.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "delivery_inconsistencies"
-    }
-   ],
-   "opportunity": 41.1,
-   "strategic_components": {
-    "core_relevance": 0,
-    "trial_need": 0.077,
-    "new_category": 0
-   },
-   "strategic_fit": 0.023,
-   "strategic_priority": 0.9
-  },
-  {
-   "id": "poor_customer_support",
-   "label": "Poor Customer Support",
-   "definition": "Users frequently report issues with unhelpful, unresponsive, or inaccessible customer service, leading to unresolved complaints, unfulfilled refunds, and general frustration.",
-   "relevance": "context",
-   "count": 29,
-   "frequency": 0.03629536921151439,
-   "severity": 0.9655172413793104,
-   "confidence": 0.8655172413793101,
-   "sources": [
-    "play_store",
-    "app_store"
-   ],
-   "cross_source_valid": true,
-   "per_source": {
-    "play_store": 16,
-    "app_store": 13
-   },
-   "segments": {
-    "unclear": 29
-   },
-   "segment_spread": 0,
-   "top_needs": [
-    [
-     "accessible and effective customer support",
-     1
-    ],
-    [
-     "clear cancellation/return option and real customer support",
-     1
-    ],
-    [
-     "return option and accessible customer support",
-     1
-    ],
-    [
-     "accessible customer support",
-     1
-    ],
-    [
-     "effective customer support and issue resolution",
-     1
-    ]
-   ],
-   "categories": [
-    [
-     "Electronics",
-     1
-    ]
-   ],
-   "quotes": [
-    {
-     "quote": "Very poor customer support. There is no chat or customer care number to contact. I received a defective product, and the only option was email.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "poor_customer_support"
-    },
-    {
-     "quote": "The only problem is the lack of cancellation or return option. Why isn't there a clear return or cancellation button but instead an ai assistant that makes 0 sense and doesn't work properly.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 5,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "poor_customer_support"
-    },
-    {
-     "quote": "bad experience from the blinkit that the product was ordered by mistake and it was also had and defect but the blinkit team refused to proceed with return also there is no chat option.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "poor_customer_support"
-    },
-    {
-     "quote": "The most horrible delivery app there is, the team has blocked any attempt to reach customer support, you're trying your luck if you do a prepaid order, order from other apps, because anything associated with Zomato will be a scam.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "poor_customer_support"
-    },
-    {
-     "quote": "To speak with customer support you have to first go through a bot which only has few options and none of which is do you want to speak with human and when you get to customer support they don't give resolution and disconnect the call and when you chat with them they give very slow reply and vague reply they themselves are not sure the issue is solved or not and when I ask them to send me in mail the issues which I have raised they don't do that and close the issue I have recordings to prove it.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "poor_customer_support"
-    },
-    {
-     "quote": "I've placed an order , and the quality of the product is not good at all.. so the product has an option of 7 day replacement period. so I tried to replace the product so that atleast I could get a better one. but it's been 4 days , I've been trying to replace the product, contacted through the app as well through the mail but the response is ZERO.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "poor_customer_support"
-    },
-    {
-     "quote": "The customer care service is poor. I ordered an item and it was defective. I returned it, but the refund is not yet initiated.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "poor_customer_support"
-    },
-    {
-     "quote": "customer service assistance is very very poor and irresponsible.When you actually need support and assistance about the product you already purchase but there is some issues related to product like wrong product delivered,actual product differ as shown in app they never assist you and you can write about your query as desired option is not listed.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "poor_customer_support"
-    },
-    {
-     "quote": "Received a damaged product not once, but twice. What is even more disappointing is that there is no proper option in the app to raise a complaint or get timely support.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "poor_customer_support"
-    },
-    {
-     "quote": "Poor customer support.",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "poor_customer_support"
-    },
-    {
-     "quote": "But the type of customer service i have got from this company is ludicrous and appalling. They cut your calls in between and argue with customers.",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "poor_customer_support"
-    },
-    {
-     "quote": "Pathetic customer support. Do not take orders 1000 kms away from customer if your customer support is unable to handle the order issues.",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "poor_customer_support"
-    }
-   ],
-   "opportunity": 40.8,
-   "strategic_components": {
-    "core_relevance": 0,
-    "trial_need": 0.069,
-    "new_category": 0
-   },
-   "strategic_fit": 0.021,
-   "strategic_priority": 0.9
-  },
-  {
-   "id": "pricing_discrepancies",
-   "label": "Higher Pricing and Hidden Fees",
-   "definition": "Users complain about products being more expensive than market prices and the presence of additional surcharges or handling fees.",
-   "relevance": "context",
-   "count": 18,
-   "frequency": 0.02252816020025031,
-   "severity": 1,
-   "confidence": 0.8500000000000001,
-   "sources": [
-    "play_store",
-    "app_store"
-   ],
-   "cross_source_valid": true,
-   "per_source": {
-    "play_store": 9,
-    "app_store": 9
-   },
-   "segments": {
-    "unclear": 18
-   },
-   "segment_spread": 0,
-   "top_needs": [
-    [
-     "fair pricing",
-     3
-    ],
-    [
-     "competitive pricing",
-     3
-    ],
-    [
-     "fair pricing and delivery of original item",
-     1
-    ],
-    [
-     "full refund for incorrect item",
-     1
-    ],
-    [
-     "fair pricing and delivery",
-     1
-    ]
-   ],
-   "categories": [
-    [
-     "Groceries",
-     1
-    ],
-    [
-     "Other",
-     1
-    ]
-   ],
-   "quotes": [
-    {
-     "quote": "I ordered one product but received a completely different item. When I complained, they refunded only the discounted amount and did not return the full amount I paid after applying the offer.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_discrepancies"
-    },
-    {
-     "quote": "At the time of placing the order, I was shown a total amount of ₹61, but ₹161 was deducted from my bank account. No clear information about any additional charges, handling fees, or extra deductions was displayed before the payment was completed.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_discrepancies"
-    },
-    {
-     "quote": "They charged higher than mrp..i hafe raised a issue on consumer helpline joe",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_discrepancies"
-    },
-    {
-     "quote": "Almost time I’ve ordered same item but facing price issue",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_discrepancies"
-    },
-    {
-     "quote": "For some products it was charging thrice than the price available outside",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_discrepancies"
-    },
-    {
-     "quote": "High rate in every product, example:- Coconut price in retail is 25 but your rate 48",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_discrepancies"
-    },
-    {
-     "quote": "Comparing to others prices are high. Cross check and do the needful or you will loose your customers",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_discrepancies"
-    },
-    {
-     "quote": "Service is too good but items are heavily priced compared to off-offline",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 4,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_discrepancies"
-    },
-    {
-     "quote": "This application is only good at finding ways to put extra charges In a quick way.",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "pricing_discrepancies"
-    },
-    {
-     "quote": "you first add something to the cart on which they add delivery and surcharge. To avoid that you add items you didn't even need in the first place.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "pricing_discrepancies"
-    },
-    {
-     "quote": "Over rated, for example : a product of 100, they charge 140, a 40% additional charge... If failed, to deliver they refund 100... 99% of the times they fail to deliver.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "pricing_discrepancies"
-    },
-    {
-     "quote": "the final bill does not appear at the time of checkout and 1 or 2 items are auto added in it we just make the payment and later we realise this is not what we wanted and there is no option to return or make complaint regarding this",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "pricing_discrepancies"
-    }
-   ],
-   "opportunity": 37.3,
    "strategic_components": {
     "core_relevance": 0,
     "trial_need": 0,
@@ -2543,7 +1664,7 @@
    "id": "stock_availability_issues",
    "label": "Frequent Out-of-Stock Items",
    "definition": "Essential items are often unavailable or marked 'out of stock,' defeating the purpose of a quick delivery service.",
-   "relevance": "core",
+   "relevance": "context",
    "count": 28,
    "frequency": 0.03504380475594493,
    "severity": 0.6071428571428571,
@@ -2708,18 +1829,18 @@
    ],
    "opportunity": 33.6,
    "strategic_components": {
-    "core_relevance": 1,
+    "core_relevance": 0,
     "trial_need": 0,
     "new_category": 0
    },
-   "strategic_fit": 0.5,
-   "strategic_priority": 16.8
+   "strategic_fit": 0,
+   "strategic_priority": 0
   },
   {
    "id": "privacy_and_discretion_breaches",
    "label": "Breaches of Privacy and Discretion",
    "definition": "Users report concerns about delivery personnel knowing their order contents, leading to uncomfortable or inappropriate interactions, especially with sensitive items.",
-   "relevance": "core",
+   "relevance": "context",
    "count": 11,
    "frequency": 0.01376720901126408,
    "severity": 0.9090909090909091,
@@ -2874,12 +1995,12 @@
    ],
    "opportunity": 31.7,
    "strategic_components": {
-    "core_relevance": 1,
+    "core_relevance": 0,
     "trial_need": 0,
     "new_category": 0.273
    },
-   "strategic_fit": 0.555,
-   "strategic_priority": 17.6
+   "strategic_fit": 0.055,
+   "strategic_priority": 1.7
   },
   {
    "id": "convenience_as_primary_driver",
@@ -3166,15 +2287,15 @@
   "label": "Occasion Spikers",
   "definition": "Coded documents showing an episodic occasion spike: the coder assigned the new_life_stage segment (new pet, new baby, moving), or the source text carries a signal keyword from the seeded occasion catalog in lib/occasions.",
   "derivation": "new_life_stage segment OR occasion signal keyword in the source text",
-  "size": 18,
-  "share_of_coded": 0.023,
+  "size": 22,
+  "share_of_coded": 0.028,
   "criteria": {
    "life_stage_only": 3,
-   "occasion_keyword_only": 15,
+   "occasion_keyword_only": 19,
    "both": 0
   },
   "keyword_source": "lib/occasions signal_keywords (whole-word match on the source text)",
-  "keywords_used": 21,
+  "keywords_used": 30,
   "keywords_excluded": [
    "fri",
    "sat",
@@ -3196,39 +2317,51 @@
     3
    ],
    [
+    "guests",
+    2
+   ],
+   [
+    "party",
+    2
+   ],
+   [
+    "celebration",
+    1
+   ],
+   [
     "adopted",
     1
    ],
    [
-    "workout",
+    "series",
     1
    ]
   ],
   "by_source": {
-   "play_store": 14,
-   "app_store": 3,
+   "play_store": 17,
+   "app_store": 4,
    "reddit": 1
   },
   "top_themes": [
+   {
+    "id": "order_and_delivery_failures",
+    "label": "Order and Delivery Failures",
+    "n": 4
+   },
    {
     "id": "convenience_as_primary_driver",
     "label": "Convenience as Primary Driver",
     "n": 3
    },
    {
-    "id": "pricing_and_fees",
-    "label": "Pricing and Fees",
+    "id": "payment_and_refunds",
+    "label": "Payment, Cancellation and Refunds",
     "n": 3
    },
    {
-    "id": "customer_support_failure",
-    "label": "Ineffective Customer Support",
-    "n": 2
-   },
-   {
-    "id": "order_accuracy_issues",
-    "label": "Order Accuracy Issues",
-    "n": 2
+    "id": "convenience_and_speed_value",
+    "label": "Value of Convenience and Speed",
+    "n": 3
    }
   ]
  },
@@ -3296,7 +2429,7 @@
      "n": 2
     },
     {
-     "id": "customer_support_failure",
+     "id": "customer_support",
      "label": "Ineffective Customer Support",
      "n": 1
     }

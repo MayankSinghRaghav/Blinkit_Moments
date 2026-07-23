@@ -1,7 +1,7 @@
 {
  "play_d4317f2d-a510-40c3-ab79-dbf0d67f6e99": {
   "id": "play_d4317f2d-a510-40c3-ab79-dbf0d67f6e99",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolution for missing item",
   "sentiment": "negative",
@@ -14,7 +14,7 @@
  },
  "play_0e87e879-82b6-412a-a5bb-b2aa43120ce9": {
   "id": "play_0e87e879-82b6-412a-a5bb-b2aa43120ce9",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "refund for undelivered items",
   "sentiment": "negative",
@@ -40,7 +40,7 @@
  },
  "play_a6b20c27-2399-4b29-b498-39f6aa9cbe35": {
   "id": "play_a6b20c27-2399-4b29-b498-39f6aa9cbe35",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "accountability for missing item",
   "sentiment": "negative",
@@ -66,7 +66,7 @@
  },
  "play_83aa0516-5e80-4101-b190-29924ae4f607": {
   "id": "play_83aa0516-5e80-4101-b190-29924ae4f607",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolution for incorrect product",
   "sentiment": "negative",
@@ -105,7 +105,7 @@
  },
  "play_b5cf0319-0809-49f8-8071-1fb3ab5423d4": {
   "id": "play_b5cf0319-0809-49f8-8071-1fb3ab5423d4",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "delivery to correct address",
   "sentiment": "negative",
@@ -144,7 +144,7 @@
  },
  "play_a6d04f1b-a788-4bab-937f-e816e7e22ee2": {
   "id": "play_a6d04f1b-a788-4bab-937f-e816e7e22ee2",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "delivery of free gift",
   "sentiment": "negative",
@@ -196,7 +196,7 @@
  },
  "play_878c1c2b-7b20-4f09-ba5a-73fb33c71161": {
   "id": "play_878c1c2b-7b20-4f09-ba5a-73fb33c71161",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolution for missing item",
   "sentiment": "negative",
@@ -222,7 +222,7 @@
  },
  "play_a59409e4-f16b-409c-aa58-0ede5ac6e38a": {
   "id": "play_a59409e4-f16b-409c-aa58-0ede5ac6e38a",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "immediate refund for cancelled orders",
   "sentiment": "negative",
@@ -248,7 +248,7 @@
  },
  "play_49c2cfac-2c68-450d-8039-b6b1e90a2daf": {
   "id": "play_49c2cfac-2c68-450d-8039-b6b1e90a2daf",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "complete and timely delivery",
   "sentiment": "negative",
@@ -261,7 +261,7 @@
  },
  "play_9695337d-d373-43fe-bc88-194dc4fce437": {
   "id": "play_9695337d-d373-43fe-bc88-194dc4fce437",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct quantity of product",
   "sentiment": "negative",
@@ -274,7 +274,7 @@
  },
  "play_0d181449-e158-42db-b9b7-ab98fa4a3b53": {
   "id": "play_0d181449-e158-42db-b9b7-ab98fa4a3b53",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "effective customer support for issues",
   "sentiment": "negative",
@@ -287,7 +287,7 @@
  },
  "play_f630a5f4-133d-4d0f-91ee-60a94c7fec8c": {
   "id": "play_f630a5f4-133d-4d0f-91ee-60a94c7fec8c",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "no cancellation fee for app error",
   "sentiment": "negative",
@@ -300,7 +300,7 @@
  },
  "play_f29694ee-857a-4e7f-a40d-e12e13a7b06c": {
   "id": "play_f29694ee-857a-4e7f-a40d-e12e13a7b06c",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "accurate delivery to location",
   "sentiment": "negative",
@@ -326,7 +326,7 @@
  },
  "play_88895801-0339-4d8c-bba6-506a6ee26bf2": {
   "id": "play_88895801-0339-4d8c-bba6-506a6ee26bf2",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "new_life_stage",
   "unmet_need": "delivery of all ordered items or refund",
   "sentiment": "negative",
@@ -339,7 +339,7 @@
  },
  "play_dab56257-a726-426c-8bbd-92bfa9050c04": {
   "id": "play_dab56257-a726-426c-8bbd-92bfa9050c04",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "fair pricing and delivery of original item",
   "sentiment": "negative",
@@ -352,7 +352,7 @@
  },
  "play_c462a553-eb03-4dd2-a3b8-16940088585a": {
   "id": "play_c462a553-eb03-4dd2-a3b8-16940088585a",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "immediate refund for failed delivery",
   "sentiment": "negative",
@@ -404,7 +404,7 @@
  },
  "play_c331cc06-4447-4311-9f8d-0b1cd7bb5580": {
   "id": "play_c331cc06-4447-4311-9f8d-0b1cd7bb5580",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "accessible and effective customer support",
   "sentiment": "negative",
@@ -469,7 +469,7 @@
  },
  "play_8c2a4afe-f3b4-4996-b7ad-c82c679dd8c4": {
   "id": "play_8c2a4afe-f3b4-4996-b7ad-c82c679dd8c4",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "routine_replenisher",
   "unmet_need": "delivery of missing items",
   "sentiment": "negative",
@@ -508,7 +508,7 @@
  },
  "play_a79fd8e0-0d8f-4eb4-ac16-49c36de18458": {
   "id": "play_a79fd8e0-0d8f-4eb4-ac16-49c36de18458",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "hassle-free return/exchange as advertised",
   "sentiment": "negative",
@@ -547,7 +547,7 @@
  },
  "play_3f413ab8-3f10-4f86-be9e-e7ae5b215b9c": {
   "id": "play_3f413ab8-3f10-4f86-be9e-e7ae5b215b9c",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "replacement for faulty product",
   "sentiment": "negative",
@@ -586,7 +586,7 @@
  },
  "play_4b048bf1-6f52-4d70-b107-e6bac3f7c978": {
   "id": "play_4b048bf1-6f52-4d70-b107-e6bac3f7c978",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "return/replacement for defective product",
   "sentiment": "negative",
@@ -625,7 +625,7 @@
  },
  "play_382a4ea4-1e62-4ede-9332-b2094326c02c": {
   "id": "play_382a4ea4-1e62-4ede-9332-b2094326c02c",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolution for coupon issue",
   "sentiment": "negative",
@@ -638,7 +638,7 @@
  },
  "play_61e25ea1-694c-4ee1-945c-94b13ed6d61c": {
   "id": "play_61e25ea1-694c-4ee1-945c-94b13ed6d61c",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "option to edit or cancel order",
   "sentiment": "negative",
@@ -651,7 +651,7 @@
  },
  "play_d3b46857-eb9f-4426-98af-c0fec19eb77b": {
   "id": "play_d3b46857-eb9f-4426-98af-c0fec19eb77b",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refunds",
   "sentiment": "negative",
@@ -664,7 +664,7 @@
  },
  "play_3ee667b2-515b-4fff-ac9f-6be68c123ba0": {
   "id": "play_3ee667b2-515b-4fff-ac9f-6be68c123ba0",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "clear cancellation/return option and real customer support",
   "sentiment": "negative",
@@ -677,7 +677,7 @@
  },
  "play_1dea7d3e-8310-40eb-a1fb-f0de10739b92": {
   "id": "play_1dea7d3e-8310-40eb-a1fb-f0de10739b92",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "delivery of order or proper solution",
   "sentiment": "negative",
@@ -729,7 +729,7 @@
  },
  "play_ae3ba5f1-da53-4af6-80d2-d02f8ce7ab89": {
   "id": "play_ae3ba5f1-da53-4af6-80d2-d02f8ce7ab89",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "consistent customer service and resolution for offer",
   "sentiment": "negative",
@@ -742,7 +742,7 @@
  },
  "play_61beed87-6274-43fb-b9eb-448e486e38f1": {
   "id": "play_61beed87-6274-43fb-b9eb-448e486e38f1",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "complete delivery with notification",
   "sentiment": "negative",
@@ -846,7 +846,7 @@
  },
  "play_961dbaac-b002-4224-93fa-48f8ffff082c": {
   "id": "play_961dbaac-b002-4224-93fa-48f8ffff082c",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivered order with OTP verification",
   "sentiment": "negative",
@@ -885,7 +885,7 @@
  },
  "play_ced6dd13-1931-4f97-9923-a648465bc15d": {
   "id": "play_ced6dd13-1931-4f97-9923-a648465bc15d",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "explanation for cancellation and timely refund",
   "sentiment": "negative",
@@ -898,7 +898,7 @@
  },
  "play_4f1ebc4f-5e68-45af-9b70-500998f4dbe1": {
   "id": "play_4f1ebc4f-5e68-45af-9b70-500998f4dbe1",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "polite delivery partner and delivery to correct address",
   "sentiment": "negative",
@@ -924,7 +924,7 @@
  },
  "play_c163dee6-7393-4a76-a48c-254b9f2a0ac9": {
   "id": "play_c163dee6-7393-4a76-a48c-254b9f2a0ac9",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "delivery to current location",
   "sentiment": "negative",
@@ -937,7 +937,7 @@
  },
  "play_6f0a9dc1-6280-4455-b285-2e412fe3c560": {
   "id": "play_6f0a9dc1-6280-4455-b285-2e412fe3c560",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": null,
   "sentiment": "positive",
@@ -950,7 +950,7 @@
  },
  "play_a60a5d53-bf69-4435-abaf-696cd0214c98": {
   "id": "play_a60a5d53-bf69-4435-abaf-696cd0214c98",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "delivery of free gift and resolution",
   "sentiment": "negative",
@@ -963,7 +963,7 @@
  },
  "play_c4800b8b-22dc-4d8d-a252-16f6b69f4d7c": {
   "id": "play_c4800b8b-22dc-4d8d-a252-16f6b69f4d7c",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "doorstep delivery",
   "sentiment": "negative",
@@ -976,7 +976,7 @@
  },
  "play_3818fbd2-f232-4c6b-b6d2-6addd614ad06": {
   "id": "play_3818fbd2-f232-4c6b-b6d2-6addd614ad06",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": null,
   "sentiment": "positive",
@@ -1002,7 +1002,7 @@
  },
  "play_ca2e4e3c-87e1-447a-ba63-ab8bef9a51df": {
   "id": "play_ca2e4e3c-87e1-447a-ba63-ab8bef9a51df",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivered order and control over delivery boy",
   "sentiment": "negative",
@@ -1054,7 +1054,7 @@
  },
  "play_581bf5fe-ab42-4c13-93da-b41c4058b9c0": {
   "id": "play_581bf5fe-ab42-4c13-93da-b41c4058b9c0",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "proper packaging for heavy items",
   "sentiment": "negative",
@@ -1067,7 +1067,7 @@
  },
  "play_fc645432-d0d5-466d-913d-1f5790590b22": {
   "id": "play_fc645432-d0d5-466d-913d-1f5790590b22",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refund for accidental payment",
   "sentiment": "negative",
@@ -1093,7 +1093,7 @@
  },
  "play_43ec75d8-2296-441f-8329-d41a0281e6a6": {
   "id": "play_43ec75d8-2296-441f-8329-d41a0281e6a6",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "accurate billing and refund for missing item",
   "sentiment": "negative",
@@ -1119,7 +1119,7 @@
  },
  "play_7b06da45-98bc-429c-b606-223b51fad91f": {
   "id": "play_7b06da45-98bc-429c-b606-223b51fad91f",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "full refund for incorrect item",
   "sentiment": "negative",
@@ -1132,7 +1132,7 @@
  },
  "play_7f9a8e93-0acd-4209-808c-317aeefe13d7": {
   "id": "play_7f9a8e93-0acd-4209-808c-317aeefe13d7",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "transparent refund status and timely refund",
   "sentiment": "negative",
@@ -1171,7 +1171,7 @@
  },
  "play_b8db02df-85a6-45c8-8869-b69adea33065": {
   "id": "play_b8db02df-85a6-45c8-8869-b69adea33065",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refund for technical issue",
   "sentiment": "negative",
@@ -1184,7 +1184,7 @@
  },
  "play_eb69d236-1b79-46a7-bc90-4a22d2ddfea4": {
   "id": "play_eb69d236-1b79-46a7-bc90-4a22d2ddfea4",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "option to cancel accidental order",
   "sentiment": "negative",
@@ -1197,7 +1197,7 @@
  },
  "play_d0b4f7aa-9412-4314-9355-1c8fed85fd61": {
   "id": "play_d0b4f7aa-9412-4314-9355-1c8fed85fd61",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund to original source",
   "sentiment": "negative",
@@ -1249,7 +1249,7 @@
  },
  "play_5a1fcc64-7c59-45f5-975d-634295053c45": {
   "id": "play_5a1fcc64-7c59-45f5-975d-634295053c45",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "replacement or refund for damaged product",
   "sentiment": "negative",
@@ -1262,7 +1262,7 @@
  },
  "play_b0a2ea97-d2a1-4499-99d5-180ecb24f563": {
   "id": "play_b0a2ea97-d2a1-4499-99d5-180ecb24f563",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "return option and accessible customer support",
   "sentiment": "negative",
@@ -1275,7 +1275,7 @@
  },
  "play_c708d966-3296-4124-aa50-85a6de3522ab": {
   "id": "play_c708d966-3296-4124-aa50-85a6de3522ab",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivery partner with change for COD",
   "sentiment": "negative",
@@ -1288,7 +1288,7 @@
  },
  "play_69c90e68-7915-412d-95c5-481592a0ee19": {
   "id": "play_69c90e68-7915-412d-95c5-481592a0ee19",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "fair COD policy",
   "sentiment": "negative",
@@ -1327,7 +1327,7 @@
  },
  "play_720b4456-2b1b-4fff-aa8a-b20ba251aec6": {
   "id": "play_720b4456-2b1b-4fff-aa8a-b20ba251aec6",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refund and proper customer support",
   "sentiment": "negative",
@@ -1340,7 +1340,7 @@
  },
  "play_59916dca-1768-4e94-b3ba-9e70f6022f43": {
   "id": "play_59916dca-1768-4e94-b3ba-9e70f6022f43",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "immediate return option for mistaken orders",
   "sentiment": "negative",
@@ -1353,7 +1353,7 @@
  },
  "play_e030c217-426f-4499-8a3e-9ff5c1a7626c": {
   "id": "play_e030c217-426f-4499-8a3e-9ff5c1a7626c",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "accessible customer support",
   "sentiment": "negative",
@@ -1379,7 +1379,7 @@
  },
  "play_58f291d2-d6c7-4f79-91df-c390ded2d84c": {
   "id": "play_58f291d2-d6c7-4f79-91df-c390ded2d84c",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolution for dirty product",
   "sentiment": "negative",
@@ -1405,7 +1405,7 @@
  },
  "play_644ecac9-4f76-496b-8b5f-33ca8f480256": {
   "id": "play_644ecac9-4f76-496b-8b5f-33ca8f480256",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolution for opened/faulty product",
   "sentiment": "negative",
@@ -1457,7 +1457,7 @@
  },
  "play_a106c109-8459-408b-887d-c5d95c1bdf0d": {
   "id": "play_a106c109-8459-408b-887d-c5d95c1bdf0d",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "fair pricing and delivery",
   "sentiment": "negative",
@@ -1483,7 +1483,7 @@
  },
  "play_e216c89e-91e0-4c55-8ec3-df40c6396d98": {
   "id": "play_e216c89e-91e0-4c55-8ec3-df40c6396d98",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "return option for defective items",
   "sentiment": "negative",
@@ -1496,7 +1496,7 @@
  },
  "play_e0cdc2b7-88dd-4e1a-8278-ac0b9a1c2899": {
   "id": "play_e0cdc2b7-88dd-4e1a-8278-ac0b9a1c2899",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivery after 11pm or app closure",
   "sentiment": "negative",
@@ -1509,7 +1509,7 @@
  },
  "play_12a12730-3807-4569-a0db-77e9cec215b9": {
   "id": "play_12a12730-3807-4569-a0db-77e9cec215b9",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "immediate complaint registration and professional customer service",
   "sentiment": "negative",
@@ -1522,7 +1522,7 @@
  },
  "play_e162f083-90e6-493b-8c78-f4fdf51a25f1": {
   "id": "play_e162f083-90e6-493b-8c78-f4fdf51a25f1",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "effective resolution for incorrect delivery",
   "sentiment": "negative",
@@ -1535,7 +1535,7 @@
  },
  "play_0a6edbc8-7076-4b85-b940-2c6520cb6b59": {
   "id": "play_0a6edbc8-7076-4b85-b940-2c6520cb6b59",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "timely refund after order cancellation",
   "sentiment": "negative",
@@ -1548,7 +1548,7 @@
  },
  "play_235d1ea4-4e49-4136-90be-d309ecff2b34": {
   "id": "play_235d1ea4-4e49-4136-90be-d309ecff2b34",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolution for defective product and unhelpful customer service",
   "sentiment": "negative",
@@ -1587,7 +1587,7 @@
  },
  "play_34a67cf7-3f3b-4f86-9495-1cbd24771923": {
   "id": "play_34a67cf7-3f3b-4f86-9495-1cbd24771923",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "transparent billing and option to return auto-added items",
   "sentiment": "negative",
@@ -1600,7 +1600,7 @@
  },
  "play_f6492de8-5a09-44d4-a723-196801ae0a03": {
   "id": "play_f6492de8-5a09-44d4-a723-196801ae0a03",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "refund for missing items",
   "sentiment": "negative",
@@ -1626,7 +1626,7 @@
  },
  "play_88afc46e-45ee-472c-b22c-05e98d1d0d98": {
   "id": "play_88afc46e-45ee-472c-b22c-05e98d1d0d98",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct item delivery and helpful customer support",
   "sentiment": "negative",
@@ -1639,7 +1639,7 @@
  },
  "play_e37bdf37-05b8-4493-be91-e775770c8c28": {
   "id": "play_e37bdf37-05b8-4493-be91-e775770c8c28",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct order delivery and responsive customer support",
   "sentiment": "negative",
@@ -1691,7 +1691,7 @@
  },
  "play_7dee029d-255d-4eca-b7ad-5047705d4cf6": {
   "id": "play_7dee029d-255d-4eca-b7ad-5047705d4cf6",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "flexible refund options",
   "sentiment": "negative",
@@ -1730,7 +1730,7 @@
  },
  "play_a3fa52e4-dc44-4541-8bf3-7000bf506e35": {
   "id": "play_a3fa52e4-dc44-4541-8bf3-7000bf506e35",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "refund for incomplete order",
   "sentiment": "negative",
@@ -1743,7 +1743,7 @@
  },
  "play_b9b41347-82a5-4365-ae24-b8d24f35927b": {
   "id": "play_b9b41347-82a5-4365-ae24-b8d24f35927b",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct quantity of items delivered",
   "sentiment": "positive",
@@ -1769,7 +1769,7 @@
  },
  "play_d50ba1b1-5e56-412f-a333-611ead5b2df6": {
   "id": "play_d50ba1b1-5e56-412f-a333-611ead5b2df6",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "reliable communication with delivery partner",
   "sentiment": "negative",
@@ -1795,7 +1795,7 @@
  },
  "play_f1310e53-0c74-4c0e-adde-0740569c5926": {
   "id": "play_f1310e53-0c74-4c0e-adde-0740569c5926",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund for returned product",
   "sentiment": "negative",
@@ -1808,7 +1808,7 @@
  },
  "play_81329453-bc79-478d-bfc6-8dd3eef5c486": {
   "id": "play_81329453-bc79-478d-bfc6-8dd3eef5c486",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "delivery of ordered items and immediate refund",
   "sentiment": "negative",
@@ -1821,7 +1821,7 @@
  },
  "play_5c997b5f-c238-47c0-a3a9-bffe785db7e5": {
   "id": "play_5c997b5f-c238-47c0-a3a9-bffe785db7e5",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "support for defective product",
   "sentiment": "negative",
@@ -1834,7 +1834,7 @@
  },
  "play_bd0e9e13-34da-47c2-a056-3082562384e3": {
   "id": "play_bd0e9e13-34da-47c2-a056-3082562384e3",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolution for product not in proper condition",
   "sentiment": "negative",
@@ -1860,7 +1860,7 @@
  },
  "play_5b0bb83e-db90-4e2d-ba14-4355a284bdc7": {
   "id": "play_5b0bb83e-db90-4e2d-ba14-4355a284bdc7",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "return option for unsatisfactory product",
   "sentiment": "negative",
@@ -1886,7 +1886,7 @@
  },
  "play_9436e960-2910-4303-aae3-79c2a57bb280": {
   "id": "play_9436e960-2910-4303-aae3-79c2a57bb280",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "confirmed payment status and received refunds",
   "sentiment": "negative",
@@ -1912,7 +1912,7 @@
  },
  "play_e496efa1-7b04-44d4-b312-1fc73475dd46": {
   "id": "play_e496efa1-7b04-44d4-b312-1fc73475dd46",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "accessible and helpful customer support",
   "sentiment": "negative",
@@ -1925,7 +1925,7 @@
  },
  "play_6289f61a-6903-422e-abd5-caa301ce8e51": {
   "id": "play_6289f61a-6903-422e-abd5-caa301ce8e51",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "consistent pricing and transparent fees",
   "sentiment": "negative",
@@ -1938,7 +1938,7 @@
  },
  "play_4979f975-3eca-406e-88d5-9e06fe2345bf": {
   "id": "play_4979f975-3eca-406e-88d5-9e06fe2345bf",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivery of ordered item or refund",
   "sentiment": "negative",
@@ -1951,7 +1951,7 @@
  },
  "play_7f7f6005-0ac6-4dcc-91c5-ee5b676632cf": {
   "id": "play_7f7f6005-0ac6-4dcc-91c5-ee5b676632cf",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "missing free treats or resolution",
   "sentiment": "negative",
@@ -1977,7 +1977,7 @@
  },
  "play_73292ee6-f616-44a5-9e75-cb0559cb64de": {
   "id": "play_73292ee6-f616-44a5-9e75-cb0559cb64de",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "accurate billing and refund for missing items",
   "sentiment": "negative",
@@ -1990,7 +1990,7 @@
  },
  "play_d4f047a5-4ddf-4f23-85ad-3993a41f1f82": {
   "id": "play_d4f047a5-4ddf-4f23-85ad-3993a41f1f82",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "timely delivery and proper handling of frozen items",
   "sentiment": "negative",
@@ -2016,7 +2016,7 @@
  },
  "play_9cca20cd-f329-4c59-bc8f-446d53f885cd": {
   "id": "play_9cca20cd-f329-4c59-bc8f-446d53f885cd",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "complete and safe delivery of items",
   "sentiment": "negative",
@@ -2029,7 +2029,7 @@
  },
  "play_e81c54dd-015f-4082-b685-ddaa1a187b04": {
   "id": "play_e81c54dd-015f-4082-b685-ddaa1a187b04",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct quantity delivered and efficient issue resolution",
   "sentiment": "negative",
@@ -2042,7 +2042,7 @@
  },
  "play_0ae4aacf-6ba5-4a4b-8f30-94cdfe4d54e7": {
   "id": "play_0ae4aacf-6ba5-4a4b-8f30-94cdfe4d54e7",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "timely delivery and proper coordination",
   "sentiment": "negative",
@@ -2055,7 +2055,7 @@
  },
  "play_829ca971-d4a7-42da-aed6-44d929b314b4": {
   "id": "play_829ca971-d4a7-42da-aed6-44d929b314b4",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "return or exchange for unusable product",
   "sentiment": "negative",
@@ -2068,7 +2068,7 @@
  },
  "play_1176970d-86ab-47ba-a56d-8bc610c45c6b": {
   "id": "play_1176970d-86ab-47ba-a56d-8bc610c45c6b",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct product delivery and timely refund",
   "sentiment": "negative",
@@ -2094,7 +2094,7 @@
  },
  "play_0b727e6f-5f9d-4d5b-8ae4-2b07b8b63998": {
   "id": "play_0b727e6f-5f9d-4d5b-8ae4-2b07b8b63998",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund to original payment method",
   "sentiment": "negative",
@@ -2107,7 +2107,7 @@
  },
  "play_d919f792-0902-4fe1-9f9c-3054adef4024": {
   "id": "play_d919f792-0902-4fe1-9f9c-3054adef4024",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund for duplicate payment",
   "sentiment": "negative",
@@ -2146,7 +2146,7 @@
  },
  "play_976c57ff-41b7-4469-a2cd-1e518c63ada1": {
   "id": "play_976c57ff-41b7-4469-a2cd-1e518c63ada1",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "routine_replenisher",
   "unmet_need": "accurate location mapping and doorstep delivery",
   "sentiment": "negative",
@@ -2172,7 +2172,7 @@
  },
  "play_56b8a404-f0ea-48be-8f1d-236b27d5164d": {
   "id": "play_56b8a404-f0ea-48be-8f1d-236b27d5164d",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "cash on delivery option and polite delivery partners",
   "sentiment": "negative",
@@ -2185,7 +2185,7 @@
  },
  "play_2b984ac4-e1ed-4177-98a9-6047c60873a1": {
   "id": "play_2b984ac4-e1ed-4177-98a9-6047c60873a1",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct and undamaged products, proper resolution",
   "sentiment": "negative",
@@ -2198,7 +2198,7 @@
  },
  "play_4a61d018-376b-427e-b09c-fb740343f865": {
   "id": "play_4a61d018-376b-427e-b09c-fb740343f865",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "complete product delivery",
   "sentiment": "negative",
@@ -2263,7 +2263,7 @@
  },
  "play_7b387683-ac29-47e4-9e78-26192e4719ee": {
   "id": "play_7b387683-ac29-47e4-9e78-26192e4719ee",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "flexible replacement policy for customer mistakes",
   "sentiment": "negative",
@@ -2276,7 +2276,7 @@
  },
  "play_58249ec0-468a-418d-a8ce-6215e73e904f": {
   "id": "play_58249ec0-468a-418d-a8ce-6215e73e904f",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "return for product not working as advertised",
   "sentiment": "negative",
@@ -2315,7 +2315,7 @@
  },
  "play_71d7e7ba-ba5c-4501-bceb-5101cb505b56": {
   "id": "play_71d7e7ba-ba5c-4501-bceb-5101cb505b56",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund for unavailable item",
   "sentiment": "negative",
@@ -2341,7 +2341,7 @@
  },
  "play_fa2bac58-5a32-4947-91d1-2595b5e575a3": {
   "id": "play_fa2bac58-5a32-4947-91d1-2595b5e575a3",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "fair and transparent refund policy",
   "sentiment": "negative",
@@ -2354,7 +2354,7 @@
  },
  "play_8a5ba142-56dc-4628-af05-111d4e650ce8": {
   "id": "play_8a5ba142-56dc-4628-af05-111d4e650ce8",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "complete and undamaged delivery",
   "sentiment": "negative",
@@ -2367,7 +2367,7 @@
  },
  "play_4abba02b-a9f4-4e3f-876d-a84954133c9b": {
   "id": "play_4abba02b-a9f4-4e3f-876d-a84954133c9b",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolution for missing/defective items",
   "sentiment": "negative",
@@ -2393,7 +2393,7 @@
  },
  "play_3ae31752-dc6b-430b-b8f3-3e181f8ad8da": {
   "id": "play_3ae31752-dc6b-430b-b8f3-3e181f8ad8da",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "refund instead of time-limited promo code",
   "sentiment": "negative",
@@ -2406,7 +2406,7 @@
  },
  "play_de098861-9e64-48f0-80de-d8ac881e74ad": {
   "id": "play_de098861-9e64-48f0-80de-d8ac881e74ad",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "accurate location pinning",
   "sentiment": "negative",
@@ -2419,7 +2419,7 @@
  },
  "play_48a80e81-d7ab-464b-b296-9bde608f6100": {
   "id": "play_48a80e81-d7ab-464b-b296-9bde608f6100",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "exchange for defective product",
   "sentiment": "negative",
@@ -2432,7 +2432,7 @@
  },
  "play_90fcd051-90a8-4ff9-9151-5bf43d00462d": {
   "id": "play_90fcd051-90a8-4ff9-9151-5bf43d00462d",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "functional chat support and resolution for damaged/missing items",
   "sentiment": "negative",
@@ -2458,7 +2458,7 @@
  },
  "play_79b48b9e-224d-46c6-b115-1e449ea60792": {
   "id": "play_79b48b9e-224d-46c6-b115-1e449ea60792",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "redelivery or refund for missing items",
   "sentiment": "negative",
@@ -2471,7 +2471,7 @@
  },
  "play_4a281f57-07b1-4d8a-b226-a835414c1b81": {
   "id": "play_4a281f57-07b1-4d8a-b226-a835414c1b81",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund for failed order payment",
   "sentiment": "negative",
@@ -2484,7 +2484,7 @@
  },
  "play_6a132cb1-7c56-4401-a1c5-2b5d1d8b94eb": {
   "id": "play_6a132cb1-7c56-4401-a1c5-2b5d1d8b94eb",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "easy order cancellation and refund to original payment method",
   "sentiment": "negative",
@@ -2497,7 +2497,7 @@
  },
  "play_3168c02f-ae02-4f82-b6ef-295a01358f52": {
   "id": "play_3168c02f-ae02-4f82-b6ef-295a01358f52",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "replacement or return for defective product",
   "sentiment": "negative",
@@ -2523,7 +2523,7 @@
  },
  "play_8283e5f4-0ef7-496e-8208-d1ac7f205a6e": {
   "id": "play_8283e5f4-0ef7-496e-8208-d1ac7f205a6e",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct product delivery and return acceptance",
   "sentiment": "negative",
@@ -2536,7 +2536,7 @@
  },
  "play_eb98ceac-58a1-4ac4-a26f-87e6b64508e1": {
   "id": "play_eb98ceac-58a1-4ac4-a26f-87e6b64508e1",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct items delivered and timely refunds",
   "sentiment": "negative",
@@ -2627,7 +2627,7 @@
  },
  "play_15ba3cbc-f001-486a-8f70-df8b5afae462": {
   "id": "play_15ba3cbc-f001-486a-8f70-df8b5afae462",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "warranty support and issue resolution",
   "sentiment": "negative",
@@ -2640,7 +2640,7 @@
  },
  "play_afe40ea1-8ec8-474c-8962-051b67a767ad": {
   "id": "play_afe40ea1-8ec8-474c-8962-051b67a767ad",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivery of prepaid order or refund",
   "sentiment": "negative",
@@ -2679,7 +2679,7 @@
  },
  "play_52bfd036-9fe2-43ef-a46a-68a88ed44b8c": {
   "id": "play_52bfd036-9fe2-43ef-a46a-68a88ed44b8c",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "flexible return/refund policy and customer support for ordering mistakes",
   "sentiment": "negative",
@@ -2705,7 +2705,7 @@
  },
  "play_23c68467-51dd-4c3c-852e-20ea1bc28b9e": {
   "id": "play_23c68467-51dd-4c3c-852e-20ea1bc28b9e",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "transparent billing and refund for excess charges",
   "sentiment": "negative",
@@ -2718,7 +2718,7 @@
  },
  "play_f27a5a4e-0e30-4ce6-8374-cd44655fc8e8": {
   "id": "play_f27a5a4e-0e30-4ce6-8374-cd44655fc8e8",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "return/replacement for defective product",
   "sentiment": "negative",
@@ -2744,7 +2744,7 @@
  },
  "play_eb24e73b-3260-410b-8e63-d48f679d4484": {
   "id": "play_eb24e73b-3260-410b-8e63-d48f679d4484",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "accurate location mapping and transparent charges",
   "sentiment": "negative",
@@ -2783,7 +2783,7 @@
  },
  "play_3cd7b32f-1409-455f-8eab-982843b839bb": {
   "id": "play_3cd7b32f-1409-455f-8eab-982843b839bb",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct item delivery and issue resolution",
   "sentiment": "negative",
@@ -2796,7 +2796,7 @@
  },
  "play_947dd8ad-077d-464b-bb7f-e3d33c8f6df6": {
   "id": "play_947dd8ad-077d-464b-bb7f-e3d33c8f6df6",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct product delivery and effective customer support",
   "sentiment": "negative",
@@ -2809,7 +2809,7 @@
  },
  "play_eb62cdbb-2194-44b2-aae4-671f97cfed53": {
   "id": "play_eb62cdbb-2194-44b2-aae4-671f97cfed53",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refund and access to real customer support",
   "sentiment": "negative",
@@ -2822,7 +2822,7 @@
  },
  "play_9c29fa5a-0b78-4fc5-b614-b7c53a41c509": {
   "id": "play_9c29fa5a-0b78-4fc5-b614-b7c53a41c509",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "return support for defective items",
   "sentiment": "negative",
@@ -2835,7 +2835,7 @@
  },
  "play_6ebdc7d9-e8a8-4030-ba7d-0033b625ea1b": {
   "id": "play_6ebdc7d9-e8a8-4030-ba7d-0033b625ea1b",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "usable promo code and accessible issue reporting",
   "sentiment": "negative",
@@ -2848,7 +2848,7 @@
  },
  "play_17989b18-f5a3-4474-9478-1ccf068de8dd": {
   "id": "play_17989b18-f5a3-4474-9478-1ccf068de8dd",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "return/exchange option for wrong order",
   "sentiment": "negative",
@@ -2874,7 +2874,7 @@
  },
  "play_5f7789d6-9aa2-427b-a1a9-31fbc35dc99f": {
   "id": "play_5f7789d6-9aa2-427b-a1a9-31fbc35dc99f",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct quantity delivered",
   "sentiment": "negative",
@@ -2887,7 +2887,7 @@
  },
  "play_c0135256-f09b-45da-a2cb-c935f1a902c5": {
   "id": "play_c0135256-f09b-45da-a2cb-c935f1a902c5",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "accurate location tracking",
   "sentiment": "positive",
@@ -2926,7 +2926,7 @@
  },
  "play_99712d0b-e94b-4235-a226-0f196107d0df": {
   "id": "play_99712d0b-e94b-4235-a226-0f196107d0df",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "fair return policy and customer support",
   "sentiment": "negative",
@@ -2965,7 +2965,7 @@
  },
  "play_a4e3cdfd-404d-410e-a5e6-9199e34a8a5f": {
   "id": "play_a4e3cdfd-404d-410e-a5e6-9199e34a8a5f",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "return/refund policy for unsatisfactory products",
   "sentiment": "negative",
@@ -2978,7 +2978,7 @@
  },
  "play_2bf4717f-dc2d-4bf6-968f-67f7ac43f605": {
   "id": "play_2bf4717f-dc2d-4bf6-968f-67f7ac43f605",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "replacement for non-working product and accessible support",
   "sentiment": "negative",
@@ -3095,7 +3095,7 @@
  },
  "play_9b1b0ca3-848f-4894-be5b-4a83ef6343ec": {
   "id": "play_9b1b0ca3-848f-4894-be5b-4a83ef6343ec",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "issue resolution and proper delivery",
   "sentiment": "negative",
@@ -3121,7 +3121,7 @@
  },
  "play_4c044304-46bc-4b47-9198-c7ac84bfea5d": {
   "id": "play_4c044304-46bc-4b47-9198-c7ac84bfea5d",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "accurate order fulfillment and honest customer service",
   "sentiment": "negative",
@@ -3147,7 +3147,7 @@
  },
  "play_156742c9-0029-4698-abee-c9a9d0e701c2": {
   "id": "play_156742c9-0029-4698-abee-c9a9d0e701c2",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "effective customer support and issue resolution",
   "sentiment": "negative",
@@ -3186,7 +3186,7 @@
  },
  "play_1e8b3530-f6f1-467c-88f8-bfa2ac4fd245": {
   "id": "play_1e8b3530-f6f1-467c-88f8-bfa2ac4fd245",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "reasonable prices, timely delivery, and customer service",
   "sentiment": "negative",
@@ -3264,7 +3264,7 @@
  },
  "play_ed488df9-46be-408f-bd2b-9ceb8c6b979f": {
   "id": "play_ed488df9-46be-408f-bd2b-9ceb8c6b979f",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "valid reasons for cancellation, timely refunds, and proper customer support",
   "sentiment": "negative",
@@ -3277,7 +3277,7 @@
  },
  "play_fc8fce3d-f25d-4005-ab93-8fc6772180a7": {
   "id": "play_fc8fce3d-f25d-4005-ab93-8fc6772180a7",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "accurate delivery and fair charges",
   "sentiment": "negative",
@@ -3303,7 +3303,7 @@
  },
  "play_3589c132-f1d2-490b-a679-c399f5374cdd": {
   "id": "play_3589c132-f1d2-490b-a679-c399f5374cdd",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "accurate product size and clear return policy",
   "sentiment": "negative",
@@ -3316,7 +3316,7 @@
  },
  "play_32a071b3-6d43-4ea3-9450-bf6098c478e2": {
   "id": "play_32a071b3-6d43-4ea3-9450-bf6098c478e2",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "successful order placement, timely refunds, and proper customer support",
   "sentiment": "negative",
@@ -3329,7 +3329,7 @@
  },
  "play_2169e1b2-514c-401a-a836-360482e33657": {
   "id": "play_2169e1b2-514c-401a-a836-360482e33657",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "accurate delivery to specified address and polite delivery personnel",
   "sentiment": "negative",
@@ -3342,7 +3342,7 @@
  },
  "play_871cec09-4636-4aa3-99b1-d54cb2acae63": {
   "id": "play_871cec09-4636-4aa3-99b1-d54cb2acae63",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "reliable delivery, timely refunds, and human customer support",
   "sentiment": "negative",
@@ -3381,7 +3381,7 @@
  },
  "play_806d8838-e0f7-4b15-a5a5-d19bfbfdcafb": {
   "id": "play_806d8838-e0f7-4b15-a5a5-d19bfbfdcafb",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "accurate stock availability and timely refunds",
   "sentiment": "negative",
@@ -3394,7 +3394,7 @@
  },
  "play_a2fd01cd-4b06-4c15-8704-6859b03a0a41": {
   "id": "play_a2fd01cd-4b06-4c15-8704-6859b03a0a41",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "accessible customer care, accurate payment processing, and hygienic delivery",
   "sentiment": "negative",
@@ -3407,7 +3407,7 @@
  },
  "play_62af481c-c373-4d5e-a37e-97d12725bd5a": {
   "id": "play_62af481c-c373-4d5e-a37e-97d12725bd5a",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "effective customer support and order fulfillment",
   "sentiment": "negative",
@@ -3446,7 +3446,7 @@
  },
  "play_7a901e5c-9297-43b5-96bb-df4111037c07": {
   "id": "play_7a901e5c-9297-43b5-96bb-df4111037c07",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "successful delivery and store identification",
   "sentiment": "neutral",
@@ -3511,7 +3511,7 @@
  },
  "play_26179669-38d7-4d24-8cca-8f0d5c191c5c": {
   "id": "play_26179669-38d7-4d24-8cca-8f0d5c191c5c",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "accurate billing for reimbursement",
   "sentiment": "negative",
@@ -3524,7 +3524,7 @@
  },
  "play_37f9693d-d473-4cb5-baae-e5b5ad0ae8ca": {
   "id": "play_37f9693d-d473-4cb5-baae-e5b5ad0ae8ca",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "correct product or timely refund",
   "sentiment": "negative",
@@ -3537,7 +3537,7 @@
  },
  "play_5771ee34-62ef-40a7-ae73-4d06290aac97": {
   "id": "play_5771ee34-62ef-40a7-ae73-4d06290aac97",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "effective customer service for product replacement",
   "sentiment": "negative",
@@ -3550,7 +3550,7 @@
  },
  "play_87615084-bdf5-4e72-8fe4-b78670207057": {
   "id": "play_87615084-bdf5-4e72-8fe4-b78670207057",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refund",
   "sentiment": "negative",
@@ -3576,7 +3576,7 @@
  },
  "play_7d215b0c-8df5-4a42-9f25-50590b0beafa": {
   "id": "play_7d215b0c-8df5-4a42-9f25-50590b0beafa",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolution for missing product parts and improved customer support",
   "sentiment": "negative",
@@ -3589,7 +3589,7 @@
  },
  "play_2c4c8f4e-824d-4aba-9ae9-0277dfd46f88": {
   "id": "play_2c4c8f4e-824d-4aba-9ae9-0277dfd46f88",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "delivery to correct address and no cancellation charges for platform-initiated cancellations",
   "sentiment": "negative",
@@ -3641,7 +3641,7 @@
  },
  "play_5ac78790-11fb-4c41-be3c-9b4ce8616372": {
   "id": "play_5ac78790-11fb-4c41-be3c-9b4ce8616372",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "quality products and helpful customer support",
   "sentiment": "negative",
@@ -3654,7 +3654,7 @@
  },
  "play_d6aeb4e3-ddd5-41f9-a651-da7b83a62d04": {
   "id": "play_d6aeb4e3-ddd5-41f9-a651-da7b83a62d04",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "accurate order processing and refunds",
   "sentiment": "negative",
@@ -3667,7 +3667,7 @@
  },
  "play_4eb94c17-6dc2-4565-a373-a31c4d4adc4a": {
   "id": "play_4eb94c17-6dc2-4565-a373-a31c4d4adc4a",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "refund to original payment method",
   "sentiment": "negative",
@@ -3680,7 +3680,7 @@
  },
  "play_c2443f4d-122a-450c-9c54-7b920310ac19": {
   "id": "play_c2443f4d-122a-450c-9c54-7b920310ac19",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "accurate delivery location and cooperative delivery partners",
   "sentiment": "negative",
@@ -3693,7 +3693,7 @@
  },
  "play_64abaa40-9888-4267-b64e-f1df29daf675": {
   "id": "play_64abaa40-9888-4267-b64e-f1df29daf675",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "effective customer support and timely refunds",
   "sentiment": "negative",
@@ -3719,7 +3719,7 @@
  },
  "play_bc05aa8d-e798-492a-92cd-70585a8b120c": {
   "id": "play_bc05aa8d-e798-492a-92cd-70585a8b120c",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "fair and consistent pricing",
   "sentiment": "negative",
@@ -3745,7 +3745,7 @@
  },
  "play_8ad99c65-0a82-4274-b6de-a63c23321af0": {
   "id": "play_8ad99c65-0a82-4274-b6de-a63c23321af0",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct product delivery and return/replacement policy",
   "sentiment": "negative",
@@ -3758,7 +3758,7 @@
  },
  "play_b05f2f27-e6af-402a-b99a-28e5fcbf0768": {
   "id": "play_b05f2f27-e6af-402a-b99a-28e5fcbf0768",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "timely delivery and option to leave a review",
   "sentiment": "negative",
@@ -3823,7 +3823,7 @@
  },
  "play_8f78e997-6501-4787-9c1a-02039008a3ab": {
   "id": "play_8f78e997-6501-4787-9c1a-02039008a3ab",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "accurate order status, timely refunds, and accessible customer support",
   "sentiment": "negative",
@@ -3849,7 +3849,7 @@
  },
  "play_cb09c583-be9a-4493-be37-2e24560ae317": {
   "id": "play_cb09c583-be9a-4493-be37-2e24560ae317",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "proper packaging and handling during delivery",
   "sentiment": "negative",
@@ -3862,7 +3862,7 @@
  },
  "play_0358ef03-8390-4c7b-b3c5-b38c372998fa": {
   "id": "play_0358ef03-8390-4c7b-b3c5-b38c372998fa",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "refund to original payment method with customer choice",
   "sentiment": "negative",
@@ -3875,7 +3875,7 @@
  },
  "play_9e8df196-3946-4aac-83bc-171684b5699e": {
   "id": "play_9e8df196-3946-4aac-83bc-171684b5699e",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "responsive and helpful customer support for product issues",
   "sentiment": "negative",
@@ -3901,7 +3901,7 @@
  },
  "play_2b72e756-78e7-43ba-9a36-e606191e27bb": {
   "id": "play_2b72e756-78e7-43ba-9a36-e606191e27bb",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refund and proper customer support",
   "sentiment": "negative",
@@ -3927,7 +3927,7 @@
  },
  "play_46c50bf5-7180-40ad-bf48-320664396151": {
   "id": "play_46c50bf5-7180-40ad-bf48-320664396151",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refund and accessible customer support",
   "sentiment": "negative",
@@ -3966,7 +3966,7 @@
  },
  "play_bde2b63d-a5d3-4cbd-b94b-060422ccbd58": {
   "id": "play_bde2b63d-a5d3-4cbd-b94b-060422ccbd58",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "delivery of all ordered items and new products",
   "sentiment": "negative",
@@ -4005,7 +4005,7 @@
  },
  "play_f305611a-1581-472c-bd63-412929614f66": {
   "id": "play_f305611a-1581-472c-bd63-412929614f66",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "resolution for damaged products and timely support",
   "sentiment": "negative",
@@ -4070,7 +4070,7 @@
  },
  "play_1b845cb6-b30b-42ac-a13f-f258f8028e91": {
   "id": "play_1b845cb6-b30b-42ac-a13f-f258f8028e91",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "delivery of all ordered items and effective customer service",
   "sentiment": "negative",
@@ -4109,7 +4109,7 @@
  },
  "play_bdd12de5-9bd6-4ec2-8371-b377d700c10a": {
   "id": "play_bdd12de5-9bd6-4ec2-8371-b377d700c10a",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct item delivery and faster resolution for wrong items",
   "sentiment": "negative",
@@ -4135,7 +4135,7 @@
  },
  "play_677059ef-9b63-4b6d-a89f-79f9da374a7d": {
   "id": "play_677059ef-9b63-4b6d-a89f-79f9da374a7d",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "clear product information and effective exchange/return process",
   "sentiment": "negative",
@@ -4174,7 +4174,7 @@
  },
  "play_61c9f203-fb9c-4462-889b-aec480dea6c3": {
   "id": "play_61c9f203-fb9c-4462-889b-aec480dea6c3",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "quality products and responsive customer support for replacements",
   "sentiment": "negative",
@@ -4200,7 +4200,7 @@
  },
  "play_873a5ac2-e1b7-4cc5-8d03-4cb475262696": {
   "id": "play_873a5ac2-e1b7-4cc5-8d03-4cb475262696",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "flexible options for image upload and item return without app download",
   "sentiment": "negative",
@@ -4226,7 +4226,7 @@
  },
  "play_aeb21980-8c26-4e63-b139-1dea8cc09f7f": {
   "id": "play_aeb21980-8c26-4e63-b139-1dea8cc09f7f",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "doorstep delivery despite paying fees",
   "sentiment": "negative",
@@ -4252,7 +4252,7 @@
  },
  "play_225325bb-b23f-4448-97c9-67ed1027f7ae": {
   "id": "play_225325bb-b23f-4448-97c9-67ed1027f7ae",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refund for returned products",
   "sentiment": "negative",
@@ -4291,7 +4291,7 @@
  },
  "play_ff1a373a-2520-459a-bc14-3d962bcdaef9": {
   "id": "play_ff1a373a-2520-459a-bc14-3d962bcdaef9",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refund for cancelled orders",
   "sentiment": "negative",
@@ -4330,7 +4330,7 @@
  },
  "play_03d9dd76-9c64-4968-bcf8-c57d5d4a0c5c": {
   "id": "play_03d9dd76-9c64-4968-bcf8-c57d5d4a0c5c",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "effective customer support for defective items and accurate order fulfillment",
   "sentiment": "negative",
@@ -4343,7 +4343,7 @@
  },
  "play_a43ab935-c249-4cf9-9ec2-29db5bcd94d1": {
   "id": "play_a43ab935-c249-4cf9-9ec2-29db5bcd94d1",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "delivery of ordered products and no time wasted on returns/refunds",
   "sentiment": "negative",
@@ -4499,7 +4499,7 @@
  },
  "play_1bd804e7-4481-48b1-a6a3-510f7f1e3307": {
   "id": "play_1bd804e7-4481-48b1-a6a3-510f7f1e3307",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "clear return policy and acceptance of returns for non-fitting items",
   "sentiment": "negative",
@@ -4551,7 +4551,7 @@
  },
  "play_605bc77e-3b2d-4d72-a790-7dfed85c613d": {
   "id": "play_605bc77e-3b2d-4d72-a790-7dfed85c613d",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "delivery of all ordered items or refund for missing items",
   "sentiment": "negative",
@@ -4577,7 +4577,7 @@
  },
  "play_20ede6c8-07aa-41a5-ae03-9a088fd39127": {
   "id": "play_20ede6c8-07aa-41a5-ae03-9a088fd39127",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "consistent and timely delivery",
   "sentiment": "negative",
@@ -4590,7 +4590,7 @@
  },
  "play_8c375762-003d-4426-b6c9-1b8763ab1f5b": {
   "id": "play_8c375762-003d-4426-b6c9-1b8763ab1f5b",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "option to exchange clothing items for different sizes",
   "sentiment": "negative",
@@ -4629,7 +4629,7 @@
  },
  "play_32a7beb6-69e4-4e1e-912a-971a34b3512d": {
   "id": "play_32a7beb6-69e4-4e1e-912a-971a34b3512d",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "received all ordered items or a refund",
   "sentiment": "negative",
@@ -4642,7 +4642,7 @@
  },
  "play_dabb413a-1311-4af3-96d3-9fa910a1f8dd": {
   "id": "play_dabb413a-1311-4af3-96d3-9fa910a1f8dd",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "effective customer support for returns",
   "sentiment": "negative",
@@ -4694,7 +4694,7 @@
  },
  "play_bc4c125d-854a-4370-8898-4208355e65c8": {
   "id": "play_bc4c125d-854a-4370-8898-4208355e65c8",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "no cancellation fees for payment failures",
   "sentiment": "negative",
@@ -4720,7 +4720,7 @@
  },
  "play_be17bd8f-d71c-453c-81a0-a17b5e37869f": {
   "id": "play_be17bd8f-d71c-453c-81a0-a17b5e37869f",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "not charged twice for the same order",
   "sentiment": "negative",
@@ -4733,7 +4733,7 @@
  },
  "play_265c9187-f5c7-4259-b1ed-f2cbe209c447": {
   "id": "play_265c9187-f5c7-4259-b1ed-f2cbe209c447",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "better packaging for orders",
   "sentiment": "negative",
@@ -4746,7 +4746,7 @@
  },
  "play_780addbb-75d1-485c-b0cd-eaecd9896554": {
   "id": "play_780addbb-75d1-485c-b0cd-eaecd9896554",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "accurate payment status and timely refunds",
   "sentiment": "negative",
@@ -4772,7 +4772,7 @@
  },
  "play_de4b1368-4931-473e-850d-b062897f2631": {
   "id": "play_de4b1368-4931-473e-850d-b062897f2631",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "faster refund process",
   "sentiment": "negative",
@@ -4837,7 +4837,7 @@
  },
  "play_c7aac51b-2bae-4791-9978-9fbf1e97d5cc": {
   "id": "play_c7aac51b-2bae-4791-9978-9fbf1e97d5cc",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "exact product as shown in the app",
   "sentiment": "negative",
@@ -4850,7 +4850,7 @@
  },
  "play_c75d3781-75f4-4868-9c9f-ca509d34031c": {
   "id": "play_c75d3781-75f4-4868-9c9f-ca509d34031c",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "timely delivery and refund for cancelled orders",
   "sentiment": "negative",
@@ -4863,7 +4863,7 @@
  },
  "play_b0a03538-196a-4ad4-8248-348a3e792b39": {
   "id": "play_b0a03538-196a-4ad4-8248-348a3e792b39",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "reliable delivery tracking and timely delivery",
   "sentiment": "negative",
@@ -4876,7 +4876,7 @@
  },
  "play_0d96ecef-a2a3-4164-8206-86789798fe6f": {
   "id": "play_0d96ecef-a2a3-4164-8206-86789798fe6f",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": null,
   "sentiment": "positive",
@@ -4902,7 +4902,7 @@
  },
  "play_90a48d34-fe79-419c-bb8f-1aa37fa36d8e": {
   "id": "play_90a48d34-fe79-419c-bb8f-1aa37fa36d8e",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct products and actual delivery",
   "sentiment": "negative",
@@ -4915,7 +4915,7 @@
  },
  "play_78de0d7b-a3d8-484c-98c2-ef20ff28b164": {
   "id": "play_78de0d7b-a3d8-484c-98c2-ef20ff28b164",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refund for cancelled orders",
   "sentiment": "negative",
@@ -4954,7 +4954,7 @@
  },
  "play_10e65aba-43a0-4c12-b179-745c5148a5d8": {
   "id": "play_10e65aba-43a0-4c12-b179-745c5148a5d8",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct and non-rotten items",
   "sentiment": "negative",
@@ -4993,7 +4993,7 @@
  },
  "play_b318316b-24c2-466e-8fe6-35978d574834": {
   "id": "play_b318316b-24c2-466e-8fe6-35978d574834",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "responsive customer service for returns",
   "sentiment": "negative",
@@ -5006,7 +5006,7 @@
  },
  "play_112a6d3a-857b-4beb-951b-46452ae290bb": {
   "id": "play_112a6d3a-857b-4beb-951b-46452ae290bb",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolution for product quality issues and returns",
   "sentiment": "negative",
@@ -5032,7 +5032,7 @@
  },
  "play_ede779c4-e9e6-46e5-b280-3e91ff463a76": {
   "id": "play_ede779c4-e9e6-46e5-b280-3e91ff463a76",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "instant refunds for returned orders",
   "sentiment": "negative",
@@ -5084,7 +5084,7 @@
  },
  "play_7ab9811d-e6d1-4613-9f9e-fad660f7e4c2": {
   "id": "play_7ab9811d-e6d1-4613-9f9e-fad660f7e4c2",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "timely delivery and rider assignment",
   "sentiment": "negative",
@@ -5097,7 +5097,7 @@
  },
  "play_265250bb-9892-452a-870e-bdafe1827f0e": {
   "id": "play_265250bb-9892-452a-870e-bdafe1827f0e",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "single, timely delivery with proper notifications",
   "sentiment": "negative",
@@ -5110,7 +5110,7 @@
  },
  "play_59a270b6-b842-4285-a75a-c57e2a5adcb6": {
   "id": "play_59a270b6-b842-4285-a75a-c57e2a5adcb6",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "reliable customer service and refunds for missing/wrong items",
   "sentiment": "negative",
@@ -5175,7 +5175,7 @@
  },
  "play_1f307f19-64ed-43ed-9f84-3e4da98b9440": {
   "id": "play_1f307f19-64ed-43ed-9f84-3e4da98b9440",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund for cancelled orders",
   "sentiment": "negative",
@@ -5188,7 +5188,7 @@
  },
  "play_ae884e27-a1d2-44e9-87ff-530e99cadcc4": {
   "id": "play_ae884e27-a1d2-44e9-87ff-530e99cadcc4",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolution for missing items and refunds",
   "sentiment": "negative",
@@ -5201,7 +5201,7 @@
  },
  "play_a3419691-87ec-4d20-b5a1-0ddf3fe8f139": {
   "id": "play_a3419691-87ec-4d20-b5a1-0ddf3fe8f139",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "professional delivery partners and improved seller standards",
   "sentiment": "negative",
@@ -5227,7 +5227,7 @@
  },
  "play_540feba6-0fe3-4f0c-b2c6-c016a33aaf74": {
   "id": "play_540feba6-0fe3-4f0c-b2c6-c016a33aaf74",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "customer care to resolve return issues",
   "sentiment": "negative",
@@ -5279,7 +5279,7 @@
  },
  "play_8e315abf-c2ab-4cf5-a372-ea5754f9a3a5": {
   "id": "play_8e315abf-c2ab-4cf5-a372-ea5754f9a3a5",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "option to talk to customer support about issues",
   "sentiment": "negative",
@@ -5292,7 +5292,7 @@
  },
  "play_11e465ab-24c6-4a38-9b08-3c87d0d95850": {
   "id": "play_11e465ab-24c6-4a38-9b08-3c87d0d95850",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "hassle-free return process",
   "sentiment": "negative",
@@ -5305,7 +5305,7 @@
  },
  "play_5da7682d-b989-41a0-a756-3e043cb278e3": {
   "id": "play_5da7682d-b989-41a0-a756-3e043cb278e3",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "orders not cancelled by the platform",
   "sentiment": "negative",
@@ -5331,7 +5331,7 @@
  },
  "play_34effa3b-9aa0-48d9-a6c4-618a6b64dff9": {
   "id": "play_34effa3b-9aa0-48d9-a6c4-618a6b64dff9",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "properly sealed and undamaged products",
   "sentiment": "negative",
@@ -5383,7 +5383,7 @@
  },
  "play_015e3f35-2d22-447a-a31c-89c4a2afc120": {
   "id": "play_015e3f35-2d22-447a-a31c-89c4a2afc120",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "replacement option for size issues",
   "sentiment": "negative",
@@ -5409,7 +5409,7 @@
  },
  "play_afe61999-2818-4830-bf6c-53219ccb286b": {
   "id": "play_afe61999-2818-4830-bf6c-53219ccb286b",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "compensation for bad quality products",
   "sentiment": "negative",
@@ -5461,7 +5461,7 @@
  },
  "play_f2fdf512-f28a-4c7e-88cc-b3f61c6c75ec": {
   "id": "play_f2fdf512-f28a-4c7e-88cc-b3f61c6c75ec",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivery person to wait for recipient and accurate delivery status",
   "sentiment": "negative",
@@ -5487,7 +5487,7 @@
  },
  "play_04a1f35c-f9be-432f-83ff-daab65d6e980": {
   "id": "play_04a1f35c-f9be-432f-83ff-daab65d6e980",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": null,
   "sentiment": "positive",
@@ -5539,7 +5539,7 @@
  },
  "play_fddd76c0-f37c-43a0-a3dc-ebefeeac74e8": {
   "id": "play_fddd76c0-f37c-43a0-a3dc-ebefeeac74e8",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "option to change or cancel order and responsive customer support",
   "sentiment": "negative",
@@ -5604,7 +5604,7 @@
  },
  "play_6f5530fd-0a59-4474-a39b-930b3e96f30b": {
   "id": "play_6f5530fd-0a59-4474-a39b-930b3e96f30b",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "functional online payment and no cancellation fees for platform errors",
   "sentiment": "negative",
@@ -5630,7 +5630,7 @@
  },
  "play_9578e183-9325-4e0a-b10f-7c7828331da7": {
   "id": "play_9578e183-9325-4e0a-b10f-7c7828331da7",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "option to report unlisted problems",
   "sentiment": "negative",
@@ -5643,7 +5643,7 @@
  },
  "play_2991974c-eb53-4da1-a28e-68b4d730127f": {
   "id": "play_2991974c-eb53-4da1-a28e-68b4d730127f",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "undamaged products and timely replacements",
   "sentiment": "negative",
@@ -5656,7 +5656,7 @@
  },
  "play_6c7c0191-6692-4096-80df-4a49191289b9": {
   "id": "play_6c7c0191-6692-4096-80df-4a49191289b9",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "replacement option for missing parts",
   "sentiment": "negative",
@@ -5682,7 +5682,7 @@
  },
  "play_f9cf4afc-be7c-4b66-8921-a83e7b78c8f2": {
   "id": "play_f9cf4afc-be7c-4b66-8921-a83e7b78c8f2",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "responsive and helpful customer support",
   "sentiment": "negative",
@@ -5695,7 +5695,7 @@
  },
  "play_61f27f6d-a140-4aa5-b1c3-3e485784cdc4": {
   "id": "play_61f27f6d-a140-4aa5-b1c3-3e485784cdc4",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct items and resolution for problems",
   "sentiment": "negative",
@@ -5734,7 +5734,7 @@
  },
  "play_dc783475-3eef-4a82-a57c-e300ebf6678c": {
   "id": "play_dc783475-3eef-4a82-a57c-e300ebf6678c",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "honored replacement policy",
   "sentiment": "negative",
@@ -5799,7 +5799,7 @@
  },
  "play_e595854e-4f78-4d3b-ad49-10a4dff1930b": {
   "id": "play_e595854e-4f78-4d3b-ad49-10a4dff1930b",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "efficient cancellation process and helpful support",
   "sentiment": "negative",
@@ -5812,7 +5812,7 @@
  },
  "play_5af77979-21c2-4b4e-9854-0ce51341fd13": {
   "id": "play_5af77979-21c2-4b4e-9854-0ce51341fd13",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "responsive customer support and replacement for damaged products",
   "sentiment": "negative",
@@ -5825,7 +5825,7 @@
  },
  "play_8bceba87-368f-4085-8814-e7d4b76b55a2": {
   "id": "play_8bceba87-368f-4085-8814-e7d4b76b55a2",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "fair pricing and accurate delivery times",
   "sentiment": "negative",
@@ -5838,7 +5838,7 @@
  },
  "play_2c53d267-375c-4159-95f5-c3a4fb8b538e": {
   "id": "play_2c53d267-375c-4159-95f5-c3a4fb8b538e",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "correct delivery by one driver and no extra charges",
   "sentiment": "negative",
@@ -5851,7 +5851,7 @@
  },
  "play_ccab77e3-3b51-437b-b3fb-bafbef3e15ca": {
   "id": "play_ccab77e3-3b51-437b-b3fb-bafbef3e15ca",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "options to upload photos, return items, or reach an agent",
   "sentiment": "negative",
@@ -5877,7 +5877,7 @@
  },
  "play_45ac415a-b113-4da8-9310-a88d6cfb18f7": {
   "id": "play_45ac415a-b113-4da8-9310-a88d6cfb18f7",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "consistent delivery times regardless of payment method",
   "sentiment": "neutral",
@@ -5942,7 +5942,7 @@
  },
  "play_abbba5e9-3c2c-4be1-a1f1-4e233a041d49": {
   "id": "play_abbba5e9-3c2c-4be1-a1f1-4e233a041d49",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "cash on delivery option and timely refunds",
   "sentiment": "negative",
@@ -5968,7 +5968,7 @@
  },
  "play_0e92ee66-b13c-4aad-bf21-345f3825c683": {
   "id": "play_0e92ee66-b13c-4aad-bf21-345f3825c683",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "timely delivery and order completion",
   "sentiment": "negative",
@@ -6007,7 +6007,7 @@
  },
  "play_767bcc29-96cc-4c6b-90b0-998639bbedaa": {
   "id": "play_767bcc29-96cc-4c6b-90b0-998639bbedaa",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "fair resolution for defective products and responsive customer support",
   "sentiment": "negative",
@@ -6033,7 +6033,7 @@
  },
  "play_604a974c-05f5-4ed9-8448-cee72d1ac796": {
   "id": "play_604a974c-05f5-4ed9-8448-cee72d1ac796",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refunds for cancelled orders",
   "sentiment": "negative",
@@ -6059,7 +6059,7 @@
  },
  "play_8479383d-de62-492a-bef5-f75cc37a300c": {
   "id": "play_8479383d-de62-492a-bef5-f75cc37a300c",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "competent delivery partners who read addresses",
   "sentiment": "negative",
@@ -6072,7 +6072,7 @@
  },
  "play_86149f8b-aaee-49a0-a6b0-594bae06b59e": {
   "id": "play_86149f8b-aaee-49a0-a6b0-594bae06b59e",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund for money deducted without order placement",
   "sentiment": "negative",
@@ -6111,7 +6111,7 @@
  },
  "play_9050811f-986c-4c3e-b5de-f4995e917650": {
   "id": "play_9050811f-986c-4c3e-b5de-f4995e917650",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "accurate stock availability and timely delivery",
   "sentiment": "negative",
@@ -6163,7 +6163,7 @@
  },
  "play_3a8c5dc7-3356-45ec-8af4-e199899a9155": {
   "id": "play_3a8c5dc7-3356-45ec-8af4-e199899a9155",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "effective customer support for order issues",
   "sentiment": "negative",
@@ -6189,7 +6189,7 @@
  },
  "play_007b6f8b-afdd-4e61-bc33-51ee21f51ca7": {
   "id": "play_007b6f8b-afdd-4e61-bc33-51ee21f51ca7",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "responsive and helpful customer support",
   "sentiment": "negative",
@@ -6215,7 +6215,7 @@
  },
  "play_cba1c1e4-b926-4ba4-a340-d4dac339ff48": {
   "id": "play_cba1c1e4-b926-4ba4-a340-d4dac339ff48",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "support from store manager and customer service",
   "sentiment": "negative",
@@ -6241,7 +6241,7 @@
  },
  "play_90fbffd4-475e-4a8a-8c34-057c3f41334e": {
   "id": "play_90fbffd4-475e-4a8a-8c34-057c3f41334e",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "refunds for cancelled orders",
   "sentiment": "negative",
@@ -6254,7 +6254,7 @@
  },
  "play_40bf25eb-c143-4a35-8c5e-d0aa58757e2d": {
   "id": "play_40bf25eb-c143-4a35-8c5e-d0aa58757e2d",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "responsive customer service for returns and complaints",
   "sentiment": "negative",
@@ -6267,7 +6267,7 @@
  },
  "play_80f4f8be-ebf7-4c1f-8909-eb74c0ad85c9": {
   "id": "play_80f4f8be-ebf7-4c1f-8909-eb74c0ad85c9",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "all ordered products delivered and effective support",
   "sentiment": "negative",
@@ -6293,7 +6293,7 @@
  },
  "play_3cd25721-277f-425c-b8b5-2757caa97c27": {
   "id": "play_3cd25721-277f-425c-b8b5-2757caa97c27",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "on-time delivery and accurate address reading",
   "sentiment": "negative",
@@ -6306,7 +6306,7 @@
  },
  "play_6e421cad-e68a-495a-8ec6-c5e5ef7d8cd4": {
   "id": "play_6e421cad-e68a-495a-8ec6-c5e5ef7d8cd4",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "on-time delivery and effective customer support",
   "sentiment": "negative",
@@ -6319,7 +6319,7 @@
  },
  "play_c7be3a53-cb55-4bd0-9851-b4fa4e4de5eb": {
   "id": "play_c7be3a53-cb55-4bd0-9851-b4fa4e4de5eb",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "replacement or refund for defective electronics",
   "sentiment": "negative",
@@ -6332,7 +6332,7 @@
  },
  "play_d986695a-23a8-4fa1-ab0a-3685c6d39a53": {
   "id": "play_d986695a-23a8-4fa1-ab0a-3685c6d39a53",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "refund for a non-working product",
   "sentiment": "negative",
@@ -6345,7 +6345,7 @@
  },
  "play_de657cde-01d0-4db9-958b-74029dbef8a4": {
   "id": "play_de657cde-01d0-4db9-958b-74029dbef8a4",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "refund for a wrong product",
   "sentiment": "negative",
@@ -6358,7 +6358,7 @@
  },
  "appstore_499d4e93162d3abf": {
   "id": "appstore_499d4e93162d3abf",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "fair pricing",
   "sentiment": "negative",
@@ -6371,7 +6371,7 @@
  },
  "appstore_6014a6b621c981c4": {
   "id": "appstore_6014a6b621c981c4",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivery to doorstep",
   "sentiment": "negative",
@@ -6436,7 +6436,7 @@
  },
  "appstore_77c2e8a544a83868": {
   "id": "appstore_77c2e8a544a83868",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "easier replacement process",
   "sentiment": "negative",
@@ -6475,7 +6475,7 @@
  },
  "appstore_16edcc3902064c0d": {
   "id": "appstore_16edcc3902064c0d",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "option to return items and effective support",
   "sentiment": "negative",
@@ -6488,7 +6488,7 @@
  },
  "appstore_a077e67dc289b01b": {
   "id": "appstore_a077e67dc289b01b",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "consistent pricing",
   "sentiment": "negative",
@@ -6501,7 +6501,7 @@
  },
  "appstore_896b6e32d9ee93e7": {
   "id": "appstore_896b6e32d9ee93e7",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "fair pricing",
   "sentiment": "negative",
@@ -6553,7 +6553,7 @@
  },
  "appstore_59aaa08c726eea9d": {
   "id": "appstore_59aaa08c726eea9d",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "delivery without personal intervention",
   "sentiment": "negative",
@@ -6579,7 +6579,7 @@
  },
  "appstore_d4da79755e3088c2": {
   "id": "appstore_d4da79755e3088c2",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "accurate address location for delivery",
   "sentiment": "neutral",
@@ -6592,7 +6592,7 @@
  },
  "appstore_d805246bae79bf2a": {
   "id": "appstore_d805246bae79bf2a",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "effective chatbot support",
   "sentiment": "negative",
@@ -6618,7 +6618,7 @@
  },
  "appstore_6c9901081706a942": {
   "id": "appstore_6c9901081706a942",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "polite delivery personnel",
   "sentiment": "negative",
@@ -6709,7 +6709,7 @@
  },
  "appstore_0c81faf30498bc85": {
   "id": "appstore_0c81faf30498bc85",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "cash on delivery option",
   "sentiment": "negative",
@@ -6748,7 +6748,7 @@
  },
  "appstore_06983c14b1df6cd2": {
   "id": "appstore_06983c14b1df6cd2",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "accurate weight of ordered items",
   "sentiment": "negative",
@@ -6774,7 +6774,7 @@
  },
  "appstore_9954a2df9965248b": {
   "id": "appstore_9954a2df9965248b",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "quick issue resolution",
   "sentiment": "negative",
@@ -6813,7 +6813,7 @@
  },
  "appstore_88aed4e5ef941b8a": {
   "id": "appstore_88aed4e5ef941b8a",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund for expired or missing items",
   "sentiment": "negative",
@@ -6826,7 +6826,7 @@
  },
  "appstore_30d566468dc126c8": {
   "id": "appstore_30d566468dc126c8",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": null,
   "sentiment": "positive",
@@ -6865,7 +6865,7 @@
  },
  "appstore_d5f6077622e2f372": {
   "id": "appstore_d5f6077622e2f372",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refund for duplicate payment",
   "sentiment": "negative",
@@ -6917,7 +6917,7 @@
  },
  "appstore_b026532a40d39d48": {
   "id": "appstore_b026532a40d39d48",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "receiving change for cash payments",
   "sentiment": "negative",
@@ -6943,7 +6943,7 @@
  },
  "appstore_f94b18fa8368a536": {
   "id": "appstore_f94b18fa8368a536",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "competent delivery service",
   "sentiment": "negative",
@@ -6956,7 +6956,7 @@
  },
  "appstore_dd6b91afa0314b5f": {
   "id": "appstore_dd6b91afa0314b5f",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refunds for cancelled orders",
   "sentiment": "negative",
@@ -7047,7 +7047,7 @@
  },
  "appstore_91965e20333473ab": {
   "id": "appstore_91965e20333473ab",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "effective issue resolution",
   "sentiment": "negative",
@@ -7073,7 +7073,7 @@
  },
  "appstore_7cf06ed815e7df48": {
   "id": "appstore_7cf06ed815e7df48",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "order fulfillment and timely cancellation",
   "sentiment": "negative",
@@ -7164,7 +7164,7 @@
  },
  "appstore_7b6664a21def1f49": {
   "id": "appstore_7b6664a21def1f49",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refund for rotten item",
   "sentiment": "negative",
@@ -7216,7 +7216,7 @@
  },
  "appstore_eb17b9cf950833ef": {
   "id": "appstore_eb17b9cf950833ef",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "timely refunds and good customer support",
   "sentiment": "negative",
@@ -7346,7 +7346,7 @@
  },
  "appstore_caa05be723a34d23": {
   "id": "appstore_caa05be723a34d23",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "improved customer service",
   "sentiment": "negative",
@@ -7385,7 +7385,7 @@
  },
  "appstore_94c3e81d00f37bf5": {
   "id": "appstore_94c3e81d00f37bf5",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "reliable delivery service",
   "sentiment": "negative",
@@ -7450,7 +7450,7 @@
  },
  "appstore_8aa3e93d7c6a1f88": {
   "id": "appstore_8aa3e93d7c6a1f88",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "good service",
   "sentiment": "negative",
@@ -7489,7 +7489,7 @@
  },
  "appstore_2b00af6fd83a0bff": {
   "id": "appstore_2b00af6fd83a0bff",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "customer care number for failed transactions",
   "sentiment": "negative",
@@ -7645,7 +7645,7 @@
  },
  "appstore_a2e0d3c5fdbc93d1": {
   "id": "appstore_a2e0d3c5fdbc93d1",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "availability of items and successful delivery",
   "sentiment": "negative",
@@ -7658,7 +7658,7 @@
  },
  "appstore_124ebaf675149a92": {
   "id": "appstore_124ebaf675149a92",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "delivery person with change for cash payments",
   "sentiment": "negative",
@@ -7671,7 +7671,7 @@
  },
  "appstore_4d6c03ca29ae65ce": {
   "id": "appstore_4d6c03ca29ae65ce",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "effective customer support",
   "sentiment": "negative",
@@ -7697,7 +7697,7 @@
  },
  "appstore_c15dec36933809ae": {
   "id": "appstore_c15dec36933809ae",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "ability to return mistakenly ordered items",
   "sentiment": "negative",
@@ -7710,7 +7710,7 @@
  },
  "appstore_05befe22ad311796": {
   "id": "appstore_05befe22ad311796",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "empathetic and effective customer service",
   "sentiment": "negative",
@@ -7723,7 +7723,7 @@
  },
  "appstore_a49749e3a0489486": {
   "id": "appstore_a49749e3a0489486",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivery personnel who can communicate effectively",
   "sentiment": "negative",
@@ -7736,7 +7736,7 @@
  },
  "appstore_d4783614620d8e4a": {
   "id": "appstore_d4783614620d8e4a",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "competitive pricing",
   "sentiment": "negative",
@@ -7775,7 +7775,7 @@
  },
  "appstore_acad35e941d8dad6": {
   "id": "appstore_acad35e941d8dad6",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "stable pricing after placing an order",
   "sentiment": "negative",
@@ -7788,7 +7788,7 @@
  },
  "appstore_4482c238a7f827b3": {
   "id": "appstore_4482c238a7f827b3",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "reliable payment processing",
   "sentiment": "negative",
@@ -7814,7 +7814,7 @@
  },
  "appstore_44b5e65de2e4b303": {
   "id": "appstore_44b5e65de2e4b303",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "effective customer support for order issues",
   "sentiment": "negative",
@@ -7827,7 +7827,7 @@
  },
  "appstore_2a4a2bce898f24f9": {
   "id": "appstore_2a4a2bce898f24f9",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "clear communication about delivery service area and doorstep delivery",
   "sentiment": "neutral",
@@ -7840,7 +7840,7 @@
  },
  "appstore_24e20a86dd822662": {
   "id": "appstore_24e20a86dd822662",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct item delivery or replacement",
   "sentiment": "negative",
@@ -7879,7 +7879,7 @@
  },
  "appstore_7771de37d6103a04": {
   "id": "appstore_7771de37d6103a04",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct product delivery",
   "sentiment": "negative",
@@ -7957,7 +7957,7 @@
  },
  "appstore_6b7c060a24660aa6": {
   "id": "appstore_6b7c060a24660aa6",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivered items",
   "sentiment": "negative",
@@ -8100,7 +8100,7 @@
  },
  "appstore_aa212119bc52c7ad": {
   "id": "appstore_aa212119bc52c7ad",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "competitive pricing",
   "sentiment": "negative",
@@ -8165,7 +8165,7 @@
  },
  "appstore_14228ff80fef9db1": {
   "id": "appstore_14228ff80fef9db1",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": null,
   "sentiment": "positive",
@@ -8256,7 +8256,7 @@
  },
  "appstore_484161754b200f45": {
   "id": "appstore_484161754b200f45",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "full refund for damaged products",
   "sentiment": "negative",
@@ -8321,7 +8321,7 @@
  },
  "appstore_9a2cbdecd8fb8f47": {
   "id": "appstore_9a2cbdecd8fb8f47",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "successful payment processing",
   "sentiment": "negative",
@@ -8347,7 +8347,7 @@
  },
  "appstore_f6360d74249a1bc6": {
   "id": "appstore_f6360d74249a1bc6",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivery of all ordered items",
   "sentiment": "negative",
@@ -8399,7 +8399,7 @@
  },
  "appstore_d8bdcf254df476b2": {
   "id": "appstore_d8bdcf254df476b2",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "immediate refund for failed payments",
   "sentiment": "negative",
@@ -8412,7 +8412,7 @@
  },
  "appstore_cf584d11fbe601b5": {
   "id": "appstore_cf584d11fbe601b5",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivery of order and customer service assistance",
   "sentiment": "negative",
@@ -8438,7 +8438,7 @@
  },
  "appstore_aa7fcf11c2d5cf0f": {
   "id": "appstore_aa7fcf11c2d5cf0f",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "no extra charges on refunds for damaged items",
   "sentiment": "negative",
@@ -8490,7 +8490,7 @@
  },
  "appstore_d98406f26489b2ae": {
   "id": "appstore_d98406f26489b2ae",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "reliable payment processing",
   "sentiment": "negative",
@@ -8516,7 +8516,7 @@
  },
  "appstore_91cfd59213be6083": {
   "id": "appstore_91cfd59213be6083",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "cash on delivery option",
   "sentiment": "neutral",
@@ -8529,7 +8529,7 @@
  },
  "appstore_3aaeb95b5f5e842e": {
   "id": "appstore_3aaeb95b5f5e842e",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivered items",
   "sentiment": "negative",
@@ -8594,7 +8594,7 @@
  },
  "appstore_534263b057355dd7": {
   "id": "appstore_534263b057355dd7",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund for deducted payment",
   "sentiment": "negative",
@@ -8646,7 +8646,7 @@
  },
  "appstore_13fe1fd25c3961ab": {
   "id": "appstore_13fe1fd25c3961ab",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "responsive customer support for delivery issues",
   "sentiment": "negative",
@@ -8659,7 +8659,7 @@
  },
  "appstore_9b87006df06b22d0": {
   "id": "appstore_9b87006df06b22d0",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivered items and responsive customer support",
   "sentiment": "negative",
@@ -8711,7 +8711,7 @@
  },
  "appstore_56302de90debff4d": {
   "id": "appstore_56302de90debff4d",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "on-time and accurate delivery",
   "sentiment": "negative",
@@ -8737,7 +8737,7 @@
  },
  "appstore_02689b3c9b2e7475": {
   "id": "appstore_02689b3c9b2e7475",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct items and full refunds",
   "sentiment": "negative",
@@ -8776,7 +8776,7 @@
  },
  "appstore_34ca62bec0a75b59": {
   "id": "appstore_34ca62bec0a75b59",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "graded produce, ice cream delivery, general medicine, and correct change for COD",
   "sentiment": "neutral",
@@ -8802,7 +8802,7 @@
  },
  "appstore_9ca5c314c0d52bba": {
   "id": "appstore_9ca5c314c0d52bba",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "competitive pricing",
   "sentiment": "negative",
@@ -8867,7 +8867,7 @@
  },
  "appstore_ebd463abe18906c7": {
   "id": "appstore_ebd463abe18906c7",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct products and fair refund process",
   "sentiment": "negative",
@@ -8880,7 +8880,7 @@
  },
  "appstore_d10f48265f53d3e2": {
   "id": "appstore_d10f48265f53d3e2",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "competitive pricing and polite delivery agents",
   "sentiment": "negative",
@@ -8932,7 +8932,7 @@
  },
  "appstore_ce564927017da323": {
   "id": "appstore_ce564927017da323",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "effective customer support for damaged items and refunds",
   "sentiment": "negative",
@@ -8945,7 +8945,7 @@
  },
  "appstore_5276af73f9e99c22": {
   "id": "appstore_5276af73f9e99c22",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivered order and refund for prepaid order",
   "sentiment": "negative",
@@ -9010,7 +9010,7 @@
  },
  "appstore_d706e6a714d50932": {
   "id": "appstore_d706e6a714d50932",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "fair resolution without extra cost",
   "sentiment": "negative",
@@ -9049,7 +9049,7 @@
  },
  "appstore_1697269a85239a5d": {
   "id": "appstore_1697269a85239a5d",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "promised cashback",
   "sentiment": "negative",
@@ -9062,7 +9062,7 @@
  },
  "appstore_2386d7f4197c03fd": {
   "id": "appstore_2386d7f4197c03fd",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct quantity of product and responsive customer service",
   "sentiment": "negative",
@@ -9166,7 +9166,7 @@
  },
  "appstore_3e42848e6af77794": {
   "id": "appstore_3e42848e6af77794",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "successful order placement after payment",
   "sentiment": "negative",
@@ -9231,7 +9231,7 @@
  },
  "appstore_64d250b5d0bdca76": {
   "id": "appstore_64d250b5d0bdca76",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivered order",
   "sentiment": "negative",
@@ -9257,7 +9257,7 @@
  },
  "appstore_2c12c4daf0a77e48": {
   "id": "appstore_2c12c4daf0a77e48",
-  "theme": "pricing_and_fees",
+  "theme": "pricing_discrepancies",
   "segment": "unclear",
   "unmet_need": "fair pricing",
   "sentiment": "negative",
@@ -9283,7 +9283,7 @@
  },
  "appstore_bc0377dd034289a2": {
   "id": "appstore_bc0377dd034289a2",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "delivered order",
   "sentiment": "negative",
@@ -9309,7 +9309,7 @@
  },
  "appstore_e6cac7135b3b2031": {
   "id": "appstore_e6cac7135b3b2031",
-  "theme": "payment_and_refunds",
+  "theme": "order_cancellation_and_refunds",
   "segment": "unclear",
   "unmet_need": "order cancellation",
   "sentiment": "negative",
@@ -9335,7 +9335,7 @@
  },
  "appstore_af980c953c0905c1": {
   "id": "appstore_af980c953c0905c1",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "resolved issue",
   "sentiment": "negative",
@@ -9374,7 +9374,7 @@
  },
  "appstore_7efae427ffbbc271": {
   "id": "appstore_7efae427ffbbc271",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolved issues and fair pricing",
   "sentiment": "negative",
@@ -9400,7 +9400,7 @@
  },
  "appstore_03a6a3ee679ff74e": {
   "id": "appstore_03a6a3ee679ff74e",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "good customer support and products",
   "sentiment": "negative",
@@ -9413,7 +9413,7 @@
  },
  "appstore_706950a93ab0c649": {
   "id": "appstore_706950a93ab0c649",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolved product issue",
   "sentiment": "negative",
@@ -9439,7 +9439,7 @@
  },
  "appstore_21e3198fab1c9ab2": {
   "id": "appstore_21e3198fab1c9ab2",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "all ordered products",
   "sentiment": "negative",
@@ -9452,7 +9452,7 @@
  },
  "appstore_3a5e51856b969ae9": {
   "id": "appstore_3a5e51856b969ae9",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "customer support",
   "sentiment": "negative",
@@ -9465,7 +9465,7 @@
  },
  "appstore_80672c6384279467": {
   "id": "appstore_80672c6384279467",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "working payment method",
   "sentiment": "negative",
@@ -9543,7 +9543,7 @@
  },
  "appstore_6a809c3c84a4116e": {
   "id": "appstore_6a809c3c84a4116e",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "consistent quality delivery",
   "sentiment": "negative",
@@ -9569,7 +9569,7 @@
  },
  "appstore_c1a016b588f01294": {
   "id": "appstore_c1a016b588f01294",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivered order",
   "sentiment": "negative",
@@ -9608,7 +9608,7 @@
  },
  "appstore_5e8af421dbc50b89": {
   "id": "appstore_5e8af421dbc50b89",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "resolved payment issues and customer support",
   "sentiment": "negative",
@@ -9621,7 +9621,7 @@
  },
  "appstore_584f189f9dee5e43": {
   "id": "appstore_584f189f9dee5e43",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund for deducted amount",
   "sentiment": "negative",
@@ -9660,7 +9660,7 @@
  },
  "appstore_cade1f6e4637d528": {
   "id": "appstore_cade1f6e4637d528",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "accessible customer service and transparent delivery charges",
   "sentiment": "negative",
@@ -9673,7 +9673,7 @@
  },
  "appstore_b76280c22ff4082c": {
   "id": "appstore_b76280c22ff4082c",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "properly packed delivery",
   "sentiment": "negative",
@@ -9699,7 +9699,7 @@
  },
  "appstore_96cf2ad9abfe830b": {
   "id": "appstore_96cf2ad9abfe830b",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "accurate and complete orders",
   "sentiment": "negative",
@@ -9725,7 +9725,7 @@
  },
  "appstore_062589be5a076a5c": {
   "id": "appstore_062589be5a076a5c",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "cash on delivery option",
   "sentiment": "neutral",
@@ -9751,7 +9751,7 @@
  },
  "appstore_dadd8860c916b5d0": {
   "id": "appstore_dadd8860c916b5d0",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund for cancelled orders",
   "sentiment": "negative",
@@ -9764,7 +9764,7 @@
  },
  "appstore_7ba319a7e9233642": {
   "id": "appstore_7ba319a7e9233642",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "delivery personnel with change",
   "sentiment": "negative",
@@ -9855,7 +9855,7 @@
  },
  "appstore_56d05d2787460ba3": {
   "id": "appstore_56d05d2787460ba3",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "solution for defective product",
   "sentiment": "negative",
@@ -9881,7 +9881,7 @@
  },
  "appstore_7aec1491e268822b": {
   "id": "appstore_7aec1491e268822b",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund",
   "sentiment": "negative",
@@ -9907,7 +9907,7 @@
  },
  "appstore_989e748d162cddd3": {
   "id": "appstore_989e748d162cddd3",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "good customer service",
   "sentiment": "negative",
@@ -9972,7 +9972,7 @@
  },
  "appstore_39bdfbd72a1f6055": {
   "id": "appstore_39bdfbd72a1f6055",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "refund for failed order and customer support",
   "sentiment": "negative",
@@ -9985,7 +9985,7 @@
  },
  "appstore_e7078ad7d423f59d": {
   "id": "appstore_e7078ad7d423f59d",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "cash on delivery option",
   "sentiment": "neutral",
@@ -10024,7 +10024,7 @@
  },
  "appstore_3ca5554e83dc8054": {
   "id": "appstore_3ca5554e83dc8054",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "resolved return issue",
   "sentiment": "negative",
@@ -10102,7 +10102,7 @@
  },
  "appstore_f1a670b3df1d73da": {
   "id": "appstore_f1a670b3df1d73da",
-  "theme": "customer_support",
+  "theme": "poor_customer_support",
   "segment": "unclear",
   "unmet_need": "accessible customer service",
   "sentiment": "negative",
@@ -10128,7 +10128,7 @@
  },
  "appstore_76ffda43e4bcee9b": {
   "id": "appstore_76ffda43e4bcee9b",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "refund or replacement for defective product",
   "sentiment": "negative",
@@ -10141,7 +10141,7 @@
  },
  "appstore_722c1097a4f1dee4": {
   "id": "appstore_722c1097a4f1dee4",
-  "theme": "customer_support",
+  "theme": "customer_support_failure",
   "segment": "unclear",
   "unmet_need": "solution for defective product",
   "sentiment": "negative",
@@ -10193,7 +10193,7 @@
  },
  "appstore_db98ac01dba0f473": {
   "id": "appstore_db98ac01dba0f473",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_inconsistencies",
   "segment": "unclear",
   "unmet_need": "quality delivery and service",
   "sentiment": "negative",
@@ -10206,7 +10206,7 @@
  },
  "appstore_d99b9e46181a3981": {
   "id": "appstore_d99b9e46181a3981",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "foreign phone number and cash payment options",
   "sentiment": "neutral",
@@ -10232,7 +10232,7 @@
  },
  "appstore_871942ed1645b3f3": {
   "id": "appstore_871942ed1645b3f3",
-  "theme": "payment_and_refunds",
+  "theme": "payment_and_refund_problems",
   "segment": "unclear",
   "unmet_need": "easy foreign credit card payment",
   "sentiment": "negative",
@@ -10245,7 +10245,7 @@
  },
  "reddit_78cec557c508e70f": {
   "id": "reddit_78cec557c508e70f",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "safe interaction with delivery agents",
   "sentiment": "negative",
@@ -10258,7 +10258,7 @@
  },
  "reddit_05499535a2109640": {
   "id": "reddit_05499535a2109640",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "safe interaction with delivery agents",
   "sentiment": "negative",
@@ -10427,7 +10427,7 @@
  },
  "reddit_1f527aa9ea5df402": {
   "id": "reddit_1f527aa9ea5df402",
-  "theme": "order_and_delivery_failures",
+  "theme": "delivery_issues",
   "segment": "unclear",
   "unmet_need": "proper packaging",
   "sentiment": "negative",
@@ -10544,7 +10544,7 @@
  },
  "reddit_2bf582170395837c": {
   "id": "reddit_2bf582170395837c",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct freebie",
   "sentiment": "negative",
@@ -10557,7 +10557,7 @@
  },
  "reddit_05669ecb7f59d9ba": {
   "id": "reddit_05669ecb7f59d9ba",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct freebie",
   "sentiment": "negative",
@@ -10583,7 +10583,7 @@
  },
  "reddit_7a30400125cd9278": {
   "id": "reddit_7a30400125cd9278",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct freebie",
   "sentiment": "neutral",
@@ -10596,7 +10596,7 @@
  },
  "reddit_ee2ee38e553d80e8": {
   "id": "reddit_ee2ee38e553d80e8",
-  "theme": "order_and_delivery_failures",
+  "theme": "order_accuracy_issues",
   "segment": "unclear",
   "unmet_need": "correct freebie",
   "sentiment": "negative",
