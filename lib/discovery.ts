@@ -101,6 +101,17 @@ export type Insights = {
   segments: { id: string; count: number; top_themes: { id: string; label: string; n: number }[] }[];
 };
 
+export type Survey = {
+  responses: number;
+  caveats: string[];
+  barrier_groups: { group: string; count: number; share: number }[];
+  out_of_basket_prompts: { label: string; count: number; share: number }[];
+  occasion_driven: { count: number; share: number };
+  north_star_baseline: { tried_new_category_within_a_month: number; share: number };
+  first_hear_about_product: { label: string; count: number; share: number }[];
+  stated_preference: Record<string, { n: number; mean: number; top2_box: number; neutral: number }>;
+};
+
 export type Holdout = {
   model_codes?: string;
   human_codes?: string;
@@ -129,3 +140,4 @@ export function loadInsights(): { data: Insights | null; fixture: boolean } {
 }
 
 export const loadHoldout = () => read<Holdout>("holdout-report.json");
+export const loadSurvey = () => read<Survey>("survey.json");

@@ -1,0 +1,227 @@
+{
+ "source": "data/interviews/survey-responses.csv",
+ "responses": 26,
+ "caveats": [
+  "Self-selected convenience sample; 84% under 35.",
+  "n=26 supports whole-sample figures only — no subgroup analysis.",
+  "Q12-Q14 describe the proposed solution and are stated preference, not behaviour."
+ ],
+ "barriers": [
+  {
+   "id": "habit_knows_what_they_need",
+   "group": "habit",
+   "count": 19,
+   "share": 0.731
+  },
+  {
+   "id": "habit_search_not_browse",
+   "group": "habit",
+   "count": 9,
+   "share": 0.346
+  },
+  {
+   "id": "inertia_happy_with_basket",
+   "group": "habit",
+   "count": 7,
+   "share": 0.269
+  },
+  {
+   "id": "quality_uncertainty",
+   "group": "quality",
+   "count": 5,
+   "share": 0.192
+  },
+  {
+   "id": "price_sensitivity",
+   "group": "price",
+   "count": 4,
+   "share": 0.154
+  },
+  {
+   "id": "distrust_suggestions",
+   "group": "trust",
+   "count": 1,
+   "share": 0.038
+  }
+ ],
+ "barrier_groups": [
+  {
+   "group": "habit",
+   "count": 24,
+   "share": 0.923
+  },
+  {
+   "group": "quality",
+   "count": 5,
+   "share": 0.192
+  },
+  {
+   "group": "price",
+   "count": 4,
+   "share": 0.154
+  },
+  {
+   "group": "trust",
+   "count": 1,
+   "share": 0.038
+  }
+ ],
+ "out_of_basket_prompts": [
+  {
+   "label": "A festival or celebration",
+   "count": 8,
+   "share": 0.308
+  },
+  {
+   "label": "Ran out of something at home",
+   "count": 7,
+   "share": 0.269
+  },
+  {
+   "label": "Saw a deal or offer",
+   "count": 5,
+   "share": 0.192
+  },
+  {
+   "label": "Hosting / guests coming over",
+   "count": 3,
+   "share": 0.115
+  },
+  {
+   "label": "A recommendation",
+   "count": 2,
+   "share": 0.077
+  },
+  {
+   "label": "Season or weather (e.g., monsoon)",
+   "count": 1,
+   "share": 0.038
+  }
+ ],
+ "occasion_driven": {
+  "count": 12,
+  "share": 0.462
+ },
+ "north_star_baseline": {
+  "tried_new_category_within_a_month": 13,
+  "share": 0.5,
+  "breakdown": [
+   {
+    "label": "This week",
+    "count": 7,
+    "share": 0.269
+   },
+   {
+    "label": "This month",
+    "count": 6,
+    "share": 0.231
+   },
+   {
+    "label": "Can't remember",
+    "count": 6,
+    "share": 0.231
+   },
+   {
+    "label": "A few months ago",
+    "count": 6,
+    "share": 0.231
+   },
+   {
+    "label": "Never",
+    "count": 1,
+    "share": 0.038
+   }
+  ]
+ },
+ "first_hear_about_product": [
+  {
+   "label": "Instagram / Reels",
+   "count": 10,
+   "share": 0.385
+  },
+  {
+   "label": "Inside the app itself",
+   "count": 6,
+   "share": 0.231
+  },
+  {
+   "label": "Friends or family",
+   "count": 5,
+   "share": 0.192
+  },
+  {
+   "label": "Ads",
+   "count": 2,
+   "share": 0.077
+  },
+  {
+   "label": "A physical store",
+   "count": 1,
+   "share": 0.038
+  },
+  {
+   "label": "depends on the product itself",
+   "count": 1,
+   "share": 0.038
+  },
+  {
+   "label": "YouTube",
+   "count": 1,
+   "share": 0.038
+  }
+ ],
+ "categories_per_month": [
+  {
+   "label": "2-3",
+   "count": 14,
+   "share": 0.538
+  },
+  {
+   "label": "4-5",
+   "count": 8,
+   "share": 0.308
+  },
+  {
+   "label": "Just 1",
+   "count": 2,
+   "share": 0.077
+  },
+  {
+   "label": "6 or more",
+   "count": 2,
+   "share": 0.077
+  }
+ ],
+ "stated_preference": {
+  "occasion_suggestion": {
+   "n": 26,
+   "mean": 3.35,
+   "top2_box": 0.538,
+   "neutral": 0.269
+  },
+  "reason_plus_reviews": {
+   "n": 26,
+   "mean": 3.42,
+   "top2_box": 0.423,
+   "neutral": 0.5
+  },
+  "basket_completion": {
+   "n": 26,
+   "mean": 3.12,
+   "top2_box": 0.462,
+   "neutral": 0.308
+  }
+ },
+ "interview_willing": [
+  {
+   "label": "No",
+   "count": 18,
+   "share": 0.692
+  },
+  {
+   "label": "Yes",
+   "count": 8,
+   "share": 0.308
+  }
+ ]
+}

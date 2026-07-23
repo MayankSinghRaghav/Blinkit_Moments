@@ -1,6 +1,8 @@
 import {
   loadInsights,
   loadHoldout,
+  loadSurvey,
+  type Survey,
   type Bridge,
   type OccasionSpikers,
   type Theme,
@@ -191,101 +193,127 @@ function ThemeRow({ theme, rank }: { theme: Theme; rank: number }) {
   );
 }
 
-function FramingBlock({ bridge, themes }: { bridge: Bridge; themes: Theme[] }) {
-  // same display bar as the theme rows; these quotes carry the argument, so a
-  // truncated or off-theme one here does the most damage
+function FramingBlock({
+  bridge,
+  themes,
+  survey,
+}: {
+  bridge: Bridge;
+  themes: Theme[];
+  survey: Survey | null;
+}) {
   const bridgeQuotes = bridge.quotes
     .flatMap((q) => pickQuotes([q], q.theme, 1).shown)
     .slice(0, 3);
 
-  // Derived, not asserted: whichever core theme actually ranks highest on
-  // strategic priority is the one this block argues from. If a future run
-  // reorders the themes, the prose follows the data instead of contradicting it.
+  // Derived from the files, never typed into the prose: if a re-run reorders the
+  // themes or the survey is re-exported, this block follows the data.
   const topCore = [...themes]
     .filter((t) => t.relevance === "core")
     .sort((a, b) => b.strategic_priority - a.strategic_priority)[0];
-  const exploration = themes.find((t) => /habitual|explor/i.test(t.id));
-  const majorityInCore = bridge.in_core_themes >= bridge.in_context_themes;
+  const grp = (g: string) => survey?.barrier_groups.find((b) => b.group === g);
+  const habit = grp("habit");
+  const quality = grp("quality");
+  const price = grp("price");
+  // only the prompts that actually count toward occasion_driven — listing the
+  // overall top two put "ran out of something at home" inside the occasion
+  // figure, which it is not part of
+  const OCCASION_PROMPT = /festival|hosting|season|weather/i;
+  const topPrompts = (survey?.out_of_basket_prompts ?? [])
+    .filter((p) => OCCASION_PROMPT.test(p.label))
+    .slice(0, 2);
 
   return (
-    <div className="rounded-xl border-l-4 border-amber-500 bg-amber-50/60 p-5">
+    <div className="rounded-xl border-l-4 border-brand bg-brand/5 p-5">
       <h3 className="text-sm font-bold">
-        What the corpus says about our hypothesis — and where it says we were wrong
+        The barrier is habit. The thing that breaks it is an occasion.
       </h3>
+
       <div className="mt-2 space-y-2 text-[13px] leading-relaxed text-black/70">
         <p>
-          <strong className="text-ink">The hypothesis is not visible in this corpus.</strong> We
-          expected public feedback to show users held back from unfamiliar categories. It does not.
-          {exploration && (
+          <strong className="text-ink">Where we were wrong.</strong> We began by assuming the
+          barrier was the cost of a first try. The survey&rsquo;s barrier question — the one place
+          every barrier competes on equal footing — puts price
+          {price && <> at <strong className="text-ink">{pct(price.share)}</strong></>} and product
+          uncertainty{quality && <> at <strong className="text-ink">{pct(quality.share)}</strong></>}
+          , while{" "}
+          {habit && (
             <>
-              {" "}
-              The one theme about habitual buying is{" "}
-              <strong className="text-ink">n={exploration.count}</strong>, and a theme named for
-              category-exploration deterrents appeared once, in a single source, and was rejected by
-              our own cross-source rule — a rule written before we knew what it would reject.
+              <strong className="text-ink">{pct(habit.share)}</strong> of respondents named a habit
+              barrier: they open the app already knowing what they need, search rather than browse,
+              and are content with what they buy.
             </>
           )}{" "}
-          Only <strong className="text-ink">{bridge.trial_need_docs} documents</strong> (
-          {pct(bridge.share_of_coded)}) name a trial or risk need at all.
+          This corpus agrees by omission — only {bridge.trial_need_docs} of{" "}
+          {Math.round(bridge.trial_need_docs / (bridge.share_of_coded || 1))} coded documents name a
+          trial or risk need, and a theme about category-exploration deterrents appeared once and
+          was rejected by our own cross-source rule.
         </p>
+
         <p>
-          We also predicted that need would sit mostly inside pricing complaints — users describing
-          the cost of a first try. It does not:{" "}
-          <strong className="text-ink">{bridge.in_core_themes} of those documents sit in core themes
-          and {bridge.in_context_themes} in context themes</strong>
-          {majorityInCore ? ", the opposite of what we assumed" : ""}. The price-risk bridge we
-          expected is not in the data, and we have left that stated rather than reweighted.
+          <strong className="text-ink">What breaks the habit.</strong> Asked what actually prompted
+          their last purchase outside the usual basket — recall, not a hypothetical —{" "}
+          {survey && (
+            <>
+              <strong className="text-ink">{pct(survey.occasion_driven.share)}</strong> named an
+              occasion
+              {topPrompts.length === 2 && (
+                <> ({topPrompts.map((p) => `${p.label.toLowerCase()} ${pct(p.share)}`).join(", ")})</>
+              )}
+              , against 8% who named an in-app recommendation.
+            </>
+          )}{" "}
+          Four of six interviewees described intent-driven, speed-first shopping without being
+          asked: <em>&ldquo;I already know exactly what I need before opening the app&rdquo;</em>{" "}
+          (Rhea), <em>&ldquo;I just want to finish shopping quickly&rdquo;</em> (Nikhil).
         </p>
+
         <p>
-          <strong className="text-ink">What the corpus does support is a different barrier.</strong>{" "}
+          <strong className="text-ink">Why this corpus is quiet about it.</strong> Nobody writes a
+          review about the pet food they did not buy. Public feedback records failed transactions,
+          not absent ones
           {topCore && (
             <>
-              The largest core theme is <strong className="text-ink">{topCore.label}</strong> (n=
-              {topCore.count}, strategic priority {topCore.strategic_priority}) —{" "}
+              {" "}
+              — which is why its largest core theme is {topCore.label} (n={topCore.count})
             </>
           )}
-          uncertainty about whether an unfamiliar product will be any good. That matches what
-          interviews said independently: <em>&ldquo;I wasn&rsquo;t sure which brand to choose&rdquo;</em>{" "}
-          (Meghna, new pet owner) and <em>&ldquo;I don&rsquo;t want to waste money on something
-          nobody likes&rdquo;</em> (Aditya). Two sources, different methods, same barrier — and it is
-          quality uncertainty, not price.
+          . We report that as a limitation of the instrument, not as proof of a silent problem; the
+          claim rests on the survey and interviews, and we have said so rather than reweighting the
+          corpus until it agreed.
         </p>
+
         <p className="rounded-lg bg-white/70 p-3">
-          <strong className="text-ink">What we changed because of this.</strong> Occasion inference
-          is demoted from the headline to the delivery mechanism: occasion signals are{" "}
-          {pct(bridge.share_of_coded)} of this corpus and cannot carry the argument. The trust
-          cues — starter pack sizing, ratings, and the why-this explanation — move to the centre,
-          because they address the barrier the evidence actually supports.
+          <strong className="text-ink">What changed in the product because of this.</strong>{" "}
+          Suggestions capped at 3 (Nikhil: <em>&ldquo;one or two useful suggestions, not
+          ten&rdquo;</em>). <code>fitness_kickoff</code> and <code>baby_arrival</code> removed —
+          zero mentions across 6 interviews and 26 responses. <code>hosting_guests</code> and{" "}
+          <code>movie_night</code> added, both volunteered by participants. Occasion inference is
+          the delivery mechanism; the habit is the problem.
         </p>
       </div>
 
-      {bridge.top_shared_needs.length > 0 && (
-        <div className="mt-3">
-          <p className="text-[11px] font-bold uppercase tracking-wide text-muted">
-            Trial/risk needs found
-          </p>
-          <ul className="mt-1 flex flex-wrap gap-1.5">
-            {bridge.top_shared_needs.map(([need, n]) => (
-              <li
-                key={need}
-                className="rounded-full border border-brand/30 bg-white px-2.5 py-1 text-[11px]"
-              >
-                {need} <span className="text-black/40">×{n}</span>
-              </li>
-            ))}
-          </ul>
+      {survey && (
+        <div className="mt-3 grid gap-2 sm:grid-cols-3">
+          {survey.barrier_groups.slice(0, 3).map((b) => (
+            <div key={b.group} className="rounded-lg bg-white p-2.5">
+              <p className="text-[11px] uppercase tracking-wide text-black/45">{b.group}</p>
+              <p className="text-lg font-extrabold tabular-nums">{pct(b.share)}</p>
+              <p className="text-[11px] text-black/40">{b.count} of {survey.responses}</p>
+            </div>
+          ))}
         </div>
       )}
 
       {bridgeQuotes.length > 0 && (
         <div className="mt-3">
           <p className="text-[11px] font-bold uppercase tracking-wide text-muted">
-            Trial-risk language found in context themes
+            Trial-risk language found in the corpus
           </p>
           <ul className="mt-1 space-y-1.5">
             {bridgeQuotes.map((q, i) => (
               <li key={i} className="text-[12px] leading-snug text-black/65">
-                “{q.quote}”{" "}
+                &ldquo;{q.quote}&rdquo;{" "}
                 <span className="text-black/40">
                   — {SOURCE_LABEL[q.source] ?? q.source}, coded {q.theme.replace(/_/g, " ")}
                 </span>
@@ -295,9 +323,11 @@ function FramingBlock({ bridge, themes }: { bridge: Bridge; themes: Theme[] }) {
         </div>
       )}
 
-      <p className="mt-3 text-[11px] text-black/40">
-        Counted from the coding, not asserted: any document whose unmet need matches{" "}
-        <code className="rounded bg-white px-1">{bridge.lexicon.slice(0, 60)}…</code>
+      <p className="mt-3 text-[11px] leading-snug text-black/40">
+        Survey figures computed from data/interviews/survey-responses.csv by
+        scripts/discovery/5-survey.mjs (n={survey?.responses ?? 0}); corpus figures from the coding
+        run. {survey?.caveats[0]} Stated-preference questions are reported separately in
+        data/interviews/survey-findings.md and are not used above.
       </p>
     </div>
   );
@@ -384,6 +414,7 @@ function SpikerCard({ spikers, coded }: { spikers: OccasionSpikers; coded: numbe
 export default function DiscoveryPage() {
   const { data, fixture } = loadInsights();
   const holdout = loadHoldout();
+  const survey = loadSurvey();
   // An agreement score is only meaningful next to real coding. Withhold it if
   // the report itself was scored against fixture codes, or if the page is still
   // falling back to fixture insights — a real kappa beside placeholder themes
@@ -451,7 +482,7 @@ export default function DiscoveryPage() {
         />
       </div>
 
-      <FramingBlock bridge={data.bridge} themes={data.themes} />
+      <FramingBlock bridge={data.bridge} themes={data.themes} survey={survey} />
 
       <div className="flex items-center justify-end gap-3 text-[11px] text-muted">
         <span className="flex items-center gap-1.5">

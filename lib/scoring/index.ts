@@ -24,6 +24,19 @@ export type CompleteResult = {
 };
 
 const WHY: Record<string, Partial<Record<Category, string>>> = {
+  festival_prep: {
+    Home: "Lights and cleanup — the two things everyone forgets.",
+    Desserts: "Guests will arrive with sweets. Have better ones.",
+    Snacks: "Something to put out when people drop by unannounced.",
+    PersonalCare: "A full house means the hand wash runs out first.",
+  },
+  hosting_guests: {
+    Home: "Six people, one set of plates. Worth thinking about now.",
+    Desserts: "Somebody always asks what's for after.",
+    Snacks: "Drinks without something to eat is a short evening.",
+    Mixers: "Turns the drinks run into an actual bar.",
+    PersonalCare: "The guest bathroom is the one nobody checks until it's late.",
+  },
   game_night: {
     Home: "Nobody wants to do dishes at midnight.",
     Desserts: "Half-time always ends with someone wanting something sweet.",
@@ -31,11 +44,11 @@ const WHY: Record<string, Partial<Record<Category, string>>> = {
     PersonalCare: "Post-party cleanup is easier with a hand wash by the sink.",
     Wellness: "Tomorrow-morning you will thank tonight-you.",
   },
-  monsoon_evening: {
-    Wellness: "Damp evenings are when immunity packs actually get used.",
-    Desserts: "Hot noodles, cold dessert — the classic rainy-day pairing.",
-    Snacks: "Pakoras are the whole point of a rainy evening.",
-    PersonalCare: "Wet weather is rough on skin.",
+  movie_night: {
+    Desserts: "The second half is when the ice cream gets opened.",
+    Beverages: "Something to sip that isn't finished in ten minutes.",
+    Mixers: "Makes the interval feel deliberate.",
+    Snacks: "Popcorn is better with something on it.",
   },
   new_pet: {
     Home: "First-week accidents happen — a pet-safe floor cleaner saves the day.",
@@ -43,21 +56,11 @@ const WHY: Record<string, Partial<Record<Category, string>>> = {
     Pet: "Rounds out the starter kit for a new pet.",
     Wellness: "New routine, less sleep — worth a small boost.",
   },
-  baby_arrival: {
-    Home: "Laundry and cleanup volume just tripled.",
-    PersonalCare: "Gentle, low-fragrance options for hands that wash 20x a day.",
-    Baby: "Completes the newborn day-one kit.",
-    Wellness: "Broken sleep is easier with a little support.",
-  },
-  fitness_kickoff: {
-    Beverages: "Post-workout hydration, sorted.",
-    PersonalCare: "Gym bag essentials.",
-    Wellness: "Week one is when the habit sticks or doesn't.",
-  },
-  festival_prep: {
-    Home: "Lights and cleanup — the two things everyone forgets.",
-    Desserts: "Guests will arrive with sweets. Have better ones.",
-    Snacks: "Something to put out when people drop by unannounced.",
+  monsoon_evening: {
+    Wellness: "Damp evenings are when immunity packs actually get used.",
+    Desserts: "Hot noodles, cold dessert — the classic rainy-day pairing.",
+    Snacks: "Pakoras are the whole point of a rainy evening.",
+    PersonalCare: "Wet weather is rough on skin.",
   },
 };
 
@@ -110,7 +113,11 @@ export function completeOccasion(
       : [];
   const cats: string[] = [...targets, ...stretch];
 
-  const count = comfort < 25 ? 2 : comfort > 70 ? 4 : 3;
+  // Capped at 3 on research, not taste. Nikhil, unprompted: "One or two useful
+  // suggestions. Not ten" — and "if they're obviously trying to sell me more"
+  // names exactly the failure mode the old maximum of 4 produced. The comfort
+  // dial now changes which categories are reached for, not how many.
+  const count = comfort < 25 ? 2 : 3;
   const suggestions = cats
     .slice(0, count)
     .map((c): Suggestion | null => {
