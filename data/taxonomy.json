@@ -1,0 +1,110 @@
+[
+  {
+    "id": "delivery_issues",
+    "label": "Delivery Problems",
+    "definition": "Users frequently report issues with incomplete, incorrect, or missing deliveries, as well as problems with delivery personnel.",
+    "relevance": "context"
+  },
+  {
+    "id": "customer_support_failure",
+    "label": "Ineffective Customer Support",
+    "definition": "Users express frustration with customer service, citing unhelpful responses, refusal to resolve issues, and lack of accountability for problems.",
+    "relevance": "context"
+  },
+  {
+    "id": "product_quality_concerns",
+    "label": "Product Quality Concerns",
+    "definition": "Users express dissatisfaction with the quality of perishable items (e.g., curdled milk), lack of visible expiry dates, or receiving items that do not match product descriptions (e.g., warm drinks, wrong umbrella).",
+    "relevance": "core"
+  },
+  {
+    "id": "pricing_discrepancies",
+    "label": "Higher Pricing and Hidden Fees",
+    "definition": "Users complain about products being more expensive than market prices and the presence of additional surcharges or handling fees.",
+    "relevance": "context"
+  },
+  {
+    "id": "stock_availability_issues",
+    "label": "Frequent Out-of-Stock Items",
+    "definition": "Essential items are often unavailable or marked 'out of stock,' defeating the purpose of a quick delivery service.",
+    "relevance": "core"
+  },
+  {
+    "id": "convenience_and_speed_value",
+    "label": "Value of Convenience and Speed",
+    "definition": "Users appreciate the quick delivery and convenience of ordering essentials from home, saving time and effort.",
+    "relevance": "core"
+  },
+  {
+    "id": "privacy_and_discretion_breaches",
+    "label": "Breaches of Privacy and Discretion",
+    "definition": "Users report concerns about delivery personnel knowing their order contents, leading to uncomfortable or inappropriate interactions, especially with sensitive items.",
+    "relevance": "core"
+  },
+  {
+    "id": "order_cancellation_and_refunds",
+    "label": "Order Cancellation and Refund Problems",
+    "definition": "Users experience issues with orders being cancelled by the platform, technical glitches leading to multiple orders, and difficulties in obtaining timely refunds.",
+    "relevance": "context"
+  },
+  {
+    "id": "delivery_time_expectations",
+    "label": "Delivery Time Expectations",
+    "definition": "Discussions around the 10-minute delivery promise, its impact on workers, and actual delivery times.",
+    "relevance": "context"
+  },
+  {
+    "id": "poor_customer_support",
+    "label": "Poor Customer Support",
+    "definition": "Users frequently report issues with unhelpful, unresponsive, or inaccessible customer service, leading to unresolved complaints, unfulfilled refunds, and general frustration.",
+    "relevance": "context"
+  },
+  {
+    "id": "order_accuracy_issues",
+    "label": "Order Accuracy Issues",
+    "definition": "Users experience problems with incorrect, missing, or defective items, as well as discrepancies in quantity or quality of products received.",
+    "relevance": "context"
+  },
+  {
+    "id": "delivery_inconsistencies",
+    "label": "Delivery Inconsistencies",
+    "definition": "Users report issues with delivery speed, incorrect delivery locations, or poor handling by delivery personnel, despite the platforms' promise of quick delivery.",
+    "relevance": "context"
+  },
+  {
+    "id": "pricing_and_fees",
+    "label": "Pricing and Fees",
+    "definition": "Users complain about high delivery charges, hidden fees, minimum cart limits, and prices being higher compared to other platforms or traditional stores.",
+    "relevance": "context"
+  },
+  {
+    "id": "payment_and_refund_problems",
+    "label": "Payment and Refund Problems",
+    "definition": "Users face issues with payment failures, duplicate orders, unexpected cancellation fees, and delayed or unreceived refunds.",
+    "relevance": "context"
+  },
+  {
+    "id": "app_technical_issues",
+    "label": "App Technical Issues",
+    "definition": "Users encounter glitches with the app, such as location unavailability, shopping cart emptying, or misleading UX regarding offers and charges.",
+    "relevance": "context"
+  },
+  {
+    "id": "habitual_purchases_value_for_money",
+    "label": "Habitual Purchases: Value for Money",
+    "definition": "Users stick to certain products or categories (e.g., protein shakes) based on cost-effectiveness and perceived value, often comparing prices across brands or platforms.",
+    "relevance": "core"
+  },
+  {
+    "id": "lack_of_category_exploration_deterrents",
+    "label": "Lack of Category Exploration Deterrents",
+    "definition": "Users are discouraged from trying new categories due to negative experiences with product quality, misleading listings, or the hassle of returns for unfamiliar items.",
+    "relevance": "core"
+  },
+  {
+    "id": "convenience_as_primary_driver",
+    "label": "Convenience as Primary Driver",
+    "definition": "Users primarily use quick-commerce for speed and convenience, especially for daily essentials or sudden requirements, which reinforces buying familiar items rather than exploring new ones.",
+    "relevance": "core"
+  }
+]
