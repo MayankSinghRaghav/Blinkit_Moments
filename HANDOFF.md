@@ -46,7 +46,7 @@ reviews record failed transactions, not absent ones.
 | 1 Discovery engine | 🟡 **830/1284 coded** (quota cut in). 18-theme codebook induced from real data. `/discovery` serves real insights. **454 documents remain** |
 | 2 Interviews | ✅ 6 committed in `data/interviews/` with leading-question flags + limitations |
 | 2 Survey | ✅ n=26 committed, analysed, `data/survey.json` generated reproducibly |
-| 3 Problem definition | ❌ **NOT WRITTEN — biggest remaining gap** |
+| 3 Problem definition | ✅ `data/problem-definition.md` — figures provisional at 65% corpus |
 | 4 MVP | ✅ Deployed, 4 screens + `/discovery` |
 
 ## Immediate next actions, in order
@@ -54,12 +54,12 @@ reviews record failed transactions, not absent ones.
 1. **Finish coding** (quota resets midnight Pacific):
    `npm run discovery:tag && npm run discovery:analyze` — ~4 calls of 20.
    Resumable and idempotent; already-coded docs are skipped.
-2. **Write Part 3** (`data/problem-definition.md`): segment, root cause
-   (habit), workarounds (Google/YouTube per Meghna; Instagram 38% per survey),
-   user value, business value. Include the triangulation table above.
-3. **Hold-out κ**: `npm run discovery:holdout` → hand-code 60 rows into
+2. **Hold-out κ**: `npm run discovery:holdout` → hand-code 60 rows into
    `data/holdout-coded.csv` → `node scripts/discovery/4-holdout.mjs --score`.
    Must be human-coded. `/discovery` shows "—" until it exists.
+3. **Business case + experiment design** — the next Phase 2 items; nothing
+   exists yet. Baseline (~50%) and guardrails are named in problem-definition.md
+   section 5 but not modelled.
 4. **Supabase env vars in Vercel** — production is `"store":"in-memory"`,
    so the tracker reads empty across lambdas. USER ACTION, 5 min.
 5. **Deck** — none exists. Likely the primary evaluation artifact.
