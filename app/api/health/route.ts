@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { llmConfigured } from "@/lib/llm";
-import { supabaseConfigured } from "@/lib/supabase/admin";
+import { supabaseConfigured, supabaseDiagnostics } from "@/lib/supabase/admin";
 import { PRODUCTS } from "@/lib/data/catalog";
 import { OCCASIONS } from "@/lib/occasions";
 
@@ -19,5 +19,8 @@ export function GET() {
     occasions: OCCASIONS.length,
     llm: llmConfigured() ? "gemini-2.5-flash" : "degraded (deterministic matcher)",
     store: supabaseConfigured() ? "supabase" : "in-memory",
+    // presence flags only, never values — so a broken deployment can be
+    // diagnosed without anyone opening the dashboard
+    config: supabaseDiagnostics(),
   });
 }
