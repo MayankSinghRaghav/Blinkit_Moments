@@ -474,7 +474,7 @@ export default function DiscoveryPage() {
           sub={`${data.corpus.no_theme} fit no theme · ${data.corpus.low_confidence} below ${data.corpus.min_code_confidence} confidence`}
         />
         <Stat
-          label="Agreement (κ)"
+          label={realHoldout?.rater === "second_model" ? "Cross-model κ" : "Agreement (κ)"}
           value={realHoldout ? realHoldout.cohens_kappa.toFixed(2) : "—"}
           sub={
             realHoldout
@@ -585,14 +585,30 @@ export default function DiscoveryPage() {
               rather than shown.
             </li>
             <li>
-              <strong className="text-ink">Blind hold-out coding.</strong>{" "}
+              <strong className="text-ink">
+                {realHoldout?.rater === "second_model"
+                  ? "Cross-model reliability."
+                  : "Blind hold-out coding."}
+              </strong>{" "}
               {realHoldout ? (
                 <>
-                  {realHoldout.coded_pairs} documents coded by hand without seeing the model&apos;s
-                  label: {pct(realHoldout.raw_agreement)} raw agreement,{" "}
+                  60 documents re-coded{" "}
+                  {realHoldout.rater === "second_model"
+                    ? "by a second, different model (GPT) blind to Gemini's labels"
+                    : "by hand without seeing the model's label"}
+                  : {pct(realHoldout.raw_agreement)} raw agreement,{" "}
                   {pct(realHoldout.expected_by_chance)} expected by chance, κ ={" "}
                   {realHoldout.cohens_kappa} ({realHoldout.interpretation}). Computed from the two
                   label sets, not asserted.
+                  {realHoldout.rater === "second_model" && (
+                    <>
+                      {" "}
+                      This is a cross-model reliability check, <em>not</em> human validation — it
+                      measures whether two independent models read the codebook the same way, and a
+                      moderate κ here means the boundary between some themes (support vs delivery,
+                      convenience-value vs convenience-driver) is genuinely fuzzy.
+                    </>
+                  )}
                 </>
               ) : (
                 <>

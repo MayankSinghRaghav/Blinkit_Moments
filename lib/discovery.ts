@@ -139,7 +139,8 @@ export type Sensitivity = {
 
 export type Holdout = {
   model_codes?: string;
-  human_codes?: string;
+  second_codes?: string;
+  rater?: "human" | "second_model";
   fixture_derived?: boolean;
   coded_pairs: number;
   raw_agreement: number;

@@ -1,0 +1,45 @@
+{
+  "model_codes": "data/tagged.json",
+  "second_codes": "data/holdout-coded.csv",
+  "rater": "second_model",
+  "fixture_derived": false,
+  "coded_pairs": 60,
+  "raw_agreement": 0.617,
+  "expected_by_chance": 0.118,
+  "cohens_kappa": 0.566,
+  "interpretation": "moderate",
+  "top_confusions": [
+    [
+      "none → convenience_and_speed_value",
+      2
+    ],
+    [
+      "customer_support → order_and_delivery_failures",
+      2
+    ],
+    [
+      "convenience_and_speed_value → convenience_as_primary_driver",
+      2
+    ],
+    [
+      "payment_and_refunds → app_technical_issues",
+      2
+    ],
+    [
+      "none → order_and_delivery_failures",
+      2
+    ],
+    [
+      "none → app_technical_issues",
+      2
+    ],
+    [
+      "customer_support → payment_and_refunds",
+      1
+    ],
+    [
+      "customer_support → product_quality_concerns",
+      1
+    ]
+  ]
+}

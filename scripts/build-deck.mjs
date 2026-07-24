@@ -6,10 +6,13 @@
  * cannot drift from the analysis. Re-run after any pipeline or survey change.
  */
 import pptxgen from "pptxgenjs";
-import { readFileSync, mkdirSync } from "node:fs";
+import { readFileSync, existsSync, mkdirSync } from "node:fs";
 
 const insights = JSON.parse(readFileSync("data/insights.json", "utf8"));
 const survey = JSON.parse(readFileSync("data/survey.json", "utf8"));
+const holdout = existsSync("data/holdout-report.json")
+  ? JSON.parse(readFileSync("data/holdout-report.json", "utf8"))
+  : null;
 
 const grp = (g) => survey.barrier_groups.find((b) => b.group === g);
 const P = (x) => `${Math.round(x * 100)}%`;
@@ -181,9 +184,18 @@ const footnote = (s, text) =>
       { text: "Open coding first — the codebook is induced from a stratified sample before anything is classified, so themes come from the data, not our hypothesis.", options: { bullet: true, breakLine: true } },
       { text: "A theme is only reported if it appears in at least two independent sources. The rule was written before we knew what it would reject.", options: { bullet: true, breakLine: true } },
       { text: "Every quote is verified verbatim against its source document; anything paraphrased is dropped rather than shown.", options: { bullet: true, breakLine: true } },
-      { text: "Codes below 0.5 confidence are excluded and counted as rejected, not quietly absorbed.", options: { bullet: true } },
+      { text: "Codes below 0.5 confidence are excluded and counted as rejected, not quietly absorbed.", options: { bullet: true, breakLine: true } },
+      {
+        text:
+          holdout && holdout.rater === "second_model"
+            ? `A second, different model (GPT) re-coded 60 documents blind: cross-model κ = ${holdout.cohens_kappa} (${holdout.interpretation}). Reported as reliability, not human validation.`
+            : holdout
+              ? `60 documents hand-coded blind: κ = ${holdout.cohens_kappa} (${holdout.interpretation}).`
+              : "Inter-rater agreement pending a blind re-coding pass.",
+        options: { bullet: true },
+      },
     ],
-    { x: M + 0.4, y: 4.5, w: CW - 0.8, h: 1.75, fontFace: BODY, fontSize: 12.5, color: INK, margin: 0, paraSpaceAfter: 6 },
+    { x: M + 0.4, y: 4.5, w: CW - 0.8, h: 1.9, fontFace: BODY, fontSize: 12.5, color: INK, margin: 0, paraSpaceAfter: 6 },
   );
   footnote(s, "Pipeline is reproducible end to end: scripts/discovery/0-fetch → 1-normalize → 2-tag → 3-analyze → 4-holdout.");
 }

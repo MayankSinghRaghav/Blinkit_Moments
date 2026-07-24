@@ -57,16 +57,22 @@ if (process.argv.includes("--score")) {
   const rows = parseCsv(readFileSync(CODED, "utf8"));
   const head = rows[0].map((h) => h.trim());
   const iId = head.indexOf("id");
+  // `human_theme` = you coded it; `theme` = a second model coded it (cross-model
+  // check, NOT human validation). Whichever is present decides how the result
+  // is labelled downstream — the distinction is the whole point.
   const iHuman = head.indexOf("human_theme");
-  if (iId < 0 || iHuman < 0) {
-    console.error("coded file must keep the 'id' and 'human_theme' columns");
+  const iTheme = head.indexOf("theme");
+  const iRater = iHuman >= 0 ? iHuman : iTheme;
+  const raterKind = iHuman >= 0 ? "human" : "second_model";
+  if (iId < 0 || iRater < 0) {
+    console.error("coded file must have an 'id' column plus 'human_theme' (you) or 'theme' (a second model)");
     process.exit(1);
   }
 
   const pairs = [];
   for (const r of rows.slice(1)) {
     const id = r[iId]?.trim();
-    const human = r[iHuman]?.trim();
+    const human = r[iRater]?.trim();
     if (!id || !human) continue; // uncoded rows are skipped, not counted as disagreement
     const llm = tagged[id]?.theme;
     if (!llm) continue;
@@ -98,7 +104,11 @@ if (process.argv.includes("--score")) {
     // provenance, so a report generated from fixture data can never be mistaken
     // for a measured one on the page
     model_codes: INPUT,
-    human_codes: CODED,
+    second_codes: CODED,
+    // "human" = independent hand-coding (true validation); "second_model" = a
+    // different LLM coded blind (cross-model reliability, weaker claim). Never
+    // conflate the two on the page.
+    rater: raterKind,
     fixture_derived: INPUT.includes(".sample."),
     coded_pairs: pairs.length,
     raw_agreement: Number(po.toFixed(3)),
@@ -109,6 +119,7 @@ if (process.argv.includes("--score")) {
   };
   writeFileSync("data/holdout-report.json", JSON.stringify(report, null, 2));
 
+  console.log(`rater               ${raterKind === "human" ? "you (human)" : "a second model (cross-model check, not human validation)"}`);
   console.log(`pairs compared      ${report.coded_pairs}`);
   console.log(`raw agreement       ${(po * 100).toFixed(1)}%`);
   console.log(`expected by chance  ${(pe * 100).toFixed(1)}%`);
