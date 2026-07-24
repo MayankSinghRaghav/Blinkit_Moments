@@ -27,6 +27,13 @@ export type CompleteResult = {
   occasion_label: string;
   confidence: number;
   suggestions: Suggestion[];
+  /**
+   * One occasion-aware sentence naming the gap between what is in the basket
+   * and what the occasion needs. This is the line Kabir described wanting:
+   * "I buy beer, chips and soft drinks separately. Nobody tells me what I'm
+   * missing." Empty string when there is no occasion.
+   */
+  gap_line: string;
 };
 
 const WHY: Record<string, Partial<Record<Category, string>>> = {
@@ -96,6 +103,49 @@ function pickProduct(category: string): Product | undefined {
   return inCat.find((p) => p.starter) ?? inCat.sort((a, b) => a.price_inr - b.price_inr)[0];
 }
 
+/* ---------- the gap line ----------
+ * A short, human noun for what a basket item IS ("beer", not "Kingfisher Ultra
+ * 6-pack") and for what a suggested category ADDS ("something sweet", not
+ * "Desserts"). Keyed by product id where the seed catalog benefits from it,
+ * falling back to the category so an unmapped product never breaks the sentence.
+ */
+const BASKET_NOUN: Record<string, string> = {
+  bev_beer: "beer", bev_cola: "soft drinks", bev_juice: "juice", bev_ginger_tea: "chai",
+  snk_nachos: "nachos", snk_chips: "chips", snk_noodles: "noodles",
+  gro_milk: "milk", gro_bread: "bread", gro_eggs: "eggs",
+  pet_treats: "dog treats", bab_wipes: "baby wipes",
+};
+const GAP_NOUN: Partial<Record<Category, string>> = {
+  Home: "plates and cleanup",
+  Desserts: "something sweet",
+  Mixers: "mixers",
+  Snacks: "more to snack on",
+  Beverages: "drinks",
+  Wellness: "a recovery pack",
+  PersonalCare: "the essentials",
+  Pet: "the starter kit",
+  Baby: "the basics",
+};
+
+const basketNoun = (i: BasketItem) =>
+  (i.product_id && BASKET_NOUN[i.product_id]) || i.name?.split(" ")[0].toLowerCase() || i.category.toLowerCase();
+
+/** "a and b", "a, b and c" — Oxford-free, reads aloud cleanly. */
+function joinNatural(parts: string[]): string {
+  if (parts.length <= 1) return parts[0] ?? "";
+  if (parts.length === 2) return `${parts[0]} and ${parts[1]}`;
+  return `${parts.slice(0, -1).join(", ")} and ${parts[parts.length - 1]}`;
+}
+
+export function gapLine(occasion: Occasion, basket: BasketItem[], suggestions: Suggestion[]): string {
+  const have = joinNatural([...new Set(basket.map(basketNoun))].slice(0, 3));
+  const need = joinNatural(
+    suggestions.map((s) => GAP_NOUN[s.category as Category] ?? s.category.toLowerCase()),
+  );
+  if (!have || !need) return "";
+  return `You've got ${have} — your ${occasion.label.toLowerCase()} still needs ${need}.`;
+}
+
 /**
  * Deterministic occasion completion: infer the occasion, then suggest 2-4 items
  * from categories the basket does NOT contain. Shared by /api/infer-occasion,
@@ -104,7 +154,7 @@ function pickProduct(category: string): Product | undefined {
 export function completeOccasion(basket: BasketItem[], context: string): CompleteResult {
   const { occasion, confidence } = matchOccasion(basket, context);
   if (!occasion) {
-    return { occasion_id: "none", occasion_label: "No clear occasion", confidence, suggestions: [] };
+    return { occasion_id: "none", occasion_label: "No clear occasion", confidence, suggestions: [], gap_line: "" };
   }
 
   const inBasket = new Set(basket.map((i) => i.category));
@@ -132,7 +182,7 @@ export function completeOccasion(basket: BasketItem[], context: string): Complet
     .filter((s): s is Suggestion => s !== null);
 
   if (suggestions.length < 2) {
-    return { occasion_id: "none", occasion_label: "No clear occasion", confidence: 0, suggestions: [] };
+    return { occasion_id: "none", occasion_label: "No clear occasion", confidence: 0, suggestions: [], gap_line: "" };
   }
 
   return {
@@ -140,6 +190,7 @@ export function completeOccasion(basket: BasketItem[], context: string): Complet
     occasion_label: occasion.label,
     confidence,
     suggestions,
+    gap_line: gapLine(occasion, basket, suggestions),
   };
 }
 

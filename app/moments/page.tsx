@@ -4,6 +4,9 @@ import { CartPanel } from "@/components/CartPanel";
 import { SuggestionCard } from "@/components/SuggestionCard";
 import { dismissItem, setSuggestionQty } from "@/lib/actions";
 import { qtyOf } from "@/lib/cart";
+import { byId } from "@/lib/data/catalog";
+import { occasionById } from "@/lib/occasions";
+import { gapLine } from "@/lib/scoring";
 import { useOccasion } from "@/lib/useOccasion";
 
 export default function MomentsPage() {
@@ -12,6 +15,19 @@ export default function MomentsPage() {
   // exactly the behaviour Nikhil described as "obviously trying to sell me more"
   const visible = data.suggestions.filter((s) => !demo.dismissed.includes(s.product_id));
   const sensed = data.occasion_id !== "none" && visible.length > 0;
+
+  // Recompute the gap line from what's actually on screen. The stored line
+  // covers every suggestion; once one is dismissed it would name an item that
+  // is no longer shown, so rebuild it from `visible`.
+  const occasion = occasionById(data.occasion_id);
+  const gapLineNow =
+    occasion && sensed
+      ? gapLine(
+          occasion,
+          demo.cart.map((l) => byId(l.id)).filter((p) => p !== undefined).map((p) => ({ product_id: p.id, name: p.name, category: p.category })),
+          visible,
+        )
+      : "";
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
@@ -28,11 +44,21 @@ export default function MomentsPage() {
               </span>
             )}
           </h1>
-          <p className="mt-1 text-sm text-black/70">
-            {sensed
-              ? `${Math.round(data.confidence * 100)}% confidence · completing across ${visible.length} ${visible.length === 1 ? "category" : "categories"} you've never ordered`
-              : "Add a couple of items and the agent will read the basket."}
-          </p>
+          {sensed && gapLineNow ? (
+            <p className="mt-2 text-base font-semibold leading-snug text-black/85">
+              {gapLineNow}
+            </p>
+          ) : (
+            <p className="mt-1 text-sm text-black/70">
+              Add a couple of items and the agent will read the basket.
+            </p>
+          )}
+          {sensed && (
+            <p className="mt-1 text-xs text-black/55">
+              {Math.round(data.confidence * 100)}% confidence · {visible.length}{" "}
+              {visible.length === 1 ? "category" : "categories"} you&apos;ve never ordered
+            </p>
+          )}
         </div>
 
         {data?.degraded && (

@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { z } from "zod";
 import { CATEGORIES, PRODUCTS, isHighConsideration } from "@/lib/data/catalog";
 import { OCCASIONS, occasionById } from "@/lib/occasions";
-import { completeOccasion, MAX_SUGGESTIONS, type BasketItem, type CompleteResult } from "@/lib/scoring";
+import { completeOccasion, gapLine, MAX_SUGGESTIONS, type BasketItem, type CompleteResult } from "@/lib/scoring";
 
 const MODEL = "gemini-2.5-flash";
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
@@ -62,7 +62,7 @@ const CompleteSchema = z.object({
 /** The model is allowed to be wrong, not to break the contract. */
 function enforceRules(r: CompleteResult, basket: BasketItem[]): CompleteResult {
   if (r.occasion_id === "none" || r.confidence < 0.4) {
-    return { ...r, occasion_id: "none", suggestions: [] };
+    return { ...r, occasion_id: "none", suggestions: [], gap_line: "" };
   }
   // the model likes inventing occasions ("casual_friday_drinks") — only seeded
   // ids exist downstream (/why links, adoption events, the golden evals)
@@ -81,7 +81,15 @@ function enforceRules(r: CompleteResult, basket: BasketItem[]): CompleteResult {
   if (suggestions.length < 2) throw new Error("llm returned <2 usable suggestions");
   // same ceiling the deterministic path uses — the model does not get to
   // exceed a limit set by research
-  return { ...r, occasion_label: occasion.label, suggestions: suggestions.slice(0, MAX_SUGGESTIONS) };
+  const capped = suggestions.slice(0, MAX_SUGGESTIONS);
+  // gap_line is computed from the basket + final suggestions, not taken from the
+  // model, so it names exactly what is on screen and can't drift from it
+  return {
+    ...r,
+    occasion_label: occasion.label,
+    suggestions: capped,
+    gap_line: gapLine(occasion, basket, capped),
+  };
 }
 
 export type InferResult = CompleteResult & { degraded: boolean };
@@ -97,7 +105,7 @@ export async function inferOccasion(basket: BasketItem[], context: string): Prom
         catalog: PRODUCTS.map((p) => `${p.id} | ${p.name} | ${p.category} | ₹${p.price_inr}${p.starter ? " | starter" : ""}`).join("\n"),
       }),
     );
-    return { ...enforceRules(CompleteSchema.parse(raw), basket), degraded: false };
+    return { ...enforceRules({ ...CompleteSchema.parse(raw), gap_line: "" }, basket), degraded: false };
   } catch (e) {
     // no key, quota exhausted, timeout, or a rule violation — deterministic path.
     // Logged, not swallowed: a demo that silently degrades looks like it works.
