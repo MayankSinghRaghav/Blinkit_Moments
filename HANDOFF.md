@@ -43,7 +43,7 @@ reviews record failed transactions, not absent ones.
 
 | Part | State |
 |---|---|
-| 1 Discovery engine | 🟡 **830/1284 coded** (quota cut in). 18-theme codebook induced from real data. `/discovery` serves real insights. **454 documents remain**; codebook has near-duplicate themes to merge before the hold-out |
+| 1 Discovery engine | 🟡 **1066/1284 coded (83%)** (quota cut in). 18-theme codebook induced from real data. `/discovery` serves real insights. **454 documents remain**; codebook has near-duplicate themes to merge before the hold-out |
 | 2 Interviews | ✅ 6 committed in `data/interviews/` with leading-question flags + limitations |
 | 2 Survey | ✅ n=26 committed, analysed, `data/survey.json` generated reproducibly |
 | 3 Problem definition | ✅ `data/problem-definition.md` — figures provisional at 65% corpus |

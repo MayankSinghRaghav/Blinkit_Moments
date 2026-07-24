@@ -9,21 +9,21 @@
   ],
   "weightings_tested": 120,
   "baseline_top": [
+   "pricing_and_fees",
    "customer_support",
-   "order_and_delivery_failures",
-   "pricing_and_fees"
+   "order_and_delivery_failures"
   ],
-  "top1_stable": 0.7,
-  "topN_set_stable": 0.617,
-  "mean_spearman": 0.902,
-  "min_spearman": 0.399,
+  "top1_stable": 0.858,
+  "topN_set_stable": 0.475,
+  "mean_spearman": 0.856,
+  "min_spearman": 0.322,
   "most_volatile": [
    {
     "id": "convenience_and_speed_value",
     "label": "Value of Convenience and Speed",
-    "best": 1,
+    "best": 2,
     "worst": 10,
-    "swing": 9
+    "swing": 8
    },
    {
     "id": "convenience_as_primary_driver",
@@ -35,9 +35,9 @@
    {
     "id": "payment_and_refunds",
     "label": "Payment, Cancellation and Refunds",
-    "best": 5,
-    "worst": 11,
-    "swing": 6
+    "best": 2,
+    "worst": 9,
+    "swing": 7
    }
   ],
   "most_stable": [
@@ -45,22 +45,22 @@
     "id": "stock_availability_issues",
     "label": "Frequent Out-of-Stock Items",
     "best": 9,
-    "worst": 11,
-    "swing": 2
+    "worst": 12,
+    "swing": 3
    },
    {
-    "id": "pricing_and_fees",
-    "label": "Pricing and Fees",
-    "best": 2,
-    "worst": 4,
-    "swing": 2
+    "id": "delivery_time_expectations",
+    "label": "Delivery Time Expectations",
+    "best": 7,
+    "worst": 11,
+    "swing": 4
    },
    {
     "id": "customer_support",
     "label": "Ineffective Customer Support",
     "best": 1,
-    "worst": 3,
-    "swing": 2
+    "worst": 5,
+    "swing": 4
    }
   ]
  },
@@ -77,24 +77,24 @@
    "convenience_as_primary_driver",
    "product_quality_concerns"
   ],
-  "top1_stable": 0.992,
-  "topN_set_stable": 0.55,
-  "mean_spearman": 0.979,
-  "min_spearman": 0.909,
+  "top1_stable": 0.983,
+  "topN_set_stable": 0.6,
+  "mean_spearman": 0.973,
+  "min_spearman": 0.916,
   "most_volatile": [
-   {
-    "id": "pricing_and_fees",
-    "label": "Pricing and Fees",
-    "best": 5,
-    "worst": 10,
-    "swing": 5
-   },
    {
     "id": "privacy_and_discretion_breaches",
     "label": "Breaches of Privacy and Discretion",
     "best": 2,
     "worst": 7,
     "swing": 5
+   },
+   {
+    "id": "pricing_and_fees",
+    "label": "Pricing and Fees",
+    "best": 6,
+    "worst": 10,
+    "swing": 4
    },
    {
     "id": "order_and_delivery_failures",
@@ -113,67 +113,67 @@
     "swing": 0
    },
    {
-    "id": "app_technical_issues",
-    "label": "App Technical Issues",
-    "best": 11,
-    "worst": 11,
-    "swing": 0
-   },
-   {
     "id": "habitual_purchases_value_for_money",
     "label": "Habitual Purchases: Value for Money",
     "best": 1,
     "worst": 2,
     "swing": 1
+   },
+   {
+    "id": "convenience_as_primary_driver",
+    "label": "Convenience as Primary Driver",
+    "best": 2,
+    "worst": 4,
+    "swing": 2
    }
   ]
  },
  "conclusions": {
-  "core_theme_leads_strategic_priority": 0.542,
+  "core_theme_leads_strategic_priority": 0.642,
   "context_theme_leads_raw_opportunity": 1
  },
  "confidence_floor_sweep": [
   {
    "floor": 0.3,
-   "accepted": 799,
+   "accepted": 917,
    "rejected_low_confidence": 0,
    "themes_surviving_cross_source": 12,
-   "largest_theme": "convenience_and_speed_value"
+   "largest_theme": "pricing_and_fees"
   },
   {
    "floor": 0.4,
-   "accepted": 799,
+   "accepted": 917,
    "rejected_low_confidence": 0,
    "themes_surviving_cross_source": 12,
-   "largest_theme": "convenience_and_speed_value"
+   "largest_theme": "pricing_and_fees"
   },
   {
    "floor": 0.5,
-   "accepted": 799,
+   "accepted": 917,
    "rejected_low_confidence": 0,
    "themes_surviving_cross_source": 12,
-   "largest_theme": "convenience_and_speed_value"
+   "largest_theme": "pricing_and_fees"
   },
   {
    "floor": 0.6,
-   "accepted": 799,
+   "accepted": 917,
    "rejected_low_confidence": 0,
    "themes_surviving_cross_source": 12,
-   "largest_theme": "convenience_and_speed_value"
+   "largest_theme": "pricing_and_fees"
   },
   {
    "floor": 0.7,
-   "accepted": 793,
-   "rejected_low_confidence": 6,
+   "accepted": 906,
+   "rejected_low_confidence": 11,
    "themes_surviving_cross_source": 12,
-   "largest_theme": "convenience_and_speed_value"
+   "largest_theme": "pricing_and_fees"
   },
   {
    "floor": 0.8,
-   "accepted": 720,
-   "rejected_low_confidence": 79,
+   "accepted": 793,
+   "rejected_low_confidence": 124,
    "themes_surviving_cross_source": 12,
-   "largest_theme": "convenience_and_speed_value"
+   "largest_theme": "pricing_and_fees"
   }
  ]
 }
