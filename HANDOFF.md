@@ -43,7 +43,7 @@ reviews record failed transactions, not absent ones.
 
 | Part | State |
 |---|---|
-| 1 Discovery engine | ✅ **1066/1284 coded (83%)**, 13-theme merged codebook, cross-model κ=0.566 (moderate), sensitivity-tested. 218 docs remain but proportions are stable. |
+| 1 Discovery engine | ✅ **1284/1284 coded (100%)**, 1011 themed / 273 none, all 13 themes pass cross-source, cross-model κ=0.566. |
 | 2 Interviews | ✅ 6 committed in `data/interviews/` with leading-question flags + limitations |
 | 2 Survey | ✅ n=26 committed, analysed, `data/survey.json` generated reproducibly |
 | 3 Problem definition | ✅ `data/problem-definition.md` — figures provisional at 65% corpus |

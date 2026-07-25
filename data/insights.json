@@ -2,12 +2,12 @@
  "generated_from": "data/tagged.json",
  "corpus": {
   "documents": 1284,
-  "returned_by_coder": 1066,
-  "with_theme": 917,
-  "no_theme": 149,
+  "returned_by_coder": 1284,
+  "with_theme": 1011,
+  "no_theme": 273,
   "low_confidence": 0,
   "min_code_confidence": 0.5,
-  "uncoded": 218,
+  "uncoded": 0,
   "by_source": {
    "play_store": 498,
    "app_store": 300,
@@ -32,11 +32,15 @@
  },
  "bridge": {
   "lexicon": "\\b(trial|try|trying|sample|small(er)?|starter|pack size|risk|unsure|unfamiliar|quality|know if|first[- ]time|worth it)\\b",
-  "trial_need_docs": 41,
-  "share_of_coded": 0.045,
+  "trial_need_docs": 48,
+  "share_of_coded": 0.047,
   "in_core_themes": 1,
-  "in_context_themes": 40,
+  "in_context_themes": 47,
   "top_shared_needs": [
+   [
+    "high quality fruits and vegetables",
+    2
+   ],
    [
     "fresh, good quality products",
     1
@@ -51,10 +55,6 @@
    ],
    [
     "product matching description and quality",
-    1
-   ],
-   [
-    "good product quality and functional customer support",
     1
    ]
   ],
@@ -172,17 +172,8 @@
  "validity": {
   "rule": "A theme is reported only if it appears in at least 2 independent sources.",
   "code_rule": "A code is accepted only if the coder's confidence is at least 0.5; below that it is counted as rejected and excluded from every theme statistic.",
-  "valid_themes": 12,
-  "rejected_themes": [
-   {
-    "id": "lack_of_category_exploration_deterrents",
-    "label": "Lack of Category Exploration Deterrents",
-    "sources": [
-     "play_store"
-    ],
-    "count": 1
-   }
-  ]
+  "valid_themes": 13,
+  "rejected_themes": []
  },
  "themes": [
   {
@@ -190,10 +181,10 @@
    "label": "Pricing and Fees",
    "definition": "Prices higher than market or other platforms, plus delivery charges, handling fees, surge pricing and minimum cart limits.",
    "relevance": "context",
-   "count": 142,
-   "frequency": 0.15485278080697928,
-   "severity": 0.7253521126760564,
-   "confidence": 0.8330985915492961,
+   "count": 175,
+   "frequency": 0.17309594460929772,
+   "severity": 0.6457142857142857,
+   "confidence": 0.8171428571428568,
    "sources": [
     "play_store",
     "app_store",
@@ -203,16 +194,17 @@
    "per_source": {
     "play_store": 48,
     "app_store": 53,
-    "reddit": 41
+    "reddit": 74
    },
    "segments": {
-    "unclear": 104,
-    "deal_seeker": 26,
-    "routine_replenisher": 7,
+    "unclear": 117,
+    "deal_seeker": 43,
+    "routine_replenisher": 9,
     "new_life_stage": 1,
-    "power_user": 4
+    "power_user": 4,
+    "urban_professional": 1
    },
-   "segment_spread": 0.8,
+   "segment_spread": 1,
    "top_needs": [
     [
      "better prices for groceries",
@@ -227,18 +219,18 @@
      5
     ],
     [
-     "lower delivery charges",
-     3
+     "compare prices across platforms",
+     5
     ],
     [
-     "Time-consuming process of comparing prices and delivery times across multiple quick commerce apps.",
+     "lower delivery charges",
      3
     ]
    ],
    "categories": [
     [
      "Groceries",
-     34
+     44
     ],
     [
      "Snacks",
@@ -363,14 +355,14 @@
      "theme": "pricing_and_fees"
     }
    ],
-   "opportunity": 87.8,
+   "opportunity": 89.4,
    "strategic_components": {
     "core_relevance": 0,
-    "trial_need": 0.035,
+    "trial_need": 0.029,
     "new_category": 0
    },
-   "strategic_fit": 0.011,
-   "strategic_priority": 1
+   "strategic_fit": 0.009,
+   "strategic_priority": 0.8
   },
   {
    "id": "customer_support",
@@ -378,7 +370,7 @@
    "definition": "Users report unhelpful, unresponsive or inaccessible customer service: unresolved complaints, refusal to take responsibility, and unfulfilled refund promises.",
    "relevance": "context",
    "count": 109,
-   "frequency": 0.11886586695747,
+   "frequency": 0.10781404549950543,
    "severity": 0.9724770642201835,
    "confidence": 0.8550458715596336,
    "sources": [
@@ -550,24 +542,24 @@
      "theme": "customer_support"
     }
    ],
-   "opportunity": 75.6,
+   "opportunity": 68.3,
    "strategic_components": {
     "core_relevance": 0,
     "trial_need": 0.037,
     "new_category": 0.028
    },
    "strategic_fit": 0.017,
-   "strategic_priority": 1.3
+   "strategic_priority": 1.2
   },
   {
    "id": "order_and_delivery_failures",
    "label": "Order and Delivery Failures",
    "definition": "The order did not arrive as promised: items incorrect, missing, damaged or short in quantity, wrong location, or poor handling by delivery personnel.",
    "relevance": "context",
-   "count": 122,
-   "frequency": 0.13304252998909488,
-   "severity": 0.9262295081967213,
-   "confidence": 0.8114754098360654,
+   "count": 125,
+   "frequency": 0.12363996043521266,
+   "severity": 0.928,
+   "confidence": 0.8087999999999999,
    "sources": [
     "play_store",
     "app_store",
@@ -577,10 +569,10 @@
    "per_source": {
     "play_store": 82,
     "app_store": 33,
-    "reddit": 7
+    "reddit": 10
    },
    "segments": {
-    "unclear": 121,
+    "unclear": 124,
     "routine_replenisher": 1
    },
    "segment_spread": 0.2,
@@ -609,7 +601,7 @@
    "categories": [
     [
      "Groceries",
-     16
+     17
     ],
     [
      "Snacks",
@@ -738,13 +730,13 @@
      "theme": "order_and_delivery_failures"
     }
    ],
-   "opportunity": 74.7,
+   "opportunity": 67.6,
    "strategic_components": {
     "core_relevance": 0,
-    "trial_need": 0.016,
-    "new_category": 0.049
+    "trial_need": 0.024,
+    "new_category": 0.048
    },
-   "strategic_fit": 0.015,
+   "strategic_fit": 0.017,
    "strategic_priority": 1.1
   },
   {
@@ -752,10 +744,10 @@
    "label": "Product Quality Concerns",
    "definition": "Users express dissatisfaction with the quality of perishable items (e.g., curdled milk), lack of visible expiry dates, or receiving items that do not match product descriptions (e.g., warm drinks, wrong umbrella).",
    "relevance": "context",
-   "count": 106,
-   "frequency": 0.11559432933478735,
-   "severity": 0.9339622641509434,
-   "confidence": 0.8518867924528304,
+   "count": 118,
+   "frequency": 0.11671612265084075,
+   "severity": 0.9067796610169492,
+   "confidence": 0.838983050847458,
    "sources": [
     "play_store",
     "app_store",
@@ -763,18 +755,26 @@
    ],
    "cross_source_valid": true,
    "per_source": {
-    "play_store": 68,
+    "play_store": 69,
     "app_store": 37,
-    "reddit": 1
+    "reddit": 12
    },
    "segments": {
-    "routine_replenisher": 6,
-    "unclear": 100
+    "routine_replenisher": 8,
+    "unclear": 110
    },
    "segment_spread": 0.2,
    "top_needs": [
     [
+     "high quality fruits and vegetables",
+     2
+    ],
+    [
      "undamaged products",
+     2
+    ],
+    [
+     "undamaged and safe frozen items",
      2
     ],
     [
@@ -784,20 +784,12 @@
     [
      "reasonable quantity of vegetables",
      1
-    ],
-    [
-     "non-expired product",
-     1
-    ],
-    [
-     "sealed and safe intimate item",
-     1
     ]
    ],
    "categories": [
     [
      "Groceries",
-     36
+     43
     ],
     [
      "Electronics",
@@ -805,15 +797,15 @@
     ],
     [
      "Other",
-     8
+     9
+    ],
+    [
+     "Snacks",
+     6
     ],
     [
      "PersonalCare",
      5
-    ],
-    [
-     "Snacks",
-     4
     ]
    ],
    "quotes": [
@@ -926,24 +918,24 @@
      "theme": "product_quality_concerns"
     }
    ],
-   "opportunity": 69.3,
+   "opportunity": 64.9,
    "strategic_components": {
     "core_relevance": 0,
-    "trial_need": 0.245,
-    "new_category": 0.057
+    "trial_need": 0.263,
+    "new_category": 0.051
    },
-   "strategic_fit": 0.085,
-   "strategic_priority": 5.9
+   "strategic_fit": 0.089,
+   "strategic_priority": 5.8
   },
   {
    "id": "payment_and_refunds",
    "label": "Payment, Cancellation and Refunds",
    "definition": "Payment failures, duplicate orders, platform-side cancellations, cancellation fees, and refunds that are delayed or never arrive.",
    "relevance": "context",
-   "count": 104,
-   "frequency": 0.1134133042529989,
-   "severity": 0.9423076923076923,
-   "confidence": 0.852884615384615,
+   "count": 108,
+   "frequency": 0.10682492581602374,
+   "severity": 0.9074074074074074,
+   "confidence": 0.847222222222222,
    "sources": [
     "play_store",
     "app_store",
@@ -953,10 +945,10 @@
    "per_source": {
     "play_store": 70,
     "app_store": 33,
-    "reddit": 1
+    "reddit": 5
    },
    "segments": {
-    "unclear": 103,
+    "unclear": 107,
     "deal_seeker": 1
    },
    "segment_spread": 0.2,
@@ -1114,13 +1106,191 @@
      "theme": "payment_and_refunds"
     }
    ],
-   "opportunity": 68.9,
+   "opportunity": 62.1,
    "strategic_components": {
     "core_relevance": 0,
     "trial_need": 0,
-    "new_category": 0.029
+    "new_category": 0.028
    },
    "strategic_fit": 0.006,
+   "strategic_priority": 0.4
+  },
+  {
+   "id": "app_technical_issues",
+   "label": "App Technical Issues",
+   "definition": "Users encounter glitches with the app, such as location unavailability, shopping cart emptying, or misleading UX regarding offers and charges.",
+   "relevance": "context",
+   "count": 90,
+   "frequency": 0.08902077151335312,
+   "severity": 0.5888888888888889,
+   "confidence": 0.7633333333333335,
+   "sources": [
+    "play_store",
+    "app_store",
+    "reddit"
+   ],
+   "cross_source_valid": true,
+   "per_source": {
+    "play_store": 37,
+    "app_store": 9,
+    "reddit": 44
+   },
+   "segments": {
+    "unclear": 58,
+    "routine_replenisher": 2,
+    "power_user": 25,
+    "deal_seeker": 5
+   },
+   "segment_spread": 0.6,
+   "top_needs": [
+    [
+     "easy price comparison across quick-commerce apps",
+     4
+    ],
+    [
+     "working payment methods",
+     2
+    ],
+    [
+     "functional payment methods",
+     2
+    ],
+    [
+     "Desire for more quick commerce platforms to be included in the comparison app.",
+     2
+    ],
+    [
+     "unified access to quick commerce pricing and delivery data",
+     2
+    ]
+   ],
+   "categories": [
+    [
+     "Groceries",
+     8
+    ],
+    [
+     "Beverages",
+     1
+    ]
+   ],
+   "quotes": [
+    {
+     "quote": "Whenever I open the app, it shows \"Location Unavailable\" and I am unable to access the service or place any orders.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "app_technical_issues"
+    },
+    {
+     "quote": "Saved Address LOCATION is forgotten/overridden by live/current location. This happens regularly but intermittently, and once an order is placed, delivery persons are following the current location instead of saved location.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 2,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "app_technical_issues"
+    },
+    {
+     "quote": "The Blinkit app has been facing a very frustrating payment issue recently. Almost every payment method keeps showing “This payment method is not available at the moment,” including Blinkit Money itself.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "app_technical_issues"
+    },
+    {
+     "quote": "my first order, took me almost an hour to order one single order, app was glitching, restarting again and again and again and again and again and again and again and again and again.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "app_technical_issues"
+    },
+    {
+     "quote": "the stupid app uses last ordered location and doesn't notify or remind user to change location if user is elsewhere.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "app_technical_issues"
+    },
+    {
+     "quote": "App working very slow. Very slow app so sometimes waiting is not possible so not ordering",
+     "source": "app_store",
+     "url": "https://apps.apple.com/in/app/id960335206",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "app_technical_issues"
+    },
+    {
+     "quote": "All this hype and can’t deliver basic functionality of sending & inputting an OTP code from the bank card.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/us/app/id960335206",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "app_technical_issues"
+    },
+    {
+     "quote": "App crashed three times before being able to get it to work.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/us/app/id960335206",
+     "rating": 3,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "app_technical_issues"
+    },
+    {
+     "quote": "The Blinkit App does not open all the time. It just keeps on as if it is loading. No start up screen Please fix the app.",
+     "source": "app_store",
+     "url": "https://apps.apple.com/us/app/id960335206",
+     "rating": 3,
+     "segment": "unclear",
+     "confidence": 0.9,
+     "theme": "app_technical_issues"
+    },
+    {
+     "quote": "Do you guys do monthly grocery shopping on apps like Zepto/Blinkit?. I’ve recently started doing my monthly grocery shopping on apps like Blinkit and Zepto instead of visiting supermarkets. It’s definitely more convenient, but one thing really frustrates me, rebuilding my cart every single month.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/Bengaluru/comments/1myt3q2/do_you_guys_do_monthly_grocery_shopping_on_apps/",
+     "rating": null,
+     "segment": "routine_replenisher",
+     "confidence": 0.9,
+     "theme": "app_technical_issues"
+    },
+    {
+     "quote": "I added items to cart for free delivery, but at payment time one item was removed due to out of stock. Then delivery charges were added without my consent.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.8,
+     "theme": "app_technical_issues"
+    },
+    {
+     "quote": "Beware of Blinkit's \"Buy 1 Get 1 Free\" offers. The free product is not added to your cart automatically. You have to add it yourself.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 1,
+     "segment": "unclear",
+     "confidence": 0.8,
+     "theme": "app_technical_issues"
+    }
+   ],
+   "opportunity": 55.4,
+   "strategic_components": {
+    "core_relevance": 0,
+    "trial_need": 0.022,
+    "new_category": 0
+   },
+   "strategic_fit": 0.007,
    "strategic_priority": 0.4
   },
   {
@@ -1129,7 +1299,7 @@
    "definition": "Users appreciate the quick delivery and convenience of ordering essentials from home, saving time and effort.",
    "relevance": "context",
    "count": 131,
-   "frequency": 0.14285714285714285,
+   "frequency": 0.12957467853610286,
    "severity": 0.007633587786259542,
    "confidence": 0.8511450381679396,
    "sources": [
@@ -1305,7 +1475,7 @@
      "theme": "convenience_and_speed_value"
     }
    ],
-   "opportunity": 62.4,
+   "opportunity": 53.7,
    "strategic_components": {
     "core_relevance": 0,
     "trial_need": 0,
@@ -1315,192 +1485,14 @@
    "strategic_priority": 0.1
   },
   {
-   "id": "app_technical_issues",
-   "label": "App Technical Issues",
-   "definition": "Users encounter glitches with the app, such as location unavailability, shopping cart emptying, or misleading UX regarding offers and charges.",
-   "relevance": "context",
-   "count": 77,
-   "frequency": 0.08396946564885496,
-   "severity": 0.5974025974025974,
-   "confidence": 0.7740259740259741,
-   "sources": [
-    "play_store",
-    "app_store",
-    "reddit"
-   ],
-   "cross_source_valid": true,
-   "per_source": {
-    "play_store": 37,
-    "app_store": 9,
-    "reddit": 31
-   },
-   "segments": {
-    "unclear": 45,
-    "routine_replenisher": 2,
-    "power_user": 25,
-    "deal_seeker": 5
-   },
-   "segment_spread": 0.6,
-   "top_needs": [
-    [
-     "easy price comparison across quick-commerce apps",
-     4
-    ],
-    [
-     "working payment methods",
-     2
-    ],
-    [
-     "functional payment methods",
-     2
-    ],
-    [
-     "Desire for more quick commerce platforms to be included in the comparison app.",
-     2
-    ],
-    [
-     "app functionality",
-     1
-    ]
-   ],
-   "categories": [
-    [
-     "Groceries",
-     8
-    ],
-    [
-     "Beverages",
-     1
-    ]
-   ],
-   "quotes": [
-    {
-     "quote": "Whenever I open the app, it shows \"Location Unavailable\" and I am unable to access the service or place any orders.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "app_technical_issues"
-    },
-    {
-     "quote": "Saved Address LOCATION is forgotten/overridden by live/current location. This happens regularly but intermittently, and once an order is placed, delivery persons are following the current location instead of saved location.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 2,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "app_technical_issues"
-    },
-    {
-     "quote": "The Blinkit app has been facing a very frustrating payment issue recently. Almost every payment method keeps showing “This payment method is not available at the moment,” including Blinkit Money itself.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "app_technical_issues"
-    },
-    {
-     "quote": "my first order, took me almost an hour to order one single order, app was glitching, restarting again and again and again and again and again and again and again and again and again.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "app_technical_issues"
-    },
-    {
-     "quote": "the stupid app uses last ordered location and doesn't notify or remind user to change location if user is elsewhere.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "app_technical_issues"
-    },
-    {
-     "quote": "App working very slow. Very slow app so sometimes waiting is not possible so not ordering",
-     "source": "app_store",
-     "url": "https://apps.apple.com/in/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "app_technical_issues"
-    },
-    {
-     "quote": "All this hype and can’t deliver basic functionality of sending & inputting an OTP code from the bank card.",
-     "source": "app_store",
-     "url": "https://apps.apple.com/us/app/id960335206",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "app_technical_issues"
-    },
-    {
-     "quote": "App crashed three times before being able to get it to work.",
-     "source": "app_store",
-     "url": "https://apps.apple.com/us/app/id960335206",
-     "rating": 3,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "app_technical_issues"
-    },
-    {
-     "quote": "The Blinkit App does not open all the time. It just keeps on as if it is loading. No start up screen Please fix the app.",
-     "source": "app_store",
-     "url": "https://apps.apple.com/us/app/id960335206",
-     "rating": 3,
-     "segment": "unclear",
-     "confidence": 0.9,
-     "theme": "app_technical_issues"
-    },
-    {
-     "quote": "Do you guys do monthly grocery shopping on apps like Zepto/Blinkit?. I’ve recently started doing my monthly grocery shopping on apps like Blinkit and Zepto instead of visiting supermarkets. It’s definitely more convenient, but one thing really frustrates me, rebuilding my cart every single month.",
-     "source": "reddit",
-     "url": "https://www.reddit.com/r/Bengaluru/comments/1myt3q2/do_you_guys_do_monthly_grocery_shopping_on_apps/",
-     "rating": null,
-     "segment": "routine_replenisher",
-     "confidence": 0.9,
-     "theme": "app_technical_issues"
-    },
-    {
-     "quote": "I added items to cart for free delivery, but at payment time one item was removed due to out of stock. Then delivery charges were added without my consent.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "app_technical_issues"
-    },
-    {
-     "quote": "Beware of Blinkit's \"Buy 1 Get 1 Free\" offers. The free product is not added to your cart automatically. You have to add it yourself.",
-     "source": "play_store",
-     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
-     "rating": 1,
-     "segment": "unclear",
-     "confidence": 0.8,
-     "theme": "app_technical_issues"
-    }
-   ],
-   "opportunity": 57,
-   "strategic_components": {
-    "core_relevance": 0,
-    "trial_need": 0.013,
-    "new_category": 0
-   },
-   "strategic_fit": 0.004,
-   "strategic_priority": 0.2
-  },
-  {
    "id": "delivery_time_expectations",
    "label": "Delivery Time Expectations",
    "definition": "Discussions around the 10-minute delivery promise, its impact on workers, and actual delivery times.",
    "relevance": "context",
-   "count": 41,
-   "frequency": 0.04471101417666303,
-   "severity": 0.6829268292682927,
-   "confidence": 0.7829268292682927,
+   "count": 50,
+   "frequency": 0.04945598417408507,
+   "severity": 0.66,
+   "confidence": 0.7700000000000005,
    "sources": [
     "play_store",
     "app_store",
@@ -1510,11 +1502,11 @@
    "per_source": {
     "play_store": 15,
     "app_store": 6,
-    "reddit": 20
+    "reddit": 29
    },
    "segments": {
     "routine_replenisher": 1,
-    "unclear": 40
+    "unclear": 49
    },
    "segment_spread": 0.2,
    "top_needs": [
@@ -1541,11 +1533,11 @@
    ],
    "categories": [
     [
-     "Other",
-     2
+     "Groceries",
+     3
     ],
     [
-     "Groceries",
+     "Other",
      2
     ],
     [
@@ -1663,24 +1655,24 @@
      "theme": "delivery_time_expectations"
     }
    ],
-   "opportunity": 38.9,
+   "opportunity": 38.1,
    "strategic_components": {
     "core_relevance": 0,
-    "trial_need": 0.049,
-    "new_category": 0.024
+    "trial_need": 0.04,
+    "new_category": 0.02
    },
-   "strategic_fit": 0.02,
-   "strategic_priority": 0.8
+   "strategic_fit": 0.016,
+   "strategic_priority": 0.6
   },
   {
    "id": "privacy_and_discretion_breaches",
    "label": "Breaches of Privacy and Discretion",
    "definition": "Users report concerns about delivery personnel knowing their order contents, leading to uncomfortable or inappropriate interactions, especially with sensitive items.",
    "relevance": "context",
-   "count": 21,
-   "frequency": 0.022900763358778626,
-   "severity": 0.7619047619047619,
-   "confidence": 0.8142857142857145,
+   "count": 23,
+   "frequency": 0.02274975272007913,
+   "severity": 0.782608695652174,
+   "confidence": 0.8043478260869567,
    "sources": [
     "play_store",
     "app_store",
@@ -1690,10 +1682,10 @@
    "per_source": {
     "play_store": 4,
     "app_store": 2,
-    "reddit": 15
+    "reddit": 17
    },
    "segments": {
-    "unclear": 19,
+    "unclear": 21,
     "power_user": 2
    },
    "segment_spread": 0.2,
@@ -1839,24 +1831,24 @@
      "theme": "privacy_and_discretion_breaches"
     }
    ],
-   "opportunity": 34.3,
+   "opportunity": 34,
    "strategic_components": {
     "core_relevance": 0,
     "trial_need": 0,
-    "new_category": 0.238
+    "new_category": 0.217
    },
-   "strategic_fit": 0.048,
-   "strategic_priority": 1.6
+   "strategic_fit": 0.043,
+   "strategic_priority": 1.5
   },
   {
    "id": "stock_availability_issues",
    "label": "Frequent Out-of-Stock Items",
    "definition": "Essential items are often unavailable or marked 'out of stock,' defeating the purpose of a quick delivery service.",
    "relevance": "context",
-   "count": 30,
-   "frequency": 0.03271537622682661,
-   "severity": 0.6,
-   "confidence": 0.7866666666666667,
+   "count": 31,
+   "frequency": 0.03066271018793274,
+   "severity": 0.6129032258064516,
+   "confidence": 0.7838709677419355,
    "sources": [
     "play_store",
     "app_store",
@@ -1866,11 +1858,11 @@
    "per_source": {
     "play_store": 18,
     "app_store": 9,
-    "reddit": 3
+    "reddit": 4
    },
    "segments": {
     "routine_replenisher": 5,
-    "unclear": 25
+    "unclear": 26
    },
    "segment_spread": 0.2,
    "top_needs": [
@@ -2015,7 +2007,7 @@
      "theme": "stock_availability_issues"
     }
    ],
-   "opportunity": 32.6,
+   "opportunity": 31.2,
    "strategic_components": {
     "core_relevance": 0,
     "trial_need": 0,
@@ -2029,10 +2021,10 @@
    "label": "Convenience as Primary Driver",
    "definition": "Users primarily use quick-commerce for speed and convenience, especially for daily essentials or sudden requirements, which reinforces buying familiar items rather than exploring new ones.",
    "relevance": "core",
-   "count": 22,
-   "frequency": 0.023991275899672846,
+   "count": 33,
+   "frequency": 0.032640949554896145,
    "severity": 0,
-   "confidence": 0.840909090909091,
+   "confidence": 0.7848484848484849,
    "sources": [
     "play_store",
     "app_store",
@@ -2042,12 +2034,12 @@
    "per_source": {
     "play_store": 9,
     "app_store": 10,
-    "reddit": 3
+    "reddit": 14
    },
    "segments": {
-    "unclear": 14,
+    "unclear": 24,
     "new_life_stage": 2,
-    "urban_professional": 2,
+    "urban_professional": 3,
     "power_user": 2,
     "routine_replenisher": 2
    },
@@ -2060,20 +2052,36 @@
     [
      "easier grocery reordering and tracking",
      1
+    ],
+    [
+     "convenience over price comparison",
+     1
+    ],
+    [
+     "local shops to compete with quick commerce apps",
+     1
+    ],
+    [
+     "fast, on-demand fashion rental",
+     1
     ]
    ],
    "categories": [
     [
      "Groceries",
-     8
+     10
     ],
     [
      "Snacks",
      3
     ],
     [
+     "Household",
+     3
+    ],
+    [
      "Other",
-     1
+     2
     ]
    ],
    "quotes": [
@@ -2186,24 +2194,24 @@
      "theme": "convenience_as_primary_driver"
     }
    ],
-   "opportunity": 23.7,
+   "opportunity": 25.4,
    "strategic_components": {
     "core_relevance": 1,
-    "trial_need": 0.045,
+    "trial_need": 0.03,
     "new_category": 0
    },
-   "strategic_fit": 0.514,
-   "strategic_priority": 12.2
+   "strategic_fit": 0.509,
+   "strategic_priority": 12.9
   },
   {
    "id": "habitual_purchases_value_for_money",
    "label": "Habitual Purchases: Value for Money",
    "definition": "Users stick to certain products or categories (e.g., protein shakes) based on cost-effectiveness and perceived value, often comparing prices across brands or platforms.",
    "relevance": "core",
-   "count": 11,
-   "frequency": 0.011995637949836423,
+   "count": 15,
+   "frequency": 0.01483679525222552,
    "severity": 0,
-   "confidence": 0.7999999999999999,
+   "confidence": 0.7733333333333331,
    "sources": [
     "play_store",
     "app_store",
@@ -2213,12 +2221,12 @@
    "per_source": {
     "play_store": 1,
     "app_store": 1,
-    "reddit": 9
+    "reddit": 13
    },
    "segments": {
     "routine_replenisher": 1,
     "deal_seeker": 2,
-    "unclear": 7,
+    "unclear": 11,
     "urban_professional": 1
    },
    "segment_spread": 0.6,
@@ -2243,7 +2251,7 @@
     ],
     [
      "Groceries",
-     3
+     5
     ],
     [
      "Beverages",
@@ -2340,27 +2348,133 @@
      "segment": "unclear",
      "confidence": 0.7,
      "theme": "habitual_purchases_value_for_money"
+    },
+    {
+     "quote": "Not specifically for snacks only, but for regular grocery and stuff - Swiggy Instamart or Zepto - whichever has the stuff I need.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/chennaicity/comments/1tvggbg/which_quickcommerce_app_does_chennai_use_the_most/opgrb39/",
+     "rating": null,
+     "segment": "unclear",
+     "confidence": 0.7,
+     "theme": "habitual_purchases_value_for_money"
+    },
+    {
+     "quote": "I mostly use Instamart or sometimes blinkit if Instamart doesn't have something i want.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/chennaicity/comments/1tvggbg/which_quickcommerce_app_does_chennai_use_the_most/ophc0io/",
+     "rating": null,
+     "segment": "unclear",
+     "confidence": 0.7,
+     "theme": "habitual_purchases_value_for_money"
     }
    ],
-   "opportunity": 15.9,
+   "opportunity": 16.3,
    "strategic_components": {
     "core_relevance": 1,
     "trial_need": 0,
-    "new_category": 0.545
+    "new_category": 0.4
    },
-   "strategic_fit": 0.609,
-   "strategic_priority": 9.7
+   "strategic_fit": 0.58,
+   "strategic_priority": 9.5
+  },
+  {
+   "id": "lack_of_category_exploration_deterrents",
+   "label": "Lack of Category Exploration Deterrents",
+   "definition": "Users are discouraged from trying new categories due to negative experiences with product quality, misleading listings, or the hassle of returns for unfamiliar items.",
+   "relevance": "core",
+   "count": 3,
+   "frequency": 0.002967359050445104,
+   "severity": 0,
+   "confidence": 0.6999999999999998,
+   "sources": [
+    "play_store",
+    "reddit"
+   ],
+   "cross_source_valid": true,
+   "per_source": {
+    "play_store": 1,
+    "reddit": 2
+   },
+   "segments": {
+    "unclear": 3
+   },
+   "segment_spread": 0,
+   "top_needs": [
+    [
+     "more product options within categories",
+     1
+    ],
+    [
+     "ready-to-eat salads in India",
+     1
+    ],
+    [
+     "trusted, body-safe douche bulb in India",
+     1
+    ]
+   ],
+   "categories": [
+    [
+     "Other",
+     1
+    ],
+    [
+     "Groceries",
+     1
+    ],
+    [
+     "PersonalCare",
+     1
+    ]
+   ],
+   "quotes": [
+    {
+     "quote": "best app ever as it makes our work easy but the minus point is that it have limited options only. I want to order a football but did'nt like and when I scrolled down I thought I might get some other options but did'nt get any other.",
+     "source": "play_store",
+     "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+     "rating": 4,
+     "segment": "unclear",
+     "confidence": 0.7,
+     "theme": "lack_of_category_exploration_deterrents"
+    },
+    {
+     "quote": "So I've been obsessing over this idea for a few months and I want some brutal honesty from people who actually live and eat in Indian cities.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/indianstartups/comments/1sbyr90/ready_to_eat_salads_in_retail_channels_like/",
+     "rating": null,
+     "segment": "unclear",
+     "confidence": 0.7,
+     "theme": "lack_of_category_exploration_deterrents"
+    },
+    {
+     "quote": "Hey guys. I need to buy a douche bulb for hygiene but I'm struggling to find trusted, body-safe options on Indian e-commerce sites.",
+     "source": "reddit",
+     "url": "https://www.reddit.com/r/askgaybros/comments/1uowvj4/where_to_buy_a_good_douche_bulb_in_india_plus_any/",
+     "rating": null,
+     "segment": "unclear",
+     "confidence": 0.7,
+     "theme": "lack_of_category_exploration_deterrents"
+    }
+   ],
+   "opportunity": 0.9,
+   "strategic_components": {
+    "core_relevance": 1,
+    "trial_need": 0,
+    "new_category": 0.333
+   },
+   "strategic_fit": 0.567,
+   "strategic_priority": 0.5
   }
  ],
  "occasion_spikers": {
   "label": "Occasion Spikers",
   "definition": "Coded documents showing an episodic occasion spike: the coder assigned the new_life_stage segment (new pet, new baby, moving), or the source text carries a signal keyword from the seeded occasion catalog in lib/occasions.",
   "derivation": "new_life_stage segment OR occasion signal keyword in the source text",
-  "size": 26,
+  "size": 28,
   "share_of_coded": 0.028,
   "criteria": {
    "life_stage_only": 5,
-   "occasion_keyword_only": 21,
+   "occasion_keyword_only": 23,
    "both": 0
   },
   "keyword_source": "lib/occasions signal_keywords (whole-word match on the source text)",
@@ -2383,7 +2497,7 @@
    ],
    [
     "friends",
-    3
+    4
    ],
    [
     "guests",
@@ -2409,9 +2523,14 @@
   "by_source": {
    "play_store": 17,
    "app_store": 4,
-   "reddit": 5
+   "reddit": 7
   },
   "top_themes": [
+   {
+    "id": "convenience_as_primary_driver",
+    "label": "Convenience as Primary Driver",
+    "n": 5
+   },
    {
     "id": "order_and_delivery_failures",
     "label": "Order and Delivery Failures",
@@ -2426,18 +2545,34 @@
     "id": "pricing_and_fees",
     "label": "Pricing and Fees",
     "n": 4
-   },
-   {
-    "id": "app_technical_issues",
-    "label": "App Technical Issues",
-    "n": 3
    }
   ]
  },
  "segments": [
   {
+   "id": "deal_seeker",
+   "count": 51,
+   "top_themes": [
+    {
+     "id": "pricing_and_fees",
+     "label": "Pricing and Fees",
+     "n": 43
+    },
+    {
+     "id": "app_technical_issues",
+     "label": "App Technical Issues",
+     "n": 5
+    },
+    {
+     "id": "habitual_purchases_value_for_money",
+     "label": "Habitual Purchases: Value for Money",
+     "n": 2
+    }
+   ]
+  },
+  {
    "id": "routine_replenisher",
-   "count": 44,
+   "count": 48,
    "top_themes": [
     {
      "id": "convenience_and_speed_value",
@@ -2447,12 +2582,12 @@
     {
      "id": "pricing_and_fees",
      "label": "Pricing and Fees",
-     "n": 7
+     "n": 9
     },
     {
      "id": "product_quality_concerns",
      "label": "Product Quality Concerns",
-     "n": 6
+     "n": 8
     }
    ]
   },
@@ -2478,23 +2613,23 @@
    ]
   },
   {
-   "id": "deal_seeker",
-   "count": 34,
+   "id": "urban_professional",
+   "count": 7,
    "top_themes": [
+    {
+     "id": "convenience_as_primary_driver",
+     "label": "Convenience as Primary Driver",
+     "n": 3
+    },
+    {
+     "id": "convenience_and_speed_value",
+     "label": "Value of Convenience and Speed",
+     "n": 2
+    },
     {
      "id": "pricing_and_fees",
      "label": "Pricing and Fees",
-     "n": 26
-    },
-    {
-     "id": "app_technical_issues",
-     "label": "App Technical Issues",
-     "n": 5
-    },
-    {
-     "id": "habitual_purchases_value_for_money",
-     "label": "Habitual Purchases: Value for Money",
-     "n": 2
+     "n": 1
     }
    ]
   },
@@ -2515,27 +2650,6 @@
     {
      "id": "customer_support",
      "label": "Ineffective Customer Support",
-     "n": 1
-    }
-   ]
-  },
-  {
-   "id": "urban_professional",
-   "count": 5,
-   "top_themes": [
-    {
-     "id": "convenience_and_speed_value",
-     "label": "Value of Convenience and Speed",
-     "n": 2
-    },
-    {
-     "id": "convenience_as_primary_driver",
-     "label": "Convenience as Primary Driver",
-     "n": 2
-    },
-    {
-     "id": "habitual_purchases_value_for_money",
-     "label": "Habitual Purchases: Value for Money",
      "n": 1
     }
    ]
