@@ -43,7 +43,7 @@ reviews record failed transactions, not absent ones.
 
 | Part | State |
 |---|---|
-| 1 Discovery engine | ✅ **1284/1284 coded (100%)**, 1011 themed / 273 none, all 13 themes pass cross-source, cross-model κ=0.566. |
+| 1 Discovery engine | ✅ **1284/1284 coded (100%)**, 1011 themed / 273 none, all 13 themes pass cross-source, HUMAN hold-out κ=0.50 (moderate). |
 | 2 Interviews | ✅ 6 committed in `data/interviews/` with leading-question flags + limitations |
 | 2 Survey | ✅ n=26 committed, analysed, `data/survey.json` generated reproducibly |
 | 3 Problem definition | ✅ `data/problem-definition.md` — figures provisional at 65% corpus |
@@ -114,8 +114,11 @@ Still open:
   the writeup rather than implying otherwise.
 - LLM degrades to the deterministic matcher after ~2 production calls (20/day
   free tier). Rules pass the golden set; the LLM has never beaten them.
-- Inter-rater agreement is CROSS-MODEL (GPT vs Gemini), κ=0.566 moderate — NOT
-  human validation. Labelled as such everywhere. A human pass would strengthen it.
+- Inter-rater agreement is HUMAN κ=0.50 (moderate): 60 docs hand-coded blind,
+  55% raw agreement. Human agreed with Gemini LESS than GPT did (0.50 vs 0.566)
+  — expected, a human is the stricter rater. Both raters show Gemini over-codes
+  (human used "none" 6x where Gemini forced a theme). data/holdout-coded.csv is
+  the human coding; data/holdout-to-code.csv is the working sheet.
 
 ## Commands
 

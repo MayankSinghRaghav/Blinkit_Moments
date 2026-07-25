@@ -1,28 +1,24 @@
 {
   "model_codes": "data/tagged.json",
   "second_codes": "data/holdout-coded.csv",
-  "rater": "second_model",
+  "rater": "human",
   "fixture_derived": false,
   "coded_pairs": 60,
-  "raw_agreement": 0.617,
-  "expected_by_chance": 0.118,
-  "cohens_kappa": 0.566,
+  "raw_agreement": 0.55,
+  "expected_by_chance": 0.099,
+  "cohens_kappa": 0.5,
   "interpretation": "moderate",
   "top_confusions": [
+    [
+      "product_quality_concerns → customer_support",
+      3
+    ],
     [
       "none → convenience_and_speed_value",
       2
     ],
     [
-      "customer_support → order_and_delivery_failures",
-      2
-    ],
-    [
-      "convenience_and_speed_value → convenience_as_primary_driver",
-      2
-    ],
-    [
-      "payment_and_refunds → app_technical_issues",
+      "convenience_as_primary_driver → convenience_and_speed_value",
       2
     ],
     [
@@ -38,7 +34,11 @@
       1
     ],
     [
-      "customer_support → product_quality_concerns",
+      "lack_of_category_exploration_deterrents → stock_availability_issues",
+      1
+    ],
+    [
+      "payment_and_refunds → order_and_delivery_failures",
       1
     ]
   ]
