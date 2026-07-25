@@ -291,23 +291,24 @@ const footnote = (s, text) =>
   const s = pres.addSlide();
   kicker(s, "The opportunity");
   title(s, "An occasion is what breaks the habit");
+  // Pie, not bar: Q11 is single-select so the shares sum to 100% — a valid
+  // whole. (The barrier question is multi-select and sums to 130%, which is why
+  // that one stays a bar; a pie of it would be a lie.) Occasion slices green,
+  // the rest grey, in-app recommendation rust as the contrast.
   s.addChart(
-    pres.ChartType.bar,
+    pres.ChartType.pie,
     [{
       name: "Prompted last out-of-basket purchase",
       labels: survey.out_of_basket_prompts.map((p) => p.label.replace(" (e.g., monsoon)", "")),
-      values: survey.out_of_basket_prompts.map((p) => p.share * 100),
+      values: survey.out_of_basket_prompts.map((p) => Math.round(p.share * 100)),
     }],
     {
-      x: M, y: 1.8, w: 7.3, h: 4.3, barDir: "bar",
-      // occasion prompts green, everything else grey, the contrast bar rust —
-      // light green read as "counts toward the 46%" when it does not
-      chartColors: [GREEN, "C4CBD4", "C4CBD4", GREEN, "B54708", GREEN],
-      showValue: true, dataLabelPosition: "outEnd", dataLabelFormatCode: '0"%"',
-      dataLabelFontFace: BODY, dataLabelFontSize: 12, dataLabelColor: INK,
-      catAxisLabelColor: INK, catAxisLabelFontFace: BODY, catAxisLabelFontSize: 11,
-      valAxisHidden: true, valGridLine: { style: "none" }, catGridLine: { style: "none" },
-      showLegend: false, barGapWidthPct: 45, valAxisMaxVal: 40,
+      x: M, y: 1.75, w: 7.0, h: 4.5,
+      chartColors: [GREEN, "C4CBD4", "C4CBD4", "0A6E19", "B54708", "3A7D44"],
+      showValue: true, dataLabelPosition: "bestFit", dataLabelFormatCode: '0"%"',
+      dataLabelFontFace: BODY, dataLabelFontSize: 11, dataLabelColor: PAPER,
+      showLegend: true, legendPos: "r", legendFontFace: BODY, legendFontSize: 10,
+      legendColor: INK,
     },
   );
   // the individually-rounded bars sum to 47, the true share is 46 — showing the
