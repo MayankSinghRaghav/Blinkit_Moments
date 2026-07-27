@@ -88,6 +88,13 @@ framing). Sample sizes from `scripts/experiment-power.mjs`.
   across 6 interviews + 26 responses); added `hosting_guests` and `movie_night`
   (both volunteered); `festival_prep` is top-weighted (31%).
   `monsoon_evening` retained but flagged as thinly evidenced.
+- **Occasion kit (the creativity move)** — `/moments` leads with a one-tap
+  opt-out kit (`components/OccasionKit.tsx`, `addKit` in actions): the occasion's
+  categories are pre-selected, user removes what they don't want, adds the rest
+  in one tap. Built to answer last project's weak "Creativity of Solution"
+  score. Deck now LEADS with the reframe ("you can't ask a habit to explore")
+  as a creativity claim, and slide 9 is the kit. Per-item cards kept behind an
+  "or add one at a time" disclosure.
 - **Framing block on `/discovery`** now argues habit→occasion and states the
   corpus null result. All numbers derive from `data/survey.json` +
   `data/insights.json`; none are typed into JSX.

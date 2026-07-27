@@ -117,13 +117,14 @@ const footnote = (s, text) =>
   s.addText("Blinkit Moments", {
     x: M, y: 2.1, w: CW, h: 1.1, fontFace: HEAD, fontSize: 54, bold: true, color: PAPER, margin: 0,
   });
-  s.addText("Getting habitual shoppers to try one new category a month", {
+  s.addText("You can't ask a habit to explore. So don't ask.", {
     x: M, y: 3.15, w: CW, h: 0.6, fontFace: BODY, fontSize: 20, color: YELLOW, margin: 0,
   });
   s.addText(
-    "We set out to prove that price risk stopped people exploring. It doesn't. " +
-      "This deck reports what the evidence actually said, including where it contradicted us.",
-    { x: M, y: 3.95, w: 9.4, h: 1, fontFace: BODY, fontSize: 14, color: "C9D6CC", margin: 0, lineSpacingMultiple: 1.3 },
+    "Every obvious answer to 'get people to try new categories' is a recommendation feed. " +
+      "Our research killed that: 92% of shoppers open the app already knowing what they want. " +
+      "The move isn't to suggest harder — it's to pre-build the occasion and let them remove what they don't want. Discovery with zero decisions.",
+    { x: M, y: 3.95, w: 10.2, h: 1.3, fontFace: BODY, fontSize: 14, color: "C9D6CC", margin: 0, lineSpacingMultiple: 1.3 },
   );
   s.addText("Product Fellowship submission · Mayank Singh Raghav · independent case study, not affiliated with Blinkit", {
     x: M, y: 6.5, w: CW, h: 0.4, fontFace: BODY, fontSize: 10.5, color: "8FA394", margin: 0,
@@ -403,21 +404,21 @@ const footnote = (s, text) =>
 /* ---------- 9. the MVP ---------- */
 {
   const s = pres.addSlide();
-  kicker(s, "The MVP");
-  title(s, "Interrupt the errand at the one moment intent is visible");
+  kicker(s, "The MVP — the occasion kit");
+  title(s, "One tap completes the occasion. Remove what you don't want.");
   numberedRow(s, 1, M, 1.9, 3.9, "Infer the occasion",
-    "From the basket plus light context. Deterministic matcher first, LLM as enrichment — the rules pass 12 of 12 golden cases and the model has never beaten them.");
-  numberedRow(s, 2, M + 4.3, 1.9, 3.9, "Complete across new categories",
-    "Up to three suggestions, only from categories the customer has never bought, each with a one-line reason tied to the occasion.");
-  numberedRow(s, 3, M + 8.6, 1.9, 3.9, "De-risk the first try",
-    "Starter pack sizing, rating and a why-this screen. Reported honestly: this is the least-endorsed part of the concept.");
+    "From the basket the moment intent is visible — beer + nachos on a Friday reads as game night. Deterministic matcher first, LLM as enrichment.");
+  numberedRow(s, 2, M + 4.3, 1.9, 3.9, "Pre-build the kit",
+    "The categories the occasion needs are already selected — plates, dessert, mixers. The default is IN, not out. Discovery that costs zero decisions.");
+  numberedRow(s, 3, M + 8.6, 1.9, 3.9, "Opt out, then one tap",
+    "Swipe away anything you don't want; the total updates; add the rest in a single tap. Each item is a first-ever purchase in that category.");
 
   card(s, M, 4.0, 6.0, 2.4);
-  s.addText("Why AI is not the headline", {
+  s.addText("Why a kit, not a feed", {
     x: M + 0.35, y: 4.2, w: 5.3, h: 0.35, fontFace: BODY, fontSize: 12.5, bold: true, color: GREEN, margin: 0,
   });
-  s.addText("At 6 occasions and 37 SKUs, a lookup table wins. The LLM earns its place only at real catalog scale, and we say so rather than claim AI-native for its own sake. Production falls back to rules and tells the user when it does.", {
-    x: M + 0.35, y: 4.6, w: 5.3, h: 1.6, fontFace: BODY, fontSize: 12.5, color: INK, margin: 0, lineSpacingMultiple: 1.2,
+  s.addText("A recommendation feed asks a habit-locked shopper to evaluate each item — the exact friction 92% of them open the app to avoid. The kit flips the default: pre-assembled, opt-out, one commit. Nikhil said it himself — 'one or two useful suggestions, not ten.'", {
+    x: M + 0.35, y: 4.6, w: 5.3, h: 1.6, fontFace: BODY, fontSize: 12, color: INK, margin: 0, lineSpacingMultiple: 1.15,
   });
 
   card(s, M + 6.4, 4.0, 6.0, 2.4, INK);

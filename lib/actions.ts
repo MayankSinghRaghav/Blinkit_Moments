@@ -25,6 +25,20 @@ export async function tryItem(ctx: Ctx, productId: string) {
   await logTrial(ctx, productId);
 }
 
+/**
+ * Add the whole occasion kit in one action. This is the opt-out mechanic: the
+ * research finding is that habit-locked shoppers won't evaluate a list of
+ * suggestions one by one (Nikhil, Rhea), so the kit is pre-assembled and the
+ * user removes what they don't want, then commits once. Every item added is a
+ * new-category trial, logged individually so the adoption metric stays honest.
+ */
+export async function addKit(ctx: Ctx, productIds: string[]) {
+  let cart = ctx.cart;
+  for (const id of productIds) cart = addOne(cart, id);
+  setDemo({ cart });
+  await Promise.all(productIds.map((id) => logTrial(ctx, id)));
+}
+
 /** Record that a suggestion was rejected, and stop showing it this session. */
 export async function dismissItem(ctx: Ctx, productId: string) {
   const product = byId(productId);

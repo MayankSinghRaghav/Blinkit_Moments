@@ -2,7 +2,8 @@
 import Link from "next/link";
 import { CartPanel } from "@/components/CartPanel";
 import { SuggestionCard } from "@/components/SuggestionCard";
-import { dismissItem, setSuggestionQty } from "@/lib/actions";
+import { OccasionKit } from "@/components/OccasionKit";
+import { addKit, dismissItem, setSuggestionQty } from "@/lib/actions";
 import { qtyOf } from "@/lib/cart";
 import { byId } from "@/lib/data/catalog";
 import { occasionById } from "@/lib/occasions";
@@ -44,19 +45,15 @@ export default function MomentsPage() {
               </span>
             )}
           </h1>
-          {sensed && gapLineNow ? (
-            <p className="mt-2 text-base font-semibold leading-snug text-black/85">
-              {gapLineNow}
+          {sensed ? (
+            <p className="mt-1 text-sm text-black/70">
+              {Math.round(data.confidence * 100)}% confidence · one tap completes it across{" "}
+              {visible.length} {visible.length === 1 ? "category" : "categories"} you&apos;ve never
+              ordered
             </p>
           ) : (
             <p className="mt-1 text-sm text-black/70">
               Add a couple of items and the agent will read the basket.
-            </p>
-          )}
-          {sensed && (
-            <p className="mt-1 text-xs text-black/55">
-              {Math.round(data.confidence * 100)}% confidence · {visible.length}{" "}
-              {visible.length === 1 ? "category" : "categories"} you&apos;ve never ordered
             </p>
           )}
         </div>
@@ -69,18 +66,37 @@ export default function MomentsPage() {
         )}
 
         {sensed && (
-          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
-            {visible.map((s) => (
-              <SuggestionCard
-                key={s.product_id}
-                suggestion={s}
-                occasionId={data.occasion_id}
-                qty={qtyOf(demo.cart, s.product_id)}
-                onQtyChange={(q) => setSuggestionQty(demo, s.product_id, q)}
-                onDismiss={() => dismissItem(demo, s.product_id)}
+          <>
+            <div className="mt-5">
+              <OccasionKit
+                occasionLabel={data.occasion_label.toLowerCase()}
+                gapLine={gapLineNow}
+                suggestions={visible}
+                inCart={(id) => qtyOf(demo.cart, id) > 0}
+                onRemove={(id) => dismissItem(demo, id)}
+                onAddKit={(ids) => addKit(demo, ids)}
+                onWhy={(id) => `/why/${id}?o=${data.occasion_id}`}
               />
-            ))}
-          </div>
+            </div>
+
+            <details className="mt-4">
+              <summary className="cursor-pointer text-sm text-black/45 hover:text-black">
+                or add one at a time
+              </summary>
+              <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
+                {visible.map((s) => (
+                  <SuggestionCard
+                    key={s.product_id}
+                    suggestion={s}
+                    occasionId={data.occasion_id}
+                    qty={qtyOf(demo.cart, s.product_id)}
+                    onQtyChange={(q) => setSuggestionQty(demo, s.product_id, q)}
+                    onDismiss={() => dismissItem(demo, s.product_id)}
+                  />
+                ))}
+              </div>
+            </details>
+          </>
         )}
 
         {!sensed && (
