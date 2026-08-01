@@ -9,6 +9,7 @@ import {
   type Theme,
 } from "@/lib/discovery";
 import { MIN_CONFIDENCE, pickQuotes } from "@/lib/quotes";
+import { DecisionSnapshot } from "@/components/DiscoveryCharts";
 
 export const dynamic = "force-dynamic";
 
@@ -483,6 +484,8 @@ export default function DiscoveryPage() {
           }
         />
       </div>
+
+      <DecisionSnapshot survey={survey} themes={data.themes} />
 
       <FramingBlock bridge={data.bridge} themes={data.themes} survey={survey} />
 
