@@ -7,12 +7,14 @@ import type { Suggestion } from "@/lib/scoring";
 export function SuggestionCard({
   suggestion,
   occasionId,
+  occasionLabel,
   qty,
   onQtyChange,
   onDismiss,
 }: {
   suggestion: Suggestion;
   occasionId: string;
+  occasionLabel: string;
   qty: number;
   onQtyChange: (qty: number) => void;
   onDismiss: () => void;
@@ -50,7 +52,7 @@ export function SuggestionCard({
         </p>
       )}
       <Link
-        href={`/why/${p.id}?o=${occasionId}`}
+        href={`/why/${p.id}?o=${occasionId}&ol=${encodeURIComponent(occasionLabel)}`}
         className="mt-1.5 text-[11px] text-black/40 underline underline-offset-2 hover:text-black"
       >
         Why this?

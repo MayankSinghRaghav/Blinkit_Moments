@@ -4,6 +4,7 @@ import { llmConfigured } from "@/lib/llm";
 import { supabaseConfigured, supabaseDiagnostics } from "@/lib/supabase/admin";
 import { PRODUCTS } from "@/lib/data/catalog";
 import { OCCASIONS } from "@/lib/occasions";
+import { inferenceStats } from "@/lib/telemetry";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -22,5 +23,8 @@ export function GET() {
     // presence flags only, never values — so a broken deployment can be
     // diagnosed without anyone opening the dashboard
     config: supabaseDiagnostics(),
+    // per-instance since last cold start: how many inferences hit the model vs
+    // the cache vs the deterministic fallback, and how fast
+    inference: inferenceStats(),
   });
 }

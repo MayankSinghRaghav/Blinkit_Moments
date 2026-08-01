@@ -75,7 +75,7 @@ export default function MomentsPage() {
                 inCart={(id) => qtyOf(demo.cart, id) > 0}
                 onRemove={(id) => dismissItem(demo, id)}
                 onAddKit={(ids) => addKit(demo, ids)}
-                onWhy={(id) => `/why/${id}?o=${data.occasion_id}`}
+                onWhy={(id) => `/why/${id}?o=${data.occasion_id}&ol=${encodeURIComponent(data.occasion_label)}`}
               />
             </div>
 
@@ -89,6 +89,7 @@ export default function MomentsPage() {
                     key={s.product_id}
                     suggestion={s}
                     occasionId={data.occasion_id}
+                    occasionLabel={data.occasion_label}
                     qty={qtyOf(demo.cart, s.product_id)}
                     onQtyChange={(q) => setSuggestionQty(demo, s.product_id, q)}
                     onDismiss={() => dismissItem(demo, s.product_id)}

@@ -1,0 +1,23 @@
+name: eval-gate
+
+# Treat prompts like code: no change lands without the offline occasion golden
+# set passing. Runs deterministic-only (no GEMINI/Supabase keys needed), so it
+# gates the rules baseline the LLM must never regress below.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run eval

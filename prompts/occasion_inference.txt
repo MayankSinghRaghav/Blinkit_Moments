@@ -7,8 +7,15 @@ INPUT
 - Context (time, day, weather, season/festival if any): {{context}}
 - Allowed categories: {{catalog_categories}}
 
-ALLOWED OCCASIONS — occasion_id MUST be one of these ids, or "none":
+KNOWN OCCASIONS — prefer one of these ids whenever it fits:
 {{occasions}}
+
+If the basket clearly implies a real-life occasion that is NOT in the list
+above, you MAY propose a new one: set occasion_id to a short snake_case slug
+(e.g. "diwali_gifting", "study_session", "sick_day", "baby_shower") and
+occasion_label to a natural human phrase. Only do this when confidence >= 0.55
+AND the basket genuinely implies that occasion — otherwise pick a known id or
+"none". Do not invent an occasion just to have one.
 
 RULES
 1. Infer ONE occasion. If confidence < 0.4, return occasion_id "none". The

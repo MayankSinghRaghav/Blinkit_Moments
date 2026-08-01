@@ -28,5 +28,48 @@
     "basket": [{ "name": "Milk", "category": "Groceries" }],
     "context": "Tue 9am, no signal",
     "expect_occasion": "none"
+  },
+  {
+    "basket": [{ "name": "Gulab Jamun Tin", "category": "Desserts" }],
+    "context": "Diwali weekend",
+    "expect_occasion": "festival_prep",
+    "expect_new_categories_any_of": ["Home", "Snacks"]
+  },
+  {
+    "basket": [
+      { "name": "Beer", "category": "Beverages" },
+      { "name": "Chips", "category": "Snacks" }
+    ],
+    "context": "hosting a few people tonight",
+    "expect_occasion": "hosting_guests",
+    "expect_new_categories_any_of": ["Home", "Desserts"]
+  },
+  {
+    "basket": [{ "name": "Chips", "category": "Snacks" }],
+    "context": "movie night on netflix",
+    "expect_occasion": "movie_night",
+    "expect_new_categories_any_of": ["Desserts", "Beverages", "Mixers"]
+  },
+  {
+    "basket": [{ "name": "Milk", "category": "Groceries" }],
+    "context": "diwali festival tonight",
+    "expect_occasion": "none"
+  },
+  {
+    "basket": [
+      { "name": "Beer", "category": "Beverages" },
+      { "name": "Nachos", "category": "Snacks" },
+      { "name": "Cola", "category": "Beverages" }
+    ],
+    "context": "IPL final Saturday",
+    "expect_occasion": "game_night",
+    "expect_new_categories_any_of": ["Home", "Desserts", "Mixers"]
+  },
+  {
+    "basket": [{ "name": "Cat litter", "category": "Pet" }],
+    "context": "just adopted a kitten",
+    "expect_occasion": "new_pet",
+    "expect_new_categories_any_of": ["PersonalCare", "Home"],
+    "must_include_confidence_note": true
   }
 ]

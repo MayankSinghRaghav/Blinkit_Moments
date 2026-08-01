@@ -14,14 +14,16 @@ export default async function WhyPage({
   searchParams,
 }: {
   params: Promise<{ itemId: string }>;
-  searchParams: Promise<{ o?: string }>;
+  searchParams: Promise<{ o?: string; ol?: string }>;
 }) {
   const { itemId } = await params;
-  const { o } = await searchParams;
+  const { o, ol } = await searchParams;
   const product = byId(itemId);
   if (!product) notFound();
 
-  const occasionLabel = (o && occasionById(o)?.label) || "this moment";
+  // seeded occasions resolve to their catalog label; an open-vocabulary occasion
+  // isn't in the catalog, so fall back to the label passed from the suggestion
+  const occasionLabel = (o && occasionById(o)?.label) || ol?.trim() || "this moment";
   const { why_you_ll_like_it, why_its_a_stretch, degraded } = await explain(product.id, occasionLabel);
 
   return (
