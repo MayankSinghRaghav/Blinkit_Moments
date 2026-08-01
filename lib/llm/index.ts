@@ -5,7 +5,7 @@ import { z } from "zod";
 import { CATEGORIES, PRODUCTS, isHighConsideration } from "@/lib/data/catalog";
 import { OCCASIONS, occasionById, type Occasion } from "@/lib/occasions";
 import { completeOccasion, gapLine, MAX_SUGGESTIONS, type BasketItem, type CompleteResult } from "@/lib/scoring";
-import { traceInference } from "@/lib/telemetry";
+import { traceInference, type LLMSource } from "@/lib/telemetry";
 
 const MODEL = "gemini-2.5-flash";
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
@@ -116,7 +116,7 @@ function enforceRules(r: CompleteResult, basket: BasketItem[]): CompleteResult {
   };
 }
 
-export type InferResult = CompleteResult & { degraded: boolean };
+export type InferResult = CompleteResult & { degraded: boolean; source: LLMSource };
 
 // ponytail: per-instance LRU, 200 entries / 10-min TTL. Serverless means each
 // lambda holds its own copy — a cross-instance miss just recomputes, which is
@@ -160,7 +160,7 @@ export async function inferOccasion(basket: BasketItem[], context: string): Prom
       degraded: false,
       suggestions: cached.suggestions.length,
     });
-    return cached;
+    return { ...cached, source: "cache" };
   }
 
   try {
@@ -174,7 +174,7 @@ export async function inferOccasion(basket: BasketItem[], context: string): Prom
       }),
     );
     const parsed = { ...CompleteSchema.parse(raw), gap_line: "" };
-    const result = { ...enforceRules(parsed, basket), degraded: false };
+    const result: InferResult = { ...enforceRules(parsed, basket), degraded: false, source: "llm" };
     cacheSet(key, result);
     traceInference({
       source: "llm",
@@ -191,7 +191,7 @@ export async function inferOccasion(basket: BasketItem[], context: string): Prom
     if ((e as Error).message !== "no-key") {
       console.warn("[occasion] LLM fallback:", (e as Error).message);
     }
-    const result = { ...completeOccasion(basket, context), degraded: true };
+    const result: InferResult = { ...completeOccasion(basket, context), degraded: true, source: "rules" };
     traceInference({
       source: "rules",
       occasion_id: result.occasion_id,

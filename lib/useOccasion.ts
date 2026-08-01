@@ -4,7 +4,8 @@ import { resolve, type CartLine } from "@/lib/cart";
 import { completeOccasion, type CompleteResult } from "@/lib/scoring";
 import { setDemo, useDemo } from "@/lib/session";
 
-export type OccasionResult = CompleteResult & { degraded: boolean };
+export type OccasionSource = "llm" | "cache" | "rules";
+export type OccasionResult = CompleteResult & { degraded: boolean; source: OccasionSource };
 
 const basketFromKey = (key: string) =>
   resolve(
@@ -37,7 +38,7 @@ export function useOccasion(endpoint: "infer-occasion" | "complete") {
   const cartKey = cart.map((l) => l.id).join(",");
 
   const local = useMemo<OccasionResult>(
-    () => ({ ...completeOccasion(basketFromKey(cartKey), context), degraded: true }),
+    () => ({ ...completeOccasion(basketFromKey(cartKey), context), degraded: true, source: "rules" }),
     [cartKey, context],
   );
 

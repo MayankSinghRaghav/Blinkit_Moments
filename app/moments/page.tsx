@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { AiTrace } from "@/components/AiTrace";
 import { CartPanel } from "@/components/CartPanel";
 import { SuggestionCard } from "@/components/SuggestionCard";
 import { OccasionKit } from "@/components/OccasionKit";
@@ -39,6 +40,11 @@ export default function MomentsPage() {
           </p>
           <h1 className="mt-1 flex items-center gap-2 text-xl font-extrabold">
             {sensed ? data.occasion_label : "No clear occasion yet"}
+            {sensed && (
+              <span className="rounded-full bg-brand px-2 py-0.5 text-[11px] font-bold text-white tabular-nums">
+                {Math.round(data.confidence * 100)}% match
+              </span>
+            )}
             {refining && (
               <span className="rounded-full bg-black/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-black/50">
                 refining
@@ -47,9 +53,8 @@ export default function MomentsPage() {
           </h1>
           {sensed ? (
             <p className="mt-1 text-sm text-black/70">
-              {Math.round(data.confidence * 100)}% confidence · one tap completes it across{" "}
-              {visible.length} {visible.length === 1 ? "category" : "categories"} you&apos;ve never
-              ordered
+              One tap completes it across {visible.length}{" "}
+              {visible.length === 1 ? "category" : "categories"} you&apos;ve never ordered
             </p>
           ) : (
             <p className="mt-1 text-sm text-black/70">
@@ -108,6 +113,8 @@ export default function MomentsPage() {
             </Link>
           </p>
         )}
+
+        <AiTrace data={data} cart={demo.cart} context={demo.context} />
 
         <Link
           href="/tracker"

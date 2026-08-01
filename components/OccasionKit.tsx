@@ -39,6 +39,15 @@ export function OccasionKit({
   const total = toAdd.reduce((sum, x) => sum + x.p.price_inr, 0);
   const [added, setAdded] = useState(false);
 
+  // Trust cues built from real catalog data — no invented review counts. Kept
+  // next to the CTA because that is the moment the first-try hesitation bites.
+  const ratings = items.map((x) => x.p.rating).filter((r): r is number => Boolean(r));
+  const trust = [
+    "↩ Free returns on your first order",
+    items.some((x) => x.p.starter) ? "◐ Starter sizes on first-try categories" : null,
+    ratings.length ? `★ ${Math.max(...ratings)}★ where rated` : null,
+  ].filter(Boolean) as string[];
+
   const commit = () => {
     onAddKit(toAdd.map((x) => x.p.id));
     setAdded(true);
@@ -59,6 +68,14 @@ export function OccasionKit({
           {gapLine}
         </p>
       )}
+
+      <p className="flex gap-2 border-b border-line bg-brand/[0.04] px-4 py-2 text-[11.5px] leading-snug text-black/60">
+        <span aria-hidden>🧠</span>
+        <span>
+          <span className="font-semibold text-brand">46% of new-category buys start with an occasion</span>{" "}
+          — the single biggest trigger in our survey (n=26). This basket reads like one.
+        </span>
+      </p>
 
       <ul className="divide-y divide-line">
         {items.map(({ s, p }) => {
@@ -96,7 +113,18 @@ export function OccasionKit({
         })}
       </ul>
 
-      <div className="flex items-center gap-3 border-t border-line px-4 py-3">
+      <div className="flex flex-wrap gap-1.5 border-t border-line px-4 pt-3">
+        {trust.map((t) => (
+          <span
+            key={t}
+            className="rounded-full bg-tile px-2 py-0.5 text-[10.5px] font-medium text-black/55"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+
+      <div className="flex items-center gap-3 px-4 py-3">
         <a
           href="#why"
           onClick={(e) => {
