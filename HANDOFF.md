@@ -47,7 +47,7 @@ reviews record failed transactions, not absent ones.
 | 2 Interviews | ✅ 6 committed in `data/interviews/` with leading-question flags + limitations |
 | 2 Survey | ✅ n=26 committed, analysed, `data/survey.json` generated reproducibly |
 | 3 Problem definition | ✅ `data/problem-definition.md` — figures provisional at 65% corpus |
-| 4 MVP | ✅ Deployed, 4 screens + `/discovery` |
+| 4 MVP | ✅ Deployed, 4 screens + `/discovery`. AI hardened — see "AI-infra upgrades" below. |
 
 Also written: `data/business-case.md` (sizing, guardrails, kill criteria),
 `data/experiment-design.md` (A/B + the 3-arm test that isolates the occasion
@@ -99,6 +99,36 @@ framing). Sample sizes from `scripts/experiment-power.mjs`.
   corpus null result. All numbers derive from `data/survey.json` +
   `data/insights.json`; none are typed into JSX.
 
+## AI-infra upgrades (commit 9ae6a1a) — answer to "the AI is decorative"
+
+An OpenAI-style MVP review found the killer: the LLM was caged to the seeded
+six occasions (`enforceRules` threw on anything else), so it could never
+produce output the deterministic matcher couldn't — AI was structurally
+decorative. Fixed, plus the production-AI signals that were missing:
+
+- **Open-vocabulary occasions** (`lib/llm/index.ts` `resolveOccasion`, prompt
+  updated). The model MAY now name an occasion outside the six (`diwali_gifting`,
+  `study_session`) when it clears a higher confidence floor (0.55 vs 0.4 for
+  seeded) and the id is a safe slug with a label. Suggestions are still
+  validated against the real catalog, so grounding is unchanged. This is the one
+  thing rules structurally cannot do — it's what makes AI necessary here.
+  Open occasions carry their label through `/why` via `&ol=` (seeded ids still
+  resolve via `occasionById`).
+- **LLM response cache** (`lib/llm/index.ts`). Per-instance LRU, 200 entries /
+  10-min TTL, keyed on sorted product-ids + context. Only successful LLM answers
+  are cached (a rules fallback isn't, so the next call retries the model).
+  Identical basket → 0ms. Per-lambda in-memory by design; Upstash Redis is the
+  swap if cross-instance hit-rate ever matters.
+- **Inference telemetry** (`lib/telemetry.ts`). One structured JSON log line per
+  call (`source: llm|cache|rules`, `latency_ms`, `degraded`, `open_vocab`) plus
+  rolling counters exposed on `/api/health` under `inference`. Per-instance,
+  resets on cold start — the durable record is the log line.
+- **CI eval-gate** (`.github/workflows/eval.yml`). Offline `typecheck → lint →
+  eval` on every push/PR; no secrets needed. Gates the rules baseline the LLM
+  must never regress below. Golden set expanded 4 → 10 cases (all seeded
+  occasions + a grounding case proving context alone can't fire, + an
+  in-basket-exclusion case). Green on first run.
+
 ## Known open criticisms (from an independent review)
 
 Closed since: comfort dial removed, dismiss path added, seeded proof labelled,
@@ -120,7 +150,10 @@ Still open:
 - MVP was committed before the discovery engine — provable from git. Own it in
   the writeup rather than implying otherwise.
 - LLM degrades to the deterministic matcher after ~2 production calls (20/day
-  free tier). Rules pass the golden set; the LLM has never beaten them.
+  free tier). On the seeded golden set the rules match the LLM by design; the
+  LLM now EXCEEDS them only on the open-vocabulary path (occasions outside the
+  six), which the golden set does not yet cover — add live open-vocab cases when
+  quota allows.
 - Inter-rater agreement is HUMAN κ=0.50 (moderate): 60 docs hand-coded blind,
   55% raw agreement. Human agreed with Gemini LESS than GPT did (0.50 vs 0.566)
   — expected, a human is the stricter rater. Both raters show Gemini over-codes
@@ -134,7 +167,7 @@ npm run discovery:tag        # resumable LLM coding, respects 20/day budget
 npm run discovery:analyze    # deterministic, no quota, re-run freely
 npm run discovery:holdout    # blind coding sheet → --score for kappa
 node scripts/discovery/5-survey.mjs   # regenerate data/survey.json from CSV
-npm run eval                 # golden occasion cases, offline
+npm run eval                 # 10 golden occasion cases, offline (also the CI gate)
 node scripts/build-deck.mjs  # regenerate the deck from the data files
 npm run verify:cart          # 14 assertions   npm run verify:quotes  # 32
 npm run build && npm run lint
