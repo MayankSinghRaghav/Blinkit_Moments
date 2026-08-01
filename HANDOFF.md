@@ -163,6 +163,7 @@ Still open:
 ## Commands
 
 ```
+npm run discovery:refresh    # one-shot re-pull → re-code new docs → regen insights.json
 npm run discovery:tag        # resumable LLM coding, respects 20/day budget
 npm run discovery:analyze    # deterministic, no quota, re-run freely
 npm run discovery:holdout    # blind coding sheet → --score for kappa

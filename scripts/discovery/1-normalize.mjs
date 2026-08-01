@@ -4,10 +4,19 @@
  * in:  data/raw/play-reviews.json, data/raw/reddit.json
  * out: data/corpus.json
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 
-const read = (p) => JSON.parse(readFileSync(p, "utf8"));
+// A refresh may only re-pull some sources (App Store is free; Play/Reddit need
+// Apify). Missing a raw file means "that source wasn't refreshed this run", not
+// a crash — skip it and keep whatever the other sources contribute.
+const read = (p) => {
+  if (!existsSync(p)) {
+    console.warn(`skip ${p} — not found (source not refreshed this run)`);
+    return [];
+  }
+  return JSON.parse(readFileSync(p, "utf8"));
+};
 
 const MIN_CHARS = 60;
 const norm = (s) => (s || "").replace(/\s+/g, " ").trim();
