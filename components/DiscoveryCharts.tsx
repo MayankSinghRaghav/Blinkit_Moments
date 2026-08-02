@@ -32,8 +32,8 @@ function PriorityMatrix({ themes, numOf }: { themes: Theme[]; numOf: Map<string,
     <figure className="rounded-xl border border-line p-4">
       <figcaption className="text-sm font-bold">Where the opportunity actually is</figcaption>
       <p className="mt-0.5 text-[11px] leading-snug text-muted">
-        Every theme by loudness (share of voice) against fit with the new-category goal. Numbers
-        match the ranked list below.
+        Every theme by loudness (share of voice) against fit with the new-category goal. Core themes
+        are numbered (matching the ranked list below); grey is the operational cluster.
       </p>
       <svg viewBox={`0 0 ${W} ${H}`} className="mt-2 w-full" role="img"
         aria-label="Scatter plot of themes by opportunity versus strategic fit">
@@ -64,7 +64,9 @@ function PriorityMatrix({ themes, numOf }: { themes: Theme[]; numOf: Map<string,
         <text x={L + pw / 2} y={H - 6} textAnchor="middle" fontSize="9" fill="#6b7280">Share of voice (opportunity) →</text>
         <text x={13} y={T + ph / 2} textAnchor="middle" fontSize="9" fill="#6b7280"
           transform={`rotate(-90 13 ${T + ph / 2})`}>Goal alignment (fit) →</text>
-        {/* dots — numbered; big dots number inside, small dots number beside */}
+        {/* dots — only the core dots are numbered. The context cluster sits at
+            fit≈0 with near-identical coordinates, so numbering it just stacks
+            digits; its identity lives in the ranked bar below instead. */}
         {themes.map((t) => {
           const core = t.relevance === "core";
           const cx = px(t.opportunity), cy = py(t.strategic_fit), rad = r(t.count);
@@ -75,13 +77,13 @@ function PriorityMatrix({ themes, numOf }: { themes: Theme[]; numOf: Map<string,
               <circle cx={cx} cy={cy} r={rad}
                 fill={core ? "#0c831f" : "#9ca3af"} fillOpacity={core ? 0.9 : 0.55}
                 stroke="#ffffff" strokeWidth="1" />
-              {inside ? (
-                <text x={cx} y={cy} textAnchor="middle" dominantBaseline="central"
-                  fontSize="7.5" fontWeight="700" fill="#ffffff">{n}</text>
-              ) : (
-                <text x={cx + rad + 2} y={cy + 3} fontSize="8" fontWeight="700"
-                  fill={core ? "#0c831f" : "#6b7280"}>{n}</text>
-              )}
+              {core &&
+                (inside ? (
+                  <text x={cx} y={cy} textAnchor="middle" dominantBaseline="central"
+                    fontSize="7.5" fontWeight="700" fill="#ffffff">{n}</text>
+                ) : (
+                  <text x={cx + rad + 2} y={cy + 3} fontSize="8" fontWeight="700" fill="#0c831f">{n}</text>
+                ))}
             </g>
           );
         })}
