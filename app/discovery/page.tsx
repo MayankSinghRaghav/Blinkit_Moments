@@ -10,6 +10,7 @@ import {
 } from "@/lib/discovery";
 import { MIN_CONFIDENCE, pickQuotes } from "@/lib/quotes";
 import { DecisionSnapshot } from "@/components/DiscoveryCharts";
+import { Steelman } from "@/components/Steelman";
 
 export const dynamic = "force-dynamic";
 
@@ -488,6 +489,8 @@ export default function DiscoveryPage() {
       <DecisionSnapshot survey={survey} themes={data.themes} />
 
       <FramingBlock bridge={data.bridge} themes={data.themes} survey={survey} />
+
+      <Steelman bridge={data.bridge} survey={survey} themes={data.themes} />
 
       <div className="flex items-center justify-end gap-3 text-[11px] text-muted">
         <span className="flex items-center gap-1.5">
