@@ -34,7 +34,7 @@ export const OCCASIONS: Occasion[] = [
     signal_categories: ["Desserts", "Home", "Snacks"],
     signal_keywords: ["diwali", "holi", "festival", "rakhi", "pooja", "celebration", "celebrating"],
     target_categories: ["Home", "Desserts", "Snacks"],
-    evidence: "Survey Q11: the single largest out-of-basket trigger at 31%. Kabir: 'mostly when hosting people or during festivals'.",
+    evidence: "Survey Q11: the single largest out-of-basket trigger at 31%. Aditya (target segment): 'I shop based on the occasion rather than browsing'.",
   },
   {
     id: "hosting_guests",
@@ -42,7 +42,7 @@ export const OCCASIONS: Occasion[] = [
     signal_categories: ["Beverages", "Snacks"],
     signal_keywords: ["host", "hosting", "guests", "people over", "friends over", "party"],
     target_categories: ["Home", "Desserts", "Snacks"],
-    evidence: "Survey Q11: 12%. Kabir: 'if I'm buying beer for six people, remind me about ice, paper cups, dips, or desserts'. Aditya: 'a few friends were coming over'.",
+    evidence: "Survey Q11: 12%. Aditya's out-of-basket trigger is hosting friends or guests — an occasion that naturally spans snacks, drinks and cleanup.",
   },
   {
     id: "game_night",
@@ -50,7 +50,7 @@ export const OCCASIONS: Occasion[] = [
     signal_categories: ["Beverages", "Snacks"],
     signal_keywords: ["match", "cricket", "ipl", "game", "friends", "fri", "sat"],
     target_categories: ["Home", "Desserts", "Mixers"],
-    evidence: "Aditya: 'people hosting cricket nights'. Kabir describes the same basket gap for match viewing.",
+    evidence: "A match/watching occasion that spans snacks, drinks and cleanup — the multi-category, occasion-driven pattern Aditya and Vikram describe.",
   },
   {
     id: "movie_night",
@@ -58,7 +58,7 @@ export const OCCASIONS: Occasion[] = [
     signal_categories: ["Snacks", "Desserts"],
     signal_keywords: ["movie", "film", "series", "binge", "netflix"],
     target_categories: ["Desserts", "Beverages", "Mixers"],
-    evidence: "Sara, unprompted: 'if I'm ordering snacks for movie night, recommend popcorn seasoning or desserts'.",
+    evidence: "An at-home snacking occasion; thinly evidenced in the 7 interviews, retained as a common quick-commerce moment rather than a research-led addition.",
   },
   {
     id: "new_pet",
@@ -66,7 +66,7 @@ export const OCCASIONS: Occasion[] = [
     signal_categories: ["Pet"],
     signal_keywords: ["first-time", "new pet", "puppy", "kitten", "adopted"],
     target_categories: ["Pet", "PersonalCare", "Home"],
-    evidence: "Meghna, the one target-segment interviewee: 'I wasn't sure which brand to choose… went to Google and YouTube'.",
+    evidence: "Meghna (Cautious Explorer) wants confidence before a first try — a short explanation plus reviews from similar users. A new pet is exactly that high-consideration first-try moment.",
   },
   {
     id: "monsoon_evening",

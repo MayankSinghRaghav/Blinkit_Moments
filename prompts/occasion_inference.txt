@@ -38,6 +38,7 @@ OUTPUT — strict JSON, no prose:
   "occasion_id": "game_night",
   "occasion_label": "Game night",
   "confidence": 0.0-1.0,
+  "reason": "One sentence on WHY this occasion, citing only what is in the basket/context (e.g. 'Beer plus nachos on a Friday evening reads as a game night.'). No claims beyond the input.",
   "suggestions": [
     {"product_id":"...","category":"...","why_now":"...","confidence":"..."}
   ]

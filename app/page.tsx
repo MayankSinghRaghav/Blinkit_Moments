@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { CartPanel } from "@/components/CartPanel";
 import { ProductCard } from "@/components/ProductCard";
+import { SourceBadge } from "@/components/SourceBadge";
 import { CATEGORIES, PRODUCTS } from "@/lib/data/catalog";
 import { setDemo } from "@/lib/session";
 import { qtyOf, setQty } from "@/lib/cart";
@@ -15,25 +16,33 @@ export default function ShopPage() {
     <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
       <div className="min-w-0">
         {sensed && (
-          <Link
-            href="/moments"
-            className="mb-5 flex items-center gap-4 rounded-xl bg-accent px-5 py-4 transition hover:brightness-[1.03]"
-          >
-            <span className="text-2xl" aria-hidden>
-              ✨
-            </span>
-            <span className="min-w-0">
-              <span className="block text-sm font-bold">
-                Looks like {data.occasion_label} · {Math.round(data.confidence * 100)}% sure
+          <div className="mb-5 rounded-xl bg-accent px-5 py-4">
+            <Link href="/moments" className="flex items-center gap-4 transition hover:brightness-[1.03]">
+              <span className="text-2xl" aria-hidden>
+                ✨
               </span>
-              <span className="block text-sm text-black/70">
-                {data.suggestions.length} things you&apos;ve never ordered would finish it off
+              <span className="min-w-0">
+                <span className="flex flex-wrap items-center gap-2 text-sm font-bold">
+                  Looks like {data.occasion_label} · {Math.round(data.confidence * 100)}% sure
+                  <SourceBadge source={data.source} />
+                </span>
+                <span className="block text-sm text-black/70">
+                  {data.suggestions.length} things you&apos;ve never ordered would finish it off
+                </span>
               </span>
-            </span>
-            <span className="ml-auto shrink-0 rounded-lg bg-black/85 px-3 py-2 text-xs font-bold text-white">
-              Complete it →
-            </span>
-          </Link>
+              <span className="ml-auto shrink-0 rounded-lg bg-black/85 px-3 py-2 text-xs font-bold text-white">
+                Complete it →
+              </span>
+            </Link>
+            {data.reason && (
+              <details className="mt-2 border-t border-black/10 pt-2">
+                <summary className="cursor-pointer text-xs font-medium text-black/50 hover:text-black">
+                  Why?
+                </summary>
+                <p className="mt-1 text-[13px] italic text-black/60">{data.reason}</p>
+              </details>
+            )}
+          </div>
         )}
 
         {!sensed && (

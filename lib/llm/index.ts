@@ -45,6 +45,11 @@ const CompleteSchema = z.object({
   occasion_id: z.string(),
   occasion_label: z.string(),
   confidence: z.number().min(0).max(1),
+  // one sentence on WHY this occasion, grounded in the basket; model may omit
+  reason: z
+    .string()
+    .nullish()
+    .transform((v) => v ?? ""),
   suggestions: z.array(
     z.object({
       product_id: z.string(),
@@ -89,7 +94,7 @@ function resolveOccasion(r: CompleteResult): Occasion {
 /** The model is allowed to be wrong, not to break the contract. */
 function enforceRules(r: CompleteResult, basket: BasketItem[]): CompleteResult {
   if (r.occasion_id === "none" || r.confidence < 0.4) {
-    return { ...r, occasion_id: "none", suggestions: [], gap_line: "" };
+    return { ...r, occasion_id: "none", suggestions: [], reason: "", gap_line: "" };
   }
   const occasion = resolveOccasion(r);
   const inBasket = new Set(basket.map((i) => i.category));

@@ -10,6 +10,7 @@ import {
 } from "@/lib/discovery";
 import { MIN_CONFIDENCE, pickQuotes } from "@/lib/quotes";
 import { DecisionSnapshot } from "@/components/DiscoveryCharts";
+import { PrimaryResearch } from "@/components/PrimaryResearch";
 import { Steelman } from "@/components/Steelman";
 
 export const dynamic = "force-dynamic";
@@ -266,9 +267,12 @@ function FramingBlock({
               , against 8% who named an in-app recommendation.
             </>
           )}{" "}
-          Four of six interviewees described intent-driven, speed-first shopping without being
-          asked: <em>&ldquo;I already know exactly what I need before opening the app&rdquo;</em>{" "}
-          (Rhea), <em>&ldquo;I just want to finish shopping quickly&rdquo;</em> (Nikhil).
+          Four of seven interviewees described intent-driven, speed-first shopping without being
+          asked: <em>&ldquo;Before opening the app, I already know exactly what I need&rdquo;</em>{" "}
+          (Neha); Rohan&apos;s mission was <em>&ldquo;already defined before opening the app.&rdquo;</em>{" "}
+          The trigger that breaks it surfaced directly —{" "}
+          <em>&ldquo;I shop based on the occasion rather than browsing&rdquo;</em> (Aditya, our target
+          segment).
         </p>
 
         <p>
@@ -288,11 +292,10 @@ function FramingBlock({
 
         <p className="rounded-lg bg-white/70 p-3">
           <strong className="text-ink">What changed in the product because of this.</strong>{" "}
-          Suggestions capped at 3 (Nikhil: <em>&ldquo;one or two useful suggestions, not
-          ten&rdquo;</em>). <code>fitness_kickoff</code> and <code>baby_arrival</code> removed —
-          zero mentions across 6 interviews and 26 responses. <code>hosting_guests</code> and{" "}
-          <code>movie_night</code> added, both volunteered by participants. Occasion inference is
-          the delivery mechanism; the habit is the problem.
+          Suggestions capped at 3 — the speed-first users (Rohan) treat a long list as clutter.{" "}
+          <code>fitness_kickoff</code> and <code>baby_arrival</code> removed — zero mentions across 7
+          interviews and 26 responses. <code>hosting_guests</code> added — Aditya&apos;s trigger is
+          hosting guests. Occasion inference is the delivery mechanism; the habit is the problem.
         </p>
       </div>
 
@@ -489,6 +492,8 @@ export default function DiscoveryPage() {
       <DecisionSnapshot survey={survey} themes={data.themes} />
 
       <FramingBlock bridge={data.bridge} themes={data.themes} survey={survey} />
+
+      <PrimaryResearch />
 
       <Steelman bridge={data.bridge} survey={survey} themes={data.themes} />
 

@@ -28,10 +28,15 @@ export type CompleteResult = {
   confidence: number;
   suggestions: Suggestion[];
   /**
+   * One sentence explaining WHY this occasion was inferred from the basket +
+   * context. The LLM writes its own; the deterministic matcher templates one.
+   * Empty when there is no occasion.
+   */
+  reason: string;
+  /**
    * One occasion-aware sentence naming the gap between what is in the basket
-   * and what the occasion needs. This is the line Kabir described wanting:
-   * "I buy beer, chips and soft drinks separately. Nobody tells me what I'm
-   * missing." Empty string when there is no occasion.
+   * and what the occasion needs — the completion nudge shown on the kit.
+   * Empty string when there is no occasion.
    */
   gap_line: string;
 };
@@ -154,7 +159,7 @@ export function gapLine(occasion: Occasion, basket: BasketItem[], suggestions: S
 export function completeOccasion(basket: BasketItem[], context: string): CompleteResult {
   const { occasion, confidence } = matchOccasion(basket, context);
   if (!occasion) {
-    return { occasion_id: "none", occasion_label: "No clear occasion", confidence, suggestions: [], gap_line: "" };
+    return { occasion_id: "none", occasion_label: "No clear occasion", confidence, suggestions: [], reason: "", gap_line: "" };
   }
 
   const inBasket = new Set(basket.map((i) => i.category));
@@ -182,14 +187,18 @@ export function completeOccasion(basket: BasketItem[], context: string): Complet
     .filter((s): s is Suggestion => s !== null);
 
   if (suggestions.length < 2) {
-    return { occasion_id: "none", occasion_label: "No clear occasion", confidence: 0, suggestions: [], gap_line: "" };
+    return { occasion_id: "none", occasion_label: "No clear occasion", confidence: 0, suggestions: [], reason: "", gap_line: "" };
   }
 
+  const have = joinNatural([...new Set(basket.map(basketNoun))].slice(0, 3));
   return {
     occasion_id: occasion.id,
     occasion_label: occasion.label,
     confidence,
     suggestions,
+    reason: have
+      ? `The built-in matcher read ${have} in your basket as ${occasion.label.toLowerCase()}.`
+      : `The built-in matcher inferred ${occasion.label.toLowerCase()} from your basket.`,
     gap_line: gapLine(occasion, basket, suggestions),
   };
 }

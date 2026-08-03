@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { AiTrace } from "@/components/AiTrace";
+import { SourceBadge } from "@/components/SourceBadge";
 import { CartPanel } from "@/components/CartPanel";
 import { SuggestionCard } from "@/components/SuggestionCard";
 import { OccasionKit } from "@/components/OccasionKit";
@@ -13,8 +14,8 @@ import { useOccasion } from "@/lib/useOccasion";
 
 export default function MomentsPage() {
   const { demo, data, refining } = useOccasion("complete");
-  // a dismissed suggestion never comes back this session — showing it again is
-  // exactly the behaviour Nikhil described as "obviously trying to sell me more"
+  // a dismissed suggestion never comes back this session — re-surfacing it is the
+  // "obviously trying to sell me more" clutter the speed-first users (Rohan) reject
   const visible = data.suggestions.filter((s) => !demo.dismissed.includes(s.product_id));
   const sensed = data.occasion_id !== "none" && visible.length > 0;
 
@@ -38,13 +39,14 @@ export default function MomentsPage() {
           <p className="text-xs font-bold uppercase tracking-wide text-black/50">
             Occasion sensed from your cart
           </p>
-          <h1 className="mt-1 flex items-center gap-2 text-xl font-extrabold">
+          <h1 className="mt-1 flex flex-wrap items-center gap-2 text-xl font-extrabold">
             {sensed ? data.occasion_label : "No clear occasion yet"}
             {sensed && (
               <span className="rounded-full bg-brand px-2 py-0.5 text-[11px] font-bold text-white tabular-nums">
                 {Math.round(data.confidence * 100)}% match
               </span>
             )}
+            {sensed && <SourceBadge source={data.source} />}
             {refining && (
               <span className="rounded-full bg-black/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-black/50">
                 refining
@@ -52,10 +54,13 @@ export default function MomentsPage() {
             )}
           </h1>
           {sensed ? (
-            <p className="mt-1 text-sm text-black/70">
-              One tap completes it across {visible.length}{" "}
-              {visible.length === 1 ? "category" : "categories"} you&apos;ve never ordered
-            </p>
+            <>
+              <p className="mt-1 text-sm text-black/70">
+                One tap completes it across {visible.length}{" "}
+                {visible.length === 1 ? "category" : "categories"} you&apos;ve never ordered
+              </p>
+              {data.reason && <p className="mt-1 text-[13px] italic text-black/55">{data.reason}</p>}
+            </>
           ) : (
             <p className="mt-1 text-sm text-black/70">
               Add a couple of items and the agent will read the basket.
