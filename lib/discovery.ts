@@ -172,7 +172,21 @@ export type PipelineStats = {
   by_source: Record<string, number>;
 };
 
+export type ExternalSource = {
+  id: string;
+  label: string;
+  provenance: string;
+  sample: boolean;
+  /** false = ingested for triangulation but NOT part of the coded corpus */
+  coded: boolean;
+  count: number;
+  by_rating: Record<string, number>;
+  sentiment: { negative: number; neutral: number; positive: number };
+};
+
 export const loadHoldout = () => read<Holdout>("holdout-report.json");
 export const loadSurvey = () => read<Survey>("survey.json");
 export const loadSensitivity = () => read<Sensitivity>("sensitivity.json");
 export const loadPipelineStats = () => read<PipelineStats>("pipeline-stats.json");
+export const loadExternalSources = () =>
+  read<{ sources: ExternalSource[] }>("external-sources.json")?.sources ?? [];

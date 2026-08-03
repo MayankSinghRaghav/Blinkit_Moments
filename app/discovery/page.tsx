@@ -4,6 +4,7 @@ import {
   loadSurvey,
   loadSensitivity,
   loadPipelineStats,
+  loadExternalSources,
   type Survey,
   type Bridge,
   type OccasionSpikers,
@@ -425,6 +426,7 @@ export default function DiscoveryPage() {
   const survey = loadSurvey();
   const sens = loadSensitivity();
   const pipeline = loadPipelineStats();
+  const externalSources = loadExternalSources();
   // An agreement score is only meaningful next to real coding. Withhold it if
   // the report itself was scored against fixture codes, or if the page is still
   // falling back to fixture insights — a real kappa beside placeholder themes
@@ -499,6 +501,7 @@ export default function DiscoveryPage() {
         themes={data.themes}
         segments={data.segments}
         dedup={pipeline?.dropped.duplicate}
+        external={externalSources}
       />
 
       <DecisionSnapshot survey={survey} themes={data.themes} />

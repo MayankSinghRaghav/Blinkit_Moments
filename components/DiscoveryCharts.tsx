@@ -1,4 +1,4 @@
-import type { Insights, Survey, Theme } from "@/lib/discovery";
+import type { ExternalSource, Insights, Survey, Theme } from "@/lib/discovery";
 
 const pct = (n: number) => `${Math.round(n * 100)}%`;
 
@@ -254,14 +254,22 @@ const CONNECTORS = [
   { label: "Social (X / Twitter)", note: "connector ready · paywalled on Apify" },
 ];
 
-/** Source split of the corpus + the not-yet-ingested connectors, labelled honestly. */
-function SourceBreakdown({ sources }: { sources: { label: string; count: number; color: string }[] }) {
+/** Source split of the corpus + ingested samples + the not-yet-ingested connectors. */
+function SourceBreakdown({
+  sources,
+  external = [],
+}: {
+  sources: { label: string; count: number; color: string }[];
+  external?: ExternalSource[];
+}) {
+  // coded-corpus bars scale among themselves; the external sample is scaled to
+  // its OWN value so a big sample can't visually dwarf (or imply it joined) the corpus
   const max = Math.max(...sources.map((s) => s.count), 1);
   return (
     <figure className="rounded-xl border border-line p-4">
       <figcaption className="text-sm font-bold">Where the reviews came from</figcaption>
       <p className="mt-0.5 text-[11px] leading-snug text-muted">
-        Ingested sources (real coded volume) plus the connectors still to be pulled.
+        Coded corpus (validated) · ingested samples (real, not yet coded) · connectors still to pull.
       </p>
       <ul className="mt-3 space-y-2">
         {sources.map((r) => (
@@ -272,6 +280,19 @@ function SourceBreakdown({ sources }: { sources: { label: string; count: number;
             </span>
             <span className="text-right text-[11.5px] font-bold tabular-nums text-black/55">
               {r.count.toLocaleString("en-IN")}
+            </span>
+          </li>
+        ))}
+        {external.map((e) => (
+          <li key={e.id} className="grid grid-cols-[128px_1fr_46px] items-center gap-2" title={e.provenance}>
+            <span className="truncate text-[11.5px] text-black/55">
+              {e.label} <span className="text-[9px] font-bold uppercase text-amber-700">sample</span>
+            </span>
+            <span className="h-3.5 overflow-hidden rounded-full bg-tile">
+              <span className="block h-full rounded-full" style={{ width: "100%", background: OKABE[5] }} />
+            </span>
+            <span className="text-right text-[11.5px] font-bold tabular-nums text-black/55">
+              {e.count.toLocaleString("en-IN")}
             </span>
           </li>
         ))}
@@ -289,16 +310,64 @@ function SourceBreakdown({ sources }: { sources: { label: string; count: number;
   );
 }
 
+/** Rating distribution + rating-based sentiment for an ingested external sample. */
+function ExternalSample({ src }: { src: ExternalSource }) {
+  const ratings = [5, 4, 3, 2, 1].map((r) => ({ label: `${r}★`, count: src.by_rating[String(r)] ?? 0 }));
+  const maxR = Math.max(...ratings.map((r) => r.count), 1);
+  const total = src.count || 1;
+  const ratingColor = (r: number) => (r <= 2 ? "#D55E00" : r === 3 ? "#9ca3af" : "#009E73");
+  const sent = [
+    { label: "negative (1–2★)", n: src.sentiment.negative, c: "#D55E00" },
+    { label: "neutral (3★)", n: src.sentiment.neutral, c: "#9ca3af" },
+    { label: "positive (4–5★)", n: src.sentiment.positive, c: "#009E73" },
+  ];
+  return (
+    <figure className="rounded-xl border border-line p-4">
+      <figcaption className="text-sm font-bold">External sample — Blinkit reviews</figcaption>
+      <p className="mt-0.5 text-[11px] leading-snug text-muted">
+        n={src.count.toLocaleString("en-IN")} · {src.provenance}. Rating-based sentiment (1–2 neg /
+        3 neu / 4–5 pos) — ingested for triangulation, <strong>not</strong> coded into the corpus.
+      </p>
+      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+        <ul className="space-y-1.5">
+          {ratings.map((r, i) => (
+            <li key={r.label} className="grid grid-cols-[24px_1fr_38px] items-center gap-2">
+              <span className="text-[11px] tabular-nums text-black/55">{r.label}</span>
+              <span className="h-3 overflow-hidden rounded-full bg-tile">
+                <span className="block h-full rounded-full" style={{ width: `${Math.round((r.count / maxR) * 100)}%`, background: ratingColor(5 - i) }} />
+              </span>
+              <span className="text-right text-[11px] font-bold tabular-nums text-black/55">{r.count}</span>
+            </li>
+          ))}
+        </ul>
+        <ul className="space-y-1.5">
+          {sent.map((s) => (
+            <li key={s.label} className="grid grid-cols-[92px_1fr_34px] items-center gap-2">
+              <span className="truncate text-[11px] text-black/55">{s.label}</span>
+              <span className="h-3 overflow-hidden rounded-full bg-tile">
+                <span className="block h-full rounded-full" style={{ width: `${Math.round((s.n / total) * 100)}%`, background: s.c }} />
+              </span>
+              <span className="text-right text-[11px] font-bold tabular-nums text-black/55">{pct(s.n / total)}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </figure>
+  );
+}
+
 export function CorpusCharts({
   corpus,
   themes,
   segments,
   dedup,
+  external = [],
 }: {
   corpus: Insights["corpus"];
   themes: Theme[];
   segments: Insights["segments"];
   dedup?: number;
+  external?: ExternalSource[];
 }) {
   const sources = Object.entries(corpus.by_source).map(([k, n], i) => ({
     label: SOURCE_LABEL[k] ?? k,
@@ -319,10 +388,13 @@ export function CorpusCharts({
       <h2 className="text-base font-bold">Corpus at a glance</h2>
       <p className="text-xs text-muted">Six views of the {corpus.documents.toLocaleString("en-IN")}-document corpus — all from the coding run.</p>
       <div className="mt-2 grid gap-4 lg:grid-cols-2">
-        <SourceBreakdown sources={sources} />
+        <SourceBreakdown sources={sources} external={external} />
         <Funnel corpus={corpus} dedup={dedup} />
         <CountBars title="What users mostly talk about" caption="Largest context themes (platform-wide), by document count." rows={contextThemes} />
         <CountBars title="Coder-assigned segments" caption="Distribution across the five behavioural segments." rows={segs} />
+        {external.map((e) => (
+          <ExternalSample key={e.id} src={e} />
+        ))}
       </div>
     </section>
   );

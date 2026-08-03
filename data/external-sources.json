@@ -1,0 +1,24 @@
+{
+ "sources": [
+  {
+   "id": "kaggle_reviews",
+   "label": "Review aggregator (Kaggle)",
+   "provenance": "Kaggle: BlinkIt vs Zepto vs JioMart Reviews",
+   "sample": true,
+   "coded": false,
+   "count": 1380,
+   "by_rating": {
+    "1": 713,
+    "2": 83,
+    "3": 78,
+    "4": 120,
+    "5": 386
+   },
+   "sentiment": {
+    "negative": 796,
+    "neutral": 78,
+    "positive": 506
+   }
+  }
+ ]
+}
