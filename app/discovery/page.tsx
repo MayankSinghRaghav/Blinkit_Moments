@@ -9,8 +9,9 @@ import {
   type Theme,
 } from "@/lib/discovery";
 import { MIN_CONFIDENCE, pickQuotes } from "@/lib/quotes";
-import { DecisionSnapshot } from "@/components/DiscoveryCharts";
+import { DecisionSnapshot, CorpusCharts } from "@/components/DiscoveryCharts";
 import { PrimaryResearch } from "@/components/PrimaryResearch";
+import { ReviewWorkflow } from "@/components/ReviewWorkflow";
 import { Steelman } from "@/components/Steelman";
 
 export const dynamic = "force-dynamic";
@@ -451,6 +452,8 @@ export default function DiscoveryPage() {
         </p>
       </div>
 
+      <ReviewWorkflow />
+
       {fixture && (
         <p className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-xs text-amber-900">
           <strong>Fixture data.</strong> These numbers come from a seeded placeholder coding used
@@ -488,6 +491,8 @@ export default function DiscoveryPage() {
           }
         />
       </div>
+
+      <CorpusCharts corpus={data.corpus} themes={data.themes} segments={data.segments} />
 
       <DecisionSnapshot survey={survey} themes={data.themes} />
 

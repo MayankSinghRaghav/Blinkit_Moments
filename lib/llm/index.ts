@@ -7,8 +7,15 @@ import { OCCASIONS, occasionById, type Occasion } from "@/lib/occasions";
 import { completeOccasion, gapLine, MAX_SUGGESTIONS, type BasketItem, type CompleteResult } from "@/lib/scoring";
 import { traceInference, type LLMSource } from "@/lib/telemetry";
 
-const MODEL = "gemini-2.5-flash";
-const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
+// Occasion inference model is swappable via env; the batched review-analysis
+// route uses flash-lite, which has the higher free-tier quota.
+export const llmModel = () => process.env.GEMINI_MODEL || "gemini-2.5-flash";
+// flash-lite has the higher free-tier quota for the batched review analysis.
+// NB: the pinned `gemini-2.5-flash-lite` is gated to existing users and 404s for
+// new API keys, so default to the `-latest` lite alias (swappable via env).
+const analyzeModel = () => process.env.GEMINI_ANALYZE_MODEL || "gemini-flash-lite-latest";
+const endpoint = (model: string) =>
+  `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
 const prompt = (name: string) =>
   readFileSync(join(process.cwd(), "prompts", `${name}.txt`), "utf8");
@@ -16,22 +23,26 @@ const prompt = (name: string) =>
 const fill = (tpl: string, vars: Record<string, string>) =>
   Object.entries(vars).reduce((s, [k, v]) => s.replaceAll(`{{${k}}}`, v), tpl);
 
-async function generate(text: string): Promise<unknown> {
+type GenOpts = { model?: string; temperature?: number; responseSchema?: object; thinking?: boolean };
+
+async function generate(text: string, opts: GenOpts = {}): Promise<unknown> {
   const key = process.env.GEMINI_API_KEY;
   if (!key) throw new Error("no-key");
-  const res = await fetch(`${ENDPOINT}?key=${key}`, {
+  const model = opts.model || llmModel();
+  const generationConfig: Record<string, unknown> = {
+    responseMimeType: "application/json",
+    temperature: opts.temperature ?? 0.2,
+  };
+  // Only thinking-capable models (2.5-flash) accept thinkingConfig; flash-lite
+  // rejects it with a 400. We only set it to DISABLE thinking on the occasion
+  // model, so lite simply omits it.
+  if (opts.thinking !== false) generationConfig.thinkingConfig = { thinkingBudget: 0 };
+  // structured output — the model must return this exact shape, not free JSON
+  if (opts.responseSchema) generationConfig.responseSchema = opts.responseSchema;
+  const res = await fetch(endpoint(model), {
     method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text }] }],
-      generationConfig: {
-        responseMimeType: "application/json",
-        temperature: 0.4,
-        // 2.5-flash burns ~1.5k thinking tokens (~9s) on this prompt by default;
-        // the task is a lookup against a fixed catalog, so skip it.
-        thinkingConfig: { thinkingBudget: 0 },
-      },
-    }),
+    headers: { "content-type": "application/json", "x-goog-api-key": key },
+    body: JSON.stringify({ contents: [{ parts: [{ text }] }], generationConfig }),
     signal: AbortSignal.timeout(20_000),
   });
   if (!res.ok) throw new Error(`llm ${res.status}`);
@@ -40,6 +51,51 @@ async function generate(text: string): Promise<unknown> {
   if (typeof out !== "string") throw new Error("llm empty");
   return JSON.parse(out);
 }
+
+const OCCASION_RESPONSE_SCHEMA = {
+  type: "object",
+  properties: {
+    occasion_id: { type: "string" },
+    occasion_label: { type: "string" },
+    confidence: { type: "number" },
+    reason: { type: "string" },
+    suggestions: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          product_id: { type: "string" },
+          category: { type: "string" },
+          why_now: { type: "string" },
+          confidence: { type: "string" },
+        },
+        required: ["product_id", "category", "why_now"],
+      },
+    },
+  },
+  required: ["occasion_id", "occasion_label", "confidence", "reason", "suggestions"],
+};
+
+const ANALYZE_RESPONSE_SCHEMA = {
+  type: "object",
+  properties: {
+    themes: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          label: { type: "string" },
+          count: { type: "integer" },
+          sentiment: { type: "string", enum: ["negative", "neutral", "positive"] },
+          example_index: { type: "integer" },
+        },
+        required: ["label", "count", "sentiment", "example_index"],
+      },
+    },
+    tagged: { type: "integer" },
+  },
+  required: ["themes", "tagged"],
+};
 
 const CompleteSchema = z.object({
   occasion_id: z.string(),
@@ -177,6 +233,7 @@ export async function inferOccasion(basket: BasketItem[], context: string): Prom
         occasions: OCCASIONS.map((o) => `${o.id} — ${o.label}`).join("\n"),
         catalog: PRODUCTS.map((p) => `${p.id} | ${p.name} | ${p.category} | ₹${p.price_inr}${p.starter ? " | starter" : ""}`).join("\n"),
       }),
+      { responseSchema: OCCASION_RESPONSE_SCHEMA },
     );
     const parsed = { ...CompleteSchema.parse(raw), gap_line: "" };
     const result: InferResult = { ...enforceRules(parsed, basket), degraded: false, source: "llm" };
@@ -241,3 +298,87 @@ export async function explain(productId: string, occasionLabel: string): Promise
 }
 
 export const llmConfigured = () => Boolean(process.env.GEMINI_API_KEY);
+
+/* ---------- P2: live review-analysis workflow ---------- */
+
+export type ReviewSentiment = "negative" | "neutral" | "positive";
+export type ReviewTheme = { label: string; count: number; sentiment: ReviewSentiment; example: string };
+export type ReviewAnalysis = { themes: ReviewTheme[]; tagged: number; source: "llm" | "rules" };
+
+const MAX_REVIEWS = 20;
+
+const AnalysisSchema = z.object({
+  themes: z
+    .array(
+      z.object({
+        label: z.string().min(1),
+        count: z.number().int().min(1),
+        sentiment: z.enum(["negative", "neutral", "positive"]),
+        example_index: z.number().int().min(0),
+      }),
+    )
+    .min(1),
+  tagged: z.number().int().min(0),
+});
+
+/** Deterministic keyword clustering — the fallback when the LLM is unavailable,
+ * so the workflow still runs (labelled rule-based). */
+function analyzeReviewsRules(reviews: string[]): ReviewAnalysis {
+  const BUCKETS: [string, RegExp][] = [
+    ["Delivery & fulfilment", /deliver|late|arriv|missing|wrong item|order/i],
+    ["Product quality", /quality|expir|rotten|stale|damaged|fresh|wilt/i],
+    ["Pricing & fees", /price|expensive|charge|fee|costl|refund|overprice/i],
+    ["App & support", /\bapp\b|crash|bug|support|customer care|response|glitch/i],
+  ];
+  const NEG = /bad|poor|worst|terrible|expir|rotten|late|never|refund|overprice|stale|damaged|unaccept|disappoint/i;
+  const POS = /good|great|love|best|fast|excellent|smooth|reliable|happy|recommend/i;
+  const groups = new Map<string, { count: number; neg: number; pos: number; example: string }>();
+  for (const r of reviews) {
+    const label = BUCKETS.find(([, re]) => re.test(r))?.[0] ?? "Other";
+    const g = groups.get(label) ?? { count: 0, neg: 0, pos: 0, example: r };
+    g.count++;
+    if (NEG.test(r)) g.neg++;
+    else if (POS.test(r)) g.pos++;
+    groups.set(label, g);
+  }
+  const themes: ReviewTheme[] = [...groups.entries()]
+    .map(([label, g]) => ({
+      label,
+      count: g.count,
+      sentiment: (g.neg > g.pos ? "negative" : g.pos > g.neg ? "positive" : "neutral") as ReviewSentiment,
+      example: g.example,
+    }))
+    .sort((a, b) => b.count - a.count);
+  return { themes, tagged: reviews.length, source: "rules" };
+}
+
+/** Tag + cluster + score pasted reviews. Grounded only in the input. */
+export async function analyzeReviews(raw: string[]): Promise<ReviewAnalysis> {
+  const reviews = raw
+    .map((r) => r.trim().slice(0, 300))
+    .filter(Boolean)
+    .slice(0, MAX_REVIEWS);
+  if (!reviews.length) return { themes: [], tagged: 0, source: "rules" };
+
+  try {
+    const parsed = AnalysisSchema.parse(
+      await generate(
+        fill(prompt("review_analysis"), {
+          reviews: reviews.map((r, i) => `${i}. ${r}`).join("\n"),
+        }),
+        { model: analyzeModel(), responseSchema: ANALYZE_RESPONSE_SCHEMA, thinking: false },
+      ),
+    );
+    const themes: ReviewTheme[] = parsed.themes.slice(0, 8).map((t) => ({
+      label: t.label,
+      count: t.count,
+      sentiment: t.sentiment,
+      // resolve to a real pasted review; never trust the model to echo text
+      example: reviews[Math.min(t.example_index, reviews.length - 1)] ?? "",
+    }));
+    return { themes, tagged: parsed.tagged || reviews.length, source: "llm" };
+  } catch (e) {
+    if ((e as Error).message !== "no-key") console.warn("[analyze-reviews] fallback:", (e as Error).message);
+    return analyzeReviewsRules(reviews);
+  }
+}

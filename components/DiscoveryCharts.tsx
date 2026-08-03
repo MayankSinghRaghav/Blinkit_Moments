@@ -1,6 +1,14 @@
-import type { Survey, Theme } from "@/lib/discovery";
+import type { Insights, Survey, Theme } from "@/lib/discovery";
 
 const pct = (n: number) => `${Math.round(n * 100)}%`;
+
+// Okabe-Ito — colorblind-safe categorical palette
+const OKABE = ["#0072B2", "#E69F00", "#009E73", "#D55E00", "#CC79A7", "#56B4E9", "#F0E442", "#333333"];
+const SOURCE_LABEL: Record<string, string> = {
+  play_store: "Google Play",
+  app_store: "App Store",
+  reddit: "Reddit",
+};
 
 /**
  * Decision snapshot — the same numbers the prose already reports, drawn so a PM
@@ -168,6 +176,108 @@ function BarChart({
         ))}
       </ul>
     </figure>
+  );
+}
+
+/** Horizontal count bars with explicit per-row colours (colorblind-safe). */
+function CountBars({
+  title,
+  caption,
+  rows,
+}: {
+  title: string;
+  caption?: string;
+  rows: { label: string; count: number; color: string }[];
+}) {
+  const max = Math.max(...rows.map((r) => r.count), 1);
+  return (
+    <figure className="rounded-xl border border-line p-4">
+      <figcaption className="text-sm font-bold">{title}</figcaption>
+      {caption && <p className="mt-0.5 text-[11px] leading-snug text-muted">{caption}</p>}
+      <ul className="mt-3 space-y-2">
+        {rows.map((r) => (
+          <li key={r.label} className="grid grid-cols-[128px_1fr_46px] items-center gap-2">
+            <span className="truncate text-[11.5px] text-black/60" title={r.label}>{r.label}</span>
+            <span className="h-3.5 overflow-hidden rounded-full bg-tile">
+              <span className="block h-full rounded-full" style={{ width: `${Math.round((r.count / max) * 100)}%`, background: r.color }} />
+            </span>
+            <span className="text-right text-[11.5px] font-bold tabular-nums text-black/55">
+              {r.count.toLocaleString("en-IN")}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </figure>
+  );
+}
+
+/** Pipeline yield funnel: corpus → coded → rejected. */
+function Funnel({ corpus }: { corpus: Insights["corpus"] }) {
+  const total = corpus.documents || 1;
+  const stages = [
+    { label: "Fetched & deduped", n: corpus.documents, color: OKABE[0] },
+    { label: "Coded to a theme", n: corpus.with_theme, color: OKABE[2] },
+    { label: "Rejected (no theme / low-conf)", n: corpus.no_theme + corpus.low_confidence, color: OKABE[3] },
+  ];
+  return (
+    <figure className="rounded-xl border border-line p-4">
+      <figcaption className="text-sm font-bold">Pipeline yield</figcaption>
+      <p className="mt-0.5 text-[11px] leading-snug text-muted">
+        Every document either grounds a theme or is dropped — the rejects stay visible.
+      </p>
+      <ul className="mt-3 space-y-2.5">
+        {stages.map((s) => (
+          <li key={s.label}>
+            <div className="flex items-baseline justify-between text-[11.5px]">
+              <span className="text-black/60">{s.label}</span>
+              <span className="font-bold tabular-nums text-black/70">
+                {s.n.toLocaleString("en-IN")} <span className="text-black/35">({pct(s.n / total)})</span>
+              </span>
+            </div>
+            <span className="mt-0.5 block h-3.5 overflow-hidden rounded-full bg-tile">
+              <span className="block h-full rounded-full" style={{ width: `${Math.round((s.n / total) * 100)}%`, background: s.color }} />
+            </span>
+          </li>
+        ))}
+      </ul>
+    </figure>
+  );
+}
+
+export function CorpusCharts({
+  corpus,
+  themes,
+  segments,
+}: {
+  corpus: Insights["corpus"];
+  themes: Theme[];
+  segments: Insights["segments"];
+}) {
+  const sources = Object.entries(corpus.by_source).map(([k, n], i) => ({
+    label: SOURCE_LABEL[k] ?? k,
+    count: n,
+    color: OKABE[i % OKABE.length],
+  }));
+  const contextThemes = themes
+    .filter((t) => t.relevance === "context")
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 6)
+    .map((t) => ({ label: t.label, count: t.count, color: OKABE[4] }));
+  const segs = [...segments]
+    .sort((a, b) => b.count - a.count)
+    .map((s, i) => ({ label: s.id.replace(/_/g, " "), count: s.count, color: OKABE[i % OKABE.length] }));
+
+  return (
+    <section>
+      <h2 className="text-base font-bold">Corpus at a glance</h2>
+      <p className="text-xs text-muted">Six views of the {corpus.documents.toLocaleString("en-IN")}-document corpus — all from the coding run.</p>
+      <div className="mt-2 grid gap-4 lg:grid-cols-2">
+        <CountBars title="Where the reviews came from" caption="Source split of the corpus." rows={sources} />
+        <Funnel corpus={corpus} />
+        <CountBars title="What users mostly talk about" caption="Largest context themes (platform-wide), by document count." rows={contextThemes} />
+        <CountBars title="Coder-assigned segments" caption="Distribution across the five behavioural segments." rows={segs} />
+      </div>
+    </section>
   );
 }
 
