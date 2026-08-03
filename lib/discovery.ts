@@ -165,6 +165,14 @@ export function loadInsights(): { data: Insights | null; fixture: boolean } {
   return { data: read<Insights>("insights.sample.json"), fixture: true };
 }
 
+export type PipelineStats = {
+  considered: number;
+  kept: number;
+  dropped: { short: number; nonEnglish: number; duplicate: number };
+  by_source: Record<string, number>;
+};
+
 export const loadHoldout = () => read<Holdout>("holdout-report.json");
 export const loadSurvey = () => read<Survey>("survey.json");
 export const loadSensitivity = () => read<Sensitivity>("sensitivity.json");
+export const loadPipelineStats = () => read<PipelineStats>("pipeline-stats.json");

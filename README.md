@@ -2,10 +2,11 @@
 
 A quick-commerce prototype where an agent infers the **real-life occasion** behind your
 cart ("game night", "monsoon evening in") and completes it across categories you've
-**never bought** — each suggestion carrying a *why now* line, a trust cue, and a comfort
-dial. An adoption tracker shows trial → repeat across a simulated month.
+**never bought** — each suggestion carrying a *why now* line and a trust cue. A discovery
+engine mines real review corpora to justify the bet; an adoption tracker shows trial →
+repeat across a simulated month.
 
-Prototype only: seeded catalog, no real Blinkit data, no payments, no accounts.
+Prototype only: seeded catalog, no real Blinkit transactions, no payments, no accounts.
 
 ## Run
 
@@ -13,54 +14,104 @@ Prototype only: seeded catalog, no real Blinkit data, no payments, no accounts.
 npm install && npm run dev
 ```
 
-Works with **zero environment variables**. Everything is optional:
+Runs with **zero environment variables** (deterministic fallbacks everywhere). To exercise
+the real AI and persistence, set:
 
-| Var | Missing → |
+| Var | Default / missing → |
 |---|---|
-| `GEMINI_API_KEY` | Deterministic occasion matcher + template explanations, with a degraded-mode banner |
-| `NEXT_PUBLIC_SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` | In-process adoption store instead of Postgres |
+| `GEMINI_API_KEY` | **Required for AI.** Missing → deterministic occasion matcher + template explanations, labelled "rule-based fallback". Get a free key at aistudio.google.com. |
+| `GEMINI_MODEL` | Occasion-inference model. Default `gemini-2.5-flash`. |
+| `GEMINI_ANALYZE_MODEL` | Review-analysis model (higher-quota lite tier). Default `gemini-flash-lite-latest`. NB: the pinned `gemini-2.5-flash-lite` is gated to existing keys and 404s for new ones. |
+| `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` | In-process adoption store instead of Postgres. |
 
-`GET /api/health` reports which path each is on.
+`GET /api/health` reports which path each is on, plus per-instance inference counters.
+
+Free-tier note: Gemini free quota is low (~10 req/min). On a 429/quota error the app
+silently falls back to the deterministic matcher and labels it "rule-based fallback" —
+it never crashes, and never claims "AI inference" for a fallback.
 
 ## Screens
 
 | Route | What |
 |---|---|
-| `/` | Cart + occasion banner (shown only at confidence ≥ 0.4) |
-| `/moments` | 2–4 new-category suggestions + comfort dial |
-| `/why/[itemId]` | Why now / why trust it / why it's a stretch |
-| `/tracker` | Adoption ring, `Simulate a month` |
+| `/` | Shop + occasion banner (shown only at confidence ≥ 0.4) with a source badge + Why? expander |
+| `/moments` | The occasion kit (opt-out completion) + a live AI reasoning trace |
+| `/why/[itemId]` | Two-sided explainability — why now / why it's a stretch |
+| `/tracker` | North-Star ring, `Simulate a month` (auto-seeds cold) |
+| `/discovery` | The runnable review-analysis workflow, 6 charts, primary research, steel-man |
+
+## Discovery pipeline
+
+Staged and resumable. The corpus is mined from App Store (Apple RSS, free), Google Play,
+and Reddit; community forums (Quora) and social (X/Twitter) are wired as connectors but
+not yet ingested (X is paywalled on Apify) — shown honestly on `/discovery`, no faked volume.
+
+```bash
+npm run discovery:fetch      # 0-fetch-appstore + 1-normalize (clean, dedupe, language-filter)
+npm run discovery:tag        # 2-tag: LLM open+closed coding, resumable, 20 calls/day free tier
+npm run discovery:analyze    # 3-analyze: deterministic clustering + scoring → data/insights.json
+npm run discovery:holdout    # 4-holdout: blind hold-out → Cohen's kappa
+npm run discovery:refresh    # fetch → tag → analyze in one shot
+node scripts/discovery/6-sensitivity.mjs   # weight-sensitivity of the scores
+```
+
+### The exact LLM prompts
+
+All prompts live in `prompts/*.txt` and are loaded verbatim at runtime.
+
+- **Tagging — open coding** (`prompts/discovery_opencode.txt`): *"You are a product researcher
+  doing OPEN CODING on quick-commerce user feedback… Why do users keep buying the same
+  categories, and what stops them from trying categories they have never bought?"* Induces a
+  theme codebook from a stratified sample.
+- **Tagging — closed coding** (`prompts/discovery_classify.txt`): *"You are coding… against a
+  FIXED codebook. Assign each document the single best-fitting theme. If nothing fits, use
+  'none'."* Applies the codebook to the full corpus; "none" is a valid answer (grounding floor).
+- **Live workflow — tag + cluster + score** (`prompts/review_analysis.txt`): tags each pasted
+  review with a theme + sentiment, clusters near-duplicates, and scores clusters by size.
+  Powers `/api/analyze-reviews` (the "Run the workflow" panel).
+- **Occasion inference** (`prompts/occasion_inference.txt`): infers `{occasion, confidence,
+  reason, suggestions[]}` from cart + context, grounded only in the input. Powers
+  `/api/infer-occasion`. Uses Gemini structured output (`responseSchema`, temp 0.2).
+
+### Clustering + scoring (deterministic, not LLM)
+
+`3-analyze.mjs` groups documents by their assigned theme (a group-by, not embeddings) and
+computes two independent axes:
+
+- **opportunity** = normalised (frequency + severity + segment spread) — "share of voice".
+- **strategic_fit** ∈ [0,1] = 0.5·core-relevance + 0.3·trial-need + 0.2·new-category — goal
+  alignment. Neither axis is tuned to the conclusion; `6-sensitivity.mjs` re-scores across
+  many weightings and reports the result against us.
+
+`/discovery` shows the achieved **grounding %** (share of the corpus coded to a theme) and
+the **dedup count** (duplicates removed during normalize), both from committed data files.
 
 ## Evals
 
 ```bash
-npm run eval
+npm run eval        # 10 golden occasion cases, offline (also the CI gate)
+npm run eval:live   # same set through /api/infer-occasion on a running dev server
 ```
 
-Runs `evals/occasion-golden.json` against the deterministic matcher at comfort 0/50/100
-(12 cases, offline, no quota). Each case checks: occasion match · no in-basket category
-suggested · at least one expected new category · trust cue on every high-consideration
-item · the "none" case returns nothing.
+The offline set gates the deterministic baseline the LLM must never regress below. CI runs
+typecheck + lint + eval on every push (`.github/workflows/eval.yml`).
 
-`npm run eval:live` runs the same set through `/api/infer-occasion` on a running dev
-server, exercising the LLM path.
+## North Star
+
+Primary metric = the assignment's wording: **the share of monthly active customers who buy
+from at least one new category each month.** A session crosses it on the first purchase in a
+category it didn't already shop. Buying it **≥ 2×** is the adoption-*quality* bar (stickiness),
+shown alongside — not the primary definition.
 
 ## Supabase (optional)
 
 ```bash
-# paste supabase/migrations/0001_init.sql into the SQL editor, then:
+# paste supabase/migrations/*.sql into the SQL editor, then:
 npm run db:seed
 ```
 
-`products` and `occasions` are seeded from `lib/data` and `lib/occasions` — the app reads
-them from code; the tables exist so `adoption_events` can reference them.
-
-## North Star
-
-A category counts as **adopted** when it collects ≥ 2 `tried`/`repeat` events *and* the
-session didn't start with it. The tracker ring is `adopted / 3`.
-
 ## Deploy
 
-Vercel, zero config. Set the two optional key groups in project settings to leave
-degraded mode.
+Vercel, zero config. Set `GEMINI_API_KEY` (and optionally `GEMINI_MODEL` /
+`GEMINI_ANALYZE_MODEL`, `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`) in project settings;
+without them the app runs in labelled fallback mode.

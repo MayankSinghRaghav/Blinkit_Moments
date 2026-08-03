@@ -95,5 +95,14 @@ for (const r of read("data/raw/reddit.json")) {
 writeFileSync("data/corpus.json", JSON.stringify(docs, null, 1));
 
 const bySource = docs.reduce((a, d) => ({ ...a, [d.source]: (a[d.source] || 0) + 1 }), {});
+
+// Persist pipeline stats so /discovery can show the dedup count. data/raw is
+// gitignored (not deployed), so this must be precomputed and committed.
+const considered = docs.length + dropped.short + dropped.nonEnglish + dropped.duplicate;
+writeFileSync(
+  "data/pipeline-stats.json",
+  JSON.stringify({ considered, kept: docs.length, dropped, by_source: bySource }, null, 1),
+);
+
 console.log("corpus:", docs.length, bySource);
 console.log("dropped:", dropped);

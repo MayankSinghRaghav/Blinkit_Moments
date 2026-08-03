@@ -1,0 +1,14 @@
+{
+ "considered": 1873,
+ "kept": 1284,
+ "dropped": {
+  "short": 569,
+  "nonEnglish": 1,
+  "duplicate": 19
+ },
+ "by_source": {
+  "play_store": 498,
+  "app_store": 300,
+  "reddit": 486
+ }
+}

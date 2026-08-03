@@ -3,6 +3,7 @@ import {
   loadHoldout,
   loadSurvey,
   loadSensitivity,
+  loadPipelineStats,
   type Survey,
   type Bridge,
   type OccasionSpikers,
@@ -423,6 +424,7 @@ export default function DiscoveryPage() {
   const holdout = loadHoldout();
   const survey = loadSurvey();
   const sens = loadSensitivity();
+  const pipeline = loadPipelineStats();
   // An agreement score is only meaningful next to real coding. Withhold it if
   // the report itself was scored against fixture codes, or if the page is still
   // falling back to fixture insights — a real kappa beside placeholder themes
@@ -474,7 +476,7 @@ export default function DiscoveryPage() {
         <Stat
           label="Accepted"
           value={String(data.corpus.with_theme)}
-          sub={`${data.corpus.no_theme + data.corpus.low_confidence} rejected`}
+          sub={`${Math.round((data.corpus.with_theme / data.corpus.documents) * 100)}% grounded · ${data.corpus.no_theme + data.corpus.low_confidence} rejected`}
         />
         <Stat
           label="Rejected"
@@ -492,7 +494,12 @@ export default function DiscoveryPage() {
         />
       </div>
 
-      <CorpusCharts corpus={data.corpus} themes={data.themes} segments={data.segments} />
+      <CorpusCharts
+        corpus={data.corpus}
+        themes={data.themes}
+        segments={data.segments}
+        dedup={pipeline?.dropped.duplicate}
+      />
 
       <DecisionSnapshot survey={survey} themes={data.themes} />
 

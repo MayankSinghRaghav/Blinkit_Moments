@@ -212,8 +212,9 @@ function CountBars({
 }
 
 /** Pipeline yield funnel: corpus → coded → rejected. */
-function Funnel({ corpus }: { corpus: Insights["corpus"] }) {
+function Funnel({ corpus, dedup }: { corpus: Insights["corpus"]; dedup?: number }) {
   const total = corpus.documents || 1;
+  const grounded = Math.round((corpus.with_theme / total) * 100);
   const stages = [
     { label: "Fetched & deduped", n: corpus.documents, color: OKABE[0] },
     { label: "Coded to a theme", n: corpus.with_theme, color: OKABE[2] },
@@ -223,6 +224,7 @@ function Funnel({ corpus }: { corpus: Insights["corpus"] }) {
     <figure className="rounded-xl border border-line p-4">
       <figcaption className="text-sm font-bold">Pipeline yield</figcaption>
       <p className="mt-0.5 text-[11px] leading-snug text-muted">
+        {grounded}% grounded in a theme{dedup != null && <> · {dedup} duplicates removed in dedup</>}.
         Every document either grounds a theme or is dropped — the rejects stay visible.
       </p>
       <ul className="mt-3 space-y-2.5">
@@ -244,14 +246,59 @@ function Funnel({ corpus }: { corpus: Insights["corpus"] }) {
   );
 }
 
+// P3: the two required sources we have not ingested yet. Shown as honest
+// connectors — the pipeline supports them (see scripts/discovery/1-normalize),
+// but a live pull needs Apify (X/Twitter is paywalled). No volume is faked.
+const CONNECTORS = [
+  { label: "Community forums (Quora)", note: "connector ready · not yet ingested" },
+  { label: "Social (X / Twitter)", note: "connector ready · paywalled on Apify" },
+];
+
+/** Source split of the corpus + the not-yet-ingested connectors, labelled honestly. */
+function SourceBreakdown({ sources }: { sources: { label: string; count: number; color: string }[] }) {
+  const max = Math.max(...sources.map((s) => s.count), 1);
+  return (
+    <figure className="rounded-xl border border-line p-4">
+      <figcaption className="text-sm font-bold">Where the reviews came from</figcaption>
+      <p className="mt-0.5 text-[11px] leading-snug text-muted">
+        Ingested sources (real coded volume) plus the connectors still to be pulled.
+      </p>
+      <ul className="mt-3 space-y-2">
+        {sources.map((r) => (
+          <li key={r.label} className="grid grid-cols-[128px_1fr_46px] items-center gap-2">
+            <span className="truncate text-[11.5px] text-black/60" title={r.label}>{r.label}</span>
+            <span className="h-3.5 overflow-hidden rounded-full bg-tile">
+              <span className="block h-full rounded-full" style={{ width: `${Math.round((r.count / max) * 100)}%`, background: r.color }} />
+            </span>
+            <span className="text-right text-[11.5px] font-bold tabular-nums text-black/55">
+              {r.count.toLocaleString("en-IN")}
+            </span>
+          </li>
+        ))}
+        {CONNECTORS.map((c) => (
+          <li key={c.label} className="grid grid-cols-[128px_1fr_46px] items-center gap-2 opacity-70">
+            <span className="truncate text-[11.5px] text-black/45" title={c.label}>{c.label}</span>
+            <span className="rounded-full border border-dashed border-line px-2 py-0.5 text-[10px] italic text-black/40">
+              {c.note}
+            </span>
+            <span className="text-right text-[11.5px] font-medium tabular-nums text-black/30">—</span>
+          </li>
+        ))}
+      </ul>
+    </figure>
+  );
+}
+
 export function CorpusCharts({
   corpus,
   themes,
   segments,
+  dedup,
 }: {
   corpus: Insights["corpus"];
   themes: Theme[];
   segments: Insights["segments"];
+  dedup?: number;
 }) {
   const sources = Object.entries(corpus.by_source).map(([k, n], i) => ({
     label: SOURCE_LABEL[k] ?? k,
@@ -272,8 +319,8 @@ export function CorpusCharts({
       <h2 className="text-base font-bold">Corpus at a glance</h2>
       <p className="text-xs text-muted">Six views of the {corpus.documents.toLocaleString("en-IN")}-document corpus — all from the coding run.</p>
       <div className="mt-2 grid gap-4 lg:grid-cols-2">
-        <CountBars title="Where the reviews came from" caption="Source split of the corpus." rows={sources} />
-        <Funnel corpus={corpus} />
+        <SourceBreakdown sources={sources} />
+        <Funnel corpus={corpus} dedup={dedup} />
         <CountBars title="What users mostly talk about" caption="Largest context themes (platform-wide), by document count." rows={contextThemes} />
         <CountBars title="Coder-assigned segments" caption="Distribution across the five behavioural segments." rows={segs} />
       </div>
