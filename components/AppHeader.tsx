@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { CATEGORIES } from "@/lib/data/catalog";
-import { CATEGORY_ICON, catAnchor } from "@/lib/category-meta";
 import { useDemo } from "@/lib/session";
 import { useSearch, setSearch } from "@/lib/search";
 import { countItems } from "@/lib/cart";
@@ -72,18 +70,6 @@ export function AppHeader() {
               }`}
             >
               {label}
-            </Link>
-          ))}
-          <span className="mx-2 h-5 w-px shrink-0 bg-line" />
-          {CATEGORIES.map((c) => (
-            <Link
-              key={c}
-              href={`/#${catAnchor(c)}`}
-              onClick={() => setSearch("")}
-              className="flex shrink-0 items-center gap-1 px-3 py-3 text-sm text-black/55 hover:text-black"
-            >
-              <span aria-hidden>{CATEGORY_ICON[c]}</span>
-              {c}
             </Link>
           ))}
         </div>
