@@ -68,12 +68,6 @@ export default function MomentsPage() {
           )}
         </div>
 
-        {data?.degraded && (
-          <p className="mt-4 rounded-lg border border-amber-300 bg-amber-50 px-4 py-2.5 text-xs text-amber-900">
-            Running on the built-in occasion matcher (AI quota unavailable). Suggestions are still
-            real, just less nuanced.
-          </p>
-        )}
 
         {sensed && (
           <>
