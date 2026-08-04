@@ -38,7 +38,7 @@ export function FloatingCart() {
       <div
         inert={!showPill}
         aria-hidden={!showPill}
-        className={`fixed inset-x-0 bottom-4 z-40 mx-auto w-fit px-4 transition-all duration-300 ease-out motion-reduce:transition-none ${
+        className={`fixed inset-x-0 bottom-20 z-40 mx-auto w-fit px-4 transition-all duration-300 ease-out motion-reduce:transition-none sm:bottom-4 ${
           showPill
             ? "translate-y-0 scale-100 opacity-100"
             : "pointer-events-none translate-y-24 scale-95 opacity-0"

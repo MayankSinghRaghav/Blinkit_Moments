@@ -1,8 +1,10 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { CATEGORIES } from "@/lib/data/catalog";
+import { CATEGORY_ICON, catAnchor } from "@/lib/category-meta";
 import { useDemo } from "@/lib/session";
+import { useSearch, setSearch } from "@/lib/search";
 import { countItems } from "@/lib/cart";
 
 const NAV = [
@@ -15,6 +17,14 @@ const NAV = [
 export function AppHeader() {
   const demo = useDemo();
   const pathname = usePathname();
+  const router = useRouter();
+  const q = useSearch();
+
+  function onSearch(v: string) {
+    setSearch(v);
+    // searching implies shopping — bring the grid into view
+    if (v && pathname !== "/") router.push("/");
+  }
 
   return (
     <header className="sticky top-0 z-20 bg-white">
@@ -30,9 +40,16 @@ export function AppHeader() {
           </div>
 
           <div className="ml-auto hidden min-w-0 flex-1 sm:block">
-            <div className="flex items-center gap-2 rounded-lg bg-white px-3 py-2 text-sm text-black/40">
+            <div className="flex items-center gap-2 rounded-lg bg-white px-3 py-2 text-sm focus-within:ring-2 focus-within:ring-brand/40">
               <span aria-hidden>🔍</span>
-              <span className="truncate">Search &quot;beer&quot;, &quot;nachos&quot;, &quot;dog treats&quot;</span>
+              <input
+                type="search"
+                value={q}
+                onChange={(e) => onSearch(e.target.value)}
+                placeholder='Search "beer", "nachos", "dog treats"'
+                aria-label="Search products"
+                className="w-full min-w-0 bg-transparent outline-none placeholder:text-black/40"
+              />
             </div>
           </div>
 
@@ -59,13 +76,15 @@ export function AppHeader() {
           ))}
           <span className="mx-2 h-5 w-px shrink-0 bg-line" />
           {CATEGORIES.map((c) => (
-            <span
+            <Link
               key={c}
-              className="shrink-0 px-3 py-3 text-sm text-black/45"
-              title="Categories are illustrative in this prototype"
+              href={`/#${catAnchor(c)}`}
+              onClick={() => setSearch("")}
+              className="flex shrink-0 items-center gap-1 px-3 py-3 text-sm text-black/55 hover:text-black"
             >
+              <span aria-hidden>{CATEGORY_ICON[c]}</span>
               {c}
-            </span>
+            </Link>
           ))}
         </div>
       </div>

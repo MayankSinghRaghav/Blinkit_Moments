@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 import { AddButton } from "@/components/AddButton";
 import { ProductImage } from "@/components/ProductImage";
 import { WhyPanel } from "@/components/WhyPanel";
-import { byId } from "@/lib/data/catalog";
+import { Reviews } from "@/components/Reviews";
+import { RecommendationStrip } from "@/components/RecommendationStrip";
+import { byId, PRODUCTS } from "@/lib/data/catalog";
 import { explain } from "@/lib/llm";
 import { occasionById } from "@/lib/occasions";
 
@@ -25,6 +27,10 @@ export default async function WhyPage({
   // isn't in the catalog, so fall back to the label passed from the suggestion
   const occasionLabel = (o && occasionById(o)?.label) || ol?.trim() || "this moment";
   const { why_you_ll_like_it, why_its_a_stretch, degraded } = await explain(product.id, occasionLabel);
+
+  // transparent catalog slices for the browse strips (NOT the AI recommender)
+  const moreInCategory = PRODUCTS.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 10);
+  const starters = PRODUCTS.filter((p) => p.starter && p.id !== product.id).slice(0, 10);
 
   return (
     <div>
@@ -73,6 +79,16 @@ export default async function WhyPage({
             </p>
           )}
         </div>
+      </div>
+
+      <div className="mt-10 space-y-8">
+        <Reviews product={product} />
+        <RecommendationStrip title={`More in ${product.category}`} products={moreInCategory} />
+        <RecommendationStrip
+          title="Starter packs to try"
+          note="low-commitment first tries"
+          products={starters}
+        />
       </div>
     </div>
   );
