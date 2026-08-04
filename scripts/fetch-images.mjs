@@ -71,6 +71,20 @@ const QUERIES = {
   gro_milk: ["off", "amul milk"],
   gro_bread: ["off", "brown bread"],
   gro_eggs: ["off", "chicken eggs"],
+
+  snk_popcorn: ["off", "instant popcorn"],
+  snk_namkeen: ["off", "aloo bhujia namkeen"],
+  snk_cookies: ["off", "choco chip cookies"],
+  bev_energy: ["off", "red bull energy drink"],
+  bev_water: ["off", "bisleri mineral water"],
+  des_cake: ["off", "chocolate mug cake"],
+
+  elec_cable: ["opf", "usb type c cable"],
+  elec_batteries: ["opf", "aa batteries"],
+  elec_earbuds: ["opf", "wireless earbuds"],
+  elec_charger: ["opf", "usb charger"],
+  elec_powerbank: ["opf", "power bank"],
+  elec_bulb: ["opf", "led bulb"],
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

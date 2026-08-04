@@ -278,5 +278,93 @@
     "code": "8719881036429",
     "image": "https://images.openfoodfacts.org/images/products/871/988/103/6429/front_en.10.400.jpg",
     "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "snk_popcorn": {
+    "source": "world.openfoodfacts.org",
+    "product": "ACT 2 INSTANT POPCORN",
+    "brand": null,
+    "code": "8901512564900",
+    "image": "https://images.openfoodfacts.org/images/products/890/151/256/4900/front_en.3.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "snk_cookies": {
+    "source": "world.openfoodfacts.org",
+    "product": "Galletas Chip Choco Sin Gluten Sin Azúcares Añadidos",
+    "brand": "Galletas Gullon, Gullón",
+    "code": "8410376037883",
+    "image": "https://images.openfoodfacts.org/images/products/841/037/603/7883/front_en.90.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "bev_energy": {
+    "source": "world.openfoodfacts.org",
+    "product": "Red Bull Energy Drink",
+    "brand": "Red Bull",
+    "code": "90162602",
+    "image": "https://images.openfoodfacts.org/images/products/000/009/016/2602/front_en.134.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "bev_water": {
+    "source": "world.openfoodfacts.org",
+    "product": "Bisleri",
+    "brand": "BISLERI",
+    "code": "8906017290033",
+    "image": "https://images.openfoodfacts.org/images/products/890/601/729/0033/front_en.34.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "des_cake": {
+    "source": "world.openfoodfacts.org",
+    "product": "Mug Treats (Triple Chocolate Cake Mix with Chocolate Topping)",
+    "brand": "Betty Crocker",
+    "code": "6291105691161",
+    "image": "https://images.openfoodfacts.org/images/products/629/110/569/1161/front_en.11.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "elec_cable": {
+    "source": "world.openproductsfacts.org",
+    "product": "Type C to C Cable, EP-DA705",
+    "brand": "Samsung",
+    "code": "8806090000973",
+    "image": "https://images.openproductsfacts.org/images/products/880/609/000/0973/front_en.6.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "elec_batteries": {
+    "source": "world.openproductsfacts.org",
+    "product": "General Alkaline AA",
+    "brand": "Panasonic",
+    "code": "5410853063674",
+    "image": "https://images.openproductsfacts.org/images/products/541/085/306/3674/front_en.20.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "elec_earbuds": {
+    "source": "world.openproductsfacts.org",
+    "product": "Mi true Wireless Earbuds Basic",
+    "brand": "xiaomi",
+    "code": "6934177709968",
+    "image": "https://images.openproductsfacts.org/images/products/693/417/770/9968/front_en.4.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "elec_charger": {
+    "source": "world.openproductsfacts.org",
+    "product": "LogiLink USB Car Charger 2 Ports",
+    "brand": "LogiLink",
+    "code": "4052792032901",
+    "image": "https://images.openproductsfacts.org/images/products/405/279/203/2901/front_de.5.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "elec_powerbank": {
+    "source": "world.openproductsfacts.org",
+    "product": "Power bank 6000 mAh",
+    "brand": null,
+    "code": "5030578649665",
+    "image": "https://images.openproductsfacts.org/images/products/503/057/864/9665/front_fr.3.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
+  },
+  "elec_bulb": {
+    "source": "world.openproductsfacts.org",
+    "product": "Pigeon Joy Led Bulb 0.5W",
+    "brand": "Pigeon",
+    "code": "8904216517937",
+    "image": "https://images.openproductsfacts.org/images/products/890/421/651/7937/front_en.3.400.jpg",
+    "licence": "Images CC-BY-SA, data ODbL — Open Food Facts contributors"
   }
 }

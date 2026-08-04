@@ -8,7 +8,8 @@ export type Category =
   | "Baby"
   | "PersonalCare"
   | "Wellness"
-  | "Groceries";
+  | "Groceries"
+  | "Electronics";
 
 export type Product = {
   id: string;
@@ -37,6 +38,7 @@ export const CATEGORIES: Category[] = [
   "PersonalCare",
   "Wellness",
   "Groceries",
+  "Electronics",
 ];
 
 export const PRODUCTS: Product[] = [
@@ -136,6 +138,25 @@ export const PRODUCTS: Product[] = [
   { id: "gro_milk", name: "Amul Toned Milk 1L", category: "Groceries", price_inr: 68, tags: ["staple"] },
   { id: "gro_bread", name: "Brown Bread 400g", category: "Groceries", price_inr: 55, tags: ["staple"] },
   { id: "gro_eggs", name: "Farm Eggs (12)", category: "Groceries", price_inr: 96, tags: ["staple"] },
+
+  // --- added for catalog richness (all non-starter and priced above each
+  // category's existing minimum, so pickProduct() and the golden evals are
+  // unchanged; Electronics is a new browse category, never an occasion target) ---
+  { id: "snk_popcorn", name: "Act II Instant Popcorn 90g", category: "Snacks", price_inr: 75, tags: ["party", "game"] },
+  { id: "snk_namkeen", name: "Haldiram's Aloo Bhujia 200g", category: "Snacks", price_inr: 65, tags: ["snack"] },
+  { id: "snk_cookies", name: "Dark Fantasy Choco Fills 75g", category: "Snacks", price_inr: 90, tags: ["snack", "sweet"] },
+
+  { id: "bev_energy", name: "Red Bull Energy Drink 250ml", category: "Beverages", price_inr: 125, tags: ["party"] },
+  { id: "bev_water", name: "Bisleri Mineral Water 1L (2-pack)", category: "Beverages", price_inr: 80, tags: ["staple"] },
+
+  { id: "des_cake", name: "Chocolate Mug Cake 200g", category: "Desserts", price_inr: 175, tags: ["sweet"] },
+
+  { id: "elec_earbuds", name: "boAt Airdopes Wireless Earbuds", category: "Electronics", price_inr: 1299, tags: ["gadget"] },
+  { id: "elec_charger", name: "65W USB-C Fast Charger", category: "Electronics", price_inr: 899, tags: ["gadget"] },
+  { id: "elec_powerbank", name: "Mi 10000mAh Power Bank", category: "Electronics", price_inr: 1199, tags: ["gadget"] },
+  { id: "elec_cable", name: "USB-C to C Cable 1m", category: "Electronics", price_inr: 199, tags: ["gadget"] },
+  { id: "elec_bulb", name: "Wipro 9W Smart LED Bulb", category: "Electronics", price_inr: 499, tags: ["gadget", "home"] },
+  { id: "elec_batteries", name: "Duracell AA Batteries (8)", category: "Electronics", price_inr: 180, tags: ["gadget"] },
 ];
 
 export const byId = (id: string) => PRODUCTS.find((p) => p.id === id);

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { ProductImage } from "@/components/ProductImage";
 import { QuantitySelector } from "@/components/cart/QuantitySelector";
 import type { Product } from "@/lib/data/catalog";
@@ -23,14 +24,15 @@ export function ProductCard({
 }) {
   return (
     <article className="flex flex-col rounded-xl border border-line p-2.5 transition hover:shadow-[0_4px_14px_rgba(0,0,0,.08)]">
-      <div className="relative mb-2 aspect-square overflow-hidden rounded-lg bg-white">
-        <ProductImage product={product} sizes="(min-width:1024px) 200px, 45vw" />
-        {badge}
-      </div>
-
-      <p className="line-clamp-2 min-h-[2.5rem] text-[13px] font-medium leading-tight">
-        {product.name}
-      </p>
+      <Link href={`/why/${product.id}`} className="group" aria-label={`View ${product.name}`}>
+        <div className="relative mb-2 aspect-square overflow-hidden rounded-lg bg-white">
+          <ProductImage product={product} sizes="(min-width:1024px) 200px, 45vw" />
+          {badge}
+        </div>
+        <p className="line-clamp-2 min-h-[2.5rem] text-[13px] font-medium leading-tight group-hover:text-brand">
+          {product.name}
+        </p>
+      </Link>
       {product.starter && <p className="mt-0.5 text-[11px] font-medium text-brand">Starter pack</p>}
 
       {children}

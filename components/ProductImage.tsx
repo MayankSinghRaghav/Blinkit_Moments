@@ -16,6 +16,7 @@ const TILE: Record<string, string> = {
   PersonalCare: "🧴",
   Wellness: "💊",
   Groceries: "🛒",
+  Electronics: "🔌",
 };
 
 export function ProductImage({ product, sizes = "160px" }: { product: Product; sizes?: string }) {

@@ -12,6 +12,7 @@ export const CATEGORY_ICON: Record<Category, string> = {
   PersonalCare: "🧴",
   Wellness: "💊",
   Groceries: "🛒",
+  Electronics: "🔌",
 };
 
 /** DOM id + scroll-margin anchor for a category section on the shop page. */
